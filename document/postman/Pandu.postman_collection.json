@@ -1,0 +1,494 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pandu",
+		"_postman_id": "65201ee7-b68c-96c3-e537-116d9294b58a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"url": "http://localhost/pandu_api/public/register",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tommyputrapg@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "tommyppg",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"url": "http://localhost/pandu_api/public/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tommyputrapg@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"url": "http://localhost/pandu_api/public/user/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "018c9215a809cddb6c5ced66cc6b0c8f4d07440a",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contoh",
+			"description": "",
+			"item": [
+				{
+					"name": "Category",
+					"description": "",
+					"item": [
+						{
+							"name": "Get Category",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/category?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"category"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/category/create?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"category",
+										"create"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Furniture",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/category/update/2?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"category",
+										"update",
+										"2"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Furniture and House",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/category/delete/2?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"category",
+										"delete",
+										"2"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Item",
+					"description": "",
+					"item": [
+						{
+							"name": "Get Item",
+							"request": {
+								"url": "http://localhost/pandu_api/public/item_ads/1",
+								"method": "GET",
+								"header": [
+									{
+										"key": "api-token",
+										"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/item_ads/create?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"item_ads",
+										"create"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Asus ROG GL198",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Dijual murah Asus ROG mulus",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"value": "asus-rog.jpg",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "085721820905",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Bandung",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "sold",
+											"value": "0",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "published",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/item_ads/update/2?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"item_ads",
+										"update",
+										"2"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Asus ROG GL198",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Dijual murah Asus ROG mulus",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"value": "asus-rog.jpg",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "085721820905",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Cimahi",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "sold",
+											"value": "0",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "published",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"url": {
+									"raw": "http://localhost/pandu_api/public/item_ads/delete/2?api_token=8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"pandu_api",
+										"public",
+										"item_ads",
+										"delete",
+										"2"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "8dbd37c51a49e84f6e73a589d1e0c287f05422aa",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
