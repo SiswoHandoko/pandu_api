@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlans extends Migration
+class CreatePlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class CreatePlans extends Migration
             $table->increments('plan_id');
             $table->integer('user_id');
             $table->integer('tp_id');
-            $table->integer('quide_id')->nullable();
+            $table->integer('guide_id')->nullable();
             $table->dateTime('plan_start');
             $table->dateTime('plan_end');
             $table->boolean('plan_status');

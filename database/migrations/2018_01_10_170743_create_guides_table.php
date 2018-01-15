@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuides extends Migration
+class CreateGuidesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,7 +22,6 @@ class CreateGuides extends Migration
             $table->text('guide_address');
             $table->date('guide_birthdate');
             $table->string('guide_nik');
-            $table->bigInteger('guide_price');
             $table->string('guide_username');
             $table->string('guide_password');
             $table->string('guide_email')->unique();
