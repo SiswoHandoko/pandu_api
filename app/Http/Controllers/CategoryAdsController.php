@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\CategoryAds;
+use App\Model\CategoryAds;
 class CategoryAdsController extends Controller
 {
     /**
