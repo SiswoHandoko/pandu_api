@@ -4,18 +4,25 @@ use Illuminate\Database\Eloquent\Model;
 /**
 * Model item ads
 */
-class CategoryAds extends Model
+class City extends Model
 {
     /**
     * Table database
     */
-    protected $table = 'category_ads';
+    protected $table = 'cities';
     /**
     * The attributes that are mass assignable.
     *
     * @var array
     */
     protected $fillable = [
-        'name'
+        'id','province_id','city_name',
     ];
+
+    /**
+    * Belongs To Relation
+    */
+    public function province() {
+       return $this->belongsTo(Province::class, 'province_id');
+   }
 }

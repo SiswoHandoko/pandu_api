@@ -49,3 +49,14 @@ $router->get('/item_ads/{id}', 'ItemAdsController@read');
 $router->post('/item_ads/delete/{id}', 'ItemAdsController@delete');
 $router->post('/item_ads/create', 'ItemAdsController@create');
 $router->post('/item_ads/update/{id}', 'ItemAdsController@update');
+
+/*
+ | ------------------------------------------
+ | PROVINCE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/province', 'ProvinceController@index');
+$router->get('/province/{id}', 'ProvinceController@show');
+$router->post('/province/save', 'ProvinceController@store');
+$router->put('/province/update/{id}', 'ProvinceController@update');
+$router->get('/province/delete/{id}', 'ProvinceController@destroy');
