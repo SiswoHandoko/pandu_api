@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Validator;
 use Illuminate\Http\Request;
 use App\Model\Province;
 use App\Model\City;
@@ -14,7 +15,8 @@ class ProvinceController extends Controller
     public function index(Request $req)
     {
       $province = Province::get();
-      return response()->json($province, 200);
+      $result = $this->generate_response($province,200,'All Data.',false);
+      return response()->json($result, 200);
     }
 
     /**
@@ -25,15 +27,22 @@ class ProvinceController extends Controller
      */
     public function store(Request $req)
     {
-      if(!$req) {
-        return response()->json([
-          'message' => 'Bad Request'
-        ], 400);
+      /* Validation */
+      $validator = Validator::make($req->all(), [
+          'province_name' => 'required|max:255',
+      ]);
+
+      if($validator->fails()) {
+        $result = $this->generate_response($province,400,'Bad Request.',true);
+        return response()->json($result, 400);
       }else{
         $province = new Province();
         $province->province_name = $req->province_name;
+        $province->status = 'active';
         $province->save();
-        return response()->json($province, 200);
+        $result = $this->generate_response($province,200,'Data Has Been Saved.',false);
+
+        return response()->json($result, 200);
       }
     }
 
@@ -45,8 +54,9 @@ class ProvinceController extends Controller
      */
     public function show($id)
     {
-      $province = Province::find($id);
-      return response()->json($province, 200);
+        $province = Province::find($id);
+        $result = $this->generate_response($province,200,'Detail Data.',false);
+        return response()->json($result, 200);
     }
 
     /**
@@ -59,15 +69,20 @@ class ProvinceController extends Controller
 
     public function update(Request $req,$id)
     {
-      if (!$req){
-        return response()->json([ 'message' => 'Bad Request' ], 400);
-      }elseif(!$id) {
-        return response()->json([ 'message' => 'Not found' ] ,404);
+      /* Validation */
+      $validator = Validator::make($req->all(), [
+          'province_name' => 'required|max:255',
+      ]);
+
+      if($validator->fails()) {
+        $result = $this->generate_response($province,400,'Bad Request.',true);
+        return response()->json($result, 400);
       }else{
         $province = Province::find($id);
         $province->province_name = $req->province_name;
         $province->save();
-        return response()->json($province, 200);
+        $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
+        return response()->json($result, 200);
       }
     }
 
@@ -79,9 +94,10 @@ class ProvinceController extends Controller
      */
     public function destroy($id)
     {
-      $province = Province::find($id);
-      $province->status = 'deleted';
-      $province->save();
-      return response()->json($province, 200);
+        $province = Province::find($id);
+        $province->status = 'deleted';
+        $province->save();
+        $result = $this->generate_response($province,200,'Data Has Been Deleted.',false);
+        return response()->json($result, 200);
     }
 }
