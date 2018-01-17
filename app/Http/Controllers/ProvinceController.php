@@ -29,7 +29,7 @@ class ProvinceController extends Controller
     {
       /* Validation */
       $validator = Validator::make($req->all(), [
-          'province_name' => 'required|max:255',
+          'name' => 'required|max:255',
       ]);
 
       if($validator->fails()) {
@@ -37,7 +37,7 @@ class ProvinceController extends Controller
         return response()->json($result, 400);
       }else{
         $province = new Province();
-        $province->province_name = $req->province_name;
+        $province->name = $req->name;
         $province->status = 'active';
         $province->save();
         $result = $this->generate_response($province,200,'Data Has Been Saved.',false);
@@ -71,7 +71,7 @@ class ProvinceController extends Controller
     {
       /* Validation */
       $validator = Validator::make($req->all(), [
-          'province_name' => 'required|max:255',
+          'name' => 'required|max:255',
       ]);
 
       if($validator->fails()) {
@@ -79,7 +79,7 @@ class ProvinceController extends Controller
         return response()->json($result, 400);
       }else{
         $province = Province::find($id);
-        $province->province_name = $req->province_name;
+        $province->name = $req->name;
         $province->save();
         $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
         return response()->json($result, 200);

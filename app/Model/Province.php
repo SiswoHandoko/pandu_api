@@ -16,8 +16,9 @@ class Province extends Model
     * @var array
     */
     protected $fillable = [
-        'id','province_name',
+        'id', 'name', 'status'
     ];
+    
     /**
     * One to Many relationships
     */

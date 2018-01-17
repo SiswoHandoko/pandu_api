@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProvinciesTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateProvinciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('provincies', function (Blueprint $table) {
-            $table->increments('province_id');
-            $table->string('province_name');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('username');
+            $table->string('password');
+            $table->string('realname');
+            $table->text('api_token');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateProvinciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provincies');
+        Schema::dropIfExists('admins');
     }
 }

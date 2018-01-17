@@ -16,13 +16,21 @@ class City extends Model
     * @var array
     */
     protected $fillable = [
-        'id','province_id','city_name',
+        'id', 'province_id', 'name', 'status'
     ];
 
+    /**
+    * One to Many relationships
+    */
+    public function tourismplace()
+    {
+        return $this->hasMany(TourismPlace::class);
+    }
+    
     /**
     * Belongs To Relation
     */
     public function province() {
-       return $this->belongsTo(Province::class, 'province_id');
-   }
+        return $this->belongsTo(Province::class, 'province_id');
+    }
 }

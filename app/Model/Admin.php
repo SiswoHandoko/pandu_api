@@ -3,7 +3,7 @@
 namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Admin extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -11,7 +11,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'midlename', 'lastname', 'contact', 'address', 'birthdate', 'username', 'password', 'email', 'api_token', 'status'
+        'username', 'password', 'realname', 'api_token', 'status'
     ];
 
     /**
@@ -22,12 +22,4 @@ class User extends Model
     protected $hidden = [
         'password', 'api_token'
     ];
-
-    /**
-    * One to Many relationships
-    */
-    public function plan()
-    {
-        return $this->hasMany(Plan::class);
-    }
 }

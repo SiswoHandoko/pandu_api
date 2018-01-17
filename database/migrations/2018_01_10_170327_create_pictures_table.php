@@ -14,10 +14,10 @@ class CreatePicturesTable extends Migration
     public function up()
     {
         Schema::create('pictures', function (Blueprint $table) {
-            $table->increments('picture_id');
+            $table->increments('id');
             $table->integer('tp_id');
-            $table->text('picture_link');
-            $table->boolean('picture_status');
+            $table->text('image_url');
+            $table->string('status');
             $table->timestamps();
         });
     }

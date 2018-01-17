@@ -14,14 +14,18 @@ class CreateTourismPlacesTable extends Migration
     public function up()
     {
         Schema::create('tourism_places', function (Blueprint $table) {
-            $table->increments('tp_id');
+            $table->increments('id');
             $table->integer('city_id');
-            $table->string('tp_name');
-            $table->text('tp_description');
-            $table->bigInteger('tp_price');
-            $table->string('tp_longitude');
-            $table->string('tp_latitude');
-            $table->text('tp_facilities');
+            $table->string('name');
+            $table->text('description');
+            $table->bigInteger('adult_price');
+            $table->bigInteger('child_price');
+            $table->bigInteger('infant_price');
+            $table->bigInteger('tourist_price');
+            $table->string('longitude');
+            $table->string('latitude');
+            $table->text('facilities');
+            $table->string('status');
             $table->timestamps();
         });
     }
