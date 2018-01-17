@@ -15,7 +15,7 @@ class AdminsTableSeeder extends Seeder
     {
         DB::table('admins')->truncate();
 
-        $data = array(
+        $data = [
             [
             	'username' => 'tommy',
             	'password' => Hash::make('tommy'),
@@ -23,10 +23,8 @@ class AdminsTableSeeder extends Seeder
                 'api_token' => sha1(time()),
             	'status' => 'nonactive'
             ]
-        );
+        ];
 
-        foreach ($data as $value) {
-            Admin::create($value);
-        }
+        Admin::insert($data);
     }
 }

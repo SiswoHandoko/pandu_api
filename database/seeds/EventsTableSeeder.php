@@ -14,7 +14,7 @@ class EventsTableSeeder extends Seeder
     {
         DB::table('events')->truncate();
     	
-        $data = array(
+        $data = [
             [
             	'tp_id' => 1,
             	'name' => 'Festival',
@@ -22,10 +22,8 @@ class EventsTableSeeder extends Seeder
             	'start_date' => '2018-01-10 08:00:00',
             	'end_date' => '2018-01-15 08:00:00'
             ]
-        );
+        ];
         
-        foreach ($data as $value) {
-            Event::create($value);
-        }
+        Event::insert($data);
     }
 }

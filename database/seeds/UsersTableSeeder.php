@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
     	DB::table('users')->truncate();
 
-        $data = array(
+        $data = [
             [
             	'firstname' => 'Asep',
             	'midlename' => null,
@@ -30,10 +30,8 @@ class UsersTableSeeder extends Seeder
                 'status' => 'nonactive',
             	'remember_token' => '-'
             ]
-        );
+        ];
 
-        foreach ($data as $value) {
-            User::create($value);
-        }
+        User::insert($data);
     }
 }

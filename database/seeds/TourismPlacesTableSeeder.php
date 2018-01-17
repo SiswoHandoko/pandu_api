@@ -14,7 +14,7 @@ class TourismPlacesTableSeeder extends Seeder
     {
         DB::table('tourism_places')->truncate();
     	
-        $data = array(
+        $data = [
             [
             	'city_id' => 1,
             	'name' => 'Borobudur',
@@ -28,10 +28,8 @@ class TourismPlacesTableSeeder extends Seeder
             	'facilities' => 'toilet, mushola, wifi',
             	'status' => 'active'
             ]
-        );
+        ];
         
-        foreach ($data as $value) {
-            TourismPlace::create($value);
-        }
+        TourismPlace::insert($data);
     }
 }

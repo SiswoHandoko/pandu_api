@@ -15,7 +15,7 @@ class GuidesTableSeeder extends Seeder
     {
         DB::table('guides')->truncate();
 
-        $data = array(
+        $data = [
             [
             	'firstname' => 'Siswo',
             	'midlename' => null,
@@ -30,10 +30,8 @@ class GuidesTableSeeder extends Seeder
                 'api_token' => sha1(time()),
             	'status' => 'nonactive'
             ]
-        );
+        ];
 
-        foreach ($data as $value) {
-            Guide::create($value);
-        }
+        Guide::insert($data);
     }
 }

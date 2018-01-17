@@ -14,15 +14,13 @@ class RolesTableSeeder extends Seeder
     {
         DB::table('roles')->truncate();
 
-        $data = array(
+        $data = [
             [
             	'name' => '-',
             	'status' => 'nonactive'
             ]
-        );
+        ];
 
-        foreach ($data as $value) {
-            Role::create($value);
-        }
+        Role::insert($data);
     }
 }

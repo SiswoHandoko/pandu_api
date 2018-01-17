@@ -14,16 +14,14 @@ class PicturesTableSeeder extends Seeder
     {
         DB::table('pictures')->truncate();
     	
-        $data = array(
+        $data = [
             [
             	'tp_id' => 1,
             	'image_url' => 'picture_1_1.jpg',
             	'status' => 'active'
             ]
-        );
+        ];
         
-        foreach ($data as $value) {
-            Picture::create($value);
-        }
+        Picture::insert($data);
     }
 }

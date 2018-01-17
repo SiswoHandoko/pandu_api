@@ -14,7 +14,7 @@ class PlansTableSeeder extends Seeder
     {
         DB::table('plans')->truncate();
     	
-        $data = array(
+        $data = [
             [
             	'user_id' => 1,
             	'tp_id' => 1,
@@ -23,10 +23,8 @@ class PlansTableSeeder extends Seeder
             	'end_date' => '2018-01-15 08:00:00',
             	'status' => 'hold'
             ]
-        );
+        ];
         
-        foreach ($data as $value) {
-            Plan::create($value);
-        }
+        Plan::insert($data);
     }
 }
