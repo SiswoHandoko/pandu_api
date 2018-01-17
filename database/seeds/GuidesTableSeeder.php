@@ -18,7 +18,6 @@ class GuidesTableSeeder extends Seeder
         $data = [
             [
             	'firstname' => 'Siswo',
-            	'midlename' => null,
             	'lastname' => 'Handoko',
             	'contact' => '089687476161',
             	'address' => 'Surabaya, Jawa Timur',

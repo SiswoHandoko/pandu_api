@@ -16,7 +16,6 @@ class CreateGuidesTable extends Migration
         Schema::create('guides', function (Blueprint $table) {
             $table->increments('id');
             $table->string('firstname');
-            $table->string('midlename')->nullable();;
             $table->string('lastname');
             $table->string('contact');
             $table->text('address');

@@ -18,7 +18,6 @@ class UsersTableSeeder extends Seeder
         $data = [
             [
             	'firstname' => 'Asep',
-            	'midlename' => null,
             	'lastname' => 'Mulyadi',
             	'contact' => '085861960366',
             	'address' => 'Cijeungjing, Ciamis, Jawa Barat',

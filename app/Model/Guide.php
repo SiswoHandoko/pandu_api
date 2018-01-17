@@ -11,7 +11,7 @@ class Guide extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'midlename', 'lastname', 'contact', 'address', 'birthdate', 'nik', 'username', 'password', 'email', 'api_token', 'status'
+        'firstname', 'lastname', 'contact', 'address', 'birthdate', 'nik', 'username', 'password', 'email', 'api_token', 'status'
     ];
 
     /**
