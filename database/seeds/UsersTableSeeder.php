@@ -27,7 +27,8 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('asepmulyadi'),
             	'email' => 'asep.mulyadi011@gmail.com',
                 'api_token' => sha1(time()),
-            	'status' => 'nonactive'
+                'status' => 'nonactive',
+            	'remember_token' => '-'
             ]
         );
 
