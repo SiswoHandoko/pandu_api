@@ -27,12 +27,30 @@ class LoginController extends Controller
         }else{
             if ($hasher->check($password, $login->password)) {
                 $api_token = sha1(time());
-                $create_token = User::where('id', $login->id)->update(['api_token' => $api_token]);
-                if ($create_token) {
-                    $res['success'] = true;
-                    $res['api_token'] = $api_token;
-                    $res['message'] = $login;
-                    return response($res);
+                if($request->header('device-type')=='web'){
+                    $create_token = User::where('id', $login->id)->update(['web_token' => $api_token]);
+                    if ($create_token) {
+                        $res['success'] = true;
+                        $res['web_token'] = $api_token;
+                        $res['message'] = $login;
+                        return response($res);
+                    }
+                }elseif($request->header('device-type')=='android'){
+                    $create_token = User::where('id', $login->id)->update(['android_token' => $api_token]);
+                    if ($create_token) {
+                        $res['success'] = true;
+                        $res['android_token'] = $api_token;
+                        $res['message'] = $login;
+                        return response($res);
+                    }
+                }elseif($request->header('device-type')=='ios'){
+                    $create_token = User::where('id', $login->id)->update(['ios_token' => $api_token]);
+                    if ($create_token) {
+                        $res['success'] = true;
+                        $res['ios_token'] = $api_token;
+                        $res['message'] = $login;
+                        return response($res);
+                    }
                 }
             }else{
                 $res['success'] = true;
