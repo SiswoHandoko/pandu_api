@@ -6,7 +6,15 @@ use App\Model\Province;
 use App\Model\City;
 class ProvinceController extends Controller
 {
-
+    /**
+    * Create a new auth instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
     * Display a listing of the resource.
     *

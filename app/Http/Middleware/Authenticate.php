@@ -40,15 +40,34 @@ class Authenticate
         if ($this->auth->guard($guard)->guest()) {
             /* check if api-token header is empty or not */
             if (!empty($request->header('api-token'))) {
-                /* check to db */
+                /* check to db web */
                 $token = $request->header('api-token');
-                $check_token = DB::table('users')->select('api_token')->where(['api_token' => $token])->get();
-                if (count($check_token) == 0) {
-                    $res['success'] = false;
-                    $res['message'] = 'Permission not allowed!';
+                if($request->header('device-type')=='web'){
+                    $check_token = DB::table('users')->select('web_token')->where(['web_token' => $token])->get();
+                    if (count($check_token) == 0) {
+                        $res['success'] = false;
+                        $res['message'] = 'Permission not allowed!';
 
-                    return response($res);
+                        return response($res);
+                    }
+                }elseif($request->header('device-type')=='android'){
+                    $check_token = DB::table('users')->select('android_token')->where(['android_token' => $token])->get();
+                    if (count($check_token) == 0) {
+                        $res['success'] = false;
+                        $res['message'] = 'Permission not allowed!';
+
+                        return response($res);
+                    }
+                }elseif($request->header('device-type')=='ios'){
+                    $check_token = DB::table('users')->select('ios_token')->where(['ios_token' => $token])->get();
+                    if (count($check_token) == 0) {
+                        $res['success'] = false;
+                        $res['message'] = 'Permission not allowed!';
+
+                        return response($res);
+                    }
                 }
+
             }else{
                 $res['success'] = false;
                 $res['message'] = 'Login please!';

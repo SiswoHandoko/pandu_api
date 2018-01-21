@@ -11,7 +11,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'contact', 'address', 'birthdate', 'username', 'password', 'email', 'api_token', 'status', 'remember_token'
+        'firstname', 'lastname', 'contact', 'address', 'birthdate', 'username', 'password', 'email', 'web_token','android_token','ios_token', 'status', 'remember_token'
     ];
 
     /**
@@ -20,7 +20,7 @@ class User extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'api_token'
+        'password', 'web_token','android_token','ios_token'
     ];
 
     /**

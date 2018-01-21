@@ -108,8 +108,21 @@
 	"requests": [
 		{
 			"id": "17b60a5f-115a-7afe-d409-20aa18f31d25",
-			"headers": "",
-			"headerData": [],
+			"headers": "api-token: b14a7bbe61ec9449b0e4e6e973966d93e52c5156\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "b14a7bbe61ec9449b0e4e6e973966d93e52c5156",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "http://localhost/pandu_api/public/province/delete",
 			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"queryParams": [],
@@ -121,7 +134,7 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516113233205,
+			"time": 1516329165864,
 			"name": "delete_province",
 			"description": "Get Province By Id",
 			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
@@ -297,8 +310,21 @@
 		},
 		{
 			"id": "80afb53a-de6d-0881-3788-1f1c7fb5a5bd",
-			"headers": "",
-			"headerData": [],
+			"headers": "api-token: b14a7bbe61ec9449b0e4e6e973966d93e52c5156\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "b14a7bbe61ec9449b0e4e6e973966d93e52c5156",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "http://localhost/pandu_api/public/province/save",
 			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"queryParams": [],
@@ -308,8 +334,8 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "province_name",
-					"value": "Yogyakarta",
+					"key": "name",
+					"value": "TESTING",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -318,7 +344,7 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516035027051,
+			"time": 1516329178057,
 			"name": "save_province",
 			"description": "Get Province By Id",
 			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
@@ -445,25 +471,37 @@
 		},
 		{
 			"id": "9c2fc085-37f1-5a91-c1af-6c7c8172c133",
-			"headers": "",
-			"headerData": [],
+			"headers": "api-token: b14a7bbe61ec9449b0e4e6e973966d93e52c5156\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "b14a7bbe61ec9449b0e4e6e973966d93e52c5156",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "http://localhost/pandu_api/public/province/1",
+			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"queryParams": [],
+			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"events": [],
-			"auth": null,
 			"method": "GET",
-			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
 			"data": null,
 			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516329163657,
 			"name": "get_province_by_id",
 			"description": "Get Province By Id",
-			"descriptionFormat": "html",
-			"time": 1516033119084,
-			"version": 2,
+			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
 			"responses": [],
-			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -667,8 +705,21 @@
 		},
 		{
 			"id": "f72fbcf1-1c96-61c0-488c-06c5307e6712",
-			"headers": "",
-			"headerData": [],
+			"headers": "api-token: b14a7bbe61ec9449b0e4e6e973966d93e52c5156\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "b14a7bbe61ec9449b0e4e6e973966d93e52c5156",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "http://localhost/pandu_api/public/province",
 			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"queryParams": [],
@@ -680,7 +731,7 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516033342572,
+			"time": 1516329162518,
 			"name": "get_province",
 			"description": "Get Province By Id",
 			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
@@ -690,16 +741,28 @@
 		},
 		{
 			"id": "fe7b7387-a741-9d5d-9513-c0d88addf958",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: b14a7bbe61ec9449b0e4e6e973966d93e52c5156\ndevice-type: web\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/x-www-form-urlencoded",
 					"description": "",
 					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "b14a7bbe61ec9449b0e4e6e973966d93e52c5156",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/province/update/4",
+			"url": "http://localhost/pandu_api/public/province/update/35",
 			"folder": "c7889d25-64bf-1753-2d81-c4326cd08ddf",
 			"queryParams": [],
 			"events": [],
@@ -708,8 +771,8 @@
 			"method": "PUT",
 			"data": [
 				{
-					"key": "province_name",
-					"value": "Banten",
+					"key": "name",
+					"value": "TESTING",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -718,7 +781,7 @@
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1516113226857,
+			"time": 1516329169629,
 			"name": "update_province",
 			"description": "Get Province By Id",
 			"collectionId": "f3fcd47f-1dd8-e435-c984-d1efa057b0bc",
