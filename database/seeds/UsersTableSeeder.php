@@ -54,7 +54,7 @@ class UsersTableSeeder extends Seeder
             	'birthdate' => '1993-08-24',
             	'username' => 'tommyppg',
             	'password' => Hash::make('qwerty'),
-            	'email' => 'asep.mulyadi011@gmail.com',
+            	'email' => 'tommy@gmail.com',
                 'web_token' => sha1(time()),
                 'android_token' => sha1(time()),
                 'ios_token' => sha1(time()),
