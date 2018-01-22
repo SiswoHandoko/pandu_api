@@ -15,9 +15,9 @@ class CreatePicturesTable extends Migration
     {
         Schema::create('pictures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tp_id');
-            $table->text('image_url');
-            $table->string('status');
+            $table->integer('tp_id')->default(0);
+            $table->text('image_url')->default('');
+            $table->string('status')->default('');
             $table->timestamps();
         });
     }

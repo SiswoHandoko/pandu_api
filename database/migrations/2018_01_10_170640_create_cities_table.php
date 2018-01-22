@@ -15,10 +15,10 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('province_id');
-            $table->string('name');
-            $table->string('image_url');
-            $table->string('status');
+            $table->integer('province_id')->default(0);
+            $table->string('name')->default('');
+            $table->string('image_url')->default('');
+            $table->string('status')->default('');
             $table->timestamps();
         });
     }
