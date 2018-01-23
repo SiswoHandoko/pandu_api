@@ -62,6 +62,21 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+            	'firstname' => 'Faizal',
+            	'lastname' => 'Muhammad',
+            	'contact' => '085795678930',
+            	'address' => 'Sukabumi, Jawa Barat',
+            	'birthdate' => '1995-31-12',
+            	'username' => 'faizal',
+            	'password' => Hash::make('qwerty'),
+            	'email' => 'faizal@gmail.com',
+                'web_token' => sha1(time()),
+                'android_token' => sha1(time()),
+                'ios_token' => sha1(time()),
+                'status' => 'active',
+            	'remember_token' => '-'
+            ],
+            [
             	'firstname' => 'Wiwid',
             	'lastname' => 'Widyanto',
             	'contact' => '08121002181',

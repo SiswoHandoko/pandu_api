@@ -11,7 +11,7 @@ class Guide extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'contact', 'address', 'birthdate', 'nik', 'username', 'password', 'email', 'api_token', 'status'
+        'firstname', 'lastname', 'contact', 'address', 'birthdate', 'nik', 'username', 'password', 'email', 'web_token','android_token','ios_token', 'status'
     ];
 
     /**
@@ -20,7 +20,7 @@ class Guide extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'api_token','created_at','updated_at'
+        'password', 'web_token','android_token','ios_token','created_at','updated_at'
     ];
 
     /**

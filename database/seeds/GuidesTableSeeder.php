@@ -24,9 +24,11 @@ class GuidesTableSeeder extends Seeder
             	'birthdate' => '1992-05-12',
             	'nik' => '3207032408930002',
             	'username' => 'siswohandoko',
-            	'password' => Hash::make('siswohandoko'),
-            	'email' => 'siswohandoko@gmail.com',
-                'api_token' => sha1(time()),
+            	'password' => Hash::make('qwerty'),
+            	'email' => 'guide@gmail.com',
+                'web_token' => sha1(time()),
+                'ios_token' => sha1(time()),
+                'android_token' => sha1(time()),
             	'status' => 'nonactive'
             ]
         ];

@@ -24,7 +24,9 @@ class CreateGuidesTable extends Migration
             $table->string('username')->default('');
             $table->string('password')->default('');
             $table->string('email')->unique()->default('');
-            $table->text('api_token')->default('');
+            $table->text('web_token')->default('');
+            $table->text('android_token')->default('');
+            $table->text('ios_token')->default('');
             $table->string('status')->default('');
             $table->rememberToken();
             $table->timestamps();

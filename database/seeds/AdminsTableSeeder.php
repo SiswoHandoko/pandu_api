@@ -18,9 +18,10 @@ class AdminsTableSeeder extends Seeder
         $data = [
             [
             	'username' => 'tommy',
-            	'password' => Hash::make('tommy'),
+            	'password' => Hash::make('qwerty'),
             	'realname' => 'Tommy',
-                'api_token' => sha1(time()),
+            	'email' => 'admin@google.com',
+                'web_token' => sha1(time()),
             	'status' => 'nonactive'
             ]
         ];

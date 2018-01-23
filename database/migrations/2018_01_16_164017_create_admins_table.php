@@ -18,7 +18,8 @@ class CreateAdminsTable extends Migration
             $table->string('username')->default('');
             $table->string('password')->default('');
             $table->string('realname')->default('');
-            $table->text('api_token')->default('');
+            $table->string('email')->default('');
+            $table->text('web_token')->default('');
             $table->string('status')->default('');
             $table->timestamps();
         });

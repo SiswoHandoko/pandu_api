@@ -11,7 +11,7 @@ class Admin extends Model
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'realname', 'api_token', 'status'
+        'username', 'password', 'realname','email', 'web_token', 'status'
     ];
 
     /**
@@ -20,6 +20,6 @@ class Admin extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'api_token','created_at','updated_at'
+        'password', 'web_token','created_at','updated_at'
     ];
 }
