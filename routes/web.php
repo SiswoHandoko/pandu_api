@@ -25,7 +25,12 @@ $router->get('/', function () use ($router) {
  */
 $router->post('/login', 'LoginController@index');
 $router->post('/register', 'UserController@register');
-$router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@get_user']);
+// $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@get_user']);
+$router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@index']);
+$router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@show']);
+$router->post('/user/create', ['middleware' => 'auth', 'uses' =>  'UserController@store']);
+$router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@update']);
+$router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);
 
 /*
  | ------------------------------------------
@@ -34,7 +39,7 @@ $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@g
  */
 $router->get('/province', 'ProvinceController@index');
 $router->get('/province/{id}', 'ProvinceController@show');
-$router->post('/province/save', 'ProvinceController@store');
+$router->post('/province/create', 'ProvinceController@store');
 $router->put('/province/update/{id}', 'ProvinceController@update');
 $router->get('/province/delete/{id}', 'ProvinceController@destroy');
 $router->get('/province/{id}/cities', 'ProvinceController@city_by_province');
@@ -46,6 +51,6 @@ $router->get('/province/{id}/cities', 'ProvinceController@city_by_province');
  */
 $router->get('/city', 'CityController@index');
 $router->get('/city/{id}', 'CityController@show');
-$router->post('/city/save', 'CityController@store');
+$router->post('/city/create', 'CityController@store');
 $router->put('/city/update/{id}', 'CityController@update');
 $router->get('/city/delete/{id}', 'CityController@destroy');
