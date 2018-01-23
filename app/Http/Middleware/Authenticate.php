@@ -48,6 +48,7 @@ class Authenticate
                         $res['isError'] = true;
                         $res['errorCode'] = 101;
                         $res['message'] = 'Permission not allowed!';
+                        $res['data'] = null;
 
                         return response($res);
                     }
@@ -57,6 +58,7 @@ class Authenticate
                         $res['isError'] = true;
                         $res['errorCode'] = 101;
                         $res['message'] = 'Permission not allowed!';
+                        $res['data'] = null;
 
                         return response($res);
                     }
@@ -66,6 +68,7 @@ class Authenticate
                         $res['isError'] = true;
                         $res['errorCode'] = 101;
                         $res['message'] = 'Permission not allowed!';
+                        $res['data'] = null;
 
                         return response($res);
                     }
@@ -73,7 +76,8 @@ class Authenticate
                     $res['isError'] = true;
                     $res['errorCode'] = 101;
                     $res['message'] = 'Permission not allowed!';
-                    
+                    $res['data'] = null;
+
                     return response($res);
                 }
 
@@ -81,7 +85,8 @@ class Authenticate
                 $res['isError'] = true;
                 $res['errorCode'] = 102;
                 $res['message'] = 'Login please!';
-
+                $res['data'] = null;
+                
                 return response($res);
             }
         }

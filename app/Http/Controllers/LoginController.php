@@ -18,7 +18,7 @@ class LoginController extends Controller
         $validator = Validator::make($request->all(), [
           'email' => 'required|max:255',
           'password' => 'required|max:255',
-          'type' => 'required|max:255',
+          'type' => 'required|max:255|in:user,guide,admin',
         ]);
 
         if($validator->fails()) {
@@ -80,6 +80,7 @@ class LoginController extends Controller
                 }
             }else{
                 /* Password Incorrect */
+                $login = null;
                 $res = $this->generate_response($login,1,'Your email or password incorrect!',true);
                 return $res;
             }
@@ -130,6 +131,7 @@ class LoginController extends Controller
                 }
             }else{
                 /* Password Incorrect */
+                $login = null;
                 $res = $this->generate_response($login,1,'Your email or password incorrect!',true);
                 return $res;
             }
@@ -162,6 +164,7 @@ class LoginController extends Controller
                 }
             }else{
                 /* Password Incorrect */
+                $login = null;
                 $res = $this->generate_response($login,1,'Your email or password incorrect!',true);
                 return $res;
             }
