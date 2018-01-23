@@ -49,3 +49,15 @@ $router->get('/city/{id}', 'CityController@show');
 $router->post('/city/save', 'CityController@store');
 $router->put('/city/update/{id}', 'CityController@update');
 $router->get('/city/delete/{id}', 'CityController@destroy');
+
+
+/*
+ | ------------------------------------------
+ | TOURISM PLACE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/tourismplace', 'TourismPlaceController@index');
+$router->get('/tourismplace/{id}', 'TourismPlaceController@show');
+$router->post('/tourismplace/create', 'TourismPlaceController@store');
+$router->put('/tourismplace/update/{id}', 'TourismPlaceController@update');
+$router->get('/tourismplace/delete/{id}', 'TourismPlaceController@destroy');
