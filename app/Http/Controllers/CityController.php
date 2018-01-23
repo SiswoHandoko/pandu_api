@@ -2,9 +2,9 @@
 namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
-use App\Model\Province;
 use App\Model\City;
-class ProvinceController extends Controller
+use App\Model\Province;
+class CityController extends Controller
 {
     /**
     * Create a new auth instance.
@@ -22,8 +22,8 @@ class ProvinceController extends Controller
     */
     public function index(Request $req)
     {
-        $province = Province::get();
-        $result = $this->generate_response($province,200,'All Data.',false);
+        $city = City::get();
+        $result = $this->generate_response($city,200,'All Data.',false);
         return response()->json($result, 200);
     }
 
@@ -41,29 +41,29 @@ class ProvinceController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($province,400,'Bad Request.',true);
-            return response()->json($result, 400);
+        $result = $this->generate_response($city,400,'Bad Request.',true);
+        return response()->json($result, 400);
         }else{
-            $province = new Province();
-            $province->name = $req->name;
-            $province->status = 'active';
-            $province->save();
-            $result = $this->generate_response($province,200,'Data Has Been Saved.',false);
+        $city = new Province();
+        $city->name = $req->name;
+        $city->status = 'active';
+        $city->save();
+        $result = $this->generate_response($city,200,'Data Has Been Saved.',false);
 
-            return response()->json($result, 200);
+        return response()->json($result, 200);
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Province  $province
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $province = Province::find($id);
-        $result = $this->generate_response($province,200,'Detail Data.',false);
+        $city = City::find($id);
+        $result = $this->generate_response($city,200,'Detail Data.',false);
         return response()->json($result, 200);
     }
 
@@ -71,7 +71,7 @@ class ProvinceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Province  $province
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
 
@@ -83,13 +83,13 @@ class ProvinceController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($province,400,'Bad Request.',true);
+            $result = $this->generate_response($city,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
-            $province = Province::find($id);
-            $province->name = $req->name;
-            $province->save();
-            $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
+            $city = City::find($id);
+            $city->name = $req->name;
+            $city->save();
+            $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);
         }
     }
@@ -97,27 +97,16 @@ class ProvinceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Province  $province
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $province = Province::find($id);
-        $province->status = 'deleted';
-        $province->save();
-        $result = $this->generate_response($province,200,'Data Has Been Deleted.',false);
+        $city = City::find($id);
+        $city->status = 'deleted';
+        $city->save();
+        $result = $this->generate_response($city,200,'Data Has Been Deleted.',false);
         return response()->json($result, 200);
     }
 
-    /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function city_by_province($id)
-    {
-        $city = City::where('province_id',$id)->get();
-        $result = $this->generate_response($city,200,'All Data.',false);
-        return response()->json($result, 200);
-    }
 }

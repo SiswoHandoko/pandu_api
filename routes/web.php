@@ -60,3 +60,15 @@ $router->get('/province/{id}', 'ProvinceController@show');
 $router->post('/province/save', 'ProvinceController@store');
 $router->put('/province/update/{id}', 'ProvinceController@update');
 $router->get('/province/delete/{id}', 'ProvinceController@destroy');
+$router->get('/province/{id}/cities', 'ProvinceController@city_by_province');
+
+/*
+ | ------------------------------------------
+ | CITY ROUTE
+ | ------------------------------------------
+ */
+$router->get('/city', 'CityController@index');
+$router->get('/city/{id}', 'CityController@show');
+$router->post('/city/save', 'CityController@store');
+$router->put('/city/update/{id}', 'CityController@update');
+$router->get('/city/delete/{id}', 'CityController@destroy');
