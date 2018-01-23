@@ -18,6 +18,15 @@ class Province extends Model
     protected $fillable = [
         'id', 'name', 'status'
     ];
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'created_at','updated_at'
+    ];
     
     /**
     * One to Many relationships

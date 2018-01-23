@@ -20,7 +20,7 @@ class Guide extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'api_token'
+        'password', 'api_token','created_at','updated_at'
     ];
 
     /**

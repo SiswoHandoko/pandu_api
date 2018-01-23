@@ -29,29 +29,6 @@ $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@g
 
 /*
  | ------------------------------------------
- | CRUD Category Routes using auth middleware
- | ------------------------------------------
- */
-
-$router->get('/category', 'CategoryAdsController@index');
-$router->get('/category/{id}', 'CategoryAdsController@read');
-$router->post('/category/create', 'CategoryAdsController@create');
-$router->post('/category/update/{id}', 'CategoryAdsController@update');
-$router->post('/category/delete/{id}', 'CategoryAdsController@delete');
-
-/*
- | ------------------------------------------
- | CRUD Item Routes using auth middleware
- | ------------------------------------------
- */
-$router->get('/item_ads', 'ItemAdsController@index');
-$router->get('/item_ads/{id}', 'ItemAdsController@read');
-$router->post('/item_ads/delete/{id}', 'ItemAdsController@delete');
-$router->post('/item_ads/create', 'ItemAdsController@create');
-$router->post('/item_ads/update/{id}', 'ItemAdsController@update');
-
-/*
- | ------------------------------------------
  | PROVINCE ROUTE
  | ------------------------------------------
  */

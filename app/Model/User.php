@@ -20,7 +20,7 @@ class User extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'web_token','android_token','ios_token'
+        'password', 'web_token','android_token','ios_token','created_at','updated_at'
     ];
 
     /**
