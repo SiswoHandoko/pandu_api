@@ -5,9 +5,9 @@ use App\Model\User;
 class UserController extends Controller
 {
     /**
-    * Register new user
+    * Display a listing of the resource.
     *
-    * @param $request Request
+    * @return \Illuminate\Http\Response
     */
     public function register(Request $request)
     {
@@ -54,5 +54,99 @@ class UserController extends Controller
 
             return response($res);
         }
+    }
+
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function index(Request $req)
+    {
+        $user = User::get();
+        $result = $this->generate_response($user,200,'All Data.',false);
+        return response()->json($result, 200);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $req)
+    {
+        /* Validation */
+        $validator = Validator::make($req->all(), [
+          'name' => 'required|max:255',
+        ]);
+
+        if($validator->fails()) {
+        $result = $this->generate_response($user,400,'Bad Request.',true);
+        return response()->json($result, 400);
+        }else{
+        $user = new Province();
+        $user->name = $req->name;
+        $user->status = 'active';
+        $user->save();
+        $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
+
+        return response()->json($result, 200);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::find($id);
+        $result = $this->generate_response($user,200,'Detail Data.',false);
+        return response()->json($result, 200);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+
+    public function update(Request $req,$id)
+    {
+        /* Validation */
+        $validator = Validator::make($req->all(), [
+          'name' => 'required|max:255',
+        ]);
+
+        if($validator->fails()) {
+            $result = $this->generate_response($user,400,'Bad Request.',true);
+            return response()->json($result, 400);
+        }else{
+            $user = User::find($id);
+            $user->name = $req->name;
+            $user->save();
+            $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
+            return response()->json($result, 200);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->status = 'deleted';
+        $user->save();
+        $result = $this->generate_response($user,200,'Data Has Been Deleted.',false);
+        return response()->json($result, 200);
     }
 }
