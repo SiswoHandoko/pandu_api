@@ -5,13 +5,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Picture extends Model
 {
+
+    /**
+    * Table database
+    */
+    protected $table = 'pictures';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'tp_id', 'image_url', 'status'
+        'tourism_place_id', 'image_url', 'status'
     ];
 
     /**
@@ -22,7 +28,7 @@ class Picture extends Model
     protected $hidden = [
         'created_at','updated_at'
     ];
-    
+
     /**
     * Belongs To Relation
     */

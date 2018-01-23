@@ -5,6 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
+
+    /**
+    * Table database
+    */
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *

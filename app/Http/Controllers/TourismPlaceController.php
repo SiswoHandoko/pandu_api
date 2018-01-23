@@ -25,7 +25,7 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
-        $tourismplace = TourismPlace::with('city')->get();
+        $tourismplace = TourismPlace::with('city','picture')->get();
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);

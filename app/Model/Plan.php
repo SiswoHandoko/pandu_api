@@ -5,6 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plan extends Model
 {
+
+    /**
+    * Table database
+    */
+    protected $table = 'plans';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +28,7 @@ class Plan extends Model
     protected $hidden = [
         'created_at','updated_at'
     ];
-    
+
     /**
     * Belongs To Relation
     */

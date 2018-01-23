@@ -5,6 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class TourismPlace extends Model
 {
+
+    /**
+    * Table database
+    */
+    protected $table = 'tourism_places';
+
     /**
      * The attributes that are mass assignable.
      *

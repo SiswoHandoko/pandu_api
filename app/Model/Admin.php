@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     /**
+    * Table database
+    */
+    protected $table = 'admins';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

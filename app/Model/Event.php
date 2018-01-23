@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     /**
+    * Table database
+    */
+    protected $table = 'events';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -22,7 +26,7 @@ class Event extends Model
     protected $hidden = [
         'created_at','updated_at'
     ];
-    
+
     /**
     * Belongs To Relation
     */

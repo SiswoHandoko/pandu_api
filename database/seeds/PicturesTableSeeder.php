@@ -13,15 +13,15 @@ class PicturesTableSeeder extends Seeder
     public function run()
     {
         DB::table('pictures')->truncate();
-    	
+
         $data = [
             [
-            	'tp_id' => 1,
+            	'tourism_place_id' => 1,
             	'image_url' => 'picture_1_1.jpg',
             	'status' => 'active'
             ]
         ];
-        
+
         Picture::insert($data);
     }
 }

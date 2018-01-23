@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 class Guide extends Model
 {
     /**
+    * Table database
+    */
+    protected $table = 'guides';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
