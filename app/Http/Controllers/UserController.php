@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Validator;
 use Illuminate\Http\Request;
 use App\Model\User;
 class UserController extends Controller
@@ -78,20 +79,54 @@ class UserController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'name' => 'required|max:255',
+          'firstname' => 'required|max:255',
+          'lastname' => 'required|max:255',
+          'contact' => 'required|max:255',
+          'address' => 'required|max:255',
+          'birthdate' => 'required|max:255',
+          'username' => 'required|max:255',
+          'password' => 'required|max:255',
+          'repassword' => 'required|max:255',
+          'email' => 'required|max:255',
         ]);
 
         if($validator->fails()) {
-        $result = $this->generate_response($user,400,'Bad Request.',true);
-        return response()->json($result, 400);
+            $result = $this->generate_response($user,400,'Bad Request.',true);
+            return response()->json($result, 400);
         }else{
-        $user = new Province();
-        $user->name = $req->name;
-        $user->status = 'active';
-        $user->save();
-        $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
 
-        return response()->json($result, 200);
+            /* Unique Field Validation */
+            $unique_validator = Validator::make($req->all(), [
+              'username' => 'unique:users',
+              'email' => 'unique:users',
+            ]);
+
+            if($unique_validator->errors()->first('username')!='') {
+                $result = $this->generate_response($user,1,'This Username already taken by others.',true);
+                return response()->json($result, 200);
+            }elseif($unique_validator->errors()->first('email')!='') {
+                $result = $this->generate_response($user,2,'This Email already taken by others.',true);
+                return response()->json($result, 200);
+            }else{
+                /* bundling data */
+                $hasher = app()->make('hash');
+                $password = $hasher->make($req->input('password'));
+
+                $user = new User();
+                $user->firstname = $req->firstname;
+                $user->lastname = $req->lastname;
+                $user->contact = $req->contact;
+                $user->address = $req->address;
+                $user->birthdate = $req->birthdate;
+                $user->username = $req->username;
+                $user->password = $req->password;
+                $user->email = $req->email;
+                $user->status = 'active';
+                $user->save();
+                $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -120,18 +155,47 @@ class UserController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'name' => 'required|max:255',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'contact' => 'required|max:255',
+            'address' => 'required|max:255',
+            'birthdate' => 'required|max:255',
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+            'repassword' => 'required|max:255',
+            'email' => 'required|max:255',
+            'status' => 'required|max:255',
         ]);
 
         if($validator->fails()) {
             $result = $this->generate_response($user,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
-            $user = User::find($id);
-            $user->name = $req->name;
-            $user->save();
-            $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
-            return response()->json($result, 200);
+            /* Custom Unique Field Validation */
+            $username = User::where([['username', '=', $req->username],['id', '!=', $id]])->first();
+            $email = User::where([['email', '=', $req->email],['id', '!=', $id]])->first();
+
+            if($username) {
+                $result = $this->generate_response($user,1,'This Username already taken by others.',true);
+                return response()->json($result, 200);
+            }elseif($email) {
+                $result = $this->generate_response($user,2,'This Email already taken by others.',true);
+                return response()->json($result, 200);
+            }else{
+                $user = User::find($id);
+                $user->firstname = $req->firstname;
+                $user->lastname = $req->lastname;
+                $user->contact = $req->contact;
+                $user->address = $req->address;
+                $user->birthdate = $req->birthdate;
+                $user->username = $req->username;
+                $user->password = $req->password;
+                $user->email = $req->email;
+                $user->status = $req->status;
+                $user->save();
+                $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
+                return response()->json($result, 200);
+            }
         }
     }
 

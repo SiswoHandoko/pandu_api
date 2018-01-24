@@ -24,11 +24,9 @@ $router->get('/', function () use ($router) {
  | ------------------------------------------
  */
 $router->post('/login', 'LoginController@index');
-$router->post('/register', 'UserController@register');
-// $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@get_user']);
 $router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@index']);
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@show']);
-$router->post('/user/create', ['middleware' => 'auth', 'uses' =>  'UserController@store']);
+$router->post('/user/create', 'UserController@store');
 $router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@update']);
 $router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);
 

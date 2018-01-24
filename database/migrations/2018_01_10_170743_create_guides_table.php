@@ -21,7 +21,7 @@ class CreateGuidesTable extends Migration
             $table->text('address')->default('');
             $table->date('birthdate')->default('0000-00-00');
             $table->string('nik')->default('');
-            $table->string('username')->default('');
+            $table->string('username')->unique()->default('');
             $table->string('password')->default('');
             $table->string('email')->unique()->default('');
             $table->text('web_token')->default('');
