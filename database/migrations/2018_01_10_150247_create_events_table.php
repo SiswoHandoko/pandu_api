@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tp_id')->default(0);
+            $table->integer('tourism_place_id')->default(0);
             $table->string('name')->default('');
             $table->text('description')->default('');
             $table->dateTime('start_date')->default('0000-00-00 00:00:00');
