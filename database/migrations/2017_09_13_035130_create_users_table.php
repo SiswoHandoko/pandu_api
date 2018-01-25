@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->default('');
             $table->string('password')->default('');
             $table->string('email')->unique()->default('');
+            $table->string('type')->default('tourism');
             $table->text('web_token')->default('');
             $table->text('android_token')->default('');
             $table->text('ios_token')->default('');

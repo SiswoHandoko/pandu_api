@@ -17,7 +17,7 @@ class Plan extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'tp_id', 'guide_id', 'start_date', 'end_date', 'status'
+        'user_id', 'tourism_place_id', 'guide_id', 'start_date', 'end_date', 'status'
     ];
 
     /**
@@ -41,6 +41,6 @@ class Plan extends Model
     }
 
     public function guide() {
-        return $this->belongsTo(Guide::class, 'guide_id');
+        return $this->belongsTo(User::class, 'guide_id');
     }
 }

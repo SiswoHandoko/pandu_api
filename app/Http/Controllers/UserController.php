@@ -10,58 +10,6 @@ class UserController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function register(Request $request)
-    {
-        /* bundling data */
-        $hasher = app()->make('hash');
-        $username = $request->input('username');
-        $email = $request->input('email');
-        $password = $hasher->make($request->input('password'));
-
-        /* register */
-        $register = User::create([
-            'username'=> $username,
-            'email'=> $email,
-            'password'=> $password,
-        ]);
-
-        /* respone */
-        if ($register) {
-            $res['success'] = true;
-            $res['message'] = 'Success register!';
-            return response($res);
-        }else{
-            $res['success'] = false;
-            $res['message'] = 'Failed to register!';
-            return response($res);
-        }
-    }
-    /**
-    * Get user by id
-    *
-    * URL /user/{id}
-    */
-    public function get_user(Request $request, $id)
-    {
-        $user = User::where('id', $id)->get();
-        if ($user) {
-            $res['success'] = true;
-            $res['message'] = $user;
-
-            return response($res);
-        }else{
-            $res['success'] = false;
-            $res['message'] = 'Cannot find user!';
-
-            return response($res);
-        }
-    }
-
-    /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
     public function index(Request $req)
     {
         $user = User::get();
@@ -88,6 +36,7 @@ class UserController extends Controller
           'password' => 'required|max:255',
           'repassword' => 'required|max:255',
           'email' => 'required|max:255',
+          'type' => 'required|max:255|in:tourism,guide,admin',
         ]);
 
         if($validator->fails()) {
@@ -121,6 +70,7 @@ class UserController extends Controller
                 $user->username = $req->username;
                 $user->password = $req->password;
                 $user->email = $req->email;
+                $user->type = $req->type;
                 $user->status = 'active';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
@@ -164,6 +114,7 @@ class UserController extends Controller
             'password' => 'required|max:255',
             'repassword' => 'required|max:255',
             'email' => 'required|max:255',
+            'type' => 'required|max:255|in:tourism,guide,admin',
             'status' => 'required|max:255',
         ]);
 
@@ -191,6 +142,7 @@ class UserController extends Controller
                 $user->username = $req->username;
                 $user->password = $req->password;
                 $user->email = $req->email;
+                $user->type = $req->type;
                 $user->status = $req->status;
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
@@ -212,5 +164,78 @@ class UserController extends Controller
         $user->save();
         $result = $this->generate_response($user,200,'Data Has Been Deleted.',false);
         return response()->json($result, 200);
+    }
+
+    /**
+     * Index login controller
+     *
+     * When user success login will retrive callback as api_token
+     */
+    public function login(Request $request)
+    {
+        /* Validation */
+        $validator = Validator::make($request->all(), [
+          'username' => 'required|max:255',
+          'password' => 'required|max:255',
+        ]);
+
+        if($validator->fails()) {
+            $result = $this->generate_response($city,400,'Bad Request.',true);
+            return response()->json($result, 400);
+        }else{
+            $result = $this->authentication($request);
+        }
+        return response()->json($result, 200);
+    }
+
+    public function authentication($request){
+        /* bundling data */
+        $hasher = app()->make('hash');
+        $username = $request->input('username');
+        $password = $request->input('password');
+
+        /* get data */
+        $login = User::where('username', $username)->first();
+
+        /* result */
+        if (!$login) {
+            /* Username Not Found */
+            $res = $this->generate_response($login,1,'Your username or password incorrect!',true);
+            return $res;
+        }else{
+            if ($hasher->check($password, $login->password)) {
+                $api_token = sha1(time());
+                if($request->header('device-type')=='web'){
+                    $create_token = User::where('id', $login->id)->update(['web_token' => $api_token]);
+                    if ($create_token) {
+                        /* Set Web Token As Result */
+                        $login['token'] = $api_token;
+                        $res = $this->generate_response($login,200,'Success Login on Web!',true);
+                        return $res;
+                    }
+                }elseif($request->header('device-type')=='android'){
+                    $create_token = User::where('id', $login->id)->update(['android_token' => $api_token]);
+                    if ($create_token) {
+                        /* Set Android Token As Result */
+                        $login['token'] = $api_token;
+                        $res = $this->generate_response($login,200,'Success Login on Android!',true);
+                        return $res;
+                    }
+                }elseif($request->header('device-type')=='ios'){
+                    $create_token = User::where('id', $login->id)->update(['ios_token' => $api_token]);
+                    if ($create_token) {
+                        /* Set IOS Token As Result */
+                        $login['token'] = $api_token;
+                        $res = $this->generate_response($login,200,'Success Login on IOS!',true);
+                        return $res;
+                    }
+                }
+            }else{
+                /* Password Incorrect */
+                $login = null;
+                $res = $this->generate_response($login,1,'Your username or password incorrect!',true);
+                return $res;
+            }
+        }
     }
 }
