@@ -210,7 +210,7 @@ class UserController extends Controller
                     if ($create_token) {
                         /* Set Web Token As Result */
                         $login['token'] = $api_token;
-                        $res = $this->generate_response($login,200,'Success Login on Web!',true);
+                        $res = $this->generate_response($login,200,'Success Login on Web!',false);
                         return $res;
                     }
                 }elseif($request->header('device-type')=='android'){
@@ -218,7 +218,7 @@ class UserController extends Controller
                     if ($create_token) {
                         /* Set Android Token As Result */
                         $login['token'] = $api_token;
-                        $res = $this->generate_response($login,200,'Success Login on Android!',true);
+                        $res = $this->generate_response($login,200,'Success Login on Android!',false);
                         return $res;
                     }
                 }elseif($request->header('device-type')=='ios'){
@@ -226,7 +226,7 @@ class UserController extends Controller
                     if ($create_token) {
                         /* Set IOS Token As Result */
                         $login['token'] = $api_token;
-                        $res = $this->generate_response($login,200,'Success Login on IOS!',true);
+                        $res = $this->generate_response($login,200,'Success Login on IOS!',false);
                         return $res;
                     }
                 }
