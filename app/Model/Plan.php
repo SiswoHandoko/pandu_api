@@ -33,7 +33,7 @@ class Plan extends Model
     * Belongs To Relation
     */
     public function tourismplace() {
-        return $this->belongsTo(TourismPlace::class, 'tp_id');
+        return $this->belongsTo(TourismPlace::class, 'tourism_place_id');
     }
 
     public function user() {

@@ -15,7 +15,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'tp_id', 'name', 'description', 'start_date', 'end_date', 'status'
+        'tourism_place_id', 'name', 'description', 'start_date', 'end_date', 'status'
     ];
 
     /**
@@ -31,6 +31,6 @@ class Event extends Model
     * Belongs To Relation
     */
     public function tourismplace() {
-        return $this->belongsTo(TourismPlace::class, 'tp_id');
+        return $this->belongsTo(TourismPlace::class, 'tourism_place_id');
     }
 }
