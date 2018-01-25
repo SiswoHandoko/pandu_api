@@ -25,7 +25,8 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
-        $tourismplace = TourismPlace::with('city','picture')->get();
+        $tourismplace = TourismPlace::with('city.province','picture')->get();
+
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
@@ -41,7 +42,14 @@ class TourismPlaceController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
+            'city_id' => 'required|min:0',
             'name' => 'required|max:255',
+            'adult_price' => 'required|min:0',
+            'child_price' => 'required|min:0',
+            'infant_price' => 'required|min:0',
+            'tourist_price' => 'required|min:0',
+            'longitude' => 'required',
+            'latitude' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -50,9 +58,21 @@ class TourismPlaceController extends Controller
             return response()->json($result, 400);
         }else{
             $tourismplace = new TourismPlace();
-            $tourismplace->name = $req->name;
+
+            $tourismplace->city_id = $req->has('city_id') ? $req->city_id : 0;
+            $tourismplace->name = $req->has('name') ? $req->name : '';
+            $tourismplace->description = $req->has('description') ? $req->description : '';
+            $tourismplace->adult_price = $req->has('adult_price') ? $req->adult_price : 0;
+            $tourismplace->child_price = $req->has('child_price') ? $req->child_price : 0;
+            $tourismplace->infant_price = $req->has('infant_price') ? $req->infant_price : 0;
+            $tourismplace->tourist_price = $req->has('tourist_price') ? $req->tourist_price : 0;
+            $tourismplace->longitude = $req->has('longitude') ? $req->longitude : '';
+            $tourismplace->latitude = $req->has('latitude') ? $req->latitude : '';
+            $tourismplace->facilities = $req->has('facilities') ? $req->facilities : '';
             $tourismplace->status = 'active';
+
             $tourismplace->save();
+
             $result = $this->generate_response($tourismplace, 200, 'Data Has Been Saved.', false);
 
             return response()->json($result, 200);
@@ -67,7 +87,12 @@ class TourismPlaceController extends Controller
      */
     public function show($id)
     {
-        $tourismplace = TourismPlace::find($id);
+        $tourismplace = TourismPlace::with('city.province','picture')->find($id);
+        
+        if (!$tourismplace) {
+          $tourismplace = array();
+        }
+
         $result = $this->generate_response($tourismplace, 200, 'Detail Data.', false);
 
         return response()->json($result, 200);
@@ -81,11 +106,18 @@ class TourismPlaceController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $req,$id)
+    public function update(Request $req, $id)
     {
+        print_r($req->all());exit;
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'name' => 'required|max:255',
+            'name' => 'required|max:255',
+            'adult_price' => 'required|min:0',
+            'child_price' => 'required|min:0',
+            'infant_price' => 'required|min:0',
+            'tourist_price' => 'required|min:0',
+            'longitude' => 'required',
+            'latitude' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -94,8 +126,21 @@ class TourismPlaceController extends Controller
             return response()->json($result, 400);
         }else{
             $tourismplace = Province::find($id);
-            $tourismplace->name = $req->name;
+            
+            $tourismplace->city_id = $req->has('city_id') ? $req->city_id : 0;
+            $tourismplace->name = $req->has('name') ? $req->name : '';
+            $tourismplace->description = $req->has('description') ? $req->description : '';
+            $tourismplace->adult_price = $req->has('adult_price') ? $req->adult_price : 0;
+            $tourismplace->child_price = $req->has('child_price') ? $req->child_price : 0;
+            $tourismplace->infant_price = $req->has('infant_price') ? $req->infant_price : 0;
+            $tourismplace->tourist_price = $req->has('tourist_price') ? $req->tourist_price : 0;
+            $tourismplace->longitude = $req->has('longitude') ? $req->longitude : '';
+            $tourismplace->latitude = $req->has('latitude') ? $req->latitude : '';
+            $tourismplace->facilities = $req->has('facilities') ? $req->facilities : '';
+            $tourismplace->status = 'active';
+
             $tourismplace->save();
+
             $result = $this->generate_response($tourismplace, 200, 'Data Has Been Updated.', false);
 
             return response()->json($result, 200);
@@ -111,22 +156,12 @@ class TourismPlaceController extends Controller
     public function destroy($id)
     {
         $tourismplace = TourismPlace::find($id);
+
         $tourismplace->status = 'deleted';
+        
         $tourismplace->save();
+        
         $result = $this->generate_response($tourismplace, 200, 'Data Has Been Deleted.', false);
-
-        return response()->json($result, 200);
-    }
-
-    /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function city_by_tourismplace($id)
-    {
-        $city = City::where('tourismplace_id',$id)->get();
-        $result = $this->generate_response($city, 200, 'All Data.', false);
 
         return response()->json($result, 200);
     }
