@@ -48,11 +48,11 @@ class PlanController extends Controller
             return response()->json($result, 400);
         }else{
             $plan = new Plan();
-            $plan->user_id = $req->user_id;
-            $plan->tourism_place_id = $req->tourism_place_id;
-            $plan->guide_id = $req->guide_id;
-            $plan->start_date = $req->start_date;
-            $plan->end_date = $req->end_date;
+            $plan->user_id = $req->has('user_id') ? $req->user_id : '0';
+            $plan->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '0';
+            $plan->guide_id = $req->has('guide_id') ? $req->guide_id : '0';
+            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00 00:00:00';
+            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00 00:00:00';
             $plan->status = 'active';
             $plan->save();
             $result = $this->generate_response($plan,200,'Data Has Been Saved.',false);
@@ -99,12 +99,12 @@ class PlanController extends Controller
             return response()->json($result, 400);
         }else{
             $plan = Plan::find($id);
-            $plan->user_id = $req->user_id;
-            $plan->tourism_place_id = $req->tourism_place_id;
-            $plan->guide_id = $req->guide_id;
-            $plan->start_date = $req->start_date;
-            $plan->end_date = $req->end_date;
-            $plan->status = $req->status;
+            $plan->user_id = $req->has('user_id') ? $req->user_id : '0';
+            $plan->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '0';
+            $plan->guide_id = $req->has('guide_id') ? $req->guide_id : '0';
+            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00 00:00:00';
+            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00 00:00:00';
+            $plan->status = $req->has('status') ? $req->status : 'active';
             $plan->save();
             $result = $this->generate_response($plan,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);

@@ -41,16 +41,16 @@ class CityController extends Controller
         ]);
 
         if($validator->fails()) {
-        $result = $this->generate_response($city,400,'Bad Request.',true);
-        return response()->json($result, 400);
+            $result = $this->generate_response($city,400,'Bad Request.',true);
+            return response()->json($result, 400);
         }else{
-        $city = new Province();
-        $city->name = $req->name;
-        $city->status = 'active';
-        $city->save();
-        $result = $this->generate_response($city,200,'Data Has Been Saved.',false);
+            $city = new Province();
+            $city->name = $req->has('name') ? $req->name : '';
+            $city->status = 'active';
+            $city->save();
+            $result = $this->generate_response($city,200,'Data Has Been Saved.',false);
 
-        return response()->json($result, 200);
+            return response()->json($result, 200);
         }
     }
 
@@ -87,7 +87,8 @@ class CityController extends Controller
             return response()->json($result, 400);
         }else{
             $city = City::find($id);
-            $city->name = $req->name;
+            $city->name = $req->has('name') ? $req->name : '';
+            $city->status = $req->has('status') ? $req->status : '';
             $city->save();
             $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);

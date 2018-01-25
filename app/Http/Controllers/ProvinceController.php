@@ -45,7 +45,7 @@ class ProvinceController extends Controller
             return response()->json($result, 400);
         }else{
             $province = new Province();
-            $province->name = $req->name;
+            $province->name = $req->has('name') ? $req->name : '';
             $province->status = 'active';
             $province->save();
             $result = $this->generate_response($province,200,'Data Has Been Saved.',false);
@@ -87,7 +87,8 @@ class ProvinceController extends Controller
             return response()->json($result, 400);
         }else{
             $province = Province::find($id);
-            $province->name = $req->name;
+            $province->name = $req->has('name') ? $req->name : '';
+            $province->status = $req->has('status') ? $req->status : 'active';
             $province->save();
             $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);
