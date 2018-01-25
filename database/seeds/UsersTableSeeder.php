@@ -14,7 +14,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
     	DB::table('users')->truncate();
-
+        // 'web_token' => sha1(time()),
+        // 'android_token' => sha1(time()),
+        // 'ios_token' => sha1(time()),
         $data = [
             [
             	'firstname' => 'Asep',
@@ -26,9 +28,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('asepmulyadi'),
             	'email' => 'asep.mulyadi011@gmail.com',
             	'type' => 'admin',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -42,9 +44,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('qwerty'),
             	'email' => 'cs.siswo.handoko@gmail.com',
             	'type' => 'guide',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -58,9 +60,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('qwerty'),
             	'email' => 'tommy@gmail.com',
                 'type' => 'tourism',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -74,9 +76,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('qwerty'),
             	'email' => 'faizal@gmail.com',
                 'type' => 'tourism',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -90,9 +92,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('qwerty'),
             	'email' => 'wiwid@gmail.com',
                 'type' => 'tourism',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -106,9 +108,9 @@ class UsersTableSeeder extends Seeder
             	'password' => Hash::make('qwerty'),
             	'email' => 'narayana@gmail.com',
                 'type' => 'tourism',
-                'web_token' => sha1(time()),
-                'android_token' => sha1(time()),
-                'ios_token' => sha1(time()),
+                'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
