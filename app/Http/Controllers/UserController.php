@@ -12,7 +12,7 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
-        $user = User::get();
+        $user = User::where('status','!=','deleted')->get();
         $result = $this->generate_response($user,200,'All Data.',false);
         return response()->json($result, 200);
     }
@@ -88,7 +88,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::where('status','!=','deleted')->find($id);
         $result = $this->generate_response($user,200,'Detail Data.',false);
         return response()->json($result, 200);
     }
@@ -195,7 +195,7 @@ class UserController extends Controller
         $password = $request->input('password');
 
         /* get data */
-        $login = User::where('username', $username)->first();
+        $login = User::where('username', $username)->where('status','!=','deleted')->first();
 
         /* result */
         if (!$login) {

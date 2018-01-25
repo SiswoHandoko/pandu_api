@@ -22,7 +22,7 @@ class ProvinceController extends Controller
     */
     public function index(Request $req)
     {
-        $province = Province::get();
+        $province = Province::where('status','!=','deleted')->get();
         $result = $this->generate_response($province,200,'All Data.',false);
         return response()->json($result, 200);
     }
@@ -62,7 +62,7 @@ class ProvinceController extends Controller
      */
     public function show($id)
     {
-        $province = Province::find($id);
+        $province = Province::where('status','!=','deleted')->find($id);
         $result = $this->generate_response($province,200,'Detail Data.',false);
         return response()->json($result, 200);
     }

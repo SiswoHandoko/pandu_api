@@ -22,7 +22,7 @@ class CityController extends Controller
     */
     public function index(Request $req)
     {
-        $city = City::get();
+        $city = City::where('status','!=','deleted')->get();
         $result = $this->generate_response($city,200,'All Data.',false);
         return response()->json($result, 200);
     }
@@ -62,7 +62,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        $city = City::find($id);
+        $city = City::where('status','!=','deleted')->find($id);
         $result = $this->generate_response($city,200,'Detail Data.',false);
         return response()->json($result, 200);
     }

@@ -53,6 +53,17 @@ $router->post('/city/create', 'CityController@store');
 $router->put('/city/update/{id}', 'CityController@update');
 $router->get('/city/delete/{id}', 'CityController@destroy');
 
+/*
+ | ------------------------------------------
+ | PLAN ROUTE
+ | ------------------------------------------
+ */
+$router->get('/plan', 'PlanController@index');
+$router->get('/plan/{id}', 'PlanController@show');
+$router->post('/plan/create', 'PlanController@store');
+$router->put('/plan/update/{id}', 'PlanController@update');
+$router->get('/plan/delete/{id}', 'PlanController@destroy');
+
 
 /*
  | ------------------------------------------
