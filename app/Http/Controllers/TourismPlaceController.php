@@ -90,7 +90,7 @@ class TourismPlaceController extends Controller
         $tourismplace = TourismPlace::with('city.province','picture')->find($id);
         
         if (!$tourismplace) {
-          $tourismplace = array();
+            $tourismplace = array();
         }
 
         $result = $this->generate_response($tourismplace, 200, 'Detail Data.', false);
@@ -108,9 +108,9 @@ class TourismPlaceController extends Controller
 
     public function update(Request $req, $id)
     {
-        print_r($req->all());exit;
         /* Validation */
         $validator = Validator::make($req->all(), [
+            'city_id' => 'required|min:0',
             'name' => 'required|max:255',
             'adult_price' => 'required|min:0',
             'child_price' => 'required|min:0',
@@ -120,24 +120,24 @@ class TourismPlaceController extends Controller
             'latitude' => 'required',
         ]);
 
+
         if($validator->fails()) {
             $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
             return response()->json($result, 400);
         }else{
-            $tourismplace = Province::find($id);
-            
-            $tourismplace->city_id = $req->has('city_id') ? $req->city_id : 0;
-            $tourismplace->name = $req->has('name') ? $req->name : '';
-            $tourismplace->description = $req->has('description') ? $req->description : '';
-            $tourismplace->adult_price = $req->has('adult_price') ? $req->adult_price : 0;
-            $tourismplace->child_price = $req->has('child_price') ? $req->child_price : 0;
-            $tourismplace->infant_price = $req->has('infant_price') ? $req->infant_price : 0;
-            $tourismplace->tourist_price = $req->has('tourist_price') ? $req->tourist_price : 0;
-            $tourismplace->longitude = $req->has('longitude') ? $req->longitude : '';
-            $tourismplace->latitude = $req->has('latitude') ? $req->latitude : '';
-            $tourismplace->facilities = $req->has('facilities') ? $req->facilities : '';
-            $tourismplace->status = 'active';
+            $tourismplace = TourismPlace::find($id);
+
+            $tourismplace->city_id = $req->has('city_id') ? $req->city_id : $tourismplace->city_id;
+            $tourismplace->name = $req->has('name') ? $req->name : $tourismplace->name;
+            $tourismplace->description = $req->has('description') ? $req->description : $tourismplace->description;
+            $tourismplace->adult_price = $req->has('adult_price') ? $req->adult_price : $tourismplace->adult_price;
+            $tourismplace->child_price = $req->has('child_price') ? $req->child_price : $tourismplace->child_price;
+            $tourismplace->infant_price = $req->has('infant_price') ? $req->infant_price : $tourismplace->infant_price;
+            $tourismplace->tourist_price = $req->has('tourist_price') ? $req->tourist_price : $tourismplace->tourist_price;
+            $tourismplace->longitude = $req->has('longitude') ? $req->longitude : $tourismplace->longitude;
+            $tourismplace->latitude = $req->has('latitude') ? $req->latitude : $tourismplace->latitude;
+            $tourismplace->facilities = $req->has('facilities') ? $req->facilities : $tourismplace->facilities;
 
             $tourismplace->save();
 

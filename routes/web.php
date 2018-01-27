@@ -75,3 +75,37 @@ $router->get('/tourismplace/{id}', 'TourismPlaceController@show');
 $router->post('/tourismplace/create', 'TourismPlaceController@store');
 $router->put('/tourismplace/update/{id}', 'TourismPlaceController@update');
 $router->get('/tourismplace/delete/{id}', 'TourismPlaceController@destroy');
+
+/*
+ | ------------------------------------------
+ | EVENT ROUTE
+ | ------------------------------------------
+ */
+$router->get('/event', 'EventController@index');
+$router->get('/event/{id}', 'EventController@show');
+$router->post('/event/create', 'EventController@store');
+$router->put('/event/update/{id}', 'EventController@update');
+$router->get('/event/delete/{id}', 'EventController@destroy');
+
+/*
+ | ------------------------------------------
+ | ROLE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/role', 'RoleController@index');
+$router->get('/role/{id}', 'RoleController@show');
+$router->post('/role/create', 'RoleController@store');
+$router->put('/role/update/{id}', 'RoleController@update');
+$router->get('/role/delete/{id}', 'RoleController@destroy');
+
+/*
+ | ------------------------------------------
+ | PICTURE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/picture', 'PictureController@index');
+$router->get('/picture/{id}', 'PictureController@show');
+$router->post('/picture/create', 'PictureController@store');
+$router->put('/picture/update/{id}', 'PictureController@update');
+$router->get('/picture/delete/{id}', 'PictureController@destroy');
+$router->get('/picture/{id}/tourismplace', 'PictureController@picture_by_tourismplace');
