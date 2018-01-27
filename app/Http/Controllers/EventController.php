@@ -25,7 +25,7 @@ class EventController extends Controller
     */
     public function index(Request $req)
     {
-        $event = Event::with('tourismplace')->get();
+        $event = Event::with('tourismplace')->where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
@@ -78,7 +78,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $event = Event::with('tourismplace')->find($id);
+        $event = Event::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$event) {
             $event = array();

@@ -25,7 +25,7 @@ class RoleController extends Controller
     */
     public function index(Request $req)
     {
-        $role = Role::get();
+        $role = Role::where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($role, 200, 'All Data.', false);
 
@@ -71,7 +71,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        $role = Role::find($id);
+        $role = Role::where('status', '!=', 'deleted')->find($id);
         
         if (!$role) {
             $role = array();

@@ -25,7 +25,7 @@ class PictureController extends Controller
     */
     public function index(Request $req)
     {
-        $picture = Picture::with('tourismplace')->get();
+        $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
@@ -81,7 +81,7 @@ class PictureController extends Controller
      */
     public function show($id)
     {
-        $picture = Picture::with('tourismplace')->find($id);
+        $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$picture) {
             $picture = array();
@@ -150,7 +150,7 @@ class PictureController extends Controller
     */
     public function picture_by_tourismplace($id)
     {
-        $picture = Picture::where('tourism_place_id', $id)->get();
+        $picture = Picture::where('tourism_place_id', $id)->where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
