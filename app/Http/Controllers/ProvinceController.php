@@ -92,11 +92,16 @@ class ProvinceController extends Controller
             return response()->json($result, 400);
         }else{
             $province = Province::find($id);
-            $province->name = $req->has('name') ? $req->name : $province->name;
-            $province->status = $req->has('status') ? $req->status : $province->status;
-            $province->save();
-            $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
-            return response()->json($result, 200);
+            if(!$province){
+                $result = $this->generate_response($province, 404, 'Data Not Found.', true);
+                return response()->json($result, 404);
+            }else{
+                $province->name = $req->has('name') ? $req->name : $province->name;
+                $province->status = $req->has('status') ? $req->status : $province->status;
+                $province->save();
+                $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -108,11 +113,16 @@ class ProvinceController extends Controller
      */
     public function destroy($id)
     {
-        $province = Province::find($id);
-        $province->status = 'deleted';
-        $province->save();
-        $result = $this->generate_response($province,200,'Data Has Been Deleted.',false);
-        return response()->json($result, 200);
+        if(!$province){
+            $result = $this->generate_response($province, 404, 'Data Not Found.', true);
+            return response()->json($result, 404);
+        }else{
+            $province = Province::find($id);
+            $province->status = 'deleted';
+            $province->save();
+            $result = $this->generate_response($province,200,'Data Has Been Deleted.',false);
+            return response()->json($result, 200);
+        }
     }
 
     /**

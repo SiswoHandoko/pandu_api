@@ -92,11 +92,16 @@ class CityController extends Controller
             return response()->json($result, 400);
         }else{
             $city = City::find($id);
-            $city->name = $req->has('name') ? $req->name : $city->name;
-            $city->status = $req->has('status') ? $req->status : $city->status;
-            $city->save();
-            $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
-            return response()->json($result, 200);
+            if(!$city){
+                $result = $this->generate_response($city, 404, 'Data Not Found.', true);
+                return response()->json($result, 404);
+            }else{
+                $city->name = $req->has('name') ? $req->name : $city->name;
+                $city->status = $req->has('status') ? $req->status : $city->status;
+                $city->save();
+                $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -109,10 +114,15 @@ class CityController extends Controller
     public function destroy($id)
     {
         $city = City::find($id);
-        $city->status = 'deleted';
-        $city->save();
-        $result = $this->generate_response($city,200,'Data Has Been Deleted.',false);
-        return response()->json($result, 200);
+        if(!$city){
+            $result = $this->generate_response($city, 404, 'Data Not Found.', true);
+            return response()->json($result, 404);
+        }else{
+            $city->status = 'deleted';
+            $city->save();
+            $result = $this->generate_response($city,200,'Data Has Been Deleted.',false);
+            return response()->json($result, 200);
+        }
     }
 
 }

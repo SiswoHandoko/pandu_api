@@ -143,21 +143,26 @@ class UserController extends Controller
                 return response()->json($result, 200);
             }else{
                 $user = User::find($id);
-                $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
-                $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
-                $user->contact = $req->has('contact') ? $req->contact : $user->contact;
-                $user->address = $req->has('address') ? $req->address : $user->address;
-                $user->birthdate = $req->has('birthdate') ? $req->birthdate : $user->birthdate;
-                $user->username = $req->has('username') ? $req->username : $user->username;
-                $user->password = $req->has('password') ? $req->password : $user->password;
-                $user->email = $req->has('email') ? $req->email : $user->email;
-                $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
-                $user->status = $req->has('status') ? $req->status : $user->status;
-                /* upload process */
-                $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo) : $user->photo;
-                $user->save();
-                $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
-                return response()->json($result, 200);
+                if(!$user){
+                    $result = $this->generate_response($user,404,'Data Not Found.',true);
+                    return response()->json($result, 404);
+                }else{
+                    $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
+                    $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
+                    $user->contact = $req->has('contact') ? $req->contact : $user->contact;
+                    $user->address = $req->has('address') ? $req->address : $user->address;
+                    $user->birthdate = $req->has('birthdate') ? $req->birthdate : $user->birthdate;
+                    $user->username = $req->has('username') ? $req->username : $user->username;
+                    $user->password = $req->has('password') ? $req->password : $user->password;
+                    $user->email = $req->has('email') ? $req->email : $user->email;
+                    $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
+                    $user->status = $req->has('status') ? $req->status : $user->status;
+                    /* upload process */
+                    $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo) : $user->photo;
+                    $user->save();
+                    $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
+                    return response()->json($result, 200);
+                }
             }
         }
     }
@@ -171,10 +176,15 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $user->status = 'deleted';
-        $user->save();
-        $result = $this->generate_response($user,200,'Data Has Been Deleted.',false);
-        return response()->json($result, 200);
+        if(!$user){
+            $result = $this->generate_response($user,404,'Data Not Found.',true);
+            return response()->json($result, 404);
+        }else{
+            $user->status = 'deleted';
+            $user->save();
+            $result = $this->generate_response($user,200,'Data Has Been Deleted.',false);
+            return response()->json($result, 200);
+        }
     }
 
     /**
