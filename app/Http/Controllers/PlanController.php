@@ -84,9 +84,14 @@ class PlanController extends Controller
     {
         $plan = Plan::with('user', 'guide')->where('status', '!=', 'deleted')->find($id);
 
-        $result = $this->generate_response($plan, 200, 'Detail Data.', false);
+        if(!$plan){
+            $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+            return response()->json($result, 404);
+        }else{
+            $result = $this->generate_response($plan, 200, 'Detail Data.', false);
+            return response()->json($result, 200);
+        }
 
-        return response()->json($result, 200);
     }
 
     /**
@@ -112,7 +117,7 @@ class PlanController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($plan, 400, 'Bad Request.', true);
-            
+
             return response()->json($result, 400);
         }else{
             $plan = Plan::find($id);
@@ -144,11 +149,11 @@ class PlanController extends Controller
         $plan = Plan::find($id);
 
         $plan->status = 'deleted';
-        
+
         $plan->save();
-        
+
         $result = $this->generate_response($plan,200,'Data Has Been Deleted.',false);
-        
+
         return response()->json($result, 200);
     }
 

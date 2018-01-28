@@ -63,8 +63,13 @@ class ProvinceController extends Controller
     public function show($id)
     {
         $province = Province::where('status','!=','deleted')->find($id);
-        $result = $this->generate_response($province,200,'Detail Data.',false);
-        return response()->json($result, 200);
+        if(!$province){
+            $result = $this->generate_response($province, 404, 'Data Not Found.', true);
+            return response()->json($result, 404);
+        }else{
+            $result = $this->generate_response($province, 200, 'Detail Data.', false);
+            return response()->json($result, 200);
+        }
     }
 
     /**
