@@ -31,6 +31,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Asep',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -47,6 +49,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Handoko',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -63,6 +67,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Tommy',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -79,6 +85,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Faizal',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -95,6 +103,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Wiwid',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -111,6 +121,8 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
+                'note' => 'Hi I am Narayana',
+                'photo' => 'default_img.png',
                 'status' => 'active',
             	'remember_token' => '-'
             ],

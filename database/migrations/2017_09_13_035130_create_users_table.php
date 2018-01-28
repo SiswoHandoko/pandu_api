@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->text('web_token')->default('');
             $table->text('android_token')->default('');
             $table->text('ios_token')->default('');
+            $table->string('note')->default('');
+            $table->string('photo')->default('default_img.png');
             $table->string('status')->default('');
             $table->rememberToken();
             $table->timestamps();
