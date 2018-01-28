@@ -37,7 +37,7 @@ class UserController extends Controller
           'repassword' => 'required|max:255',
           'email' => 'required|max:255',
           'role_id' => 'required|max:255|in:1,2,3',
-          'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+          'photo' => 'max:2048',
         ]);
 
         if($validator->fails()) {
@@ -69,11 +69,12 @@ class UserController extends Controller
                 $user->address = $req->has('address') ? $req->address : '';
                 $user->birthdate = $req->has('birthdate') ? $req->birthdate : '0000-00-00';
                 $user->username = $req->has('username') ? $req->username : '';
-                $user->password = $req->has('password') ? $req->password : '';
+                $user->password = $password;
                 $user->email = $req->has('email') ? $req->email : '';
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
-                $user->photo = $req->has('photo') ? $req->photo : '1';
                 $user->status = 'active';
+                /* upload process */
+                $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo) : 'default_img.png';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
 
@@ -123,6 +124,7 @@ class UserController extends Controller
             'email' => 'required|max:255',
             'role_id' => 'required|max:255|in:1,2,3',
             'status' => 'required|max:255',
+            'photo' => 'max:2048',
         ]);
 
         if($validator->fails()) {
@@ -141,16 +143,18 @@ class UserController extends Controller
                 return response()->json($result, 200);
             }else{
                 $user = User::find($id);
-                $user->firstname = $req->has('firstname') ? $user->firstname : '';
-                $user->lastname = $req->has('lastname') ? $user->lastname : '';
-                $user->contact = $req->has('contact') ? $user->contact : '';
-                $user->address = $req->has('address') ? $user->address : '';
-                $user->birthdate = $req->has('birthdate') ? $user->birthdate : '0000-00-00';
-                $user->username = $req->has('username') ? $user->username : '';
-                $user->password = $req->has('password') ? $user->password : '';
-                $user->email = $req->has('email') ? $user->email : '';
-                $user->role_id = $req->has('role_id') ? $user->role_id : '1';
-                $user->status = $req->has('status') ? $user->status : 'active';
+                $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
+                $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
+                $user->contact = $req->has('contact') ? $req->contact : $user->contact;
+                $user->address = $req->has('address') ? $req->address : $user->address;
+                $user->birthdate = $req->has('birthdate') ? $req->birthdate : $user->birthdate;
+                $user->username = $req->has('username') ? $req->username : $user->username;
+                $user->password = $req->has('password') ? $req->password : $user->password;
+                $user->email = $req->has('email') ? $req->email : $user->email;
+                $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
+                $user->status = $req->has('status') ? $req->status : $user->status;
+                /* upload process */
+                $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo) : $user->photo;
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
                 return response()->json($result, 200);
@@ -174,10 +178,12 @@ class UserController extends Controller
     }
 
     /**
-     * Index login controller
+     * Index for login
      *
-     * When user success login will retrive callback as api_token
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
      */
+
     public function login(Request $request)
     {
         /* Validation */
@@ -194,6 +200,13 @@ class UserController extends Controller
         }
         return response()->json($result, 200);
     }
+
+    /**
+     * Authenticate for login
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
 
     public function authentication($request){
         /* bundling data */

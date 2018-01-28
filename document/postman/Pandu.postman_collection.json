@@ -1,165 +1,166 @@
 {
-	"id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+	"id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 	"name": "Pandu",
 	"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 	"order": [],
 	"folders": [
 		{
 			"auth": null,
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"description": "",
 			"folders_order": [],
-			"id": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
+			"id": "62283170-6785-06a5-9351-a971e6808908",
 			"name": "City",
 			"order": [
-				"35fe2d2c-e022-d2c0-d6fa-6ffb7d8da0a5",
-				"e9f07ee8-f2a5-5021-fa76-ecb960b16014",
-				"8593a5e6-e4c4-bb19-07c4-703e08e2fec9",
-				"58213151-6933-2cb3-67b5-7c456c35035c",
-				"77c6cecb-8fe6-6b36-d2b1-05991a4084a5"
+				"9fd78490-a441-8fdf-15df-1328b9369a7f",
+				"47286b2d-d4a0-4e91-3eb7-18a9a01fff13",
+				"b690ed50-1c19-862c-23ca-1c9db22f5544",
+				"dabd0302-2142-2578-1a38-2007f3a73e11",
+				"eed8072f-63fa-7e0a-fdee-176c2797908f"
 			],
-			"owner": "748996"
+			"owner": "290234"
 		},
 		{
 			"name": "Event",
 			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"order": [
-				"67f4272a-38f8-2f32-4374-82fca92ff4b6",
-				"289c68d3-9cc5-2067-ca86-3b4282a0fb15",
-				"53b464f0-022d-0e59-5610-3d8604e3bc00",
-				"283ff1c4-831f-4a33-afeb-b25826e612a0",
-				"dd5948c7-3a3d-626e-ea47-ea72cdd3a995"
+				"70b9ece1-fb44-b778-661f-b1fda2e46639",
+				"2bd6d760-cf5e-c1ea-cb8a-0d5b5b869be6",
+				"9b8811a9-482b-80cb-46a0-b4bfa369ac69",
+				"1ff97ca9-291a-6821-9412-27a61e8761c8",
+				"7d3e9beb-cd07-c74b-27ae-985013505474"
 			],
-			"owner": "748996",
+			"owner": "290234",
 			"folders_order": [],
 			"auth": null,
-			"id": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4"
+			"id": "f5445c01-5176-12de-fd88-5fff28fa7b22"
 		},
 		{
 			"name": "Picture",
 			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"order": [
-				"a24a3fb9-d856-3711-c8e1-34960bff6751",
-				"b79ba3b3-819d-340a-8d94-5bb6dd359b84",
-				"f50c259b-15d6-4dd3-9d38-722a72a37e1a",
-				"840135e2-7965-fe9c-3790-22c2061b3c27",
-				"750b3522-2b5c-186e-e355-c91eb0140334",
-				"9047e584-b454-81d3-82f0-2a7eb9488ec6"
+				"660efc3c-e73d-7ef5-8d5f-be09e5226c8a",
+				"23935a29-e05c-519e-f880-dd810a837ede",
+				"6bcaa977-a397-1bba-83a1-7336c1c4651c",
+				"1aa6741c-b6f8-5206-0869-ae4918552ef9",
+				"e233e62c-c6ce-70c7-2a24-00531f9c597f",
+				"2750a904-6538-483a-8747-695ed18fdc01"
 			],
-			"owner": "748996",
+			"owner": "290234",
 			"folders_order": [],
 			"auth": null,
-			"id": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246"
+			"id": "ca13f938-736f-61ff-f925-48fba0c9e51d"
 		},
 		{
 			"auth": null,
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"description": "",
 			"folders_order": [],
-			"id": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
+			"id": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
 			"name": "Plan",
 			"order": [
-				"0067514a-b3b4-5bd3-48af-c5ab84362459",
-				"c3c0522f-fa7e-8455-2560-55769cb12452",
-				"fda904a0-3858-383d-9e93-e298375da64c",
-				"e19d8ebb-bd0f-2658-12fb-1c310b535361",
-				"3b037a0f-d62a-ef9e-4881-2198c3a06e7c"
+				"eea6499b-14f2-a600-0cca-520fc5b37bd9",
+				"0c2dff49-8731-aa9a-70c2-48aa09fc8ad4",
+				"39b8762d-9d2b-a7c6-c19b-b512018c0833",
+				"7a56fe39-b34b-910e-53f1-ac4ab37c2e2c",
+				"f4935e85-0b73-9e3e-e856-9f660b6b37f5"
 			],
-			"owner": "748996"
+			"owner": "290234"
 		},
 		{
 			"auth": null,
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"description": "",
 			"folders_order": [],
-			"id": "79c9abf1-246b-7931-7287-107a11012bf9",
+			"id": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
 			"name": "Province",
 			"order": [
-				"ef219063-3f3b-4f06-e4bd-57cf2896c24f",
-				"55b56069-7d6b-2712-3c8a-601ca2cc4616",
-				"92fe4d3b-c6de-3d00-c4b2-1344a871ff0f",
-				"b314307b-365c-65eb-8d2c-923dd01f106f",
-				"fb1d63f8-c81d-d9eb-98d4-33d86cb4762b",
-				"8da39c32-48c4-b6d1-55c2-79b1700190cd"
+				"0585c909-e4de-8aa3-3189-165dfdb3d64c",
+				"828b7ce5-2697-0603-eb5f-28d49431dcc1",
+				"0e4cf029-f96a-ef79-176c-08122fba5386",
+				"9686872e-9c60-fb59-17a9-a0d9e5fc1545",
+				"46449576-29a7-5859-ebf1-dd21050056fd",
+				"5f682217-f80c-4c30-decd-b53f7a41d46a"
 			],
-			"owner": "748996"
+			"owner": "290234"
 		},
 		{
 			"name": "Role",
 			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"order": [
-				"e4eec7d4-66ac-2b42-acaf-0a8bc0062390",
-				"ef559d48-702c-a9e9-f24a-54d2d42b5782",
-				"8129fbb5-710b-b813-de14-9538a9f7adb0",
-				"649bc3b4-882d-8f6c-bd5d-85cb8a81e7cf",
-				"3d981352-09a2-1d6d-7926-05990144bac0"
+				"432e3494-47fa-6426-3dd2-09cdbfb855bd",
+				"3a23a42a-1793-7f5f-98e3-553f5d7de6ed",
+				"4e0006e1-bb41-f3ef-a711-db7b01100cb9",
+				"c140dee7-83a4-9408-2026-4acd2e683623",
+				"2d1ae99c-cb43-b751-47cb-4fdd9c999b2b"
 			],
-			"owner": "748996",
+			"owner": "290234",
 			"folders_order": [],
 			"auth": null,
-			"id": "ba1081a2-224d-96e1-28c1-faecf6ad66bd"
+			"id": "5d65e027-afd2-b69a-5104-c3cd90a3549e"
 		},
 		{
 			"name": "Tourism Place",
 			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"order": [
-				"54dea8d3-25c0-3005-9a49-cdb93c1bb384",
-				"e5928801-c67d-4976-4c4a-287f1b5ff9a1",
-				"97989233-7bb8-3f27-aa1f-1bd5439ed0cd",
-				"e947bf36-6059-2853-54de-69c055fe9c66",
-				"411e575e-3307-0d54-4316-364d915669c4"
+				"328c1654-6851-ea6f-9bce-6b5ff9207e69",
+				"d8c96376-409a-3075-7083-76aaded690dc",
+				"09494d40-e2fd-3716-ca78-9af168a0a0e2",
+				"9711b004-7b9b-8f25-fefd-407dcfb7bbf2",
+				"50fd55e5-ca16-eecb-f768-ccb13630c2d8"
 			],
-			"owner": "748996",
+			"owner": "290234",
 			"folders_order": [],
 			"auth": null,
-			"id": "7b2fec25-aa1b-394c-e3cb-d4505f69f733"
+			"id": "2573987e-3895-ae72-228e-dcb3e51c1695"
 		},
 		{
 			"auth": null,
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"description": "",
 			"events": null,
 			"folder": null,
 			"folders_order": [],
-			"id": "d9f28f20-371b-4303-c314-75aa986696f8",
+			"id": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
 			"lastRevision": 2202229566,
 			"lastUpdatedBy": "290234",
 			"name": "User",
 			"order": [
-				"a757188d-de5e-f75f-a0ea-7b733afb5c3d",
-				"87092a64-9c15-1e02-9151-1226d3a3004c",
-				"35b33a33-abeb-cc9f-ba90-3137117b47e9",
-				"e1f9af2f-240b-ac61-1756-a35553f56780",
-				"78f8b95f-77a1-7650-ba79-1042017a7940",
-				"14d5ffc4-e91c-a6ba-2eee-2a7cf9ea0b89"
+				"1e909850-7910-a2b9-3733-1ede91a5d2c9",
+				"a572dcd0-6bfe-6217-c891-faf50d8cf9fc",
+				"5eebbf81-81c8-659d-0828-d2938c0cd364",
+				"40e9964f-b501-1718-aee5-c404c809599b",
+				"fd2f1ea8-b321-a112-f4d6-7ade1df49fa5",
+				"cf8ec0a0-afd4-8793-1c43-d6187b990da6"
 			],
-			"owner": "748996",
+			"owner": "290234",
 			"variables": null
 		}
 	],
 	"folders_order": [
-		"ba1081a2-224d-96e1-28c1-faecf6ad66bd",
-		"7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
-		"dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
-		"7b2fec25-aa1b-394c-e3cb-d4505f69f733",
-		"d9f28f20-371b-4303-c314-75aa986696f8",
-		"79c9abf1-246b-7931-7287-107a11012bf9",
-		"c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-		"1981ee14-a915-c6fd-61f6-17a735cd02b9"
+		"5d65e027-afd2-b69a-5104-c3cd90a3549e",
+		"ca13f938-736f-61ff-f925-48fba0c9e51d",
+		"f5445c01-5176-12de-fd88-5fff28fa7b22",
+		"2573987e-3895-ae72-228e-dcb3e51c1695",
+		"3bf3bdac-992f-87ee-9ee6-89d784d7d836",
+		"50bdd649-37a6-d03b-59ef-70b7ad71dd47",
+		"62283170-6785-06a5-9351-a971e6808908",
+		"0d75b79f-8f8d-115f-3895-0e64b3691d1e"
 	],
 	"timestamp": 0,
-	"owner": "748996",
+	"owner": "290234",
 	"public": false,
 	"events": null,
 	"variables": null,
 	"auth": null,
+	"hasRequests": true,
 	"requests": [
 		{
-			"id": "0067514a-b3b4-5bd3-48af-c5ab84362459",
+			"id": "0585c909-e4de-8aa3-3189-165dfdb3d64c",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -175,17 +176,9 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/plan",
-			"folder": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
+			"url": "http://localhost/pandu_api/public/province",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
+			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -194,25 +187,43 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892085241,
-			"name": "Get Plans",
+			"time": 1516892039035,
+			"name": "Get Provinces",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "14d5ffc4-e91c-a6ba-2eee-2a7cf9ea0b89",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"id": "09494d40-e2fd-3716-ca78-9af168a0a0e2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/tourismplace/delete/3",
+			"folder": "2573987e-3895-ae72-228e-dcb3e51c1695",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516897387134,
+			"name": "Delete Tourism Place",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "0c2dff49-8731-aa9a-70c2-48aa09fc8ad4",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
 				{
 					"key": "api-token",
 					"value": "77a64fae487baef2ae395a80db6b82549723219a",
@@ -226,109 +237,136 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/user/update/6",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
+			"url": "http://localhost/pandu_api/public/plan/1",
+			"folder": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "firstname",
-					"type": "text",
-					"value": "Ghiffary"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "lastname",
-					"type": "text",
-					"value": "Muhammad"
-				},
-				{
-					"description": "",
-					"key": "email",
-					"type": "text",
-					"value": "ghiffary@gmail.com"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "contact",
-					"type": "text",
-					"value": "089687476161"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "address",
-					"type": "text",
-					"value": "Jl. Kusuma Wandani No 13"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "birthdate",
-					"type": "text",
-					"value": "20-01-1991"
-				},
-				{
-					"description": "tourism || guide || admin",
-					"enabled": true,
-					"key": "type",
-					"type": "text",
-					"value": "tourism"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "username",
-					"type": "text",
-					"value": "ghiffary"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "password",
-					"type": "text",
-					"value": "qwerty"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "repassword",
-					"type": "text",
-					"value": "qwerty"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "status",
-					"type": "text",
-					"value": "active"
-				}
-			],
-			"dataMode": "urlencoded",
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892536155,
-			"name": "Update User",
+			"time": 1516892089646,
+			"name": "Get Plan",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "283ff1c4-831f-4a33-afeb-b25826e612a0",
+			"id": "0e4cf029-f96a-ef79-176c-08122fba5386",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/province/delete/1",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892046523,
+			"name": "Delete Province",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "1aa6741c-b6f8-5206-0869-ae4918552ef9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/picture/delete/10",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517022306133,
+			"name": "Delete Picture",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "1e909850-7910-a2b9-3733-1ede91a5d2c9",
+			"headers": "device-type: web\n",
+			"headerData": [
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/login",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
+			"queryParams": [],
+			"events": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "siswohandoko",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "qwerty",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1516891293002,
+			"name": "Login",
+			"description": "",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "1ff97ca9-291a-6821-9412-27a61e8761c8",
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost/pandu_api/public/event/create",
-			"folder": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
+			"folder": "f5445c01-5176-12de-fd88-5fff28fa7b22",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -377,17 +415,82 @@
 			"time": 1516897894483,
 			"name": "Create Event",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "289c68d3-9cc5-2067-ca86-3b4282a0fb15",
+			"id": "23935a29-e05c-519e-f880-dd810a837ede",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/picture/1/tourismplace",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517021015940,
+			"name": "Get Pictures by Tourism Places",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2750a904-6538-483a-8747-695ed18fdc01",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/picture/update/10",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "image_url",
+					"value": "picture_1_5.jpg",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517022279446,
+			"name": "Update Picture",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2bd6d760-cf5e-c1ea-cb8a-0d5b5b869be6",
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost/pandu_api/public/event/2",
-			"folder": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
+			"folder": "f5445c01-5176-12de-fd88-5fff28fa7b22",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -400,75 +503,58 @@
 			"time": 1516898432454,
 			"name": "Get Event",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "35b33a33-abeb-cc9f-ba90-3137117b47e9",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"id": "2d1ae99c-cb43-b751-47cb-4fdd9c999b2b",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"headerData": [
 				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/user/1",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
+			"url": "http://localhost/pandu_api/public/role/update/2",
+			"folder": "5d65e027-afd2-b69a-5104-c3cd90a3549e",
 			"queryParams": [],
-			"events": null,
+			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": null,
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "This is role",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
 			"auth": null,
-			"time": 1516892516762,
-			"name": "Get User",
-			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"time": 1516899079089,
+			"name": "Update Role",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "35fe2d2c-e022-d2c0-d6fa-6ffb7d8da0a5",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/city",
-			"folder": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
+			"id": "328c1654-6851-ea6f-9bce-6b5ff9207e69",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/tourismplace",
+			"folder": "2573987e-3895-ae72-228e-dcb3e51c1695",
+			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -477,17 +563,152 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892062435,
-			"name": "Get Cities",
+			"time": 1516898442525,
+			"name": "Get Tourism Places",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "3b037a0f-d62a-ef9e-4881-2198c3a06e7c",
+			"id": "39b8762d-9d2b-a7c6-c19b-b512018c0833",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/plan/delete/1",
+			"folder": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892092943,
+			"name": "Delete Plan",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "3a23a42a-1793-7f5f-98e3-553f5d7de6ed",
+			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "android",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/role/1",
+			"folder": "5d65e027-afd2-b69a-5104-c3cd90a3549e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516899030364,
+			"name": "Get Role",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "40e9964f-b501-1718-aee5-c404c809599b",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/user/delete/6",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892526563,
+			"name": "Delete User",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "432e3494-47fa-6426-3dd2-09cdbfb855bd",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/role",
+			"folder": "5d65e027-afd2-b69a-5104-c3cd90a3549e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516898457782,
+			"name": "Get Roles",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "46449576-29a7-5859-ebf1-dd21050056fd",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -509,8 +730,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/plan/update/1",
-			"folder": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
+			"url": "http://localhost/pandu_api/public/province/update/1",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -520,98 +741,86 @@
 				{
 					"description": "",
 					"enabled": true,
-					"key": "user_id",
+					"key": "name",
 					"type": "text",
-					"value": "6"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "tourism_place_id",
-					"type": "text",
-					"value": "1"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "guide_id",
-					"type": "text",
-					"value": "2"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "start_date",
-					"type": "text",
-					"value": "2018-01-10 08:00:00"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "end_date",
-					"type": "text",
-					"value": "2018-01-15 08:00:00"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "status",
-					"type": "text",
-					"value": "nonactive"
+					"value": "New Province Name"
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1516892099922,
-			"name": "Update Plan",
+			"time": 1516892564973,
+			"name": "Update Province",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "3d981352-09a2-1d6d-7926-05990144bac0",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"id": "47286b2d-d4a0-4e91-3eb7-18a9a01fff13",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/role/update/2",
-			"folder": "ba1081a2-224d-96e1-28c1-faecf6ad66bd",
+			"url": "http://localhost/pandu_api/public/city/1",
+			"folder": "62283170-6785-06a5-9351-a971e6808908",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "name",
-					"value": "This is role",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				}
-			],
-			"dataMode": "urlencoded",
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516899079089,
-			"name": "Update Role",
+			"time": 1516892871454,
+			"name": "Get City",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "411e575e-3307-0d54-4316-364d915669c4",
+			"id": "4e0006e1-bb41-f3ef-a711-db7b01100cb9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/role/delete/2",
+			"folder": "5d65e027-afd2-b69a-5104-c3cd90a3549e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516898338103,
+			"name": "Delete Role",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "50fd55e5-ca16-eecb-f768-ccb13630c2d8",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"headerData": [
 				{
@@ -622,7 +831,7 @@
 				}
 			],
 			"url": "http://localhost/pandu_api/public/tourismplace/update/3",
-			"folder": "7b2fec25-aa1b-394c-e3cb-d4505f69f733",
+			"folder": "2573987e-3895-ae72-228e-dcb3e51c1695",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -706,59 +915,14 @@
 			"time": 1516898134161,
 			"name": "Update Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "53b464f0-022d-0e59-5610-3d8604e3bc00",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/event/delete/2",
-			"folder": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516898251495,
-			"name": "Delete Event",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "54dea8d3-25c0-3005-9a49-cdb93c1bb384",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/tourismplace",
-			"folder": "7b2fec25-aa1b-394c-e3cb-d4505f69f733",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516898442525,
-			"name": "Get Tourism Places",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "55b56069-7d6b-2712-3c8a-601ca2cc4616",
+			"id": "5eebbf81-81c8-659d-0828-d2938c0cd364",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -774,465 +938,27 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/province/1",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892043304,
-			"name": "Get Province",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "58213151-6933-2cb3-67b5-7c456c35035c",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/city/create",
-			"folder": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892584117,
-			"name": "Create City",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "649bc3b4-882d-8f6c-bd5d-85cb8a81e7cf",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/role/create",
-			"folder": "ba1081a2-224d-96e1-28c1-faecf6ad66bd",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "name",
-					"value": "-",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516899042706,
-			"name": "Create Role",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "67f4272a-38f8-2f32-4374-82fca92ff4b6",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/event",
-			"folder": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516898425558,
-			"name": "Get Events",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "750b3522-2b5c-186e-e355-c91eb0140334",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/picture/create",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "tourism_place_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "image_url[0]",
-					"value": "picture_1_2.jpg",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "image_url[1]",
-					"value": "picture_1_3.jpg",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "image_url[2]",
-					"value": "picture_1_4.jpg",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516900268008,
-			"name": "Create Picture",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "8247027e-161b-09df-efa4-b17e747d15de",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "77c6cecb-8fe6-6b36-d2b1-05991a4084a5",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/city/update/1",
-			"folder": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1516892576135,
-			"name": "Update City",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "78f8b95f-77a1-7650-ba79-1042017a7940",
-			"headers": "device-type: web\n",
-			"headerData": [
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/user/create",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
+			"url": "http://localhost/pandu_api/public/user/1",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
 			"queryParams": [],
 			"events": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"key": "firstname",
-					"type": "text",
-					"value": "Ghiffary"
-				},
-				{
-					"description": "",
-					"key": "lastname",
-					"type": "text",
-					"value": "Muhammad"
-				},
-				{
-					"description": "",
-					"key": "email",
-					"type": "text",
-					"value": "ghiffary@gmail.com"
-				},
-				{
-					"description": "tourism || guide || admin",
-					"enabled": true,
-					"key": "type",
-					"type": "text",
-					"value": "tourism"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "contact",
-					"type": "text",
-					"value": "089687476161"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "address",
-					"type": "text",
-					"value": "Jl. Kusuma Wandani No 13"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "birthdate",
-					"type": "text",
-					"value": "20-01-1991"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "username",
-					"type": "text",
-					"value": "ghiffary"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "password",
-					"type": "text",
-					"value": "qwerty"
-				},
-				{
-					"description": "",
-					"enabled": true,
-					"key": "repassword",
-					"type": "text",
-					"value": "qwerty"
-				}
-			],
-			"dataMode": "params",
+			"method": "GET",
+			"data": [],
+			"dataMode": null,
 			"auth": null,
-			"time": 1516892021405,
-			"name": "Create User",
+			"time": 1516892516762,
+			"name": "Get User",
 			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "8129fbb5-710b-b813-de14-9538a9f7adb0",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/role/delete/2",
-			"folder": "ba1081a2-224d-96e1-28c1-faecf6ad66bd",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516898338103,
-			"name": "Delete Role",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "840135e2-7965-fe9c-3790-22c2061b3c27",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/picture/delete/10",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517022306133,
-			"name": "Delete Picture",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "8593a5e6-e4c4-bb19-07c4-703e08e2fec9",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/city/delete/1",
-			"folder": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892070062,
-			"name": "Delete City",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "87092a64-9c15-1e02-9151-1226d3a3004c",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/user",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516891990962,
-			"name": "Get Users",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "8da39c32-48c4-b6d1-55c2-79b1700190cd",
+			"id": "5f682217-f80c-4c30-decd-b53f7a41d46a",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1249,7 +975,7 @@
 				}
 			],
 			"url": "http://localhost/pandu_api/public/province/1/cities",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1270,116 +996,18 @@
 			"time": 1516892056754,
 			"name": "Get Cities By Province",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "9047e584-b454-81d3-82f0-2a7eb9488ec6",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/picture/update/10",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "image_url",
-					"value": "picture_1_5.jpg",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517022279446,
-			"name": "Update Picture",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "92fe4d3b-c6de-3d00-c4b2-1344a871ff0f",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/province/delete/1",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892046523,
-			"name": "Delete Province",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "97989233-7bb8-3f27-aa1f-1bd5439ed0cd",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/tourismplace/delete/3",
-			"folder": "7b2fec25-aa1b-394c-e3cb-d4505f69f733",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516897387134,
-			"name": "Delete Tourism Place",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "a24a3fb9-d856-3711-c8e1-34960bff6751",
+			"id": "660efc3c-e73d-7ef5-8d5f-be09e5226c8a",
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost/pandu_api/public/picture",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1392,107 +1020,19 @@
 			"time": 1516899534116,
 			"name": "Get Pictures",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
 			"isFromCollection": true,
-			"collectionRequestId": "03aea387-db07-2b73-8d4e-43479427f39a",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "a757188d-de5e-f75f-a0ea-7b733afb5c3d",
-			"headers": "device-type: web\n",
-			"headerData": [
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/login",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
-			"queryParams": [],
-			"events": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "username",
-					"value": "siswohandoko",
-					"description": "",
-					"type": "text"
-				},
-				{
-					"key": "password",
-					"value": "qwerty",
-					"description": "",
-					"type": "text"
-				}
-			],
-			"dataMode": "params",
-			"auth": null,
-			"time": 1516891293002,
-			"name": "Login",
-			"description": "",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "b314307b-365c-65eb-8d2c-923dd01f106f",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/province/create",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New Province Name"
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892604629,
-			"name": "Create Province",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "b79ba3b3-819d-340a-8d94-5bb6dd359b84",
+			"id": "6bcaa977-a397-1bba-83a1-7336c1c4651c",
 			"headers": "",
 			"headerData": [],
-			"url": "http://localhost/pandu_api/public/picture/1/tourismplace",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
+			"url": "http://localhost/pandu_api/public/picture/1",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1502,35 +1042,21 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517021015940,
-			"name": "Get Pictures by Tourism Places",
+			"time": 1516899560629,
+			"name": "Get Picture",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "5013465e-3643-ba11-e6ba-9f6bc992d60e",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "c3c0522f-fa7e-8455-2560-55769cb12452",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/plan/1",
-			"folder": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
+			"id": "70b9ece1-fb44-b778-661f-b1fda2e46639",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/event",
+			"folder": "f5445c01-5176-12de-fd88-5fff28fa7b22",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1540,85 +1066,17 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892089646,
-			"name": "Get Plan",
+			"time": 1516898425558,
+			"name": "Get Events",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "dd5948c7-3a3d-626e-ea47-ea72cdd3a995",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/event/update/2",
-			"folder": "dbf878db-3f44-2d96-c2f5-e0c146dc16b4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "tourism_place_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "name",
-					"value": "Festival Kembang Api",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "description",
-					"value": "",
-					"type": "text",
-					"enabled": false,
-					"description": "no mandatory"
-				},
-				{
-					"key": "start_date",
-					"value": "2018-02-20",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "end_date",
-					"value": "2018-02-25",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1516898175352,
-			"name": "Update Event",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "9807b9d8-1b62-b600-40bf-af9cc4ac97b2",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "e19d8ebb-bd0f-2658-12fb-1c310b535361",
+			"id": "7a56fe39-b34b-910e-53f1-ac4ab37c2e2c",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1635,7 +1093,7 @@
 				}
 			],
 			"url": "http://localhost/pandu_api/public/plan/create",
-			"folder": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
+			"folder": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1684,14 +1142,82 @@
 			"time": 1516892096308,
 			"name": "Create Plan",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e1f9af2f-240b-ac61-1756-a35553f56780",
+			"id": "7d3e9beb-cd07-c74b-27ae-985013505474",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/event/update/2",
+			"folder": "f5445c01-5176-12de-fd88-5fff28fa7b22",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "tourism_place_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "name",
+					"value": "Festival Kembang Api",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "description",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": "no mandatory"
+				},
+				{
+					"key": "start_date",
+					"value": "2018-02-20",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "end_date",
+					"value": "2018-02-25",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1516898175352,
+			"name": "Update Event",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "828b7ce5-2697-0603-eb5f-28d49431dcc1",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1707,8 +1233,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/user/delete/6",
-			"folder": "d9f28f20-371b-4303-c314-75aa986696f8",
+			"url": "http://localhost/pandu_api/public/province/1",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1718,67 +1244,66 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892526563,
-			"name": "Delete User",
+			"time": 1516892043304,
+			"name": "Get Province",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e4eec7d4-66ac-2b42-acaf-0a8bc0062390",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/role",
-			"folder": "ba1081a2-224d-96e1-28c1-faecf6ad66bd",
+			"id": "9686872e-9c60-fb59-17a9-a0d9e5fc1545",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/province/create",
+			"folder": "50bdd649-37a6-d03b-59ef-70b7ad71dd47",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
+			"method": "POST",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New Province Name"
+				}
+			],
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516898457782,
-			"name": "Get Roles",
+			"time": 1516892604629,
+			"name": "Create Province",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e5928801-c67d-4976-4c4a-287f1b5ff9a1",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost/pandu_api/public/tourismplace/1",
-			"folder": "7b2fec25-aa1b-394c-e3cb-d4505f69f733",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516900370391,
-			"name": "Get Tourism Place",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "e947bf36-6059-2853-54de-69c055fe9c66",
+			"id": "9711b004-7b9b-8f25-fefd-407dcfb7bbf2",
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost/pandu_api/public/tourismplace/create",
-			"folder": "7b2fec25-aa1b-394c-e3cb-d4505f69f733",
+			"folder": "2573987e-3895-ae72-228e-dcb3e51c1695",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1862,127 +1387,18 @@
 			"time": 1516893859428,
 			"name": "Create Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e9f07ee8-f2a5-5021-fa76-ecb960b16014",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/city/1",
-			"folder": "c73f6b99-e31a-2baf-0f8d-41df7ca9cf62",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892871454,
-			"name": "Get City",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "ef219063-3f3b-4f06-e4bd-57cf2896c24f",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/province",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516892039035,
-			"name": "Get Provinces",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "ef559d48-702c-a9e9-f24a-54d2d42b5782",
-			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "android",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost/pandu_api/public/role/1",
-			"folder": "ba1081a2-224d-96e1-28c1-faecf6ad66bd",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1516899030364,
-			"name": "Get Role",
-			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "f50c259b-15d6-4dd3-9d38-722a72a37e1a",
+			"id": "9b8811a9-482b-80cb-46a0-b4bfa369ac69",
 			"headers": "",
 			"headerData": [],
-			"url": "http://localhost/pandu_api/public/picture/1",
-			"folder": "7c4f7c0d-641e-9178-4ab4-f2e3a7ea3246",
+			"url": "http://localhost/pandu_api/public/event/delete/2",
+			"folder": "f5445c01-5176-12de-fd88-5fff28fa7b22",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1992,16 +1408,176 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516899560629,
-			"name": "Get Picture",
+			"time": 1516898251495,
+			"name": "Delete Event",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "fb1d63f8-c81d-d9eb-98d4-33d86cb4762b",
+			"id": "9fd78490-a441-8fdf-15df-1328b9369a7f",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/city",
+			"folder": "62283170-6785-06a5-9351-a971e6808908",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892062435,
+			"name": "Get Cities",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a572dcd0-6bfe-6217-c891-faf50d8cf9fc",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/user",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516891990962,
+			"name": "Get Users",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "b690ed50-1c19-862c-23ca-1c9db22f5544",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/city/delete/1",
+			"folder": "62283170-6785-06a5-9351-a971e6808908",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892070062,
+			"name": "Delete City",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c140dee7-83a4-9408-2026-4acd2e683623",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/role/create",
+			"folder": "5d65e027-afd2-b69a-5104-c3cd90a3549e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "-",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516899042706,
+			"name": "Create Role",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "cf8ec0a0-afd4-8793-1c43-d6187b990da6",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2023,8 +1599,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/province/update/1",
-			"folder": "79c9abf1-246b-7931-7287-107a11012bf9",
+			"url": "http://localhost/pandu_api/public/user/update/6",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2034,25 +1610,124 @@
 				{
 					"description": "",
 					"enabled": true,
-					"key": "name",
+					"key": "firstname",
 					"type": "text",
-					"value": "New Province Name"
+					"value": "Ghiffary"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "lastname",
+					"type": "text",
+					"value": "Muhammad"
+				},
+				{
+					"description": "",
+					"key": "email",
+					"type": "text",
+					"value": "ghiffary@gmail.com"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "contact",
+					"type": "text",
+					"value": "089687476161"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "address",
+					"type": "text",
+					"value": "Jl. Kusuma Wandani No 13"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "birthdate",
+					"type": "text",
+					"value": "1991-01-11"
+				},
+				{
+					"key": "photo",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "username",
+					"type": "text",
+					"value": "ghiffary"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "password",
+					"type": "text",
+					"value": "qwerty"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "repassword",
+					"type": "text",
+					"value": "qwerty"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "status",
+					"type": "text",
+					"value": "active"
+				},
+				{
+					"key": "role_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1516892564973,
-			"name": "Update Province",
+			"time": 1517120472925,
+			"name": "Update User",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "fda904a0-3858-383d-9e93-e298375da64c",
+			"id": "d8c96376-409a-3075-7083-76aaded690dc",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pandu_api/public/tourismplace/1",
+			"folder": "2573987e-3895-ae72-228e-dcb3e51c1695",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516900370391,
+			"name": "Get Tourism Place",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "dabd0302-2142-2578-1a38-2007f3a73e11",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2068,9 +1743,123 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/pandu_api/public/plan/delete/1",
-			"folder": "1981ee14-a915-c6fd-61f6-17a735cd02b9",
+			"url": "http://localhost/pandu_api/public/city/create",
+			"folder": "62283170-6785-06a5-9351-a971e6808908",
 			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516892584117,
+			"name": "Create City",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "e233e62c-c6ce-70c7-2a24-00531f9c597f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/picture/create",
+			"folder": "ca13f938-736f-61ff-f925-48fba0c9e51d",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "tourism_place_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "image_url[0]",
+					"value": "picture_1_2.jpg",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "image_url[1]",
+					"value": "picture_1_3.jpg",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "image_url[2]",
+					"value": "picture_1_4.jpg",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1516900268008,
+			"name": "Create Picture",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "eea6499b-14f2-a600-0cca-520fc5b37bd9",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/plan",
+			"folder": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -2079,12 +1868,253 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1516892092943,
-			"name": "Delete Plan",
+			"time": 1516892085241,
+			"name": "Get Plans",
 			"description": "Get Province By Id",
-			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
 			"responses": [],
-			"collection_id": "f587b3de-f981-ad8e-9c53-510037908d4f",
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "eed8072f-63fa-7e0a-fdee-176c2797908f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/city/update/1",
+			"folder": "62283170-6785-06a5-9351-a971e6808908",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1516892576135,
+			"name": "Update City",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f4935e85-0b73-9e3e-e856-9f660b6b37f5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/plan/update/1",
+			"folder": "0d75b79f-8f8d-115f-3895-0e64b3691d1e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "user_id",
+					"type": "text",
+					"value": "6"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "tourism_place_id",
+					"type": "text",
+					"value": "1"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "guide_id",
+					"type": "text",
+					"value": "2"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "start_date",
+					"type": "text",
+					"value": "2018-01-10 08:00:00"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "end_date",
+					"type": "text",
+					"value": "2018-01-15 08:00:00"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "status",
+					"type": "text",
+					"value": "nonactive"
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1516892099922,
+			"name": "Update Plan",
+			"description": "Get Province By Id",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
+			"collection_id": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fd2f1ea8-b321-a112-f4d6-7ade1df49fa5",
+			"headers": "device-type: web\n",
+			"headerData": [
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pandu_api/public/user/create",
+			"folder": "3bf3bdac-992f-87ee-9ee6-89d784d7d836",
+			"queryParams": [],
+			"events": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"description": "",
+					"key": "firstname",
+					"type": "text",
+					"value": "Ghiffary"
+				},
+				{
+					"description": "",
+					"key": "lastname",
+					"type": "text",
+					"value": "Muhammad"
+				},
+				{
+					"description": "",
+					"key": "email",
+					"type": "text",
+					"value": "ghiffary@gmail.com"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "contact",
+					"type": "text",
+					"value": "089687476161"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "address",
+					"type": "text",
+					"value": "Jl. Kusuma Wandani No 13"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "birthdate",
+					"type": "text",
+					"value": "1991-01-11"
+				},
+				{
+					"key": "photo",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "username",
+					"type": "text",
+					"value": "ghiffary"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "password",
+					"type": "text",
+					"value": "qwerty"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "repassword",
+					"type": "text",
+					"value": "qwerty"
+				},
+				{
+					"key": "role_id",
+					"value": "1",
+					"description": "1(tourist) || 2(guide) || 3(admin)",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517120445786,
+			"name": "Create User",
+			"description": "",
+			"collectionId": "182a839b-637d-1a7a-bc90-c0fffd9d71ae",
+			"responses": [],
 			"currentHelper": null,
 			"helperAttributes": null
 		}

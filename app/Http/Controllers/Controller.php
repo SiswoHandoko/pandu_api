@@ -27,4 +27,66 @@ class Controller extends BaseController
 
     return $result;
   }
+
+  public function uploadFile($path, $base64 ){
+      /* Upload function */
+      $data = base64_decode($base64);
+      $extension = $this->getImageMimeType($data);
+      $filename = sha1(time()).".".$extension;
+      $destinationPath = $path . $filename;
+      if(file_put_contents($destinationPath, $data)){
+          return $filename;
+      }else{
+          return false;
+      };
+  }
+
+  /**
+  * Get Type File from base_64.
+  *
+  * @return \Illuminate\Http\Response
+  */
+
+  public function getImageMimeType($imagedata)
+  {
+      $imagemimetypes = array(
+      "jpeg" => "FFD8",
+      "png" => "89504E470D0A1A0A",
+      "gif" => "474946",
+      "bmp" => "424D",
+      "tiff" => "4949",
+      "tiff" => "4D4D"
+      );
+
+      foreach ($imagemimetypes as $mime => $hexbytes)
+      {
+          $bytes = $this->getBytesFromHexString($hexbytes);
+          if (substr($imagedata, 0, strlen($bytes)) == $bytes)
+          return $mime;
+      }
+      return NULL;
+  }
+
+  /**
+  * Parse Type base_64 file.
+  *
+  * @return \Illuminate\Http\Response
+  */
+
+  public function getBytesFromHexString($hexdata)
+  {
+      for($count = 0; $count < strlen($hexdata); $count+=2)
+      $bytes[] = chr(hexdec(substr($hexdata, $count, 2)));
+      return implode($bytes);
+  }
+
+  /**
+  * Access public path on lumen.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  function public_path($path = null)
+  {
+      return rtrim(app()->basePath('public/' . $path), '/');
+  }
 }

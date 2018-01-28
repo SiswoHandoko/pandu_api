@@ -92,8 +92,8 @@ class ProvinceController extends Controller
             return response()->json($result, 400);
         }else{
             $province = Province::find($id);
-            $province->name = $req->has('name') ? $province->name : '';
-            $province->status = $req->has('status') ? $province->status : 'active';
+            $province->name = $req->has('name') ? $req->name : $province->name;
+            $province->status = $req->has('status') ? $req->status : $province->status;
             $province->save();
             $result = $this->generate_response($province,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);
