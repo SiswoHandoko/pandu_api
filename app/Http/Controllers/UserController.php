@@ -36,7 +36,7 @@ class UserController extends Controller
           'password' => 'required|max:255',
           'repassword' => 'required|max:255',
           'email' => 'required|max:255',
-          'type' => 'required|max:255|in:tourism,guide,admin',
+          'role_id' => 'required|max:255|in:1,2,3',
         ]);
 
         if($validator->fails()) {
@@ -70,7 +70,7 @@ class UserController extends Controller
                 $user->username = $req->has('username') ? $req->username : '';
                 $user->password = $req->has('password') ? $req->password : '';
                 $user->email = $req->has('email') ? $req->email : '';
-                $user->type = $req->has('type') ? $req->type : 'tourism';
+                $user->role_id = $req->has('role_id') ? $req->role_id : '1';
                 $user->status = 'active';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
@@ -114,7 +114,7 @@ class UserController extends Controller
             'password' => 'required|max:255',
             'repassword' => 'required|max:255',
             'email' => 'required|max:255',
-            'type' => 'required|max:255|in:tourism,guide,admin',
+            'role_id' => 'required|max:255|in:1,2,3',
             'status' => 'required|max:255',
         ]);
 
@@ -142,7 +142,7 @@ class UserController extends Controller
                 $user->username = $req->has('username') ? $req->username : '';
                 $user->password = $req->has('password') ? $req->password : '';
                 $user->email = $req->has('email') ? $req->email : '';
-                $user->type = $req->has('type') ? $req->type : 'tourism';
+                $user->role_id = $req->has('role_id') ? $req->role_id : '1';
                 $user->status = $req->has('status') ? $req->status : 'active';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Updated.',false);

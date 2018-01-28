@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
         // 'ios_token' => sha1(time()),
         $data = [
             [
+            	'role_id' => '3',
             	'firstname' => 'Asep',
             	'lastname' => 'Mulyadi',
             	'contact' => '085861960366',
@@ -27,7 +28,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'asepmulyadi',
             	'password' => Hash::make('asepmulyadi'),
             	'email' => 'asep.mulyadi011@gmail.com',
-            	'type' => 'admin',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
@@ -35,6 +35,7 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+                'role_id' => '2',
             	'firstname' => 'Siswo',
             	'lastname' => 'Handoko',
             	'contact' => '089687476161',
@@ -43,7 +44,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'siswohandoko',
             	'password' => Hash::make('qwerty'),
             	'email' => 'cs.siswo.handoko@gmail.com',
-            	'type' => 'guide',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
@@ -51,6 +51,7 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+                'role_id' => '1',
             	'firstname' => 'Tommy',
             	'lastname' => 'Putra Pratama Gunawan',
             	'contact' => '085721820905',
@@ -59,7 +60,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'tommyppg',
             	'password' => Hash::make('qwerty'),
             	'email' => 'tommy@gmail.com',
-                'type' => 'tourism',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
@@ -67,6 +67,7 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+                'role_id' => '1',
             	'firstname' => 'Faizal',
             	'lastname' => 'Muhammad',
             	'contact' => '085795678930',
@@ -75,7 +76,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'faizal',
             	'password' => Hash::make('qwerty'),
             	'email' => 'faizal@gmail.com',
-                'type' => 'tourism',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
@@ -83,6 +83,7 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+                'role_id' => '1',
             	'firstname' => 'Wiwid',
             	'lastname' => 'Widyanto',
             	'contact' => '08121002181',
@@ -91,7 +92,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'wiwidwidyanto',
             	'password' => Hash::make('qwerty'),
             	'email' => 'wiwid@gmail.com',
-                'type' => 'tourism',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
@@ -99,6 +99,7 @@ class UsersTableSeeder extends Seeder
             	'remember_token' => '-'
             ],
             [
+                'role_id' => '1',
             	'firstname' => 'Narayana',
             	'lastname' => 'Wijaya',
             	'contact' => '081238347077',
@@ -107,7 +108,6 @@ class UsersTableSeeder extends Seeder
             	'username' => 'narayana',
             	'password' => Hash::make('qwerty'),
             	'email' => 'narayana@gmail.com',
-                'type' => 'tourism',
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',

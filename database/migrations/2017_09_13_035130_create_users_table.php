@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('role_id')->default('1');
             $table->string('firstname')->default('');
             $table->string('lastname')->default('');
             $table->string('contact')->default('');
@@ -23,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique()->default('');
             $table->string('password')->default('');
             $table->string('email')->unique()->default('');
-            $table->string('type')->default('tourism');
             $table->text('web_token')->default('');
             $table->text('android_token')->default('');
             $table->text('ios_token')->default('');

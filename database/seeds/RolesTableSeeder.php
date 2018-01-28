@@ -16,9 +16,17 @@ class RolesTableSeeder extends Seeder
 
         $data = [
             [
-            	'name' => '-',
-            	'status' => 'nonactive'
-            ]
+            	'name' => 'tourist',
+            	'status' => 'active'
+            ],
+            [
+            	'name' => 'guide',
+            	'status' => 'active'
+            ],
+            [
+            	'name' => 'admin',
+            	'status' => 'active'
+            ],
         ];
 
         Role::insert($data);
