@@ -16,13 +16,13 @@ class PackagesTableSeeder extends Seeder
     	
         $data = [
             [
-            	'tourism_place_id' => 1,
-            	'name' => 'Paket A',
+                'name' => 'Paket A',
+            	'description' => 'Paket A',
             	'status' => 'active'
             ],
             [
-            	'tourism_place_id' => 2,
-            	'name' => 'Paket A',
+                'name' => 'Paket B',
+            	'description' => 'Paket B',
             	'status' => 'active'
             ]
         ];

@@ -146,4 +146,18 @@ class EventController extends Controller
 
         return response()->json($result, 200);
     }
+
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function event_by_tourismplace($id)
+    {
+        $event = Event::where('tourism_place_id', $id)->where('status', '!=', 'deleted')->get();
+
+        $result = $this->generate_response($event, 200, 'All Data.', false);
+
+        return response()->json($result, 200);
+    }
 }

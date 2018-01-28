@@ -26,7 +26,7 @@ class PlanDetail extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at','updated_at','plan_id', 'tourism_place_id', 'guide_id',
+        'created_at', 'updated_at', 'plan_id', 'tourism_place_id'
     ];
 
     /**
@@ -36,11 +36,7 @@ class PlanDetail extends Model
         return $this->belongsTo(Plan::class, 'plan_id');
     }
 
-    /**
-    * One to Many relationships
-    */
-    public function tourismplace()
-    {
-        return $this->hasMany(TourismPlace::class);
+    public function tourismplace() {
+        return $this->belongsTo(TourismPlace::class, 'tourism_place_id');
     }
 }

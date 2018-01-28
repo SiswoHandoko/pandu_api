@@ -17,7 +17,7 @@ class Plan extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'tourism_place_id', 'guide_id', 'start_date', 'end_date', 'status'
+        'user_id', 'guide_id', 'start_date', 'end_date', 'status'
     ];
 
     /**
@@ -26,16 +26,12 @@ class Plan extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at','updated_at','user_id', 'tourism_place_id', 'guide_id',
+        'created_at', 'updated_at', 'user_id', 'guide_id',
     ];
 
     /**
     * Belongs To Relation
     */
-    public function tourismplace() {
-        return $this->belongsTo(TourismPlace::class, 'tourism_place_id');
-    }
-
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -47,7 +43,7 @@ class Plan extends Model
     /**
     * One to Many relationships
     */
-    public function plan_detail()
+    public function plandetail()
     {
         return $this->hasMany(PlanDetail::class);
     }

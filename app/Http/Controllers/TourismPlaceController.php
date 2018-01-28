@@ -25,7 +25,7 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
-        $tourismplace = TourismPlace::with('city.province','picture')->where('status', '!=', 'deleted')->get();
+        $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
@@ -87,7 +87,7 @@ class TourismPlaceController extends Controller
      */
     public function show($id)
     {
-        $tourismplace = TourismPlace::with('city.province','picture')->where('status', '!=', 'deleted')->find($id);
+        $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->find($id);
         
         if (!$tourismplace) {
             $tourismplace = array();

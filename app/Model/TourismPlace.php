@@ -26,7 +26,7 @@ class TourismPlace extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at','updated_at'
+        'created_at', 'updated_at', 'city_id'
     ];
 
     /**
@@ -42,19 +42,14 @@ class TourismPlace extends Model
         return $this->hasMany(Picture::class);
     }
 
-    public function plan()
-    {
-        return $this->hasMany(Plan::class);
-    }
-
     public function plandetail()
     {
         return $this->hasMany(PlanDetail::class);
     }
 
-    public function package()
+    public function packagedetail()
     {
-        return $this->hasMany(Package::class);
+        return $this->hasMany(PackageDetail::class);
     }
 
     /**

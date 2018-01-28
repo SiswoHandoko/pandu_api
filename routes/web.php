@@ -64,6 +64,17 @@ $router->post('/plan/create', 'PlanController@store');
 $router->put('/plan/update/{id}', 'PlanController@update');
 $router->get('/plan/delete/{id}', 'PlanController@destroy');
 
+/*
+ | ------------------------------------------
+ | PLAN DETAIL ROUTE
+ | ------------------------------------------
+ */
+$router->get('/plandetail', 'PlanDetailController@index');
+$router->get('/plandetail/{id}', 'PlanDetailController@show');
+$router->post('/plandetail/create', 'PlanDetailController@store');
+$router->put('/plandetail/update/{id}', 'PlanDetailController@update');
+$router->get('/plandetail/delete/{id}', 'PlanDetailController@destroy');
+$router->get('/plandetail/{id}/plan', 'PlanDetailController@plandetail_by_plan');
 
 /*
  | ------------------------------------------
@@ -86,6 +97,7 @@ $router->get('/event/{id}', 'EventController@show');
 $router->post('/event/create', 'EventController@store');
 $router->put('/event/update/{id}', 'EventController@update');
 $router->get('/event/delete/{id}', 'EventController@destroy');
+$router->get('/event/{id}/tourismplace', 'EventController@event_by_tourismplace');
 
 /*
  | ------------------------------------------
@@ -109,3 +121,27 @@ $router->post('/picture/create', 'PictureController@store');
 $router->put('/picture/update/{id}', 'PictureController@update');
 $router->get('/picture/delete/{id}', 'PictureController@destroy');
 $router->get('/picture/{id}/tourismplace', 'PictureController@picture_by_tourismplace');
+
+/*
+ | ------------------------------------------
+ | PACKAGE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/package', 'PackageController@index');
+$router->get('/package/{id}', 'PackageController@show');
+$router->post('/package/create', 'PackageController@store');
+$router->put('/package/update/{id}', 'PackageController@update');
+$router->get('/package/delete/{id}', 'PackageController@destroy');
+
+
+/*
+ | ------------------------------------------
+ | PACKAGE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/packagedetail', 'PackageDetailController@index');
+$router->get('/packagedetail/{id}', 'PackageDetailController@show');
+$router->post('/packagedetail/create', 'PackageDetailController@store');
+$router->put('/packagedetail/update/{id}', 'PackageDetailController@update');
+$router->get('/packagedetail/delete/{id}', 'PackageDetailController@destroy');
+$router->get('/packagedetail/{id}/package', 'PackageDetailController@packagedetail_by_package');

@@ -17,7 +17,7 @@ class Package extends Model
      * @var array
      */
     protected $fillable = [
-        'tourism_place_id', 'name', 'status'
+        'name', 'description', 'status'
     ];
 
     /**
@@ -26,13 +26,14 @@ class Package extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at', 'tourism_place_id'
+        'created_at', 'updated_at'
     ];
 
     /**
-    * Belongs To Relation
+    * One to Many relationships
     */
-    public function tourismplace() {
-        return $this->belongsTo(Tourismplace::class, 'tourism_place_id');
+    public function packagedetail()
+    {
+        return $this->hasMany(PackageDetail::class);
     }
 }

@@ -21,7 +21,7 @@ class PlanController extends Controller
     */
     public function index(Request $req)
     {
-        $plan = Plan::with('user', 'guide')->where('status', '!=', 'deleted')->get();
+        $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->get();
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
 
@@ -64,7 +64,7 @@ class PlanController extends Controller
             $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
             $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
-            $plan->status = 'active';
+            $plan->status = $req->has('status') ? $req->status : 'active';
 
             $plan->save();
 
@@ -82,16 +82,17 @@ class PlanController extends Controller
      */
     public function show($id)
     {
-        $plan = Plan::with('user', 'guide')->where('status', '!=', 'deleted')->find($id);
+        $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
 
-        if(!$plan){
+        if (!$plan) {
             $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
             return response()->json($result, 404);
-        }else{
+        } else {
             $result = $this->generate_response($plan, 200, 'Detail Data.', false);
+
             return response()->json($result, 200);
         }
-
     }
 
     /**
@@ -122,13 +123,14 @@ class PlanController extends Controller
         }else{
             $plan = Plan::find($id);
 
-            $plan->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
-            $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
-            $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
-            $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : 0;
-            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
-            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
-            $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
+            $plan->total_adult = $req->has('total_adult') ? $req->total_adult : $plan->total_adult;
+            $plan->total_child = $req->has('total_child') ? $req->total_child : $plan->total_child;
+            $plan->total_infant = $req->has('total_infant') ? $req->total_infant : $plan->total_infant;
+            $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : $plan->total_tourist;
+            $plan->start_date = $req->has('start_date') ? $req->start_date : $plan->start_date;
+            $plan->end_date = $req->has('end_date') ? $req->end_date : $plan->end_date;
+            $plan->total_price = $req->has('total_price') ? $req->total_price : $plan->total_price;
+            $plan->status = $req->has('status') ? $req->status : $plan->status;
 
             $plan->save();
 
@@ -152,7 +154,7 @@ class PlanController extends Controller
 
         $plan->save();
 
-        $result = $this->generate_response($plan,200,'Data Has Been Deleted.',false);
+        $result = $this->generate_response($plan, 200, 'Data Has Been Deleted.',false);
 
         return response()->json($result, 200);
     }
