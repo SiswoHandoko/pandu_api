@@ -87,8 +87,8 @@ class CityController extends Controller
             return response()->json($result, 400);
         }else{
             $city = City::find($id);
-            $city->name = $req->has('name') ? $req->name : '';
-            $city->status = $req->has('status') ? $req->status : '';
+            $city->name = $req->has('name') ? $city->name : '';
+            $city->status = $req->has('status') ? $city->status : '';
             $city->save();
             $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
             return response()->json($result, 200);

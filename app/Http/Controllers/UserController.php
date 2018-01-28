@@ -134,16 +134,16 @@ class UserController extends Controller
                 return response()->json($result, 200);
             }else{
                 $user = User::find($id);
-                $user->firstname = $req->has('firstname') ? $req->firstname : '';
-                $user->lastname = $req->has('lastname') ? $req->lastname : '';
-                $user->contact = $req->has('contact') ? $req->contact : '';
-                $user->address = $req->has('address') ? $req->address : '';
-                $user->birthdate = $req->has('birthdate') ? $req->birthdate : '0000-00-00';
-                $user->username = $req->has('username') ? $req->username : '';
-                $user->password = $req->has('password') ? $req->password : '';
-                $user->email = $req->has('email') ? $req->email : '';
-                $user->role_id = $req->has('role_id') ? $req->role_id : '1';
-                $user->status = $req->has('status') ? $req->status : 'active';
+                $user->firstname = $req->has('firstname') ? $user->firstname : '';
+                $user->lastname = $req->has('lastname') ? $user->lastname : '';
+                $user->contact = $req->has('contact') ? $user->contact : '';
+                $user->address = $req->has('address') ? $user->address : '';
+                $user->birthdate = $req->has('birthdate') ? $user->birthdate : '0000-00-00';
+                $user->username = $req->has('username') ? $user->username : '';
+                $user->password = $req->has('password') ? $user->password : '';
+                $user->email = $req->has('email') ? $user->email : '';
+                $user->role_id = $req->has('role_id') ? $user->role_id : '1';
+                $user->status = $req->has('status') ? $user->status : 'active';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
                 return response()->json($result, 200);
