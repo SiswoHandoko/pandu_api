@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call('TourismPlacesTableSeeder');
         $this->call('PicturesTableSeeder');
         $this->call('EventsTableSeeder');
-        $this->call('PlansTableSeeder');
         $this->call('RolesTableSeeder');
+        $this->call('PlansTableSeeder');
+        $this->call('PlanDetailsTableSeeder');
+        $this->call('PackagesTableSeeder');
     }
 }

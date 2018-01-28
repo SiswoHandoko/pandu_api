@@ -16,11 +16,15 @@ class PlansTableSeeder extends Seeder
 
         $data = [
             [
-            	'user_id' => 3,
-            	'tourism_place_id' => 1,
-            	'guide_id' => 2,
-            	'start_date' => '2018-01-10 08:00:00',
-            	'end_date' => '2018-01-15 08:00:00',
+            	'user_id' => 1,
+                'guide_id' => 2,
+                'total_adult' => 2,
+                'total_child' => 1,
+                'total_infant' => 1,
+            	'total_tourist' => 0,
+            	'start_date' => '2018-01-10',
+                'end_date' => '2018-01-15',
+            	'total_price' => 74000,
             	'status' => 'hold'
             ]
         ];

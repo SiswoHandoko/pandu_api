@@ -16,10 +16,14 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->default(0);
-            $table->integer('tourism_place_id')->default(0);
             $table->integer('guide_id')->default(0);
-            $table->dateTime('start_date')->default('000-00-00 00:00:00');
-            $table->dateTime('end_date')->default('0000-00-00 00:00:00');
+            $table->integer('total_adult')->default(0);
+            $table->integer('total_child')->default(0);
+            $table->integer('total_infant')->default(0);
+            $table->integer('total_tourist')->default(0);
+            $table->date('start_date')->default('000-00-00');
+            $table->date('end_date')->default('0000-00-00');
+            $table->bigInteger('total_price')->default(0);
             $table->string('status')->default('');
             $table->timestamps();
         });

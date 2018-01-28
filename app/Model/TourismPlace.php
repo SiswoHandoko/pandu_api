@@ -47,6 +47,16 @@ class TourismPlace extends Model
         return $this->hasMany(Plan::class);
     }
 
+    public function plandetail()
+    {
+        return $this->hasMany(PlanDetail::class);
+    }
+
+    public function package()
+    {
+        return $this->hasMany(Package::class);
+    }
+
     /**
     * Belongs To Relation
     */
