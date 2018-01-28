@@ -21,8 +21,10 @@ class PlanController extends Controller
     */
     public function index(Request $req)
     {
-        $plan = Plan::with('user','guide','tourismplace')->where('status','!=','deleted')->get();
-        $result = $this->generate_response($plan,200,'All Data.',false);
+        $plan = Plan::with('user', 'guide')->where('status', '!=', 'deleted')->get();
+
+        $result = $this->generate_response($plan, 200, 'All Data.', false);
+
         return response()->json($result, 200);
     }
 
@@ -36,28 +38,39 @@ class PlanController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'user_id' => 'required|numeric',
-          'tourism_place_id' => 'required|numeric',
-          'guide_id' => 'required|numeric',
-          'start_date' => 'required|date_format:"Y-m-d H:i:s"',
-          'end_date' => 'required|date_format:"Y-m-d H:i:s"',
+            'user_id' => 'required|numeric',
+            'total_adult' => 'required|numeric',
+            'total_child' => 'required|numeric',
+            'total_infant' => 'required|numeric',
+            'total_tourist' => 'required|numeric',
+            'start_date' => 'required|date_format:"Y-m-d"',
+            'end_date' => 'required|date_format:"Y-m-d"',
+            'total_price' => 'required|numeric',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             $result = $this->generate_response($plan,400,'Bad Request.',true);
-            return response()->json($result, 400);
-        }else{
-            $plan = new Plan();
-            $plan->user_id = $req->has('user_id') ? $req->user_id : '0';
-            $plan->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '0';
-            $plan->guide_id = $req->has('guide_id') ? $req->guide_id : '0';
-            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00 00:00:00';
-            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00 00:00:00';
-            $plan->status = 'active';
-            $plan->save();
-            $result = $this->generate_response($plan,200,'Data Has Been Saved.',false);
 
-        return response()->json($result, 200);
+            return response()->json($result, 400);
+        } else {
+            $plan = new Plan();
+
+            $plan->user_id = $req->has('user_id') ? $req->user_id : 0;
+            $plan->guide_id = $req->has('guide_id') ? $req->guide_id : 0;
+            $plan->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
+            $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
+            $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
+            $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : 0;
+            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
+            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
+            $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
+            $plan->status = 'active';
+
+            $plan->save();
+
+            $result = $this->generate_response($plan, 200, 'Data Has Been Saved.', false);
+
+            return response()->json($result, 200);
         }
     }
 
@@ -69,8 +82,10 @@ class PlanController extends Controller
      */
     public function show($id)
     {
-        $plan = Plan::with('user','guide','tourismplace')->where('status','!=','deleted')->find($id);
-        $result = $this->generate_response($plan,200,'Detail Data.',false);
+        $plan = Plan::with('user', 'guide')->where('status', '!=', 'deleted')->find($id);
+
+        $result = $this->generate_response($plan, 200, 'Detail Data.', false);
+
         return response()->json($result, 200);
     }
 
@@ -82,31 +97,38 @@ class PlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $req,$id)
+    public function update(Request $req, $id)
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-            'user_id' => 'required|numeric',
-            'tourism_place_id' => 'required|numeric',
-            'guide_id' => 'required|numeric',
-            'start_date' => 'required|date_format:"Y-m-d H:i:s"',
-            'end_date' => 'required|date_format:"Y-m-d H:i:s"',
-            'status' => 'required|max:255',
+            'total_adult' => 'required|numeric',
+            'total_child' => 'required|numeric',
+            'total_infant' => 'required|numeric',
+            'total_tourist' => 'required|numeric',
+            'start_date' => 'required|date_format:"Y-m-d"',
+            'end_date' => 'required|date_format:"Y-m-d"',
+            'total_price' => 'required|numeric',
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($plan,400,'Bad Request.',true);
+            $result = $this->generate_response($plan, 400, 'Bad Request.', true);
+            
             return response()->json($result, 400);
         }else{
             $plan = Plan::find($id);
-            $plan->user_id = $req->has('user_id') ? $req->user_id : '0';
-            $plan->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '0';
-            $plan->guide_id = $req->has('guide_id') ? $req->guide_id : '0';
-            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00 00:00:00';
-            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00 00:00:00';
-            $plan->status = $req->has('status') ? $req->status : 'active';
+
+            $plan->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
+            $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
+            $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
+            $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : 0;
+            $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
+            $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
+            $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
+
             $plan->save();
-            $result = $this->generate_response($plan,200,'Data Has Been Updated.',false);
+
+            $result = $this->generate_response($plan, 200, 'Data Has Been Updated.', false);
+
             return response()->json($result, 200);
         }
     }
@@ -120,9 +142,13 @@ class PlanController extends Controller
     public function destroy($id)
     {
         $plan = Plan::find($id);
+
         $plan->status = 'deleted';
+        
         $plan->save();
+        
         $result = $this->generate_response($plan,200,'Data Has Been Deleted.',false);
+        
         return response()->json($result, 200);
     }
 

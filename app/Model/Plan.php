@@ -43,4 +43,12 @@ class Plan extends Model
     public function guide() {
         return $this->belongsTo(User::class, 'guide_id');
     }
+
+    /**
+    * One to Many relationships
+    */
+    public function plan_detail()
+    {
+        return $this->hasMany(PlanDetail::class);
+    }
 }
