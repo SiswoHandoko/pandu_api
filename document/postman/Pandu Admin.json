@@ -707,6 +707,7 @@
 				}
 			],
 			"url": "{{url}}/public/user/update/6",
+			"folder": "92585fc2-9df5-2a95-08d3-9a2140867e37",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -714,92 +715,98 @@
 			"method": "PUT",
 			"data": [
 				{
-					"description": "",
-					"enabled": true,
 					"key": "firstname",
+					"value": "Ghiffary",
 					"type": "text",
-					"value": "Ghiffary"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "lastname",
+					"value": "Muhammad",
 					"type": "text",
-					"value": "Muhammad"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
 					"key": "email",
+					"value": "ghiffary@gmail.com",
 					"type": "text",
-					"value": "ghiffary@gmail.com"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "contact",
+					"value": "089687476161",
 					"type": "text",
-					"value": "089687476161"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "address",
+					"value": "Jl. Kusuma Wandani No 13",
 					"type": "text",
-					"value": "Jl. Kusuma Wandani No 13"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "birthdate",
+					"value": "1991-01-11",
 					"type": "text",
-					"value": "20-01-1991"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "tourism || guide || admin",
-					"enabled": true,
-					"key": "type",
+					"key": "photo",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
-					"value": "tourism"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "username",
+					"value": "ghiffary",
 					"type": "text",
-					"value": "ghiffary"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "password",
+					"value": "qwerty",
 					"type": "text",
-					"value": "qwerty"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "repassword",
+					"value": "qwerty",
 					"type": "text",
-					"value": "qwerty"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "status",
+					"value": "active",
 					"type": "text",
-					"value": "active"
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "role_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "1(tourist) || 2(guide) || 3(admin)"
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517120913339,
+			"time": 1517148737899,
 			"name": "Update User",
 			"description": "Get Province By Id",
 			"collectionId": "72399042-4eec-bddd-0002-c1329d405d87",
 			"responses": [],
-			"collection_id": "72399042-4eec-bddd-0002-c1329d405d87",
-			"folder": "92585fc2-9df5-2a95-08d3-9a2140867e37",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -815,6 +822,7 @@
 				}
 			],
 			"url": "{{url}}/public/user/create",
+			"folder": "92585fc2-9df5-2a95-08d3-9a2140867e37",
 			"queryParams": [],
 			"events": null,
 			"pathVariables": {},
@@ -822,82 +830,90 @@
 			"method": "POST",
 			"data": [
 				{
-					"description": "",
 					"key": "firstname",
+					"value": "Ghiffary",
 					"type": "text",
-					"value": "Ghiffary"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
 					"key": "lastname",
+					"value": "Muhammad",
 					"type": "text",
-					"value": "Muhammad"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
 					"key": "email",
+					"value": "ghiffary@gmail.com",
 					"type": "text",
-					"value": "ghiffary@gmail.com"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "tourism || guide || admin",
-					"enabled": true,
-					"key": "type",
-					"type": "text",
-					"value": "tourism"
-				},
-				{
-					"description": "",
-					"enabled": true,
 					"key": "contact",
+					"value": "089687476161",
 					"type": "text",
-					"value": "089687476161"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "address",
+					"value": "Jl. Kusuma Wandani No 13",
 					"type": "text",
-					"value": "Jl. Kusuma Wandani No 13"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "birthdate",
+					"value": "1991-01-11",
 					"type": "text",
-					"value": "20-01-1991"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
+					"key": "photo",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
 					"enabled": true,
+					"description": ""
+				},
+				{
 					"key": "username",
+					"value": "ghiffary",
 					"type": "text",
-					"value": "ghiffary"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "password",
+					"value": "qwerty",
 					"type": "text",
-					"value": "qwerty"
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"description": "",
-					"enabled": true,
 					"key": "repassword",
+					"value": "qwerty",
 					"type": "text",
-					"value": "qwerty"
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "role_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "1(tourist) || 2(guide) || 3(admin)"
 				}
 			],
 			"dataMode": "params",
 			"auth": null,
-			"time": 1517120909490,
+			"time": 1517148706608,
 			"name": "Create User",
 			"description": "",
 			"collectionId": "72399042-4eec-bddd-0002-c1329d405d87",
 			"responses": [],
-			"collection_id": "72399042-4eec-bddd-0002-c1329d405d87",
-			"folder": "92585fc2-9df5-2a95-08d3-9a2140867e37",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -2593,22 +2609,22 @@
 				},
 				{
 					"key": "image_url[0]",
-					"value": "PP.jpg",
-					"type": "file",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
 					"key": "image_url[1]",
 					"value": "",
-					"type": "file",
+					"type": "text",
 					"enabled": false,
 					"description": ""
 				},
 				{
 					"key": "image_url[2]",
 					"value": "",
-					"type": "file",
+					"type": "text",
 					"enabled": false,
 					"description": ""
 				}
@@ -2616,7 +2632,7 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517138604768,
+			"time": 1517148768663,
 			"name": "Create Picture",
 			"description": "Get Province By Id",
 			"collectionId": "72399042-4eec-bddd-0002-c1329d405d87",
@@ -3149,7 +3165,7 @@
 			"data": [
 				{
 					"key": "image_url",
-					"value": "picture_1_5.jpg",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
 					"description": ""
@@ -3158,7 +3174,7 @@
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517137766192,
+			"time": 1517148802928,
 			"name": "Update Picture",
 			"description": "Get Province By Id",
 			"collectionId": "72399042-4eec-bddd-0002-c1329d405d87",
