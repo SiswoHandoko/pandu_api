@@ -37,6 +37,7 @@ class UserController extends Controller
           'repassword' => 'required|max:255',
           'email' => 'required|max:255',
           'role_id' => 'required|max:255|in:1,2,3',
+          'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if($validator->fails()) {
@@ -71,6 +72,7 @@ class UserController extends Controller
                 $user->password = $req->has('password') ? $req->password : '';
                 $user->email = $req->has('email') ? $req->email : '';
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
+                $user->photo = $req->has('photo') ? $req->photo : '1';
                 $user->status = 'active';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
@@ -89,8 +91,13 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::where('status','!=','deleted')->find($id);
-        $result = $this->generate_response($user,200,'Detail Data.',false);
-        return response()->json($result, 200);
+        if(!$user){
+            $result = $this->generate_response($user,404,'Data Not Found.',true);
+            return response()->json($result, 404);
+        }else{
+            $result = $this->generate_response($user,200,'Detail Data.',false);
+            return response()->json($result, 200);
+        }
     }
 
     /**
