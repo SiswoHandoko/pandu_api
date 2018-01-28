@@ -23,7 +23,20 @@ class PackageDetailController extends Controller
     */
     public function index(Request $req)
     {
-        $packagedetail = PackageDetail::with('package', 'tourismplace')->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $packagedetail = PackageDetail::with('package', 'tourismplace')
+            ->where('status', '!=', 'deleted')
+            ->where('start_time', 'LIKE', '%'.$search_query.'%')
+            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 
@@ -42,8 +55,8 @@ class PackageDetailController extends Controller
         $validator = Validator::make($req->all(), [
             'package_id' => 'required|numeric|min:0',
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required',
-            'end_time' => 'required',
+            'start_time' => 'required|date_format:"H:i:s"',
+            'end_time' => 'required|date_format:"H:i:s"',
             'total_price' => 'required|numeric|min:0',
         ]);
 
@@ -79,7 +92,7 @@ class PackageDetailController extends Controller
     {
         $packagedetail = PackageDetail::with('package', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
 
-        if(!$packagedetail) {
+        if (!$packagedetail) {
             $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
 
             return response()->json($result, 404);
@@ -113,19 +126,25 @@ class PackageDetailController extends Controller
             
             return response()->json($result, 400);
         }else{
-            $packagedetail = PackageDetail::find($id);
+            $packagedetail = PackageDetail::where('status', '!=', 'deleted')->find($id);
 
-            $packagedetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $packagedetail->tourism_place_id;
-            $packagedetail->start_time = $req->has('start_time') ? $req->start_time : $packagedetail->start_time;
-            $packagedetail->end_time = $req->has('end_time') ? $req->end_time : $packagedetail->end_time;
-            $packagedetail->total_price = $req->has('total_price') ? $req->total_price : $packagedetail->total_price;
-            $packagedetail->status = $req->has('status') ? $req->status : $packagedetail->status;
+            if (!$packagedetail) {
+                $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
 
-            $packagedetail->save();
+                return response()->json($result, 404);
+            } else {
+                $packagedetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $packagedetail->tourism_place_id;
+                $packagedetail->start_time = $req->has('start_time') ? $req->start_time : $packagedetail->start_time;
+                $packagedetail->end_time = $req->has('end_time') ? $req->end_time : $packagedetail->end_time;
+                $packagedetail->total_price = $req->has('total_price') ? $req->total_price : $packagedetail->total_price;
+                $packagedetail->status = $req->has('status') ? $req->status : $packagedetail->status;
 
-            $result = $this->generate_response($packagedetail, 200, 'Data Has Been Updated.', false);
+                $packagedetail->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($packagedetail, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -137,9 +156,9 @@ class PackageDetailController extends Controller
      */
     public function destroy($id)
     {
-        $packagedetail = PackageDetail::find($id);
+        $packagedetail = PackageDetail::where('status', '!=', 'deleted')->find($id);
 
-        if(!$packagedetail) {
+        if (!$packagedetail) {
             $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
 
             return response()->json($result, 404);
@@ -159,9 +178,22 @@ class PackageDetailController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function packagedetail_by_package($id)
+    public function packagedetail_by_package(Request $req, $id)
     {
-        $packagedetail = PackageDetail::where('package_id', $id)->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $packagedetail = PackageDetail::where('package_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('start_time', 'LIKE', '%'.$search_query.'%')
+            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 

@@ -237,9 +237,44 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/packagedetail",
+			"url": "{{url}}/public/packagedetail?search_query=1&offset=0&limit=5&order_by=start_time&order_type=asc",
 			"folder": "ab9c6307-54ee-9ca4-2047-5b4c74fbd32f",
 			"queryParams": [
+				{
+					"key": "search_query",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "offset",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "order_by",
+					"value": "start_time",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "order_type",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
 				{
 					"description": "",
 					"enabled": false,
@@ -256,7 +291,7 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121077744,
+			"time": 1517145477267,
 			"name": "Get Package Details",
 			"description": "Get Province By Id",
 			"collectionId": "f587b3de-f981-ad8e-9c53-510037908d4f",

@@ -25,8 +25,19 @@ class RoleController extends Controller
     */
     public function index(Request $req)
     {
-        $role = Role::where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
+        $role = Role::where('status', '!=', 'deleted')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+        
         $result = $this->generate_response($role, 200, 'All Data.', false);
 
         return response()->json($result, 200);
@@ -74,12 +85,14 @@ class RoleController extends Controller
         $role = Role::where('status', '!=', 'deleted')->find($id);
         
         if (!$role) {
-            $role = array();
+            $result = $this->generate_response($role, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $result = $this->generate_response($role, 200, 'Detail Data.', false);
+
+            return response()->json($result, 200);
         }
-
-        $result = $this->generate_response($role, 200, 'Detail Data.', false);
-
-        return response()->json($result, 200);
     }
 
     /**
@@ -102,15 +115,21 @@ class RoleController extends Controller
 
             return response()->json($result, 400);
         }else{
-            $role = Role::find($id);
+            $role = Role::where('status', '!=', 'deleted')->find($id);
 
-            $role->name = $req->has('name') ? $req->name : '';
-                                    
-            $role->save();
+            if (!$role) {
+                $result = $this->generate_response($role, 404, 'Data Not Found.', true);
 
-            $result = $this->generate_response($role, 200, 'Data Has Been Updated.', false);
+                return response()->json($result, 404);
+            } else {
+                $role->name = $req->has('name') ? $req->name : '';
+                                        
+                $role->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($role, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -122,14 +141,20 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        $role = Role::find($id);
+        $role = Role::where('status', '!=', 'deleted')->find($id);
 
-        $role->status = 'deleted';
-        
-        $role->save();
-        
-        $result = $this->generate_response($role, 200, 'Data Has Been Deleted.', false);
+        if (!$role) {
+            $result = $this->generate_response($role, 404, 'Data Not Found.', true);
 
-        return response()->json($result, 200);
+            return response()->json($result, 404);
+        } else {
+            $role->status = 'deleted';
+            
+            $role->save();
+            
+            $result = $this->generate_response($role, 200, 'Data Has Been Deleted.', false);
+
+            return response()->json($result, 200);
+        }
     }
 }

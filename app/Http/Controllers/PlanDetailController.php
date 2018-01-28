@@ -23,7 +23,20 @@ class PlanDetailController extends Controller
     */
     public function index(Request $req)
     {
-        $plandetail = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        
+        $plandetail = PlanDetail::with('plan', 'tourismplace')
+            ->where('status', '!=', 'deleted')
+            ->where('start_time', 'LIKE', '%'.$search_query.'%')
+            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 
@@ -40,11 +53,11 @@ class PlanDetailController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-            'plan_id' => 'required|numeric',
-            'tourism_place_id' => 'required|numeric',
-            'start_time' => 'required',
-            'end_time' => 'required',
-            'total_price' => 'required|numeric'
+            'plan_id' => 'required|numeric|min:0',
+            'tourism_place_id' => 'required|numeric|min:0',
+            'start_time' => 'required|date_format:"H:i:s"',
+            'end_time' => 'required|date_format:"H:i:s"',
+            'total_price' => 'required|numeric|min:0'
         ]);
 
         if ($validator->fails()) {
@@ -80,12 +93,14 @@ class PlanDetailController extends Controller
         $plandetail = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
 
         if (!$plandetail) {
-            $plandetail = new stdClass();
+            $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $result = $this->generate_response($plandetail, 200, 'Detail Data.', false);
+
+            return response()->json($result, 200);
         }
-
-        $result = $this->generate_response($plandetail, 200, 'Detail Data.', false);
-
-        return response()->json($result, 200);
     }
 
     /**
@@ -100,10 +115,10 @@ class PlanDetailController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-            'tourism_place_id' => 'required|numeric',
-            'start_time' => 'required',
-            'end_time' => 'required',
-            'total_price' => 'required|numeric'
+            'tourism_place_id' => 'required|numeric|min:0',
+            'start_time' => 'required|date_format:"H:i:s"',
+            'end_time' => 'required|date_format:"H:i:s"',
+            'total_price' => 'required|numeric|min:0'
         ]);
 
         if($validator->fails()) {
@@ -111,18 +126,24 @@ class PlanDetailController extends Controller
             
             return response()->json($result, 400);
         }else{
-            $plandetail = PlanDetail::find($id);
+            $plandetail = PlanDetail::where('status', '!=', 'deleted')->find($id);
 
-            $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
-            $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
-            $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
-            $plandetail->total_price = $req->has('total_price') ? $req->total_price : 0;
+            if (!$plandetail) {
+                $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
 
-            $plandetail->save();
+                return response()->json($result, 404);
+            } else {
+                $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
+                $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
+                $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
+                $plandetail->total_price = $req->has('total_price') ? $req->total_price : 0;
 
-            $result = $this->generate_response($plandetail, 200, 'Data Has Been Updated.', false);
+                $plandetail->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($plandetail, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -134,15 +155,21 @@ class PlanDetailController extends Controller
      */
     public function destroy($id)
     {
-        $plandetail = PlanDetail::find($id);
+        $plandetail = PlanDetail::where('status', '!=', 'deleted')->find($id);
 
-        $plandetail->status = 'deleted';
-        
-        $plandetail->save();
-        
-        $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.', false);
-        
-        return response()->json($result, 200);
+        if (!$plandetail) {
+            $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $plandetail->status = 'deleted';
+            
+            $plandetail->save();
+            
+            $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.', false);
+            
+            return response()->json($result, 200);
+        }
     }
 
     /**
@@ -150,9 +177,22 @@ class PlanDetailController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function plandetail_by_plan($id)
+    public function plandetail_by_plan(Request $req, $id)
     {
-        $plandetail = PlanDetail::where('plan_id', $id)->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $plandetail = PlanDetail::where('plan_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('start_time', 'LIKE', '%'.$search_query.'%')
+            ->where('end_time', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 

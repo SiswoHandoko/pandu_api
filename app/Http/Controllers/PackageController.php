@@ -23,7 +23,20 @@ class PackageController extends Controller
     */
     public function index(Request $req)
     {
-        $package = Package::with('packagedetail')->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $package = Package::with('packagedetail')
+            ->where('status', '!=', 'deleted')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
+            ->orWhere('description', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($package, 200, 'All Data.', false);
 
@@ -73,9 +86,15 @@ class PackageController extends Controller
     {
         $package = Package::with('packagedetail')->where('status', '!=', 'deleted')->find($id);
 
-        $result = $this->generate_response($package, 200, 'Detail Data.', false);
+        if (!$package) {
+            $result = $this->generate_response($package, 404, 'Data Not Found.', true);
 
-        return response()->json($result, 200);
+            return response()->json($result, 404);
+        } else {
+            $result = $this->generate_response($package, 200, 'Detail Data.', false);
+
+            return response()->json($result, 200);
+        }
     }
 
     /**
@@ -99,17 +118,23 @@ class PackageController extends Controller
             
             return response()->json($result, 400);
         }else{
-            $package = Package::find($id);
+            $package = Package::where('status', '!=', 'deleted')->find($id);
 
-            $package->name = $req->has('name') ? $req->name : $package->name;
-            $package->description = $req->has('description') ? $req->description : $package->description;
-            $package->status = $req->has('status') ? $req->status : $package->status;
+            if (!$package) {
+                $result = $this->generate_response($package, 404, 'Data Not Found.', true);
 
-            $package->save();
+                return response()->json($result, 404);
+            } else {
+                $package->name = $req->has('name') ? $req->name : $package->name;
+                $package->description = $req->has('description') ? $req->description : $package->description;
+                $package->status = $req->has('status') ? $req->status : $package->status;
 
-            $result = $this->generate_response($package, 200, 'Data Has Been Updated.', false);
+                $package->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($package, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -121,15 +146,20 @@ class PackageController extends Controller
      */
     public function destroy($id)
     {
-        $package = Package::find($id);
+        $package = Package::where('status', '!=', 'deleted')->find($id);
 
-        $package->status = 'deleted';
-        
-        $package->save();
-        
-        $result = $this->generate_response($package,200,'Data Has Been Deleted.',false);
-        
-        return response()->json($result, 200);
+        if (!$package) {
+            $result = $this->generate_response($package, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $package->status = 'deleted';
+            
+            $package->save();
+            
+            $result = $this->generate_response($package,200,'Data Has Been Deleted.',false);
+            
+            return response()->json($result, 200);
+        }
     }
-
 }

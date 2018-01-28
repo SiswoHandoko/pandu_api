@@ -25,7 +25,19 @@ class EventController extends Controller
     */
     public function index(Request $req)
     {
-        $event = Event::with('tourismplace')->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $event = Event::with('tourismplace')
+            ->where('status', '!=', 'deleted')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
@@ -44,8 +56,8 @@ class EventController extends Controller
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
             'name' => 'required|max:255',
-            'start_date' => 'required',
-            'end_date' => 'required',
+            'start_date' => 'required|date_format:"Y-m-d H:i:s"',
+            'end_date' => 'required|date_format:"Y-m-d H:i:s"',
         ]);
 
         if($validator->fails()) {
@@ -81,12 +93,14 @@ class EventController extends Controller
         $event = Event::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$event) {
-            $event = array();
+            $result = $this->generate_response($event, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $result = $this->generate_response($event, 200, 'Detail Data.', false);
+
+            return response()->json($result, 200);
         }
-
-        $result = $this->generate_response($event, 200, 'Detail Data.', false);
-
-        return response()->json($result, 200);
     }
 
     /**
@@ -103,8 +117,8 @@ class EventController extends Controller
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
             'name' => 'required|max:255',
-            'start_date' => 'required',
-            'end_date' => 'required',
+            'start_date' => 'required|date_format:"Y-m-d H:i:s"',
+            'end_date' => 'required|date_format:"Y-m-d H:i:s"',
         ]);
 
         if($validator->fails()) {
@@ -112,19 +126,25 @@ class EventController extends Controller
 
             return response()->json($result, 400);
         }else{
-            $event = Event::find($id);
+            $event = Event::where('status', '!=', 'deleted')->find($id);
 
-            $event->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
-            $event->name = $req->has('name') ? $req->name : '';
-            $event->description = $req->has('description') ? $req->description : '';
-            $event->start_date = $req->has('start_date') ? $req->start_date : 0;
-            $event->end_date = $req->has('end_date') ? $req->end_date : 0;
-                        
-            $event->save();
+            if (!$event) {
+                $result = $this->generate_response($event, 404, 'Data Not Found.', true);
 
-            $result = $this->generate_response($event, 200, 'Data Has Been Updated.', false);
+                return response()->json($result, 404);
+            } else {
+                $event->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
+                $event->name = $req->has('name') ? $req->name : '';
+                $event->description = $req->has('description') ? $req->description : '';
+                $event->start_date = $req->has('start_date') ? $req->start_date : 0;
+                $event->end_date = $req->has('end_date') ? $req->end_date : 0;
+                            
+                $event->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($event, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -136,15 +156,21 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event = Event::find($id);
+        $event = Event::where('status', '!=', 'deleted')->find($id);
 
-        $event->status = 'deleted';
-        
-        $event->save();
-        
-        $result = $this->generate_response($event, 200, 'Data Has Been Deleted.', false);
+        if (!$event) {
+            $result = $this->generate_response($event, 404, 'Data Not Found.', true);
 
-        return response()->json($result, 200);
+            return response()->json($result, 404);
+        } else {
+            $event->status = 'deleted';
+            
+            $event->save();
+            
+            $result = $this->generate_response($event, 200, 'Data Has Been Deleted.', false);
+
+            return response()->json($result, 200);
+        }
     }
 
     /**
@@ -152,10 +178,22 @@ class EventController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function event_by_tourismplace($id)
+    public function event_by_tourismplace(Request $req, $id)
     {
-        $event = Event::where('tourism_place_id', $id)->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
+        $event = Event::where('tourism_place_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+                
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
         return response()->json($result, 200);

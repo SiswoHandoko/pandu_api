@@ -25,7 +25,19 @@ class PictureController extends Controller
     */
     public function index(Request $req)
     {
-        $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $picture = Picture::with('tourismplace')
+            ->where('status', '!=', 'deleted')
+            ->where('image_url', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
@@ -43,7 +55,7 @@ class PictureController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
-            'image_url' => 'required',
+            'image_url' => 'required|max:255',
         ]);
 
         if($validator->fails()) {
@@ -59,7 +71,7 @@ class PictureController extends Controller
                 $picture = new Picture();
 
                 $picture->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
-                $picture->image_url = $value ? $value : '';
+                $picture->image_url = $value ? $this->uploadFile($this->public_path(). "/images/users/", $value) : 'default_img.png';
                 $picture->status = 'active';
 
                 $picture->save();
@@ -84,12 +96,14 @@ class PictureController extends Controller
         $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$picture) {
-            $picture = array();
+            $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
+
+            return response()->json($result, 404);
+        } else {
+            $result = $this->generate_response($picture, 200, 'Detail Data.', false);
+
+            return response()->json($result, 200);
         }
-
-        $result = $this->generate_response($picture, 200, 'Detail Data.', false);
-
-        return response()->json($result, 200);
     }
 
     /**
@@ -104,7 +118,7 @@ class PictureController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-            'image_url' => 'required',
+            'image_url' => 'required|max:255',
         ]);
 
         if($validator->fails()) {
@@ -112,15 +126,21 @@ class PictureController extends Controller
 
             return response()->json($result, 400);
         }else{
-            $picture = Picture::find($id);
+            $picture = Picture::where('status', '!=', 'deleted')->find($id);
 
-            $picture->image_url = $req->has('image_url') ? $req->image_url : '';
-            
-            $picture->save();
+            if (!$picture) {
+                $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
 
-            $result = $this->generate_response($picture, 200, 'Data Has Been Updated.', false);
+                return response()->json($result, 404);
+            } else {
+                $picture->image_url = $req->has('image_url') ? $req->image_url : '';
+                
+                $picture->save();
 
-            return response()->json($result, 200);
+                $result = $this->generate_response($picture, 200, 'Data Has Been Updated.', false);
+
+                return response()->json($result, 200);
+            }
         }
     }
 
@@ -132,15 +152,21 @@ class PictureController extends Controller
      */
     public function destroy($id)
     {
-        $picture = Picture::find($id);
+        $picture = Picture::where('status', '!=', 'deleted')->find($id);
 
-        $picture->status = 'deleted';
-        
-        $picture->save();
-        
-        $result = $this->generate_response($picture, 200, 'Data Has Been Deleted.', false);
+        if (!$picture) {
+            $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
 
-        return response()->json($result, 200);
+            return response()->json($result, 404);
+        } else {
+            $picture->status = 'deleted';
+        
+            $picture->save();
+            
+            $result = $this->generate_response($picture, 200, 'Data Has Been Deleted.', false);
+
+            return response()->json($result, 200);
+        }
     }
 
     /**
@@ -148,9 +174,21 @@ class PictureController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function picture_by_tourismplace($id)
+    public function picture_by_tourismplace(Request $req, $id)
     {
-        $picture = Picture::where('tourism_place_id', $id)->where('status', '!=', 'deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $picture = Picture::where('tourism_place_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('image_url', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
