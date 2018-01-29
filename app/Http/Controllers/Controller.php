@@ -35,7 +35,7 @@ class Controller extends BaseController
       $filename = sha1(time()).".".$extension;
       $destinationPath = $path . $filename;
       if(file_put_contents($destinationPath, $data)){
-          if($last_image){
+          if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png'){
               unlink($path.$last_image);
           }
           return $filename;
