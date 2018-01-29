@@ -133,7 +133,7 @@ class PictureController extends Controller
 
                 return response()->json($result, 404);
             } else {
-                $picture->image_url = $req->has('image_url') ? $req->image_url : '';
+                $picture->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/users/", $req->image_url, $picture->image_url) : $picture->image_url;
                 
                 $picture->save();
 

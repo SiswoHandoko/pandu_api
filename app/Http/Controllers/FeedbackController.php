@@ -3,10 +3,9 @@ namespace App\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
-use App\Model\Role;
-use App\Model\City;
+use App\Model\Feedback;
 
-class RoleController extends Controller
+class FeedbackController extends Controller
 {
     /**
     * Create a new auth instance.
@@ -26,19 +25,20 @@ class RoleController extends Controller
     public function index(Request $req)
     {
         $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $search_field = $req->input('search_field') ? $req->input('search_field') : 'id';
         $offset = $req->input('offset') ? $req->input('offset') : 0;
         $limit = $req->input('limit') ? $req->input('limit') : 255;
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
-
-        $role = Role::where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
+        
+        $feedback = Feedback::where('status', '!=', 'deleted')
+            ->where($search_field, 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
             ->get();
         
-        $result = $this->generate_response($role, 200, 'All Data.', false);
+        $result = $this->generate_response($feedback, 200, 'All Data.', false);
 
         return response()->json($result, 200);
     }
@@ -57,18 +57,19 @@ class RoleController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($role, 400, 'Bad Request.', true);
+            $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
 
             return response()->json($result, 400);
         }else{
-            $role = new Role();
+            $feedback = new Feedback();
 
-            $role->name = $req->has('name') ? $req->name : '';
-            $role->status = 'active';
+            $feedback->name = $req->has('name') ? $req->name : '';
+            $feedback->description = $req->has('description') ? $req->description : '';
+            $feedback->status = 'active';
 
-            $role->save();
+            $feedback->save();
 
-            $result = $this->generate_response($role, 200, 'Data Has Been Saved.', false);
+            $result = $this->generate_response($feedback, 200, 'Data Has Been Saved.', false);
 
             return response()->json($result, 200);
         }
@@ -77,19 +78,19 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Role  $role
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $role = Role::where('status', '!=', 'deleted')->find($id);
+        $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
         
-        if (!$role) {
-            $result = $this->generate_response($role, 404, 'Data Not Found.', true);
+        if (!$feedback) {
+            $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
 
             return response()->json($result, 404);
         } else {
-            $result = $this->generate_response($role, 200, 'Detail Data.', false);
+            $result = $this->generate_response($feedback, 200, 'Detail Data.', false);
 
             return response()->json($result, 200);
         }
@@ -99,7 +100,7 @@ class RoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Role  $role
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
 
@@ -111,22 +112,23 @@ class RoleController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($role, 400, 'Bad Request.', true);
+            $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
 
             return response()->json($result, 400);
         }else{
-            $role = Role::where('status', '!=', 'deleted')->find($id);
+            $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
 
-            if (!$role) {
-                $result = $this->generate_response($role, 404, 'Data Not Found.', true);
+            if (!$feedback) {
+                $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
 
                 return response()->json($result, 404);
             } else {
-                $role->name = $req->has('name') ? $req->name : $role->name;
+                $feedback->name = $req->has('name') ? $req->name : $feedback->name;
+                $feedback->description = $req->has('description') ? $req->description : $feedback->description;
                                         
-                $role->save();
+                $feedback->save();
 
-                $result = $this->generate_response($role, 200, 'Data Has Been Updated.', false);
+                $result = $this->generate_response($feedback, 200, 'Data Has Been Updated.', false);
 
                 return response()->json($result, 200);
             }
@@ -136,23 +138,23 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Role  $role
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $role = Role::where('status', '!=', 'deleted')->find($id);
+        $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
 
-        if (!$role) {
-            $result = $this->generate_response($role, 404, 'Data Not Found.', true);
+        if (!$feedback) {
+            $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
 
             return response()->json($result, 404);
         } else {
-            $role->status = 'deleted';
+            $feedback->status = 'deleted';
             
-            $role->save();
+            $feedback->save();
             
-            $result = $this->generate_response($role, 200, 'Data Has Been Deleted.', false);
+            $result = $this->generate_response($feedback, 200, 'Data Has Been Deleted.', false);
 
             return response()->json($result, 200);
         }

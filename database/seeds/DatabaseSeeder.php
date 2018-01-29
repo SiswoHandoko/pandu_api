@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call('PackagesTableSeeder');
         $this->call('PackageDetailsTableSeeder');
         $this->call('AdvertisementsTableSeeder');
+        $this->call('FeedbacksTableSeeder');
     }
 }

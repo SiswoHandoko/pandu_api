@@ -156,3 +156,14 @@ $router->get('/advertisement/{id}', 'AdvertisementController@show');
 $router->post('/advertisement/create', 'AdvertisementController@store');
 $router->put('/advertisement/update/{id}', 'AdvertisementController@update');
 $router->get('/advertisement/delete/{id}', 'AdvertisementController@destroy');
+
+/*
+ | ------------------------------------------
+ | FEEDBACK ROUTE
+ | ------------------------------------------
+ */
+$router->get('/feedback', 'FeedbackController@index');
+$router->get('/feedback/{id}', 'FeedbackController@show');
+$router->post('/feedback/create', 'FeedbackController@store');
+$router->put('/feedback/update/{id}', 'FeedbackController@update');
+$router->get('/feedback/delete/{id}', 'FeedbackController@destroy');
