@@ -17,10 +17,10 @@ class AdvertisementsTableSeeder extends Seeder
 
          $data = [
              [
-             	'image_url' => 'advertisement_1.jpg',
+             	'image_url' => 'default_advertisement.png',
              	'title' => 'Title Image',
              	'caption' => 'This a Caption Of Image',
-             	'type' => '',
+             	'type' => 'main_slider',
              	'status' => 'active',
              ]
          ];

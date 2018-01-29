@@ -28,13 +28,16 @@ class Controller extends BaseController
     return $result;
   }
 
-  public function uploadFile($path, $base64 ){
+  public function uploadFile($path, $base64,$last_image = ''){
       /* Upload function */
       $data = base64_decode($base64);
       $extension = $this->getImageMimeType($data);
       $filename = sha1(time()).".".$extension;
       $destinationPath = $path . $filename;
       if(file_put_contents($destinationPath, $data)){
+          if($last_image){
+              unlink($path.$last_image);
+          }
           return $filename;
       }else{
           return false;

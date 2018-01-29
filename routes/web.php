@@ -145,3 +145,14 @@ $router->post('/packagedetail/create', 'PackageDetailController@store');
 $router->put('/packagedetail/update/{id}', 'PackageDetailController@update');
 $router->get('/packagedetail/delete/{id}', 'PackageDetailController@destroy');
 $router->get('/packagedetail/{id}/package', 'PackageDetailController@packagedetail_by_package');
+
+/*
+ | ------------------------------------------
+ | CITY ADVERTISEMENT
+ | ------------------------------------------
+ */
+$router->get('/advertisement', 'AdvertisementController@index');
+$router->get('/advertisement/{id}', 'AdvertisementController@show');
+$router->post('/advertisement/create', 'AdvertisementController@store');
+$router->put('/advertisement/update/{id}', 'AdvertisementController@update');
+$router->get('/advertisement/delete/{id}', 'AdvertisementController@destroy');
