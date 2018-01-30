@@ -25,14 +25,13 @@ class FeedbackController extends Controller
     public function index(Request $req)
     {
         $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $search_field = $req->input('search_field') ? $req->input('search_field') : 'id';
         $offset = $req->input('offset') ? $req->input('offset') : 0;
         $limit = $req->input('limit') ? $req->input('limit') : 255;
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
         
         $feedback = Feedback::where('status', '!=', 'deleted')
-            ->where($search_field, 'LIKE', '%'.$search_query.'%')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
