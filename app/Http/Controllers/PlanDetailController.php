@@ -185,7 +185,8 @@ class PlanDetailController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $plandetail = PlanDetail::where('plan_id', $id)
+        $plandetail = PlanDetail::with('plan', 'tourismplace')
+            ->where('plan_id', $id)
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
             ->where('end_time', 'LIKE', '%'.$search_query.'%')
