@@ -9,6 +9,22 @@
 			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
 			"description": "",
 			"folders_order": [],
+			"id": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"name": "Advertisement",
+			"order": [
+				"cf2de61f-2a31-e5bf-7076-7b14d8c0281c",
+				"4dddeac9-0dc8-abca-51e5-ecec257ca3cd",
+				"c44822fd-2ce7-094a-2ecc-1f5f2d54fb89",
+				"9cbde742-e5aa-9957-cbf3-c76abb6847d1",
+				"9d7f234f-5e55-a362-dd84-f3852d5215c1"
+			],
+			"owner": "748996"
+		},
+		{
+			"auth": null,
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"description": "",
+			"folders_order": [],
 			"id": "8c740d3e-6157-4469-9ef6-883cccd48e3d",
 			"name": "City",
 			"order": [
@@ -171,6 +187,7 @@
 		}
 	],
 	"folders_order": [
+		"b4df2f58-b5cd-64d7-4085-d8876278c945",
 		"98b11dd1-648b-04d5-578e-fd7939a958e4",
 		"1a5543c6-c1f1-4db1-9130-70e1a54f43ab",
 		"528020c0-6aca-def8-ad90-9beaa9dc21b9",
@@ -613,6 +630,43 @@
 			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
 			"responses": [],
 			"collection_id": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4dddeac9-0dc8-abca-51e5-ecec257ca3cd",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/1",
+			"folder": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234709859,
+			"name": "Get Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1232,6 +1286,102 @@
 			"helperAttributes": null
 		},
 		{
+			"id": "9cbde742-e5aa-9957-cbf3-c76abb6847d1",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/create",
+			"folder": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234717864,
+			"name": "Create Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "9d7f234f-5e55-a362-dd84-f3852d5215c1",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/update/1",
+			"folder": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517234720692,
+			"name": "Update Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
 			"id": "aa465b3d-2dd5-afc5-8f0d-2efa04448deb",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
@@ -1717,7 +1867,43 @@
 			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
 			"responses": [],
 			"isFromCollection": true,
-			"collectionRequestId": "59006921-3458-5ca2-a807-6c644bd171e0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c44822fd-2ce7-094a-2ecc-1f5f2d54fb89",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/delete/1",
+			"folder": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234714509,
+			"name": "Delete Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1763,6 +1949,53 @@
 			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
 			"responses": [],
 			"collection_id": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "cf2de61f-2a31-e5bf-7076-7b14d8c0281c",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement",
+			"folder": "b4df2f58-b5cd-64d7-4085-d8876278c945",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234900011,
+			"name": "Get Advertisements",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"isFromCollection": true,
+			"collectionRequestId": "62e80448-031f-1b5d-bc0e-52fafcbc53d6",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
