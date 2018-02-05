@@ -24,5 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call('PackageDetailsTableSeeder');
         $this->call('AdvertisementsTableSeeder');
         $this->call('FeedbacksTableSeeder');
+        $this->call('MessagesTableSeeder');
+        $this->call('SpecialDealsTableSeeder');
+        $this->call('TipTricksTableSeeder');
+        $this->call('InfoPaymentsTableSeeder');
     }
 }
