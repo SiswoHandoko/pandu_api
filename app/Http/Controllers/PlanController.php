@@ -80,7 +80,7 @@ class PlanController extends Controller
             $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
             $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
-            $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->has('receipt')) : '';
+            $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '';
             $plan->status = $req->has('status') ? $req->status : 'active';
 
             $plan->save();
