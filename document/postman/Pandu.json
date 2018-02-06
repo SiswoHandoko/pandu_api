@@ -29,7 +29,8 @@
 			"name": "City",
 			"order": [
 				"fc375843-93f0-0a10-248a-dc2a9b7ad40c",
-				"e7127cb1-4ab5-671b-fef3-fef23eb40904"
+				"e7127cb1-4ab5-671b-fef3-fef23eb40904",
+				"80da159d-5ec3-bc8e-4d37-2bb71b9383b3"
 			],
 			"owner": "748996"
 		},
@@ -970,6 +971,44 @@
 			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
 			"responses": [],
 			"collection_id": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "80da159d-5ec3-bc8e-4d37-2bb71b9383b3",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/city/1/tourismplaces",
+			"folder": "8c740d3e-6157-4469-9ef6-883cccd48e3d",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517924170361,
+			"name": "Get Tourism Places by City",
+			"description": "Get Province By Id",
+			"collectionId": "b8c66c26-d420-ac1a-abb8-e72212adc704",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "9d4c13ba-45f0-d8ca-4544-b599420319f8",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
