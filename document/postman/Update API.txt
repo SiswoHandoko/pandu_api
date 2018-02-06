@@ -8,3 +8,7 @@ Picture -> Get Pictures by Tourism Place 			=> Tourism Place -> Get Pictures by 
 
 New
 Tourism Place -> Get Tourism Places by City
+
+Update Field
+Plan
+PlanDetail
