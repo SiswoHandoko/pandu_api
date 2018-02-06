@@ -10,5 +10,5 @@ New
 Tourism Place -> Get Tourism Places by City
 
 Update Field
-Plan
-PlanDetail
+Plan -> Create Plan + Update Plan
+PlanDetail -> Create Plan Detail + Update Plan Detail

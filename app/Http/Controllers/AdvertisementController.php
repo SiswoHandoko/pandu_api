@@ -21,8 +21,21 @@ class AdvertisementController extends Controller
     */
     public function index(Request $req)
     {
-        $advertisement = Advertisement::where('status','!=','deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $advertisement = Advertisement::where('status','!=','deleted')
+            ->where('title', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+
         $result = $this->generate_response($advertisement,200,'All Data.',false);
+
         return response()->json($result, 200);
     }
 
@@ -108,9 +121,9 @@ class AdvertisementController extends Controller
             }else{
                 /* upload process */
                 $advertisement->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url, $advertisement->image_url) :  $advertisement->image_url;
-                $advertisement->title = $req->has('title') ? $advertisement->title : '';
-                $advertisement->caption = $req->has('caption') ? $advertisement->caption : '';
-                $advertisement->type = $req->has('type') ? $advertisement->type : '';
+                $advertisement->title = $req->has('title') ? $req->title : $advertisement->title;
+                $advertisement->caption = $req->has('caption') ? $req->caption : $advertisement->title;
+                $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
                 $advertisement->status = 'active';
                 $advertisement->save();
                 $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);
