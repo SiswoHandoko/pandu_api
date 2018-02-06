@@ -12,8 +12,21 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
-        $user = User::where('status','!=','deleted')->get();
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $user = User::where('status','!=','deleted')
+            ->where('username', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+
         $result = $this->generate_response($user,200,'All Data.',false);
+
         return response()->json($result, 200);
     }
 
