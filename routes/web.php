@@ -178,3 +178,14 @@ $router->get('/tiptrick/{id}', 'TipTrickController@show');
 $router->post('/tiptrick/create', 'TipTrickController@store');
 $router->put('/tiptrick/update/{id}', 'TipTrickController@update');
 $router->get('/tiptrick/delete/{id}', 'TipTrickController@destroy');
+
+/*
+ | ------------------------------------------
+ | SPECIAL DEAL ROUTE
+ | ------------------------------------------
+ */
+$router->get('/specialdeal', 'SpecialDealController@index');
+$router->get('/specialdeal/{id}', 'SpecialDealController@show');
+$router->post('/specialdeal/create', 'SpecialDealController@store');
+$router->put('/specialdeal/update/{id}', 'SpecialDealController@update');
+$router->get('/specialdeal/delete/{id}', 'SpecialDealController@destroy');

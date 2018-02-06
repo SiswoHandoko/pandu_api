@@ -28,4 +28,18 @@ class SpecialDeal extends Model
     protected $hidden = [
         'created_at', 'updated_at'
     ];
+
+    /**
+    * Belongs to relationships
+    */
+    public function tourismplace()
+    {
+        return $this->belongsTo(TourismPlace::class, 'tourism_place_id');
+    }
+
+    public function package()
+    {
+        return $this->belongsTo(Package::class, 'package_id');
+    }
+
 }

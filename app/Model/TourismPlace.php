@@ -53,9 +53,18 @@ class TourismPlace extends Model
     }
 
     /**
+    * One to One relationships
+    */
+    public function special_deal()
+    {
+        return $this->hasOne(SpecialDeal::class);
+    }
+
+    /**
     * Belongs To Relation
     */
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }
+
 }

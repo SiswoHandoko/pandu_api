@@ -36,4 +36,12 @@ class Package extends Model
     {
         return $this->hasMany(PackageDetail::class);
     }
+
+    /**
+    * One to One relationships
+    */
+    public function special_deal()
+    {
+        return $this->hasOne(SpecialDeal::class);
+    }
 }
