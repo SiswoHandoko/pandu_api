@@ -30,6 +30,7 @@
 			"order": [
 				"f228125d-3c00-41a1-b557-3f8b3b0b3de3",
 				"6ea85455-2606-fd93-a23b-65e641676b84",
+				"d1f791aa-ab71-56a9-ae6e-354993bf1f87",
 				"9115605d-62ac-39de-6521-935d6b100e44",
 				"36a8cb6e-0542-3a33-3f76-532160ce5d4a",
 				"6036f667-fb7b-4588-e9cc-ace47caf93bb"
@@ -42,7 +43,6 @@
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
 				"00e669ad-18d4-c90d-5ff2-93179b782068",
-				"6f0eaf87-1ebe-2edd-0eae-ce3b1f4297fc",
 				"e4a0db11-3c2a-927b-222e-8f6eb5cabe03",
 				"2e8c7c43-d9f6-3cda-c25e-d19d38e0897d",
 				"a775a31d-ba45-c1a5-a692-b36d386657ed",
@@ -81,7 +81,8 @@
 				"8803f709-0983-8c96-fbd1-e59611183625",
 				"ef834d6e-159a-d884-328c-17936e7d943e",
 				"2a168898-9b67-b03d-b4c1-bd40a0ec21b8",
-				"175ac3dd-7c7e-fa10-8198-92eaedb605b8"
+				"175ac3dd-7c7e-fa10-8198-92eaedb605b8",
+				"968fbc04-8971-6579-eef1-20b1c4bc1456"
 			],
 			"owner": "748996"
 		},
@@ -94,7 +95,6 @@
 			"name": "Package Detail",
 			"order": [
 				"d27852c9-c507-f68a-9d27-6a26a865429e",
-				"968fbc04-8971-6579-eef1-20b1c4bc1456",
 				"2be764be-5bff-c4c4-37bb-4b434bfb22bd",
 				"c283ad07-f568-24a6-0c37-706987b83ce4",
 				"3645c736-544a-46d0-ba25-314e16a0ef6d",
@@ -108,7 +108,6 @@
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
 				"8adf539f-ec16-2f4a-8f67-1df804aaa910",
-				"7ba042ba-d4c2-044e-d4af-0dac4a42e4ab",
 				"944af9a2-b522-926b-5573-e0274acb25ba",
 				"e738edb4-6fa0-5f4a-9d15-14b404b936b9",
 				"fa70b4f8-06c2-666b-c801-5bc8a0e022b9",
@@ -131,7 +130,8 @@
 				"3f9479ff-bfbf-72d0-ef42-39a2c853e7e3",
 				"aab14185-45c8-b329-3297-524362259937",
 				"f4f95c94-0048-bdb5-a561-202b81997e6b",
-				"775aa0bb-1640-6bc3-85d3-e7179be5e70f"
+				"775aa0bb-1640-6bc3-85d3-e7179be5e70f",
+				"20ae1cf4-e893-328a-5a90-11899da87bf1"
 			],
 			"owner": "748996"
 		},
@@ -144,7 +144,6 @@
 			"name": "Plan Detail",
 			"order": [
 				"239227d7-2df2-ee16-ff3c-90afef8cf34c",
-				"20ae1cf4-e893-328a-5a90-11899da87bf1",
 				"fe5dd191-2424-fe58-abf0-a94bf9754874",
 				"fdfc046c-b430-97c8-1e20-f21a4b7cab81",
 				"7eed2f5f-61e0-714a-5939-aa02b69a9422",
@@ -194,7 +193,9 @@
 				"c967fbb7-439d-196b-af9a-fee10ba38614",
 				"262657d9-5e50-f6fb-8afa-c69deebfca7b",
 				"c63e3ad2-9217-a931-2c7a-c3ca426b7d87",
-				"d3bca465-58eb-eec5-ed5d-36b8985f38c3"
+				"d3bca465-58eb-eec5-ed5d-36b8985f38c3",
+				"6f0eaf87-1ebe-2edd-0eae-ce3b1f4297fc",
+				"7ba042ba-d4c2-044e-d4af-0dac4a42e4ab"
 			],
 			"owner": "748996",
 			"folders_order": [],
@@ -395,8 +396,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/plandetail/1/plan?search_query=8",
-			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
+			"url": "{{url}}/public/plan/1/plandetails",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [
 				{
 					"description": "",
@@ -404,13 +405,6 @@
 					"equals": true,
 					"key": "",
 					"value": ""
-				},
-				{
-					"key": "search_query",
-					"value": "8",
-					"equals": true,
-					"description": "",
-					"enabled": true
 				}
 			],
 			"events": [],
@@ -421,12 +415,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517144728888,
+			"time": 1517923500316,
 			"name": "Get Plan Details by Plan",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1634,8 +1627,8 @@
 			"id": "6f0eaf87-1ebe-2edd-0eae-ce3b1f4297fc",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/event/4/tourismplace",
-			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
+			"url": "{{url}}/public/tourismplace/1/events",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1645,12 +1638,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517137496403,
+			"time": 1517923889344,
 			"name": "Get Events by Tourism Place",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1677,7 +1669,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/plan/update/2",
+			"url": "{{url}}/public/plan/update/5",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1734,6 +1727,13 @@
 					"description": ""
 				},
 				{
+					"key": "receipt",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
@@ -1744,13 +1744,11 @@
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517120982265,
+			"time": 1517929398652,
 			"name": "Update Plan",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
-			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1758,8 +1756,8 @@
 			"id": "7ba042ba-d4c2-044e-d4af-0dac4a42e4ab",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/picture/1/tourismplace",
-			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
+			"url": "{{url}}/public/tourismplace/1/pictures",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1769,12 +1767,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517143437686,
+			"time": 1517923895264,
 			"name": "Get Pictures by Tourism Places",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1819,14 +1816,14 @@
 				},
 				{
 					"key": "start_time",
-					"value": "15:00:00",
+					"value": "15:00",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
 					"key": "end_time",
-					"value": "16:00:00",
+					"value": "16:00",
 					"type": "text",
 					"enabled": true,
 					"description": ""
@@ -1839,6 +1836,13 @@
 					"description": ""
 				},
 				{
+					"key": "no_ticket",
+					"value": "T-001",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
@@ -1849,12 +1853,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517138905140,
+			"time": 1517927093867,
 			"name": "Create Plan Detail",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -2138,7 +2141,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/picture/update/3",
+			"url": "{{url}}/public/picture/update/5",
 			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
 			"queryParams": [],
 			"events": [],
@@ -2157,12 +2160,11 @@
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517148802928,
+			"time": 1517926618911,
 			"name": "Update Picture",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -2183,7 +2185,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/packagedetail/1/package",
+			"url": "{{url}}/public/package/1/packagedetails",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
 			"queryParams": [
 				{
 					"description": "",
@@ -2201,13 +2204,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121081520,
+			"time": 1517923939643,
 			"name": "Get Package Details by Plan",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
-			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -2883,6 +2884,42 @@
 			"helperAttributes": null
 		},
 		{
+			"id": "d1f791aa-ab71-56a9-ae6e-354993bf1f87",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/city/1/tourismplaces",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517924170361,
+			"name": "Get Tourism Places by City",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
 			"id": "d27852c9-c507-f68a-9d27-6a26a865429e",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
@@ -3112,6 +3149,7 @@
 				}
 			],
 			"url": "{{url}}/public/plandetail/update/3",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -3147,6 +3185,13 @@
 					"description": ""
 				},
 				{
+					"key": "no_ticket",
+					"value": "T-002",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
@@ -3157,13 +3202,11 @@
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517121013640,
+			"time": 1517927052797,
 			"name": "Update Plan Detail",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
-			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -3353,6 +3396,7 @@
 				}
 			],
 			"url": "{{url}}/public/plan/create",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -3423,6 +3467,13 @@
 					"description": ""
 				},
 				{
+					"key": "receipt",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
@@ -3433,13 +3484,11 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120979038,
+			"time": 1517928516596,
 			"name": "Create Plan",
 			"description": "Get Province By Id",
 			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
-			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
