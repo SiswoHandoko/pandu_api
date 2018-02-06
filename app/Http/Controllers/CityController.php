@@ -47,7 +47,7 @@ class CityController extends Controller
             $result = $this->generate_response($city,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
-            $city = new Province();
+            $city = new City();
             $city->name = $req->has('name') ? $req->name : '';
             $city->status = 'active';
             $city->save();

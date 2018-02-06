@@ -167,3 +167,14 @@ $router->get('/feedback/{id}', 'FeedbackController@show');
 $router->post('/feedback/create', 'FeedbackController@store');
 $router->put('/feedback/update/{id}', 'FeedbackController@update');
 $router->get('/feedback/delete/{id}', 'FeedbackController@destroy');
+
+/*
+ | ------------------------------------------
+ | TIP AND TRICK ROUTE
+ | ------------------------------------------
+ */
+$router->get('/tiptrick', 'TipTrickController@index');
+$router->get('/tiptrick/{id}', 'TipTrickController@show');
+$router->post('/tiptrick/create', 'TipTrickController@store');
+$router->put('/tiptrick/update/{id}', 'TipTrickController@update');
+$router->get('/tiptrick/delete/{id}', 'TipTrickController@destroy');

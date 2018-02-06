@@ -108,9 +108,9 @@ class AdvertisementController extends Controller
             }else{
                 /* upload process */
                 $advertisement->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url, $advertisement->image_url) :  $advertisement->image_url;
-                $advertisement->title = $req->has('title') ? $advertisement->title : '';
-                $advertisement->caption = $req->has('caption') ? $advertisement->caption : '';
-                $advertisement->type = $req->has('type') ? $advertisement->type : '';
+                $advertisement->title = $req->has('title') ? $req->title : $advertisement->title;
+                $advertisement->caption = $req->has('caption') ? $req->caption : $advertisement->title;
+                $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
                 $advertisement->status = 'active';
                 $advertisement->save();
                 $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);

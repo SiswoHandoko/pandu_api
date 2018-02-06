@@ -36,7 +36,7 @@ class Controller extends BaseController
       $destinationPath = $path . $filename;
       if(file_put_contents($destinationPath, $data)){
           if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png'){
-              unlink($path.$last_image);
+              @unlink($path.$last_image);
           }
           return $filename;
       }else{
