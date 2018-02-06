@@ -171,32 +171,4 @@ class PlanDetailController extends Controller
             return response()->json($result, 200);
         }
     }
-
-    /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function plandetail_by_plan(Request $req, $id)
-    {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
-
-        $plandetail = PlanDetail::with('plan', 'tourismplace')
-            ->where('plan_id', $id)
-            ->where('status', '!=', 'deleted')
-            ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->where('end_time', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
-
-        $result = $this->generate_response($plandetail, 200, 'All Data.', false);
-
-        return response()->json($result, 200);
-    }
 }

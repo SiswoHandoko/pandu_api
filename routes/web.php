@@ -52,6 +52,7 @@ $router->get('/city/{id}', 'CityController@show');
 $router->post('/city/create', 'CityController@store');
 $router->put('/city/update/{id}', 'CityController@update');
 $router->get('/city/delete/{id}', 'CityController@destroy');
+$router->get('/city/{id}/tourismplaces', 'CityController@tourismplace_by_city');
 
 /*
  | ------------------------------------------
@@ -63,6 +64,7 @@ $router->get('/plan/{id}', 'PlanController@show');
 $router->post('/plan/create', 'PlanController@store');
 $router->put('/plan/update/{id}', 'PlanController@update');
 $router->get('/plan/delete/{id}', 'PlanController@destroy');
+$router->get('/plan/{id}/plandetails', 'PlanController@plandetail_by_plan');
 
 /*
  | ------------------------------------------
@@ -74,7 +76,6 @@ $router->get('/plandetail/{id}', 'PlanDetailController@show');
 $router->post('/plandetail/create', 'PlanDetailController@store');
 $router->put('/plandetail/update/{id}', 'PlanDetailController@update');
 $router->get('/plandetail/delete/{id}', 'PlanDetailController@destroy');
-$router->get('/plandetail/{id}/plan', 'PlanDetailController@plandetail_by_plan');
 
 /*
  | ------------------------------------------
@@ -86,6 +87,8 @@ $router->get('/tourismplace/{id}', 'TourismPlaceController@show');
 $router->post('/tourismplace/create', 'TourismPlaceController@store');
 $router->put('/tourismplace/update/{id}', 'TourismPlaceController@update');
 $router->get('/tourismplace/delete/{id}', 'TourismPlaceController@destroy');
+$router->get('/tourismplace/{id}/events', 'TourismPlaceController@event_by_tourismplace');
+$router->get('/tourismplace/{id}/pictures', 'TourismPlaceController@picture_by_tourismplace');
 
 /*
  | ------------------------------------------
@@ -97,7 +100,6 @@ $router->get('/event/{id}', 'EventController@show');
 $router->post('/event/create', 'EventController@store');
 $router->put('/event/update/{id}', 'EventController@update');
 $router->get('/event/delete/{id}', 'EventController@destroy');
-$router->get('/event/{id}/tourismplace', 'EventController@event_by_tourismplace');
 
 /*
  | ------------------------------------------
@@ -120,7 +122,6 @@ $router->get('/picture/{id}', 'PictureController@show');
 $router->post('/picture/create', 'PictureController@store');
 $router->put('/picture/update/{id}', 'PictureController@update');
 $router->get('/picture/delete/{id}', 'PictureController@destroy');
-$router->get('/picture/{id}/tourismplace', 'PictureController@picture_by_tourismplace');
 
 /*
  | ------------------------------------------
@@ -132,7 +133,7 @@ $router->get('/package/{id}', 'PackageController@show');
 $router->post('/package/create', 'PackageController@store');
 $router->put('/package/update/{id}', 'PackageController@update');
 $router->get('/package/delete/{id}', 'PackageController@destroy');
-
+$router->get('/package/{id}/packagedetails', 'PackageController@packagedetail_by_package');
 
 /*
  | ------------------------------------------
@@ -144,7 +145,6 @@ $router->get('/packagedetail/{id}', 'PackageDetailController@show');
 $router->post('/packagedetail/create', 'PackageDetailController@store');
 $router->put('/packagedetail/update/{id}', 'PackageDetailController@update');
 $router->get('/packagedetail/delete/{id}', 'PackageDetailController@destroy');
-$router->get('/packagedetail/{id}/package', 'PackageDetailController@packagedetail_by_package');
 
 /*
  | ------------------------------------------

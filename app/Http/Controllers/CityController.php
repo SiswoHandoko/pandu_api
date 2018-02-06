@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\City;
 use App\Model\Province;
+use App\Model\TourismPlace;
+
 class CityController extends Controller
 {
     /**
@@ -125,4 +128,30 @@ class CityController extends Controller
         }
     }
 
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function tourismplace_by_city(Request $req, $id)
+    {
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $tourismplace = TourismPlace::with('city.province', 'picture', 'event')
+            ->where('city_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('name', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+
+        $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
+
+        return response()->json($result, 200);
+    }
 }

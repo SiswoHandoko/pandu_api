@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Package;
+use App\Model\PackageDetail;
 
 class PackageController extends Controller
 {
@@ -161,5 +162,32 @@ class PackageController extends Controller
             
             return response()->json($result, 200);
         }
+    }
+
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function packagedetail_by_package(Request $req, $id)
+    {
+        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+        $offset = $req->input('offset') ? $req->input('offset') : 0;
+        $limit = $req->input('limit') ? $req->input('limit') : 255;
+        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
+        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+        $packagedetail = PackageDetail::where('package_id', $id)
+            ->where('status', '!=', 'deleted')
+            ->where('start_time', 'LIKE', '%'.$search_query.'%')
+            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
+            ->orderBy($order_by, $order_type)
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+
+        $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
+
+        return response()->json($result, 200);
     }
 }
