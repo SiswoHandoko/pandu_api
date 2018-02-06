@@ -55,8 +55,8 @@ class PlanDetailController extends Controller
         $validator = Validator::make($req->all(), [
             'plan_id' => 'required|numeric|min:0',
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required|date_format:"H:i:s"',
-            'end_time' => 'required|date_format:"H:i:s"',
+            'start_time' => 'required|date_format:"H:i"',
+            'end_time' => 'required|date_format:"H:i"',
             'total_price' => 'required|numeric|min:0'
         ]);
 
@@ -72,7 +72,8 @@ class PlanDetailController extends Controller
             $plandetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
             $plandetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
             $plandetail->total_price = $req->has('total_price') ? $req->total_price : 0;
-            $plandetail->status = 'active';
+            $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
+            $plandetail->status = $req->has('status') ? $req->status : 'active';
 
             $plandetail->save();
 
@@ -116,8 +117,8 @@ class PlanDetailController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required|date_format:"H:i:s"',
-            'end_time' => 'required|date_format:"H:i:s"',
+            'start_time' => 'required|date_format:"H:i"',
+            'end_time' => 'required|date_format:"H:i"',
             'total_price' => 'required|numeric|min:0'
         ]);
 
@@ -136,7 +137,9 @@ class PlanDetailController extends Controller
                 $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
                 $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
                 $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
-                $plandetail->total_price = $req->has('total_price') ? $req->total_price : 0;
+                $plandetail->total_price = $req->has('total_price') ? $req->total_price : $plandetail->total_price;
+                $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
+                $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
 
                 $plandetail->save();
 

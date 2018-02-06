@@ -20,6 +20,7 @@ class CreatePlanDetailsTable extends Migration
             $table->time('start_time')->default('00:00:00');
             $table->time('end_time')->default('00:00:00');
             $table->bigInteger('total_price')->default(0);
+            $table->string('no_ticket')->default('');
             $table->string('status')->default('');
             $table->timestamps();
         });

@@ -55,8 +55,8 @@ class PackageDetailController extends Controller
         $validator = Validator::make($req->all(), [
             'package_id' => 'required|numeric|min:0',
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required|date_format:"H:i:s"',
-            'end_time' => 'required|date_format:"H:i:s"',
+            'start_time' => 'required|date_format:"H:i"',
+            'end_time' => 'required|date_format:"H:i"',
             'total_price' => 'required|numeric|min:0',
         ]);
 
@@ -116,8 +116,8 @@ class PackageDetailController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required',
-            'end_time' => 'required',
+            'start_time' => 'required|date_format:"H:i"',
+            'end_time' => 'required|date_format:"H:i"',
             'total_price' => 'required|numeric|min:0',
         ]);
 

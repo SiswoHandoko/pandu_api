@@ -21,6 +21,7 @@ class PlanDetailsTableSeeder extends Seeder
                 'start_time' => '08:00',
                 'end_time' => '10:00',
                 'total_price' => 37000,
+                'no_ticket' => 'T-001',
             	'status' => 'active'
             ],
             [
@@ -29,6 +30,7 @@ class PlanDetailsTableSeeder extends Seeder
                 'start_time' => '13:00',
                 'end_time' => '15:00',
                 'total_price' => 37000,
+                'no_ticket' => 'T-002',
                 'status' => 'active'
             ]
         ];

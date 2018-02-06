@@ -24,7 +24,8 @@ class PlansTableSeeder extends Seeder
             	'total_tourist' => 0,
             	'start_date' => '2018-01-10',
                 'end_date' => '2018-01-15',
-            	'total_price' => 74000,
+                'total_price' => 74000,
+            	'receipt' => '',
             	'status' => 'hold'
             ]
         ];
