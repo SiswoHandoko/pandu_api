@@ -25,6 +25,7 @@ class CreatePlansTable extends Migration
             $table->date('end_date')->default('0000-00-00');
             $table->bigInteger('total_price')->default(0);
             $table->string('receipt')->default('');
+            $table->string('type')->default('');
             $table->string('status')->default('');
             $table->timestamps();
         });

@@ -18,6 +18,7 @@ class CreateCitiesTable extends Migration
             $table->integer('province_id')->default(0);
             $table->string('name')->default('');
             $table->string('image_url')->default('');
+            $table->integer('rate')->default(0);
             $table->string('status')->default('');
             $table->timestamps();
         });

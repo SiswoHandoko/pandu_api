@@ -12,3 +12,18 @@ Tourism Place -> Get Tourism Places by City
 Update Field
 Plan -> Create Plan + Update Plan
 PlanDetail -> Create Plan Detail + Update Plan Detail
+
+10 Februari 2018
+===================================================================================
+PANDU
+Remove
+Package -> Create Package, Update Package, Delete Package
+Package Detail -> Create Package Detail, Update Package Detail, Delete Package Detail
+
+Update Field
+Plan (type)
+
+PANDU ADMIN
+Update Field
+Plan (type)
+City (rate)

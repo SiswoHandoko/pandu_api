@@ -62,6 +62,7 @@ class PlanController extends Controller
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'required|numeric|min:0',
+            'type' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -81,6 +82,7 @@ class PlanController extends Controller
             $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
             $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '';
+            $plan->type = $req->has('type') ? $req->type : 'single';
             $plan->status = $req->has('status') ? $req->status : 'active';
 
             $plan->save();
@@ -131,6 +133,7 @@ class PlanController extends Controller
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'required|numeric|min:0',
+            'type' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -154,6 +157,7 @@ class PlanController extends Controller
                 $plan->total_price = $req->has('total_price') ? $req->total_price : $plan->total_price;
                 $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt, $plan->receipt) : $plan->receipt;
                 $plan->status = $req->has('status') ? $req->status : $plan->status;
+                $plan->type = $req->has('type') ? $req->type : $plan->type;
                 
                 $plan->save();
 

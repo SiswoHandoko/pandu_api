@@ -17,7 +17,7 @@ class Plan extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'guide_id', 'start_date', 'end_date', 'status'
+        'user_id', 'guide_id', 'start_date', 'end_date', 'type', 'status'
     ];
 
     /**

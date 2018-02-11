@@ -26,7 +26,22 @@ class PlansTableSeeder extends Seeder
                 'end_date' => '2018-01-15',
                 'total_price' => 74000,
             	'receipt' => '',
+                'type' => 'many',
             	'status' => 'hold'
+            ],
+            [
+                'user_id' => 2,
+                'guide_id' => 2,
+                'total_adult' => 2,
+                'total_child' => 1,
+                'total_infant' => 1,
+                'total_tourist' => 0,
+                'start_date' => '2018-01-10',
+                'end_date' => '2018-01-15',
+                'total_price' => 37000,
+                'receipt' => '',
+                'type' => 'single',
+                'status' => 'hold'
             ]
         ];
 

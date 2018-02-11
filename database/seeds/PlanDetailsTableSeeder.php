@@ -32,6 +32,15 @@ class PlanDetailsTableSeeder extends Seeder
                 'total_price' => 37000,
                 'no_ticket' => 'T-002',
                 'status' => 'active'
+            ],
+            [
+                'plan_id' => 2,
+                'tourism_place_id' => 2,
+                'start_time' => '13:00',
+                'end_time' => '15:00',
+                'total_price' => 37000,
+                'no_ticket' => 'T-002',
+                'status' => 'active'
             ]
         ];
 
