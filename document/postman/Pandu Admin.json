@@ -1,341 +1,257 @@
 {
-	"id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+	"id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 	"name": "Pandu Admin",
 	"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 	"order": [],
 	"folders": [
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
+			"id": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
 			"name": "Advertisement",
 			"order": [
-				"94de4cac-973a-a2f1-0aae-036c660585fa",
-				"6d53bf92-2831-bfa7-e5e3-b887ea2cb8af",
-				"810e7f9e-0248-39f6-17f7-4e8bb69ea0c3",
-				"4e50101b-2a51-6334-849d-5a9347b96aaf",
-				"ef71c9dc-225c-cd13-0bbc-72d7a9fe77c0"
+				"62e80448-031f-1b5d-bc0e-52fafcbc53d6",
+				"c7117395-36ea-d5b5-adc7-d09813dca01f",
+				"ba99ee3c-cea3-4c20-e635-c2182c7d8c34",
+				"b898426d-3b40-fa7d-f339-1a77077ada12",
+				"826ece3a-6b6a-b324-43ff-d42d344789cb"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
+			"id": "df018f08-f561-2911-10dc-e829454d91d4",
 			"name": "City",
 			"order": [
-				"36cb83b4-b3ba-a42d-c85d-02eac7e40be6",
-				"6e56bea7-2f18-2fca-dd7c-5342c31c8006",
-				"b9f97702-3e5e-a1f2-8dce-4e86dac56f4b",
-				"1001a47c-8216-fd1d-43e4-9dc698ccde7b",
-				"fcc350ca-d556-e61e-6e5d-d81b310631e5",
-				"a6d8de28-8ae1-bc97-fc4e-07a67ec9e1ca"
+				"f228125d-3c00-41a1-b557-3f8b3b0b3de3",
+				"6ea85455-2606-fd93-a23b-65e641676b84",
+				"d1f791aa-ab71-56a9-ae6e-354993bf1f87",
+				"9115605d-62ac-39de-6521-935d6b100e44",
+				"36a8cb6e-0542-3a33-3f76-532160ce5d4a",
+				"6036f667-fb7b-4588-e9cc-ace47caf93bb"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"name": "Event",
 			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
-				"4ff342d2-238b-1bf6-2059-516d5ee8232f",
-				"7266f7b5-9f3a-cbae-b2eb-9203946b182c",
-				"63329d70-8ae1-a71c-2c9d-d7e681700f86",
-				"8e1799a4-41c9-8eef-5c05-cbcc683f6dba",
-				"78d93b5a-81a1-0e0a-6f15-1588251ade3d"
+				"00e669ad-18d4-c90d-5ff2-93179b782068",
+				"e4a0db11-3c2a-927b-222e-8f6eb5cabe03",
+				"2e8c7c43-d9f6-3cda-c25e-d19d38e0897d",
+				"a775a31d-ba45-c1a5-a692-b36d386657ed",
+				"4663b156-e33d-39ce-4643-e67b3db3a3eb"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"folders_order": [],
 			"auth": null,
-			"id": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9"
+			"id": "48a87087-78dd-abf4-f35c-34a72f469eb2"
 		},
 		{
 			"name": "Feedback",
 			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
-				"817a3aed-d74c-ca32-ab6a-ee5947433409",
-				"4785db36-d40b-133a-11f1-15d6fcaeb273",
-				"30321a0a-dea7-6d36-a153-19506d1ccaf9",
-				"cfd61ff6-c3ba-5ec6-f771-dc04ab205388",
-				"a9da791c-e29f-30ec-b494-7f5d162e1583"
+				"28e131b4-654a-ac48-f421-8d5e45cd2da0",
+				"f7f0d129-4042-26dc-cd5e-3e377c845e43",
+				"84c3df3c-b02a-ae32-abc0-74195c42e2ae",
+				"59006921-3458-5ca2-a807-6c644bd171e0",
+				"3a903692-3866-e850-f001-abc9d3da2d78"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"folders_order": [],
 			"auth": null,
-			"id": "1ed33763-b259-30dc-6fdf-41e60c3e30d4"
+			"id": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
+			"id": "01fde332-8de9-b195-d1fe-323d49957b34",
 			"name": "Package",
 			"order": [
-				"defd5b7c-6034-46a1-6ed6-778d500f96b1",
-				"9660df80-c3b5-db39-087c-78eafa3a0269",
-				"b4469dba-1034-48b0-b29d-cfda30d4e7a9",
-				"07f6f1d4-b772-d62a-b034-47375873df4a",
-				"bb40916f-40c9-f281-4a86-c93ce5e0e23c",
-				"3211dceb-13bf-fcd0-86aa-109ba483b2c9"
+				"60585380-9330-24f6-ebbb-0ef447c0c55f",
+				"8803f709-0983-8c96-fbd1-e59611183625",
+				"ef834d6e-159a-d884-328c-17936e7d943e",
+				"2a168898-9b67-b03d-b4c1-bd40a0ec21b8",
+				"175ac3dd-7c7e-fa10-8198-92eaedb605b8",
+				"968fbc04-8971-6579-eef1-20b1c4bc1456"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "06535706-b50b-aa91-2674-416d32c8562d",
+			"id": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"name": "Package Detail",
 			"order": [
-				"0a0218b6-407e-7bee-8ada-38b34a3c7e50",
-				"6961a419-b94c-dfef-4b11-b6b90900be11",
-				"32ad8174-627a-6c92-dd18-aaccaa727ff6",
-				"48d8efa6-265c-bb89-d2ff-8c25e46b0f7c",
-				"68badc1e-f0ea-001c-f06c-8b88980b2299"
+				"d27852c9-c507-f68a-9d27-6a26a865429e",
+				"2be764be-5bff-c4c4-37bb-4b434bfb22bd",
+				"c283ad07-f568-24a6-0c37-706987b83ce4",
+				"3645c736-544a-46d0-ba25-314e16a0ef6d",
+				"61c8f0a9-962c-6f08-133a-f5bb9f4e4e59"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"name": "Picture",
 			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
-				"3bff94d0-6e6a-3502-68c4-4d756fe49309",
-				"f68d107d-e6d1-d538-0d68-9e202f78f9a5",
-				"8a50796d-dfbf-a8ec-eb60-926f078648f7",
-				"81b6355b-ab70-5008-812f-069392f872eb",
-				"8850a486-895f-ceab-e24f-4020408c03e1"
+				"8adf539f-ec16-2f4a-8f67-1df804aaa910",
+				"944af9a2-b522-926b-5573-e0274acb25ba",
+				"e738edb4-6fa0-5f4a-9d15-14b404b936b9",
+				"fa70b4f8-06c2-666b-c801-5bc8a0e022b9",
+				"94d1fbe2-9945-54c2-2b2e-1b89781e054d"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"folders_order": [],
 			"auth": null,
-			"id": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516"
+			"id": "71df041c-48e7-6780-0034-fb162b8bdc5c"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
+			"id": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"name": "Plan",
 			"order": [
-				"bf476425-e66b-81e6-008c-86662a2bb275",
-				"f4e8df8a-b5f0-0e34-8842-26877a0095a0",
-				"124ccba9-f3fb-178a-a9c5-fbdb3761e84e",
-				"ea4e710c-3147-b527-91f0-dc0ea0a5ad90",
-				"e1042113-3967-da43-ee02-7fc700e6e1cf",
-				"376ee197-9059-ff45-fdcf-df253d2c4225"
+				"a023cfd2-c315-2869-9b65-74bf0b0435f3",
+				"3f9479ff-bfbf-72d0-ef42-39a2c853e7e3",
+				"aab14185-45c8-b329-3297-524362259937",
+				"f4f95c94-0048-bdb5-a561-202b81997e6b",
+				"775aa0bb-1640-6bc3-85d3-e7179be5e70f",
+				"20ae1cf4-e893-328a-5a90-11899da87bf1"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
+			"id": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"name": "Plan Detail",
 			"order": [
-				"25d46e51-7bf2-b357-dc26-c10e9e439ead",
-				"03408b80-cebe-4714-1d8c-6ba7e9e68947",
-				"f1a31f43-26df-5b38-ab64-7f43e72d09bf",
-				"e09f390f-139f-893d-b8c9-507b0f667464",
-				"fdde5330-7d06-c424-af85-df13050e3c8e"
+				"239227d7-2df2-ee16-ff3c-90afef8cf34c",
+				"fe5dd191-2424-fe58-abf0-a94bf9754874",
+				"fdfc046c-b430-97c8-1e20-f21a4b7cab81",
+				"7eed2f5f-61e0-714a-5939-aa02b69a9422",
+				"ded1dd0d-7511-d15e-c15c-a3e263c4f38d"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"folders_order": [],
-			"id": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
+			"id": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
 			"name": "Province",
 			"order": [
-				"2b108d7b-f055-798d-25cd-489129add6cd",
-				"3d4950ba-47e3-9e73-c285-fba277473747",
-				"27afa361-d129-5832-6724-7fd72f17aef2",
-				"afdb8a9f-4116-6cd0-053c-c55293ac86eb",
-				"c7fd9db0-f1dd-1c59-cb2e-c956afea3607",
-				"1480dbce-00d0-253b-0501-7b83ebfbb394"
+				"ab4391f0-c819-27f6-e3bf-33296f170204",
+				"8654a72d-3cea-d905-0173-f768254ada65",
+				"4b5687dc-7b71-821c-6cc5-f30b014cbc5d",
+				"3490a570-ce1f-b30d-fe0d-e1b3ec908ec7",
+				"9f54cda8-6633-bdc0-0e96-54b9d8d85500",
+				"6ccb92b9-b12d-9f90-c719-09367d762969"
 			],
-			"owner": "290234"
+			"owner": "748996"
 		},
 		{
 			"name": "Role",
 			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
-				"67f18459-ba94-eaf0-03af-fa75c6eb2c25",
-				"ff187db7-81bd-2578-f1e3-fb786da1ce36",
-				"17374bf2-bb9e-e573-b479-64c0da9c1252",
-				"0360f440-550b-5c7f-68ef-a54db30de59b",
-				"00f9e98d-eb56-a060-edbd-aa42393474bc"
+				"fbdb0d68-5510-a960-23f6-b0b650831154",
+				"c28c5857-016a-e17a-bc3b-5ee0f86c746b",
+				"6de74d39-c325-d9b8-5f48-44b92e05f4a7",
+				"6c2092db-fc5d-50fa-0458-cbce3f1c61d6",
+				"616bbc55-9256-6515-a22a-eb9a1f09a2c0"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"folders_order": [],
 			"auth": null,
-			"id": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66"
-		},
-		{
-			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"description": "",
-			"folders_order": [],
-			"id": "048ebd1f-2028-a8a4-caca-8afc992d5407",
-			"name": "Special Deal",
-			"order": [
-				"2d5622ac-4240-aa21-e1c7-48c1a383e8e9",
-				"e86ec9d6-5b68-bd37-66c6-1aa85f83abac",
-				"00cf1113-1a17-a623-d279-5417d86c48ef",
-				"61f199b8-5131-3e2f-4fdf-a44767f512da",
-				"5e01d3fe-690e-2356-558e-cc86ac96b323"
-			],
-			"owner": "290234"
-		},
-		{
-			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"description": "",
-			"folders_order": [],
-			"id": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
-			"name": "Tip and Trick",
-			"order": [
-				"96bfadf1-4c44-d657-b638-f04a713c894c",
-				"1fc26dae-b883-18de-d5d7-d73e3f3a0fbc",
-				"6c232e07-bb77-49d0-8921-032a71504d4d",
-				"5abe5d41-5203-3710-74f3-40bf6831ebe8",
-				"5e429223-7bf0-0b37-d62c-b9a00c713abb"
-			],
-			"owner": "290234"
+			"id": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9"
 		},
 		{
 			"name": "Tourism Place",
 			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"order": [
-				"ad8f2d0f-f0f5-f5f1-9d1c-05dd9f2e6c61",
-				"72a5bc71-31c4-d944-d4b9-fddd69768432",
-				"4c85617a-e6fc-fe84-8b0d-8bf0013e770c",
-				"399c5716-8496-3d2c-7de4-c286b639dfe2",
-				"b608d5dd-1ec8-6665-e371-b4bfcc8afb7d",
-				"717d940c-5263-6cd5-db6d-d52a616c5a1a",
-				"bb1207ae-1a27-b4b6-9418-163c9f0736c9"
+				"dd3417fd-744d-2307-a4c0-1335c65976d7",
+				"c967fbb7-439d-196b-af9a-fee10ba38614",
+				"262657d9-5e50-f6fb-8afa-c69deebfca7b",
+				"c63e3ad2-9217-a931-2c7a-c3ca426b7d87",
+				"d3bca465-58eb-eec5-ed5d-36b8985f38c3",
+				"6f0eaf87-1ebe-2edd-0eae-ce3b1f4297fc",
+				"7ba042ba-d4c2-044e-d4af-0dac4a42e4ab"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"folders_order": [],
 			"auth": null,
-			"id": "6046947e-e56b-401f-8ad9-c98b64129564"
+			"id": "b6eee62e-1ede-3566-b676-ded896a6f47a"
 		},
 		{
 			"auth": null,
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"description": "",
 			"events": null,
 			"folder": null,
 			"folders_order": [],
-			"id": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
+			"id": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
 			"lastRevision": 2202229566,
 			"lastUpdatedBy": "290234",
 			"name": "User",
 			"order": [
-				"79e49e21-c694-7344-7541-82094e9b5349",
-				"1477de02-c387-8311-c7bb-0650856ed04a",
-				"004a5341-d63f-10b7-af85-9a53cae2cddb",
-				"be32c94e-0af6-1e7b-60f4-2365a56e0403",
-				"b21a3f36-6e77-b513-7a36-e43e414d2ed5",
-				"9f79a3a8-2c79-41f4-6f08-3b6552491f54"
+				"1d1fde87-ca81-9cab-d21d-142459b44122",
+				"26cffb9d-a925-897c-8478-1c1b35d56a78",
+				"4112d1cf-41e4-2d49-dfbd-3c2b4d7fce85",
+				"e64987a5-2a54-3b75-3dbf-4273d3795ca4",
+				"54234963-66d7-6edf-8b69-c84b31eb051e",
+				"bf44a4b7-e429-6fcb-6d95-e927a21ce6e8"
 			],
-			"owner": "290234",
+			"owner": "748996",
 			"variables": null
 		}
 	],
 	"folders_order": [
-		"6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
-		"1ed33763-b259-30dc-6fdf-41e60c3e30d4",
-		"b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
-		"fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
-		"6046947e-e56b-401f-8ad9-c98b64129564",
-		"320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
-		"467a5337-c6dc-b5a4-1dc0-747340024cfe",
-		"c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
-		"a7b09276-f7c6-0337-f0a4-54e4b426f01d",
-		"048ebd1f-2028-a8a4-caca-8afc992d5407",
-		"a71903d9-442d-c9e9-da6a-e4ee1461832e",
-		"a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
-		"ec48bf07-2b25-5263-8fc2-e37bbc692942",
-		"2e82027b-d66e-1a9d-160a-cc780b5cdc78",
-		"06535706-b50b-aa91-2674-416d32c8562d"
+		"21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
+		"414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
+		"71df041c-48e7-6780-0034-fb162b8bdc5c",
+		"48a87087-78dd-abf4-f35c-34a72f469eb2",
+		"b6eee62e-1ede-3566-b676-ded896a6f47a",
+		"d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
+		"9b947fdb-d8d6-462d-6586-8372a0e8b61a",
+		"df018f08-f561-2911-10dc-e829454d91d4",
+		"96eebe98-8ab0-0d68-4140-41a0226c16f2",
+		"49c1c050-43a3-9110-f39d-a319818ea853",
+		"a63107d2-ca96-ba75-b596-35f01694fc26",
+		"01fde332-8de9-b195-d1fe-323d49957b34",
+		"58815155-e1d0-8996-80d4-a6304bd6a61f"
 	],
 	"timestamp": 1517121111003,
-	"owner": "290234",
+	"owner": "748996",
 	"public": false,
 	"events": null,
 	"variables": null,
 	"auth": null,
 	"requests": [
 		{
-			"id": "004a5341-d63f-10b7-af85-9a53cae2cddb",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/user/1",
-			"queryParams": [],
-			"events": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": null,
-			"auth": null,
-			"time": 1517120902603,
-			"name": "Get User",
-			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "00cf1113-1a17-a623-d279-5417d86c48ef",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/specialdeal/delete/1",
-			"folder": "048ebd1f-2028-a8a4-caca-8afc992d5407",
+			"id": "00e669ad-18d4-c90d-5ff2-93179b782068",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/event",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -345,26 +261,40 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517933178577,
-			"name": "Delete Special Deal",
+			"time": 1517120846083,
+			"name": "Get Events",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "00f9e98d-eb56-a060-edbd-aa42393474bc",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"id": "175ac3dd-7c7e-fa10-8198-92eaedb605b8",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/x-www-form-urlencoded",
 					"description": "",
 					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/role/update/2",
+			"url": "{{url}}/public/package/update/3",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -373,27 +303,84 @@
 			"data": [
 				{
 					"key": "name",
-					"value": "This is role",
+					"value": "Paket D",
 					"type": "text",
 					"enabled": true,
 					"description": ""
+				},
+				{
+					"key": "description",
+					"value": "Paket D",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": "no mandatory"
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517120801108,
-			"name": "Update Role",
+			"time": 1517121035281,
+			"name": "Update Package",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "03408b80-cebe-4714-1d8c-6ba7e9e68947",
+			"id": "1d1fde87-ca81-9cab-d21d-142459b44122",
+			"headers": "device-type: web\n",
+			"headerData": [
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/login",
+			"queryParams": [],
+			"events": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "siswohandoko",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "qwerty",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517120890554,
+			"name": "Login",
+			"description": "",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "20ae1cf4-e893-328a-5a90-11899da87bf1",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -409,7 +396,90 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/plandetail/3",
+			"url": "{{url}}/public/plan/1/plandetails",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517923500316,
+			"name": "Get Plan Details by Plan",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "239227d7-2df2-ee16-ff3c-90afef8cf34c",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/plandetail?search_query=16",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
+			"queryParams": [
+				{
+					"key": "search_query",
+					"value": "16",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517145196562,
+			"name": "Get Plan Details",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "262657d9-5e50-f6fb-8afa-c69deebfca7b",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/tourismplace/delete/3",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -419,50 +489,86 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121003521,
-			"name": "Get Plan Detail",
+			"time": 1517120877547,
+			"name": "Delete Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "0360f440-550b-5c7f-68ef-a54db30de59b",
+			"id": "26cffb9d-a925-897c-8478-1c1b35d56a78",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/user",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120894635,
+			"name": "Get Users",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "28e131b4-654a-ac48-f421-8d5e45cd2da0",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/role/create",
+			"url": "{{url}}/public/feedback",
+			"folder": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "name",
-					"value": "-",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
+			"method": "GET",
+			"data": null,
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120797060,
-			"name": "Create Role",
+			"time": 1517500807500,
+			"name": "Get Feedbacks",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "07f6f1d4-b772-d62a-b034-47375873df4a",
+			"id": "2a168898-9b67-b03d-b4c1-bd40a0ec21b8",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -513,16 +619,16 @@
 			"time": 1517121031480,
 			"name": "Create Package",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
 			"isFromCollection": true,
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "0a0218b6-407e-7bee-8ada-38b34a3c7e50",
+			"id": "2be764be-5bff-c4c4-37bb-4b434bfb22bd",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -538,87 +644,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/packagedetail?search_query=1&offset=0&limit=5&order_by=start_time&order_type=asc",
-			"folder": "06535706-b50b-aa91-2674-416d32c8562d",
-			"queryParams": [
-				{
-					"key": "search_query",
-					"value": "1",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "offset",
-					"value": "0",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "limit",
-					"value": "5",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "order_by",
-					"value": "start_time",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				},
-				{
-					"key": "order_type",
-					"value": "asc",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517145465831,
-			"name": "Get Package Details",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "1001a47c-8216-fd1d-43e4-9dc698ccde7b",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/city/delete/1",
+			"url": "{{url}}/public/packagedetail/4",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -628,149 +654,21 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120954737,
-			"name": "Delete City",
+			"time": 1517121085920,
+			"name": "Get Package Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "124ccba9-f3fb-178a-a9c5-fbdb3761e84e",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plan/delete/2",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517136895817,
-			"name": "Delete Plan",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "1477de02-c387-8311-c7bb-0650856ed04a",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/user",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120894635,
-			"name": "Get Users",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "1480dbce-00d0-253b-0501-7b83ebfbb394",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/province/1/cities",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "",
-					"type": "text",
-					"value": ""
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120936578,
-			"name": "Get Cities By Province",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "17374bf2-bb9e-e573-b479-64c0da9c1252",
+			"id": "2e8c7c43-d9f6-3cda-c25e-d19d38e0897d",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/role/delete/5",
-			"folder": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
+			"url": "{{url}}/public/event/delete/2",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -780,17 +678,18 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517137404009,
-			"name": "Delete Role",
+			"time": 1517120854515,
+			"name": "Delete Event",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "1fc26dae-b883-18de-d5d7-d73e3f3a0fbc",
+			"id": "3490a570-ce1f-b30d-fe0d-e1b3ec908ec7",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -806,401 +705,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/tiptrick/1",
-			"folder": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517930033663,
-			"name": "Get Tip and Trick",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "0f4200e3-651f-4ccf-9b2d-c12777c5d692",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "25d46e51-7bf2-b357-dc26-c10e9e439ead",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plandetail?search_query=16",
-			"folder": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
-			"queryParams": [
-				{
-					"key": "search_query",
-					"value": "16",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517145196562,
-			"name": "Get Plan Details",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "27afa361-d129-5832-6724-7fd72f17aef2",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/province/delete/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120924795,
-			"name": "Delete Province",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "2b108d7b-f055-798d-25cd-489129add6cd",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/province",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120667405,
-			"name": "Get Provinces",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"isFromCollection": true,
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "2d5622ac-4240-aa21-e1c7-48c1a383e8e9",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/tiptrick",
-			"folder": "048ebd1f-2028-a8a4-caca-8afc992d5407",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517930030824,
-			"name": "Get Special Deals",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "d644f3ec-a41a-1464-d95d-d49cda4e5e8b",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "30321a0a-dea7-6d36-a153-19506d1ccaf9",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/feedback/delete/2",
-			"folder": "1ed33763-b259-30dc-6fdf-41e60c3e30d4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517242172522,
-			"name": "Delete Feedback",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "3211dceb-13bf-fcd0-86aa-109ba483b2c9",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/package/1/packagedetails",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517923939643,
-			"name": "Get Package Details by Plan",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "32ad8174-627a-6c92-dd18-aaccaa727ff6",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/packagedetail/delete/5",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517121089528,
-			"name": "Delete Package Detail",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "06535706-b50b-aa91-2674-416d32c8562d",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "36cb83b4-b3ba-a42d-c85d-02eac7e40be6",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/city",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120942018,
-			"name": "Get Cities",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "376ee197-9059-ff45-fdcf-df253d2c4225",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plan/1/plandetails",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517923500316,
-			"name": "Get Plan Details by Plan",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "399c5716-8496-3d2c-7de4-c286b639dfe2",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/tourismplace/create",
+			"url": "{{url}}/public/province/create",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1208,225 +713,28 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "city_id",
-					"value": "1",
 					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
+					"enabled": true,
 					"key": "name",
-					"value": "Prambanan",
-					"description": "",
 					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "description",
-					"value": "This is prambanan",
-					"description": "no mandatory",
-					"type": "text",
-					"enabled": false
-				},
-				{
-					"key": "adult_price",
-					"value": "7000",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "child_price",
-					"value": "8000",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "infant_price",
-					"value": "9000",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "tourist_price",
-					"value": "10000",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "longitude",
-					"value": "1",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "latitude",
-					"value": "-1",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "facilities",
-					"value": "toilet, mushola, wifi",
-					"description": "no mandatory",
-					"type": "text",
-					"enabled": false
+					"value": "New Province Name"
 				}
 			],
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120881659,
-			"name": "Create Tourism Place",
+			"time": 1517120929331,
+			"name": "Create Province",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "3bff94d0-6e6a-3502-68c4-4d756fe49309",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/picture?search_query=asep&limit=2&offset=0&order_by=image_url&order_type=asc",
-			"folder": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
-			"queryParams": [
-				{
-					"key": "search_query",
-					"value": "asep",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "limit",
-					"value": "2",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "offset",
-					"value": "0",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "order_by",
-					"value": "image_url",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "order_type",
-					"value": "asc",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517500816403,
-			"name": "Get Pictures",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "3d4950ba-47e3-9e73-c285-fba277473747",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/province/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120921050,
-			"name": "Get Province",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "4785db36-d40b-133a-11f1-15d6fcaeb273",
-			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "android",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/feedback/1",
-			"folder": "1ed33763-b259-30dc-6fdf-41e60c3e30d4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517242001843,
-			"name": "Get Feedback",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "48d8efa6-265c-bb89-d2ff-8c25e46b0f7c",
+			"id": "3645c736-544a-46d0-ba25-314e16a0ef6d",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1498,40 +806,16 @@
 			"time": 1517121093552,
 			"name": "Create Package Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "06535706-b50b-aa91-2674-416d32c8562d",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "4c85617a-e6fc-fe84-8b0d-8bf0013e770c",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/tourismplace/delete/3",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120877547,
-			"name": "Delete Tourism Place",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "4e50101b-2a51-6334-849d-5a9347b96aaf",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\nContent-Type: application/x-www-form-urlencoded\n",
+			"id": "36a8cb6e-0542-3a33-3f76-532160ce5d4a",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
 					"key": "api-token",
@@ -1544,16 +828,9 @@
 					"value": "web",
 					"description": "",
 					"enabled": true
-				},
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement/create",
-			"folder": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
+			"url": "{{url}}/public/city/create",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1561,90 +838,362 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "title",
-					"value": "Advertisement Dummy",
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120959185,
+			"name": "Create City",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "3a903692-3866-e850-f001-abc9d3da2d78",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/feedback/update/2",
+			"folder": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "aksan maulana",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "image_url",
+					"key": "description",
+					"value": "i like this app",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517242069666,
+			"name": "Update Feedback",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "3f9479ff-bfbf-72d0-ef42-39a2c853e7e3",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/plan/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120972153,
+			"name": "Get Plan",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4112d1cf-41e4-2d49-dfbd-3c2b4d7fce85",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/user/1",
+			"queryParams": [],
+			"events": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": null,
+			"auth": null,
+			"time": 1517120902603,
+			"name": "Get User",
+			"description": "",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4663b156-e33d-39ce-4643-e67b3db3a3eb",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/event/update/2",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "tourism_place_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "name",
+					"value": "Festival Kembang Api",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "description",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": "no mandatory"
+				},
+				{
+					"key": "start_date",
+					"value": "2018-02-20",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "end_date",
+					"value": "2018-02-25",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517120863195,
+			"name": "Update Event",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4b5687dc-7b71-821c-6cc5-f30b014cbc5d",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/province/delete/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120924795,
+			"name": "Delete Province",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "54234963-66d7-6edf-8b69-c84b31eb051e",
+			"headers": "device-type: web\n",
+			"headerData": [
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/user/create",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
+			"queryParams": [],
+			"events": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "firstname",
+					"value": "Ghiffary",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "lastname",
+					"value": "Muhammad",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "email",
+					"value": "ghiffary@gmail.com",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "contact",
+					"value": "089687476161",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "address",
+					"value": "Jl. Kusuma Wandani No 13",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "1991-01-11",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "photo",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "caption",
-					"value": "Caption Advertisement",
+					"key": "username",
+					"value": "ghiffary",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "type",
-					"value": "main_slider",
+					"key": "password",
+					"value": "qwerty",
 					"type": "text",
 					"enabled": true,
-					"description": "main_slider"
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517932359227,
-			"name": "Create Advertisement",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "d7521f18-de5d-8d4a-481e-4a342882d68d",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "4ff342d2-238b-1bf6-2059-516d5ee8232f",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/event",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120846083,
-			"name": "Get Events",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "5abe5d41-5203-3710-74f3-40bf6831ebe8",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
+					"description": ""
 				},
 				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
+					"key": "repassword",
+					"value": "qwerty",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "role_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "1(tourist) || 2(guide) || 3(admin)"
 				}
 			],
-			"url": "{{url}}/public/tiptrick/create",
-			"folder": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517148706608,
+			"name": "Create User",
+			"description": "",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "59006921-3458-5ca2-a807-6c644bd171e0",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/feedback/create",
+			"folder": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1652,15 +1201,15 @@
 			"method": "POST",
 			"data": [
 				{
+					"key": "name",
+					"value": "aksan maulana",
 					"description": "",
-					"enabled": true,
-					"key": "title",
 					"type": "text",
-					"value": "Tip and Trick"
+					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "Description of Tips and Tricks",
+					"value": "-",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -1669,16 +1218,16 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517930313246,
-			"name": "Create Tip and Trick",
+			"time": 1517242040475,
+			"name": "Create Feedback",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "5e01d3fe-690e-2356-558e-cc86ac96b323",
+			"id": "6036f667-fb7b-4588-e9cc-ace47caf93bb",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1700,8 +1249,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/specialdeal/update/2",
-			"folder": "048ebd1f-2028-a8a4-caca-8afc992d5407",
+			"url": "{{url}}/public/city/update/1",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -1711,104 +1259,26 @@
 				{
 					"description": "",
 					"enabled": true,
-					"key": "title",
+					"key": "name",
 					"type": "text",
-					"value": "Tip and trick2"
-				},
-				{
-					"key": "description",
-					"value": "Description Of Tip And Tricks",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"description": "",
-					"type": "text",
-					"enabled": true
+					"value": "New City Name"
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517933238169,
-			"name": "Update Special Deal",
+			"time": 1517120962737,
+			"name": "Update City",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "06169adf-a3b0-6784-f971-ea2d0165fa58",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "5e429223-7bf0-0b37-d62c-b9a00c713abb",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/tiptrick/update/2",
-			"folder": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "title",
-					"type": "text",
-					"value": "Tip and trick2"
-				},
-				{
-					"key": "description",
-					"value": "Description Of Tip And Tricks",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517931570231,
-			"name": "Update Tip and Trick",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "61f199b8-5131-3e2f-4fdf-a44767f512da",
+			"id": "60585380-9330-24f6-ebbb-0ef447c0c55f",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1824,99 +1294,75 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/tiptrick/create",
-			"folder": "048ebd1f-2028-a8a4-caca-8afc992d5407",
-			"queryParams": [],
+			"url": "{{url}}/public/package",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "POST",
-			"data": [
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517121066584,
+			"name": "Get Packages",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "616bbc55-9256-6515-a22a-eb9a1f09a2c0",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
 				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
 					"description": "",
-					"enabled": true,
-					"key": "tourism_place_id",
-					"type": "text",
-					"value": "2"
-				},
-				{
-					"key": "package_id",
-					"value": "3",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "rate",
-					"value": "3",
-					"description": "",
-					"type": "text",
 					"enabled": true
 				}
 			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517933209724,
-			"name": "Create Special Deal",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "0492e4fd-d80c-a6fd-d241-2c5100e824af",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "63329d70-8ae1-a71c-2c9d-d7e681700f86",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/event/delete/2",
+			"url": "{{url}}/public/role/update/2",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "This is role",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517120854515,
-			"name": "Delete Event",
+			"time": 1517120801108,
+			"name": "Update Role",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "67f18459-ba94-eaf0-03af-fa75c6eb2c25",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/role",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120695509,
-			"name": "Get Roles",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "68badc1e-f0ea-001c-f06c-8b88980b2299",
+			"id": "61c8f0a9-962c-6f08-133a-f5bb9f4e4e59",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -1987,15 +1433,15 @@
 			"time": 1517121109063,
 			"name": "Update Package Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "06535706-b50b-aa91-2674-416d32c8562d",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "6961a419-b94c-dfef-4b11-b6b90900be11",
+			"id": "62e80448-031f-1b5d-bc0e-52fafcbc53d6",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2011,8 +1457,17 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/packagedetail/4",
-			"queryParams": [],
+			"url": "{{url}}/public/advertisement",
+			"folder": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -2021,18 +1476,48 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121085920,
-			"name": "Get Package Detail",
+			"time": 1518322929693,
+			"name": "Get Advertisements",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "06535706-b50b-aa91-2674-416d32c8562d",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "6c232e07-bb77-49d0-8921-032a71504d4d",
+			"id": "6c2092db-fc5d-50fa-0458-cbce3f1c61d6",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/role/create",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "-",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120797060,
+			"name": "Create Role",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6ccb92b9-b12d-9f90-c719-09367d762969",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2048,44 +1533,40 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/tiptrick/delete/1",
-			"folder": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
+			"url": "{{url}}/public/province/1/cities",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
 			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517930260404,
-			"name": "Delete Tip and Trick",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "6d53bf92-2831-bfa7-e5e3-b887ea2cb8af",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
+			"data": [
 				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
 					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
+					"enabled": true,
+					"key": "",
+					"type": "text",
+					"value": ""
 				}
 			],
-			"url": "{{url}}/public/advertisement/1",
-			"folder": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120936578,
+			"name": "Get Cities By Province",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6de74d39-c325-d9b8-5f48-44b92e05f4a7",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/role/delete/5",
+			"folder": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2095,19 +1576,17 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517234709859,
-			"name": "Get Advertisement",
+			"time": 1517137404009,
+			"name": "Delete Role",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "9d2cbe15-839b-88ba-a841-78626ba434ab",
-			"isFromCollection": true,
-			"collectionRequestId": "87e6e8d2-fddd-7ead-b6ec-0e194187ca46",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "6e56bea7-2f18-2fca-dd7c-5342c31c8006",
+			"id": "6ea85455-2606-fd93-a23b-65e641676b84",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2136,19 +1615,19 @@
 			"time": 1517120947194,
 			"name": "Get City",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "717d940c-5263-6cd5-db6d-d52a616c5a1a",
+			"id": "6f0eaf87-1ebe-2edd-0eae-ce3b1f4297fc",
 			"headers": "",
 			"headerData": [],
 			"url": "{{url}}/public/tourismplace/1/events",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2161,131 +1640,27 @@
 			"time": 1517923889344,
 			"name": "Get Events by Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "7266f7b5-9f3a-cbae-b2eb-9203946b182c",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/event/2",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120849747,
-			"name": "Get Event",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "72a5bc71-31c4-d944-d4b9-fddd69768432",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/tourismplace/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120872355,
-			"name": "Get Tourism Place",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "78d93b5a-81a1-0e0a-6f15-1588251ade3d",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"id": "775aa0bb-1640-6bc3-85d3-e7179be5e70f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/x-www-form-urlencoded",
 					"description": "",
 					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/event/update/2",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "tourism_place_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
 				},
 				{
-					"key": "name",
-					"value": "Festival Kembang Api",
-					"type": "text",
-					"enabled": true,
-					"description": ""
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
 				},
-				{
-					"key": "description",
-					"value": "",
-					"type": "text",
-					"enabled": false,
-					"description": "no mandatory"
-				},
-				{
-					"key": "start_date",
-					"value": "2018-02-20",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "end_date",
-					"value": "2018-02-25",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517120863195,
-			"name": "Update Event",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "79e49e21-c694-7344-7541-82094e9b5349",
-			"headers": "device-type: web\n",
-			"headerData": [
 				{
 					"key": "device-type",
 					"value": "web",
@@ -2293,40 +1668,121 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/login",
+			"url": "{{url}}/public/plan/update/3",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [],
-			"events": null,
+			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "POST",
+			"method": "PUT",
 			"data": [
 				{
-					"key": "username",
-					"value": "siswohandoko",
-					"description": "",
-					"type": "text"
+					"key": "total_adult",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
 				},
 				{
-					"key": "password",
-					"value": "qwerty",
-					"description": "",
-					"type": "text"
+					"key": "total_child",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_infant",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_tourist",
+					"value": "0",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "start_date",
+					"value": "2018-01-10",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "end_date",
+					"value": "2018-01-15",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_price",
+					"value": "0",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "receipt",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": "no mandatory"
+				},
+				{
+					"key": "type",
+					"value": "many",
+					"type": "text",
+					"enabled": true,
+					"description": "single = thing to do, many = one to seven days"
 				}
 			],
-			"dataMode": "params",
+			"dataMode": "urlencoded",
+			"version": 2,
 			"auth": null,
-			"time": 1517120890554,
-			"name": "Login",
-			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"time": 1518322909649,
+			"name": "Update Plan",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "810e7f9e-0248-39f6-17f7-4e8bb69ea0c3",
+			"id": "7ba042ba-d4c2-044e-d4af-0dac4a42e4ab",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/tourismplace/1/pictures",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517923895264,
+			"name": "Get Pictures by Tourism Places",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "7eed2f5f-61e0-714a-5939-aa02b69a9422",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2342,71 +1798,21 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement/delete/1",
-			"folder": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517234714509,
-			"name": "Delete Advertisement",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "9d2cbe15-839b-88ba-a841-78626ba434ab",
-			"isFromCollection": true,
-			"collectionRequestId": "a312f661-9d6e-5050-4397-e52a25f3db5a",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "817a3aed-d74c-ca32-ab6a-ee5947433409",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/feedback",
-			"folder": "1ed33763-b259-30dc-6fdf-41e60c3e30d4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517500807500,
-			"name": "Get Feedbacks",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "81b6355b-ab70-5008-812f-069392f872eb",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/picture/create",
-			"folder": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
+			"url": "{{url}}/public/plandetail/create",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
 			"method": "POST",
 			"data": [
+				{
+					"key": "plan_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
 				{
 					"key": "tourism_place_id",
 					"value": "1",
@@ -2415,22 +1821,36 @@
 					"description": ""
 				},
 				{
-					"key": "image_url[0]",
-					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"key": "start_time",
+					"value": "15:00",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "image_url[1]",
-					"value": "",
+					"key": "end_time",
+					"value": "16:00",
 					"type": "text",
-					"enabled": false,
+					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "image_url[2]",
-					"value": "",
+					"key": "total_price",
+					"value": "37000",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "no_ticket",
+					"value": "T-001",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "active",
 					"type": "text",
 					"enabled": false,
 					"description": ""
@@ -2439,17 +1859,285 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517148768663,
-			"name": "Create Picture",
+			"time": 1517927093867,
+			"name": "Create Plan Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "8850a486-895f-ceab-e24f-4020408c03e1",
+			"id": "826ece3a-6b6a-b324-43ff-d42d344789cb",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/update/1",
+			"folder": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517234720692,
+			"name": "Update Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "84c3df3c-b02a-ae32-abc0-74195c42e2ae",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/feedback/delete/2",
+			"folder": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517242172522,
+			"name": "Delete Feedback",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8654a72d-3cea-d905-0173-f768254ada65",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/province/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120921050,
+			"name": "Get Province",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8803f709-0983-8c96-fbd1-e59611183625",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/package/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517121022961,
+			"name": "Get Package",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8adf539f-ec16-2f4a-8f67-1df804aaa910",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/picture?search_query=asep&limit=2&offset=0&order_by=image_url&order_type=asc",
+			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
+			"queryParams": [
+				{
+					"key": "search_query",
+					"value": "asep",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "offset",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "order_by",
+					"value": "image_url",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "order_type",
+					"value": "asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517500816403,
+			"name": "Get Pictures",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "9115605d-62ac-39de-6521-935d6b100e44",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/city/delete/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120954737,
+			"name": "Delete City",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "944af9a2-b522-926b-5573-e0274acb25ba",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/picture/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120816108,
+			"name": "Get Picture",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "94d1fbe2-9945-54c2-2b2e-1b89781e054d",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"headerData": [
 				{
@@ -2460,7 +2148,7 @@
 				}
 			],
 			"url": "{{url}}/public/picture/update/5",
-			"folder": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
+			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2481,19 +2169,39 @@
 			"time": 1517926618911,
 			"name": "Update Picture",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "8a50796d-dfbf-a8ec-eb60-926f078648f7",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/picture/delete/3",
-			"folder": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
-			"queryParams": [],
+			"id": "968fbc04-8971-6579-eef1-20b1c4bc1456",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/package/1/packagedetails",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -2502,21 +2210,116 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517137763656,
-			"name": "Delete Picture",
+			"time": 1517923939643,
+			"name": "Get Package Details by Plan",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "8e1799a4-41c9-8eef-5c05-cbcc683f6dba",
+			"id": "9f54cda8-6633-bdc0-0e96-54b9d8d85500",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/province/update/1",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New Province Name"
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"auth": null,
+			"time": 1517120932499,
+			"name": "Update Province",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a023cfd2-c315-2869-9b65-74bf0b0435f3",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/plan",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120967809,
+			"name": "Get Plans",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a775a31d-ba45-c1a5-a692-b36d386657ed",
 			"headers": "",
 			"headerData": [],
 			"url": "{{url}}/public/event/create",
-			"folder": "fc3c2c45-8a76-36ba-06fa-8820c6bd37e9",
+			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2565,14 +2368,14 @@
 			"time": 1517139583448,
 			"name": "Create Event",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "94de4cac-973a-a2f1-0aae-036c660585fa",
+			"id": "aab14185-45c8-b329-3297-524362259937",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2588,54 +2391,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement",
-			"folder": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517234900011,
-			"name": "Get Advertisements",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "9d2cbe15-839b-88ba-a841-78626ba434ab",
-			"isFromCollection": true,
-			"collectionRequestId": "388d29f6-fc6a-2e3b-8aad-081c3972a5fb",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "9660df80-c3b5-db39-087c-78eafa3a0269",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/package/1",
+			"url": "{{url}}/public/plan/delete/2",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2645,19 +2402,17 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121022961,
-			"name": "Get Package",
+			"time": 1517136895817,
+			"name": "Delete Plan",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"isFromCollection": true,
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "96bfadf1-4c44-d657-b638-f04a713c894c",
+			"id": "ab4391f0-c819-27f6-e3bf-33296f170204",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2673,17 +2428,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/tiptrick",
-			"folder": "a71903d9-442d-c9e9-da6a-e4ee1461832e",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
+			"url": "{{url}}/public/province",
+			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -2692,18 +2438,101 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517930030824,
-			"name": "Get Tips and Tricks",
+			"time": 1517120667405,
+			"name": "Get Provinces",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
 			"isFromCollection": true,
-			"collectionRequestId": "fdc3a633-229a-4247-88a0-803d2e3579df",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "9b947fdb-d8d6-462d-6586-8372a0e8b61a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "9f79a3a8-2c79-41f4-6f08-3b6552491f54",
+			"id": "b898426d-3b40-fa7d-f339-1a77077ada12",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/create",
+			"folder": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "name",
+					"type": "text",
+					"value": "New City Name"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234717864,
+			"name": "Create Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "ba99ee3c-cea3-4c20-e635-c2182c7d8c34",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/delete/1",
+			"folder": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234714509,
+			"name": "Delete Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "bf44a4b7-e429-6fcb-6d95-e927a21ce6e8",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2726,7 +2555,7 @@
 				}
 			],
 			"url": "{{url}}/public/user/update/6",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2824,22 +2653,16 @@
 			"time": 1517148737899,
 			"name": "Update User",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "a6d8de28-8ae1-bc97-fc4e-07a67ec9e1ca",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"id": "c283ad07-f568-24a6-0c37-706987b83ce4",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
 				{
 					"key": "api-token",
 					"value": "77a64fae487baef2ae395a80db6b82549723219a",
@@ -2853,85 +2676,200 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/city/update/1",
+			"url": "{{url}}/public/packagedetail/delete/5",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "urlencoded",
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120962737,
-			"name": "Update City",
+			"time": 1517121089528,
+			"name": "Delete Package Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "a9da791c-e29f-30ec-b494-7f5d162e1583",
-			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"id": "c28c5857-016a-e17a-bc3b-5ee0f86c746b",
+			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
 			"headerData": [
 				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
+					"key": "api-token",
+					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "android",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/feedback/update/2",
-			"folder": "1ed33763-b259-30dc-6fdf-41e60c3e30d4",
+			"url": "{{url}}/public/role/1",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120702253,
+			"name": "Get Role",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c63e3ad2-9217-a931-2c7a-c3ca426b7d87",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/tourismplace/create",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
 			"data": [
 				{
-					"key": "name",
-					"value": "aksan maulana",
+					"key": "city_id",
+					"value": "1",
+					"description": "",
 					"type": "text",
-					"enabled": true,
-					"description": ""
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "Prambanan",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "i like this app",
+					"value": "This is prambanan",
+					"description": "no mandatory",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "adult_price",
+					"value": "7000",
 					"description": "",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "child_price",
+					"value": "8000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "infant_price",
+					"value": "9000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "tourist_price",
+					"value": "10000",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "longitude",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "latitude",
+					"value": "-1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "facilities",
+					"value": "toilet, mushola, wifi",
+					"description": "no mandatory",
+					"type": "text",
+					"enabled": false
 				}
 			],
-			"dataMode": "urlencoded",
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517242069666,
-			"name": "Update Feedback",
+			"time": 1517120881659,
+			"name": "Create Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "ad8f2d0f-f0f5-f5f1-9d1c-05dd9f2e6c61",
+			"id": "c7117395-36ea-d5b5-adc7-d09813dca01f",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement/1",
+			"folder": "96eebe98-8ab0-0d68-4140-41a0226c16f2",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234709859,
+			"name": "Get Advertisement",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c967fbb7-439d-196b-af9a-fee10ba38614",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/tourismplace",
+			"url": "{{url}}/public/tourismplace/1",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2941,18 +2879,18 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120868779,
-			"name": "Get Tourism Places",
+			"time": 1517120872355,
+			"name": "Get Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "afdb8a9f-4116-6cd0-053c-c55293ac86eb",
+			"id": "d1f791aa-ab71-56a9-ae6e-354993bf1f87",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2968,38 +2906,35 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/province/create",
+			"url": "{{url}}/public/city/1/tourismplaces",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New Province Name"
-				}
-			],
+			"method": "GET",
+			"data": null,
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120929331,
-			"name": "Create Province",
+			"time": 1517924170361,
+			"name": "Get Tourism Places by City",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "b21a3f36-6e77-b513-7a36-e43e414d2ed5",
-			"headers": "device-type: web\n",
+			"id": "d27852c9-c507-f68a-9d27-6a26a865429e",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
 				{
 					"key": "device-type",
 					"value": "web",
@@ -3007,122 +2942,52 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/user/create",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
-			"queryParams": [],
-			"events": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
+			"url": "{{url}}/public/packagedetail?search_query=1&offset=0&limit=5&order_by=start_time&order_type=asc",
+			"folder": "58815155-e1d0-8996-80d4-a6304bd6a61f",
+			"queryParams": [
 				{
-					"key": "firstname",
-					"value": "Ghiffary",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "lastname",
-					"value": "Muhammad",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "email",
-					"value": "ghiffary@gmail.com",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "contact",
-					"value": "089687476161",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "address",
-					"value": "Jl. Kusuma Wandani No 13",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "birthdate",
-					"value": "1991-01-11",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "photo",
-					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "username",
-					"value": "ghiffary",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "password",
-					"value": "qwerty",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "repassword",
-					"value": "qwerty",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "role_id",
+					"key": "search_query",
 					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": "1(tourist) || 2(guide) || 3(admin)"
-				}
-			],
-			"dataMode": "params",
-			"auth": null,
-			"time": 1517148706608,
-			"name": "Create User",
-			"description": "",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "b4469dba-1034-48b0-b29d-cfda30d4e7a9",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"equals": true,
 					"description": "",
 					"enabled": true
 				},
 				{
-					"key": "device-type",
-					"value": "web",
+					"key": "offset",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "order_by",
+					"value": "start_time",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				},
+				{
+					"key": "order_type",
+					"value": "asc",
+					"equals": true,
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/package/delete/3",
-			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -3131,19 +2996,17 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517121028024,
-			"name": "Delete Package",
+			"time": 1517145465831,
+			"name": "Get Package Details",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"isFromCollection": true,
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "b608d5dd-1ec8-6665-e371-b4bfcc8afb7d",
+			"id": "d3bca465-58eb-eec5-ed5d-36b8985f38c3",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"headerData": [
 				{
@@ -3237,56 +3100,18 @@
 			"time": 1517120885811,
 			"name": "Update Tourism Place",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "b9f97702-3e5e-a1f2-8dce-4e86dac56f4b",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/city/1/tourismplaces",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517924170361,
-			"name": "Get Tourism Places by City",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "bb1207ae-1a27-b4b6-9418-163c9f0736c9",
+			"id": "dd3417fd-744d-2307-a4c0-1335c65976d7",
 			"headers": "",
 			"headerData": [],
-			"url": "{{url}}/public/tourismplace/1/pictures",
-			"folder": "6046947e-e56b-401f-8ad9-c98b64129564",
+			"url": "{{url}}/public/tourismplace",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -3296,17 +3121,18 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517923895264,
-			"name": "Get Pictures by Tourism Places",
+			"time": 1517120868779,
+			"name": "Get Tourism Places",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "b6eee62e-1ede-3566-b676-ded896a6f47a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "bb40916f-40c9-f281-4a86-c93ce5e0e23c",
+			"id": "ded1dd0d-7511-d15e-c15c-a3e263c4f38d",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -3328,297 +3154,14 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/package/update/3",
+			"url": "{{url}}/public/plandetail/update/3",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
 			"method": "PUT",
 			"data": [
-				{
-					"key": "name",
-					"value": "Paket D",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "description",
-					"value": "Paket D",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"type": "text",
-					"enabled": false,
-					"description": "no mandatory"
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517121035281,
-			"name": "Update Package",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "be32c94e-0af6-1e7b-60f4-2365a56e0403",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/user/delete/6",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120905875,
-			"name": "Delete User",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "320e15cd-b2e8-6b6a-a5de-380a8fd7fd8f",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "bf476425-e66b-81e6-008c-86662a2bb275",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plan",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120967809,
-			"name": "Get Plans",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "c7fd9db0-f1dd-1c59-cb2e-c956afea3607",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/province/update/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New Province Name"
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517120932499,
-			"name": "Update Province",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "467a5337-c6dc-b5a4-1dc0-747340024cfe",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "cfd61ff6-c3ba-5ec6-f771-dc04ab205388",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/feedback/create",
-			"folder": "1ed33763-b259-30dc-6fdf-41e60c3e30d4",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "name",
-					"value": "aksan maulana",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "description",
-					"value": "-",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517242040475,
-			"name": "Create Feedback",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "defd5b7c-6034-46a1-6ed6-778d500f96b1",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/package",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517121066584,
-			"name": "Get Packages",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "2e82027b-d66e-1a9d-160a-cc780b5cdc78",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "e09f390f-139f-893d-b8c9-507b0f667464",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plandetail/create",
-			"folder": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "plan_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
 				{
 					"key": "tourism_place_id",
 					"value": "1",
@@ -3649,7 +3192,7 @@
 				},
 				{
 					"key": "no_ticket",
-					"value": "T-001",
+					"value": "T-002",
 					"description": "",
 					"type": "text",
 					"enabled": false
@@ -3662,127 +3205,43 @@
 					"description": ""
 				}
 			],
-			"dataMode": "params",
+			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1517927093867,
-			"name": "Create Plan Detail",
+			"time": 1517927052797,
+			"name": "Update Plan Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e1042113-3967-da43-ee02-7fc700e6e1cf",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plan/update/5",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
+			"id": "e4a0db11-3c2a-927b-222e-8f6eb5cabe03",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/event/2",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "total_adult",
-					"value": "2",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "total_child",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "total_infant",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "total_tourist",
-					"value": "0",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "start_date",
-					"value": "2018-01-10",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "end_date",
-					"value": "2018-01-15",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "total_price",
-					"value": "0",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "receipt",
-					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"type": "text",
-					"enabled": false,
-					"description": "no mandatory"
-				}
-			],
-			"dataMode": "urlencoded",
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517929398652,
-			"name": "Update Plan",
+			"time": 1517120849747,
+			"name": "Get Event",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "48a87087-78dd-abf4-f35c-34a72f469eb2",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "e86ec9d6-5b68-bd37-66c6-1aa85f83abac",
+			"id": "e64987a5-2a54-3b75-3dbf-4273d3795ca4",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -3798,8 +3257,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/tiptrick/1",
-			"folder": "048ebd1f-2028-a8a4-caca-8afc992d5407",
+			"url": "{{url}}/public/user/delete/6",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -3809,18 +3267,124 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517930033663,
-			"name": "Get Special Deal",
+			"time": 1517120905875,
+			"name": "Delete User",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "9c67fde7-b49c-5a6a-a724-acb08ad3778c",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "d79d743d-cbeb-efa6-e133-a4e6f4e8babd",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "ea4e710c-3147-b527-91f0-dc0ea0a5ad90",
+			"id": "e738edb4-6fa0-5f4a-9d15-14b404b936b9",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/picture/delete/3",
+			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517137763656,
+			"name": "Delete Picture",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "ef834d6e-159a-d884-328c-17936e7d943e",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/package/delete/3",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517121028024,
+			"name": "Delete Package",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "01fde332-8de9-b195-d1fe-323d49957b34",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f228125d-3c00-41a1-b557-3f8b3b0b3de3",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/city",
+			"folder": "df018f08-f561-2911-10dc-e829454d91d4",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1518321928130,
+			"name": "Get Cities",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f4f95c94-0048-bdb5-a561-202b81997e6b",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -3837,7 +3401,7 @@
 				}
 			],
 			"url": "{{url}}/public/plan/create",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
+			"folder": "49c1c050-43a3-9110-f39d-a319818ea853",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -3920,100 +3484,148 @@
 					"type": "text",
 					"enabled": false,
 					"description": "no mandatory"
+				},
+				{
+					"key": "type",
+					"value": "single",
+					"description": "single = thing to do, many = one to seven days",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517928516596,
+			"time": 1518322854664,
 			"name": "Create Plan",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "ef71c9dc-225c-cd13-0bbc-72d7a9fe77c0",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"id": "f7f0d129-4042-26dc-cd5e-3e377c845e43",
+			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "android",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/feedback/1",
+			"folder": "414fdfa7-61a1-6bf0-8bd9-9030ab71b14e",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517242001843,
+			"name": "Get Feedback",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fa70b4f8-06c2-666b-c801-5bc8a0e022b9",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/x-www-form-urlencoded",
 					"description": "",
 					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement/update/1",
-			"folder": "a7b09276-f7c6-0337-f0a4-54e4b426f01d",
+			"url": "{{url}}/public/picture/create",
+			"folder": "71df041c-48e7-6780-0034-fb162b8bdc5c",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "PUT",
+			"method": "POST",
 			"data": [
 				{
-					"key": "title",
-					"value": "Advertisement Dummy Update",
+					"key": "tourism_place_id",
+					"value": "1",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "image_url",
+					"key": "image_url[0]",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
 					"description": ""
 				},
 				{
-					"key": "caption",
-					"value": "Caption Advertisement",
+					"key": "image_url[1]",
+					"value": "",
 					"type": "text",
-					"enabled": true,
+					"enabled": false,
 					"description": ""
 				},
 				{
-					"key": "type",
-					"value": "main_slider",
+					"key": "image_url[2]",
+					"value": "",
 					"type": "text",
-					"enabled": true,
-					"description": "main_slider"
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"description": "",
-					"type": "text",
-					"enabled": true
+					"enabled": false,
+					"description": ""
 				}
 			],
-			"dataMode": "urlencoded",
+			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517932491608,
-			"name": "Update Advertisement",
+			"time": 1517148768663,
+			"name": "Create Picture",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "f1a31f43-26df-5b38-ab64-7f43e72d09bf",
+			"id": "fbdb0d68-5510-a960-23f6-b0b650831154",
+			"headers": "",
+			"headerData": [],
+			"url": "{{url}}/public/role",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517120695509,
+			"name": "Get Roles",
+			"description": "Get Province By Id",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"responses": [],
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "21fc376e-7f3b-e5b9-3923-cd7dd6ca5fb9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fdfc046c-b430-97c8-1e20-f21a4b7cab81",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -4042,15 +3654,15 @@
 			"time": 1517121007328,
 			"name": "Delete Plan Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
 		{
-			"id": "f4e8df8a-b5f0-0e34-8842-26877a0095a0",
+			"id": "fe5dd191-2424-fe58-abf0-a94bf9754874",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -4066,7 +3678,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/plan/1",
+			"url": "{{url}}/public/plandetail/3",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -4076,205 +3688,13 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517120972153,
-			"name": "Get Plan",
+			"time": 1517121003521,
+			"name": "Get Plan Detail",
 			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
+			"collectionId": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
 			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "a68fbc7d-89d5-2743-dabd-5bd7dbdf1517",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "f68d107d-e6d1-d538-0d68-9e202f78f9a5",
-			"headers": "",
-			"headerData": [],
-			"url": "{{url}}/public/picture/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120816108,
-			"name": "Get Picture",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "b35e7a5d-a23b-82cb-3ce9-7d09cfeda516",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "fcc350ca-d556-e61e-6e5d-d81b310631e5",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/city/create",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120959185,
-			"name": "Create City",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "c2bbd455-2beb-528a-96d6-f8ad2ab965e3",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "fdde5330-7d06-c424-af85-df13050e3c8e",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/plandetail/update/3",
-			"folder": "ec48bf07-2b25-5263-8fc2-e37bbc692942",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"key": "tourism_place_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "start_time",
-					"value": "15:00",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "end_time",
-					"value": "16:00",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "total_price",
-					"value": "37000",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "no_ticket",
-					"value": "T-002",
-					"description": "",
-					"type": "text",
-					"enabled": false
-				},
-				{
-					"key": "status",
-					"value": "active",
-					"type": "text",
-					"enabled": false,
-					"description": ""
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517927052797,
-			"name": "Update Plan Detail",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "ff187db7-81bd-2578-f1e3-fb786da1ce36",
-			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "android",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/role/1",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517120702253,
-			"name": "Get Role",
-			"description": "Get Province By Id",
-			"collectionId": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"responses": [],
-			"collection_id": "c83b36d4-282c-9e9a-bdb7-6c1158d45f4e",
-			"folder": "6c73d5f1-e1cd-ad57-44b5-3bbf0bea2c66",
+			"collection_id": "1c20dd2b-3908-8924-073b-f4041b6b1fce",
+			"folder": "a63107d2-ca96-ba75-b596-35f01694fc26",
 			"currentHelper": null,
 			"helperAttributes": null
 		}
