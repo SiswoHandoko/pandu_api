@@ -189,3 +189,10 @@ $router->get('/specialdeal/{id}', 'SpecialDealController@show');
 $router->post('/specialdeal/create', 'SpecialDealController@store');
 $router->put('/specialdeal/update/{id}', 'SpecialDealController@update');
 $router->get('/specialdeal/delete/{id}', 'SpecialDealController@destroy');
+
+/*
+ | ------------------------------------------
+ | CUSTOM SENDING EMAIL
+ | ------------------------------------------
+ */
+$router->post('/mail/sendmail', 'MailController@sendmail');
