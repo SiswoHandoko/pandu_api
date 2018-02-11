@@ -9,14 +9,11 @@
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"description": "",
 			"folders_order": [],
-			"id": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
+			"id": "44440712-9b1f-9e05-952e-37ef7341210a",
 			"name": "Advertisement",
 			"order": [
-				"6aae1e2b-6e8f-205e-2d21-74e43efd0cd7",
-				"fbf8e2c7-4bc2-aad4-4b1c-1bff8b00379e",
-				"de436f92-00cf-a07b-1826-923087fbecfa",
-				"5b070578-6db7-57d3-afaf-30438c6cf5a2",
-				"dd64f63e-e90d-4bb4-5e25-bf87cad4a85e"
+				"fe22ff8b-eec5-3f09-66ba-69837b39ea54",
+				"4ae0d142-f4f4-60e2-e06a-b7ba8f659414"
 			],
 			"owner": "748996"
 		},
@@ -146,6 +143,32 @@
 			"owner": "748996"
 		},
 		{
+			"auth": null,
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"description": "",
+			"folders_order": [],
+			"id": "4e500777-7b23-5d1b-7207-fcec87377a0c",
+			"name": "Special Deal",
+			"order": [
+				"f1e4ee96-b83a-4626-73c4-4a7fe0c479e1",
+				"f6738c16-8c91-6da4-e58c-4f84734a5842"
+			],
+			"owner": "748996"
+		},
+		{
+			"auth": null,
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"description": "",
+			"folders_order": [],
+			"id": "2e79c1ad-ad2c-6ac9-e687-0f580c884f32",
+			"name": "Tip and Trick",
+			"order": [
+				"771141a7-9804-18f7-ac66-ed0541985b4a",
+				"cd124dbf-d202-3b6e-8478-be6b7f2fe729"
+			],
+			"owner": "748996"
+		},
+		{
 			"name": "Tourism Place",
 			"description": "",
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
@@ -182,7 +205,6 @@
 		}
 	],
 	"folders_order": [
-		"47070354-c3a1-14c3-8d1c-51b9dd81eea9",
 		"86249d90-7010-fdec-1665-b1942cdc3215",
 		"eef98743-4e39-ae81-dfdf-ad56cd31234a",
 		"cbca3eab-9e80-d6f3-47fd-9aa5dd351227",
@@ -190,6 +212,9 @@
 		"e856f95e-1ac9-759d-a8aa-cae04c19954b",
 		"0960fdb6-4e1d-68f4-6548-679a03a0dafb",
 		"b092c1bc-35ea-e772-4a8d-048742887037",
+		"44440712-9b1f-9e05-952e-37ef7341210a",
+		"4e500777-7b23-5d1b-7207-fcec87377a0c",
+		"2e79c1ad-ad2c-6ac9-e687-0f580c884f32",
 		"ba0938aa-83a2-1faf-39b2-078f30bd456b",
 		"14e5e9cc-5afc-4266-0e54-30614fb1e72f",
 		"b0e1b98c-10dc-98fc-adce-d01d4f506344",
@@ -591,16 +616,16 @@
 				},
 				{
 					"key": "type",
-					"value": "many",
-					"description": "single = thing to do, many = one to seven days",
+					"value": "single",
 					"type": "text",
-					"enabled": true
+					"enabled": true,
+					"description": "single = thing to do, many = one to seven days"
 				}
 			],
 			"dataMode": "urlencoded",
 			"version": 2,
 			"auth": null,
-			"time": 1518323471935,
+			"time": 1518324730102,
 			"name": "Update Plan",
 			"description": "Get Province By Id",
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
@@ -609,7 +634,7 @@
 			"helperAttributes": null
 		},
 		{
-			"id": "5b070578-6db7-57d3-afaf-30438c6cf5a2",
+			"id": "4ae0d142-f4f4-60e2-e06a-b7ba8f659414",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -625,62 +650,9 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement/create",
-			"folder": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
+			"url": "{{url}}/public/advertisement/1",
+			"folder": "44440712-9b1f-9e05-952e-37ef7341210a",
 			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517234717864,
-			"name": "Create Advertisement",
-			"description": "Get Province By Id",
-			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
-			"responses": [],
-			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "6aae1e2b-6e8f-205e-2d21-74e43efd0cd7",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/advertisement",
-			"folder": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
-			"queryParams": [
-				{
-					"description": "",
-					"enabled": false,
-					"equals": true,
-					"key": "",
-					"value": ""
-				}
-			],
 			"events": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -689,12 +661,12 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517234900011,
-			"name": "Get Advertisements",
+			"time": 1517234709859,
+			"name": "Get Advertisement",
 			"description": "Get Province By Id",
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"responses": [],
-			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
 			"isFromCollection": true,
 			"currentHelper": null,
 			"helperAttributes": null
@@ -780,6 +752,52 @@
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"responses": [],
 			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "771141a7-9804-18f7-ac66-ed0541985b4a",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/tiptrick",
+			"folder": "2e79c1ad-ad2c-6ac9-e687-0f580c884f32",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517930030824,
+			"name": "Get Tips and Tricks",
+			"description": "Get Province By Id",
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1573,6 +1591,44 @@
 			"helperAttributes": null
 		},
 		{
+			"id": "cd124dbf-d202-3b6e-8478-be6b7f2fe729",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/tiptrick/1",
+			"folder": "2e79c1ad-ad2c-6ac9-e687-0f580c884f32",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517930033663,
+			"name": "Get Tip and Trick",
+			"description": "Get Province By Id",
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
 			"id": "d8d7a9c8-18ce-6579-407e-bdaedbecb46f",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
@@ -1670,107 +1726,19 @@
 				{
 					"key": "type",
 					"value": "single",
-					"description": "single = thing to do, many = one to seven days",
 					"type": "text",
-					"enabled": true
+					"enabled": true,
+					"description": "single = thing to do, many = one to seven days"
 				}
 			],
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1518323446823,
+			"time": 1518324723520,
 			"name": "Create Plan",
 			"description": "Get Province By Id",
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"responses": [],
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "dd64f63e-e90d-4bb4-5e25-bf87cad4a85e",
-			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/advertisement/update/1",
-			"folder": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [
-				{
-					"description": "",
-					"enabled": true,
-					"key": "name",
-					"type": "text",
-					"value": "New City Name"
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"auth": null,
-			"time": 1517234720692,
-			"name": "Update Advertisement",
-			"description": "Get Province By Id",
-			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
-			"responses": [],
-			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
-			"currentHelper": null,
-			"helperAttributes": null
-		},
-		{
-			"id": "de436f92-00cf-a07b-1826-923087fbecfa",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
-			"headerData": [
-				{
-					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "device-type",
-					"value": "web",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "{{url}}/public/advertisement/delete/1",
-			"folder": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
-			"queryParams": [],
-			"events": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"auth": null,
-			"time": 1517234714509,
-			"name": "Delete Advertisement",
-			"description": "Get Province By Id",
-			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
-			"responses": [],
-			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"currentHelper": null,
 			"helperAttributes": null
 		},
@@ -1985,6 +1953,52 @@
 			"helperAttributes": null
 		},
 		{
+			"id": "f1e4ee96-b83a-4626-73c4-4a7fe0c479e1",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/tiptrick",
+			"folder": "4e500777-7b23-5d1b-7207-fcec87377a0c",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517930030824,
+			"name": "Get Special Deals",
+			"description": "Get Province By Id",
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
 			"id": "f3e37070-fad1-e605-fac5-f7605014e765",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
@@ -2065,7 +2079,7 @@
 			"helperAttributes": null
 		},
 		{
-			"id": "fbf8e2c7-4bc2-aad4-4b1c-1bff8b00379e",
+			"id": "f6738c16-8c91-6da4-e58c-4f84734a5842",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"headerData": [
 				{
@@ -2081,8 +2095,8 @@
 					"enabled": true
 				}
 			],
-			"url": "{{url}}/public/advertisement/1",
-			"folder": "47070354-c3a1-14c3-8d1c-51b9dd81eea9",
+			"url": "{{url}}/public/tiptrick/1",
+			"folder": "4e500777-7b23-5d1b-7207-fcec87377a0c",
 			"queryParams": [],
 			"events": [],
 			"pathVariables": {},
@@ -2092,12 +2106,59 @@
 			"dataMode": "params",
 			"version": 2,
 			"auth": null,
-			"time": 1517234709859,
-			"name": "Get Advertisement",
+			"time": 1517930033663,
+			"name": "Get Special Deal",
 			"description": "Get Province By Id",
 			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
 			"responses": [],
-			"collection_id": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"isFromCollection": true,
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fe22ff8b-eec5-3f09-66ba-69837b39ea54",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/public/advertisement",
+			"folder": "44440712-9b1f-9e05-952e-37ef7341210a",
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517234900011,
+			"name": "Get Advertisements",
+			"description": "Get Province By Id",
+			"collectionId": "5b262977-9141-1c98-15f4-16a9a5d84bc8",
+			"responses": [],
+			"collection_id": "2f8ad972-666a-c9b7-983b-afec0ceea19a",
+			"isFromCollection": true,
 			"currentHelper": null,
 			"helperAttributes": null
 		}
