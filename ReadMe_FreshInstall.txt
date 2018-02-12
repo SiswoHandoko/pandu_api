@@ -35,3 +35,9 @@ Terdapat juga contoh CRUD di folder contoh.
 
 Regards,
 Tommy
+
+
+MAILGUN Account
+EMAIL       :dipanduapp@gmail.com
+USERNAME    :dipanduapp
+PASSWORD     :panduapp1234,
