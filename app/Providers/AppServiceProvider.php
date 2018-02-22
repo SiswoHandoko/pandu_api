@@ -13,6 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Mandrill Custom App Service Provider Setting 
+        $this->app->singleton('mailer', function ($app) {
+        $app->configure('services');
+        return $app->loadComponent('mail', 'Illuminate\Mail\MailServiceProvider', 'mailer');
+    });
     }
 }

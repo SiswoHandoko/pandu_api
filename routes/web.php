@@ -200,3 +200,10 @@ $router->get('/infopayment/{id}', 'InfoPaymentController@show');
 $router->post('/infopayment/create', 'InfoPaymentController@store');
 $router->put('/infopayment/update/{id}', 'InfoPaymentController@update');
 $router->get('/infopayment/delete/{id}', 'InfoPaymentController@destroy');
+
+/*
+ | ------------------------------------------
+ | CUSTOM SENDING EMAIL
+ | ------------------------------------------
+ */
+$router->post('/mail/sendmail', 'MailController@sendmail');
