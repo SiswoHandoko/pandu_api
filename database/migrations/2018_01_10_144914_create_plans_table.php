@@ -21,6 +21,7 @@ class CreatePlansTable extends Migration
             $table->integer('total_child')->default(0);
             $table->integer('total_infant')->default(0);
             $table->integer('total_tourist')->default(0);
+            $table->date('days')->default('000-00-00');
             $table->date('start_date')->default('000-00-00');
             $table->date('end_date')->default('0000-00-00');
             $table->bigInteger('total_price')->default(0);

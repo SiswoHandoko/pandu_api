@@ -17,6 +17,10 @@ class CreatePackagesTable extends Migration
             $table->increments('id');
             $table->string('name')->default('');
             $table->text('description')->default('');
+            $table->date('days')->default('000-00-00');
+            $table->date('start_date')->default('000-00-00');
+            $table->date('end_date')->default('0000-00-00');
+            $table->bigInteger('total_price')->default(0);
             $table->string('status')->default('');
             $table->timestamps();
         });

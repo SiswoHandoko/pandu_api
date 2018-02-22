@@ -189,3 +189,14 @@ $router->get('/specialdeal/{id}', 'SpecialDealController@show');
 $router->post('/specialdeal/create', 'SpecialDealController@store');
 $router->put('/specialdeal/update/{id}', 'SpecialDealController@update');
 $router->get('/specialdeal/delete/{id}', 'SpecialDealController@destroy');
+
+/*
+ | ------------------------------------------
+ | INFO PAYMENT ROUTE
+ | ------------------------------------------
+ */
+$router->get('/infopayment', 'InfoPaymentController@index');
+$router->get('/infopayment/{id}', 'InfoPaymentController@show');
+$router->post('/infopayment/create', 'InfoPaymentController@store');
+$router->put('/infopayment/update/{id}', 'InfoPaymentController@update');
+$router->get('/infopayment/delete/{id}', 'InfoPaymentController@destroy');

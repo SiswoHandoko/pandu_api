@@ -32,6 +32,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -49,6 +50,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -66,6 +68,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -83,6 +86,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -100,6 +104,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
@@ -117,6 +122,7 @@ class UsersTableSeeder extends Seeder
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'photo' => 'default_img.png',
+                'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
             ],
