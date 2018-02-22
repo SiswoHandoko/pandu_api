@@ -18,21 +18,36 @@ class MailController extends Controller
     {
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'mail_to' => 'required|max:255',
+          'to' => 'required|max:255',
+          'alias' => 'required|max:255',
+          'subject' => 'required|max:255',
+          'content' => 'required|max:255',
+          'name' => 'required|max:255',
         ]);
 
         if($validator->fails()) {
             $result = $this->generate_response($mails,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
-            $data['email'] = 'cs.siswo.handoko@gmail.com';
-            $data['nama']  = 'Siswo Handoko';
-            $email         = $data;
-            Mail::send('emails.test', ['data'=>$data], function($send) use ($email){
-                $send->to($email['email'], $email['nama'])->subject('Contoh Kirim Email via Mandrill!');
-                $send->from('noreply@dipanduapp.com', 'Dipandu Customer Care');
+            $data['to']         = $req->to;
+            $data['alias']      = $req->alias;
+            $data['subject']    = $req->subject;
+            $data['content']    = $req->content;
+            $data['name']       = $req->name;
+
+            $email              = $data;
+            Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                $send->to($email['to'])->subject($email['subject']);
+                $send->from('noreply@dipanduapp.com', $email['alias']);
             });
-            return $email;
+
+            if(Mail::failures()) {
+                $result = $this->generate_response($mails,409,'Something Wrong, email Can not sent.',true);
+                return response()->json($result, 400);
+            }else{
+                $result = $this->generate_response($email, 200, 'All Data.', false);
+                return response()->json($result, 200);
+            }
         }
     }
 
