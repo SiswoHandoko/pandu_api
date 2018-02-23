@@ -17,7 +17,7 @@ class Package extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'status'
+        'name', 'description', 'days', 'start_date', 'end_date', 'status'
     ];
 
     /**

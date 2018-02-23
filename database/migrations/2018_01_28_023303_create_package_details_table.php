@@ -19,7 +19,8 @@ class CreatePackageDetailsTable extends Migration
             $table->integer('tourism_place_id')->default(0);
             $table->time('start_time')->default('00:00:00');
             $table->time('end_time')->default('00:00:00');
-            $table->bigInteger('total_price')->default(0);
+            $table->integer('day')->default(0);
+            // $table->bigInteger('total_price')->default(0);
             $table->string('status')->default('');
             $table->timestamps();
         });

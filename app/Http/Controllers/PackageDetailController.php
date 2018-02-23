@@ -32,7 +32,6 @@ class PackageDetailController extends Controller
         $packagedetail = PackageDetail::with('package', 'tourismplace')
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
@@ -57,7 +56,8 @@ class PackageDetailController extends Controller
             'tourism_place_id' => 'required|numeric|min:0',
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
-            'total_price' => 'required|numeric|min:0',
+            // 'total_price' => 'required|numeric|min:0',
+            'day' => 'required|numeric|min:0',
         ]);
 
         if ($validator->fails()) {
@@ -71,7 +71,8 @@ class PackageDetailController extends Controller
             $packagedetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
             $packagedetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
             $packagedetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
-            $packagedetail->total_price = $req->has('total_price') ? $req->total_price : 0;
+            // $packagedetail->total_price = $req->has('total_price') ? $req->total_price : 0;
+            $packagedetail->day = $req->has('day') ? $req->day : 0;
             $packagedetail->status = $req->has('status') ? $req->status : 'active';
 
             $packagedetail->save();
@@ -118,7 +119,8 @@ class PackageDetailController extends Controller
             'tourism_place_id' => 'required|numeric|min:0',
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
-            'total_price' => 'required|numeric|min:0',
+            // 'total_price' => 'required|numeric|min:0',
+            'day' => 'required|numeric|min:0',
         ]);
 
         if($validator->fails()) {
@@ -136,7 +138,8 @@ class PackageDetailController extends Controller
                 $packagedetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $packagedetail->tourism_place_id;
                 $packagedetail->start_time = $req->has('start_time') ? $req->start_time : $packagedetail->start_time;
                 $packagedetail->end_time = $req->has('end_time') ? $req->end_time : $packagedetail->end_time;
-                $packagedetail->total_price = $req->has('total_price') ? $req->total_price : $packagedetail->total_price;
+                // $packagedetail->total_price = $req->has('total_price') ? $req->total_price : $packagedetail->total_price;
+                $packagedetail->day = $req->has('day') ? $req->day : 0;
                 $packagedetail->status = $req->has('status') ? $req->status : $packagedetail->status;
 
                 $packagedetail->save();

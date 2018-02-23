@@ -17,7 +17,7 @@ class PlanDetail extends Model
      * @var array
      */
     protected $fillable = [
-        'plan_id', 'tourism_place_id', 'start_time', 'end_time', 'total_price', 'status'
+        'plan_id', 'tourism_place_id', 'start_time', 'end_time', 'day', 'total_price_adult', 'total_price_child', 'total_price_infant', 'total_price_tourist', 'no_ticket', 'status'
     ];
 
     /**

@@ -30,10 +30,9 @@ class PlanController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $plan = Plan::with('user', 'guide', 'plandetail')
+        $plan = Plan::with('user', 'guide')
             ->where('status', '!=', 'deleted')
             ->where('start_date', 'LIKE', '%'.$search_query.'%')
-            ->orWhere('end_date', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
@@ -59,6 +58,7 @@ class PlanController extends Controller
             'total_child' => 'required|numeric|min:0',
             'total_infant' => 'required|numeric|min:0',
             'total_tourist' => 'required|numeric|min:0',
+            'days' => 'required|numeric|min:0',
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'required|numeric|min:0',
@@ -78,6 +78,7 @@ class PlanController extends Controller
             $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
             $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
             $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : 0;
+            $plan->days = $req->has('days') ? $req->days : 0;
             $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
             $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
@@ -130,6 +131,7 @@ class PlanController extends Controller
             'total_child' => 'required|numeric|min:0',
             'total_infant' => 'required|numeric|min:0',
             'total_tourist' => 'required|numeric|min:0',
+            'days' => 'required|numeric|min:0',
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'required|numeric|min:0',
@@ -152,6 +154,7 @@ class PlanController extends Controller
                 $plan->total_child = $req->has('total_child') ? $req->total_child : $plan->total_child;
                 $plan->total_infant = $req->has('total_infant') ? $req->total_infant : $plan->total_infant;
                 $plan->total_tourist = $req->has('total_tourist') ? $req->total_tourist : $plan->total_tourist;
+                $plan->days = $req->has('days') ? $req->days : $plan->days;
                 $plan->start_date = $req->has('start_date') ? $req->start_date : $plan->start_date;
                 $plan->end_date = $req->has('end_date') ? $req->end_date : $plan->end_date;
                 $plan->total_price = $req->has('total_price') ? $req->total_price : $plan->total_price;
@@ -210,7 +213,6 @@ class PlanController extends Controller
             ->where('plan_id', $id)
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->where('end_time', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)

@@ -30,10 +30,8 @@ class PackageController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $package = Package::with('packagedetail')
-            ->where('status', '!=', 'deleted')
+        $package = Package::where('status', '!=', 'deleted')
             ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orWhere('description', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
@@ -56,6 +54,9 @@ class PackageController extends Controller
         $validator = Validator::make($req->all(), [
             'name' => 'required',
             'description' => 'required',
+            'days' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -67,6 +68,9 @@ class PackageController extends Controller
 
             $package->name = $req->has('name') ? $req->name : '';
             $package->description = $req->has('description') ? $req->description : '';
+            $package->days = $req->has('days') ? $req->days : '';
+            $package->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
+            $package->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $package->status = $req->has('status') ? $req->status : 'active';
 
             $package->save();
@@ -112,6 +116,9 @@ class PackageController extends Controller
         $validator = Validator::make($req->all(), [
             'name' => 'required',
             'description' => 'required',
+            'days' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
         ]);
 
         if($validator->fails()) {
@@ -128,6 +135,9 @@ class PackageController extends Controller
             } else {
                 $package->name = $req->has('name') ? $req->name : $package->name;
                 $package->description = $req->has('description') ? $req->description : $package->description;
+                $package->days = $req->has('days') ? $req->days : $package->days;
+                $package->start_date = $req->has('start_date') ? $req->start_date : $package->start_date;
+                $package->end_date = $req->has('end_date') ? $req->end_date : $package->end_date;
                 $package->status = $req->has('status') ? $req->status : $package->status;
 
                 $package->save();
@@ -180,7 +190,6 @@ class PackageController extends Controller
         $packagedetail = PackageDetail::where('package_id', $id)
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)

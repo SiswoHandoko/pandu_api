@@ -19,7 +19,11 @@ class CreatePlanDetailsTable extends Migration
             $table->integer('tourism_place_id')->default(0);
             $table->time('start_time')->default('00:00:00');
             $table->time('end_time')->default('00:00:00');
-            $table->bigInteger('total_price')->default(0);
+            $table->integer('day')->default(0);
+            $table->bigInteger('total_price_adult')->default(0);
+            $table->bigInteger('total_price_child')->default(0);
+            $table->bigInteger('total_price_infant')->default(0);
+            $table->bigInteger('total_price_tourist')->default(0);
             $table->string('no_ticket')->default('');
             $table->string('status')->default('');
             $table->timestamps();

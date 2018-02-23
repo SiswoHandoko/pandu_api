@@ -17,7 +17,7 @@ class PackageDetail extends Model
      * @var array
      */
     protected $fillable = [
-        'package_id', 'tourism_place_id', 'start_time', 'end_time', 'total_price', 'status'
+        'package_id', 'tourism_place_id', 'start_time', 'end_time', 'day', 'status'
     ];
 
     /**

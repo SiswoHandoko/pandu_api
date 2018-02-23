@@ -32,7 +32,6 @@ class PlanDetailController extends Controller
         $plandetail = PlanDetail::with('plan', 'tourismplace')
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->orWhere('end_time', 'LIKE', '%'.$search_query.'%')
             ->orderBy($order_by, $order_type)
             ->offset($offset)
             ->limit($limit)
@@ -57,7 +56,11 @@ class PlanDetailController extends Controller
             'tourism_place_id' => 'required|numeric|min:0',
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
-            'total_price' => 'required|numeric|min:0'
+            'day' => 'required|numeric|min:0',
+            'total_price_adult' => 'required|numeric|min:0',
+            'total_price_child' => 'required|numeric|min:0',
+            'total_price_infant' => 'required|numeric|min:0',
+            'total_price_tourist' => 'required|numeric|min:0'
         ]);
 
         if ($validator->fails()) {
@@ -71,7 +74,11 @@ class PlanDetailController extends Controller
             $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
             $plandetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
             $plandetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
-            $plandetail->total_price = $req->has('total_price') ? $req->total_price : 0;
+            $plandetail->day = $req->has('day') ? $req->day : 0;
+            $plandetail->total_price_adult = $req->has('total_price_adult') ? $req->total_price_adult : 0;
+            $plandetail->total_price_child = $req->has('total_price_child') ? $req->total_price_child : 0;
+            $plandetail->total_price_infant = $req->has('total_price_infant') ? $req->total_price_infant : 0;
+            $plandetail->total_price_tourist = $req->has('total_price_tourist') ? $req->total_price_tourist : 0;
             $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
             $plandetail->status = $req->has('status') ? $req->status : 'active';
 
@@ -119,7 +126,11 @@ class PlanDetailController extends Controller
             'tourism_place_id' => 'required|numeric|min:0',
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
-            'total_price' => 'required|numeric|min:0'
+            'day' => 'required|numeric|min:0',
+            'total_price_adult' => 'required|numeric|min:0',
+            'total_price_child' => 'required|numeric|min:0',
+            'total_price_infant' => 'required|numeric|min:0',
+            'total_price_tourist' => 'required|numeric|min:0'
         ]);
 
         if($validator->fails()) {
@@ -137,7 +148,11 @@ class PlanDetailController extends Controller
                 $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
                 $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
                 $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
-                $plandetail->total_price = $req->has('total_price') ? $req->total_price : $plandetail->total_price;
+                $plandetail->day = $req->has('day') ? $req->day : $plandetail->day;
+                $plandetail->total_price_adult = $req->has('total_price_adult') ? $req->total_price_adult : $plandetail->total_price_adult;
+                $plandetail->total_price_child = $req->has('total_price_child') ? $req->total_price_child : $plandetail->total_price_child;
+                $plandetail->total_price_infant = $req->has('total_price_infant') ? $req->total_price_infant : $plandetail->total_price_infant;
+                $plandetail->total_price_tourist = $req->has('total_price_tourist') ? $req->total_price_tourist : $plandetail->total_price_tourist;
                 $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
                 $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
 

@@ -22,8 +22,8 @@ class CreateTourismPlacesTable extends Migration
             $table->bigInteger('child_price')->default(0);
             $table->bigInteger('infant_price')->default(0);
             $table->bigInteger('tourist_price')->default(0);
-            $table->string('longitude')->default('');
-            $table->string('latitude')->default('');
+            $table->double('longitude')->default(0);
+            $table->double('latitude')->default(0);
             $table->text('facilities')->default('');
             $table->string('status')->default('');
             $table->timestamps();
