@@ -22,6 +22,7 @@ class PackagesTableSeeder extends Seeder
                 'start_date' => '2018-01-10',
                 'end_date' => '2018-01-11',
                 // 'total_price' => 74000,
+                'image_url' => 'package_1_1.jpg',
             	'status' => 'active'
             ],
             [
@@ -31,6 +32,7 @@ class PackagesTableSeeder extends Seeder
                 'start_date' => '2018-01-10',
                 'end_date' => '2018-01-10',
                 // 'total_price' => 37000,
+                'image_url' => 'package_1_2.jpg',
             	'status' => 'active'
             ]
         ];

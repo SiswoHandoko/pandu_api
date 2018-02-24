@@ -31,14 +31,22 @@ class EventController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $event = Event::with('tourismplace')
-            ->where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // $event = Event::with('tourismplace')
+        //     ->where('status', '!=', 'deleted')
+        //     ->where('name', 'LIKE', '%'.$search_query.'%')
+        //     ->orderBy($order_by, $order_type)
+        //     ->offset($offset)
+        //     ->limit($limit)
+        //     ->get();
 
+        $event = Event::with('tourismplace');
+        $event->where('status', '!=', 'deleted');
+        $event->where('name', 'LIKE', '%'.$search_query.'%');
+        $event->orderBy($order_by, $order_type);
+        $event->offset($offset);
+        $event->limit($limit);
+        $event->get();
+        
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
         return response()->json($result, 200);

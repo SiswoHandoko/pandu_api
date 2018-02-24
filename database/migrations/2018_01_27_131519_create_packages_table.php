@@ -21,6 +21,7 @@ class CreatePackagesTable extends Migration
             $table->date('start_date')->default('000-00-00');
             $table->date('end_date')->default('0000-00-00');
             // $table->bigInteger('total_price')->default(0);
+            $table->string('image_url')->default('');
             $table->string('status')->default('');
             $table->timestamps();
         });
