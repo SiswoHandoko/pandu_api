@@ -27,12 +27,21 @@ class AdvertisementController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $advertisement = Advertisement::where('status','!=','deleted')
-            ->where('title', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        $advertisement = Advertisement::where('status','!=','deleted');
+        $advertisement = $advertisement->where('title', 'LIKE', '%'.$search_query.'%');
+
+        /* Filter */
+        if($req->input('type')){
+            $advertisement = $advertisement->where('type', $req->input('type'));
+        }
+        if($req->input('status')){
+            $advertisement = $advertisement->where('status', $req->input('status'));
+        }
+
+        $advertisement = $advertisement->orderBy($order_by, $order_type);
+        $advertisement = $advertisement->offset($offset);
+        $advertisement = $advertisement->limit($limit);
+        $advertisement = $advertisement->get();
 
         $result = $this->generate_response($advertisement,200,'All Data.',false);
 

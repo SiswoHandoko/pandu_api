@@ -24,6 +24,7 @@ $router->get('/', function () use ($router) {
  | ------------------------------------------
  */
 $router->post('/login', 'UserController@login');
+$router->get('/logout/{id}', 'UserController@logout');
 $router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@index']);
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@show']);
 $router->post('/user/create', 'UserController@store');
