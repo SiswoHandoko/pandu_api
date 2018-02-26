@@ -272,12 +272,19 @@ class UserController extends Controller
             if ($hasher->check($password, $login->password)) {
                 $api_token = sha1(time());
                 if($request->header('device-type')=='web'){
-                    $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
-                    if ($create_token) {
-                        /* Set Web Token As Result */
-                        $login['token'] = $api_token;
+                    /* Force Login Web */
+                    if(!$request->input('force_login') && $login->is_login=='1'){
                         $res = $this->generate_response($login,200,'Success Login on Web!',false);
                         return $res;
+                    }else{
+                        $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
+                        if ($create_token) {
+                            /* Set Web Token As Result */
+                            $login['token'] = $api_token;
+                            $login['is_login'] = 1;
+                            $res = $this->generate_response($login,200,'Success Login on Web!',false);
+                            return $res;
+                        }
                     }
                 }elseif($request->header('device-type')=='android'){
                     $create_token = User::where('id', $login->id)->update(['android_token' => $api_token]);
