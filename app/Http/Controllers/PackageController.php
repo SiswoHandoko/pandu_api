@@ -30,7 +30,8 @@ class PackageController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $package = Package::with('packagedetail.tourismplace.city')->where('status', '!=', 'deleted');
+        $package = Package::select('name','description','days','start_date','end_date','image_url','status');
+        $package = $package->with('packagedetail.tourismplace.city')->where('status', '!=', 'deleted');
         $package = $package->where('name', 'LIKE', '%'.$search_query.'%');
 
         /* Deep Filter */
