@@ -30,12 +30,25 @@ class PackageController extends Controller
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-        $package = Package::where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        $package = Package::with('packagedetail.tourismplace.city')->where('status', '!=', 'deleted');
+        $package = $package->where('name', 'LIKE', '%'.$search_query.'%');
+
+        /* Deep Filter */
+        if($req->input('day')){
+            $package = $package->where('days',$req->input('day'));
+        }
+
+        if($req->input('city_id')){
+            $city_id = $req->input('city_id');
+            $package = $package->whereHas('packagedetail.tourismplace.city', function($query) use ($city_id) {
+                            $query->where('id' , $city_id);
+                        });
+        }
+
+        $package = $package->orderBy($order_by, $order_type);
+        $package = $package->offset($offset);
+        $package = $package->limit($limit);
+        $package = $package->get();
 
         $result = $this->generate_response($package, 200, 'All Data.', false);
 
@@ -126,7 +139,7 @@ class PackageController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($package, 400, 'Bad Request.', true);
-            
+
             return response()->json($result, 400);
         }else{
             $package = Package::where('status', '!=', 'deleted')->find($id);
@@ -169,11 +182,11 @@ class PackageController extends Controller
             return response()->json($result, 404);
         } else {
             $package->status = 'deleted';
-            
+
             $package->save();
-            
+
             $result = $this->generate_response($package,200,'Data Has Been Deleted.',false);
-            
+
             return response()->json($result, 200);
         }
     }
