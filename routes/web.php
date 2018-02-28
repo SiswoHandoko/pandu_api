@@ -29,6 +29,7 @@ $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@s
 $router->post('/user/create', 'UserController@store');
 $router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@update']);
 $router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);
+$router->get('/user/{id}/plans', 'UserController@user_by_plan');
 
 /*
  | ------------------------------------------
