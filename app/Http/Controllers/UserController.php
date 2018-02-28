@@ -227,6 +227,27 @@ class UserController extends Controller
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function logout($id)
+    {
+        $user = User::find($id);
+        if(!$user){
+            $result = $this->generate_response($user,404,'Data Not Found.',true);
+            return response()->json($result, 404);
+        }else{
+            $user->is_login = 0;
+            $user->web_token = '';
+            $user->save();
+            $result = $this->generate_response($user,200,'You are already logout.',false);
+            return response()->json($result, 200);
+        }
+    }
+
+    /**
      * Authenticate for login
      *
      * @param  \App\User  $user
@@ -251,12 +272,19 @@ class UserController extends Controller
             if ($hasher->check($password, $login->password)) {
                 $api_token = sha1(time());
                 if($request->header('device-type')=='web'){
-                    $create_token = User::where('id', $login->id)->update(['web_token' => $api_token]);
-                    if ($create_token) {
-                        /* Set Web Token As Result */
-                        $login['token'] = $api_token;
+                    /* Force Login Web */
+                    if(!$request->input('force_login') && $login->is_login=='1'){
                         $res = $this->generate_response($login,200,'Success Login on Web!',false);
                         return $res;
+                    }else{
+                        $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
+                        if ($create_token) {
+                            /* Set Web Token As Result */
+                            $login['token'] = $api_token;
+                            $login['is_login'] = 1;
+                            $res = $this->generate_response($login,200,'Success Login on Web!',false);
+                            return $res;
+                        }
                     }
                 }elseif($request->header('device-type')=='android'){
                     $create_token = User::where('id', $login->id)->update(['android_token' => $api_token]);
