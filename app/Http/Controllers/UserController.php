@@ -274,7 +274,7 @@ class UserController extends Controller
                 if($request->header('device-type')=='web'){
                     /* Force Login Web */
                     if(!$request->input('force_login') && $login->is_login=='1'){
-                        $res = $this->generate_response($login,200,'Success Login on Web!',false);
+                        $res = $this->generate_response($login,201,'Your account is login on other device!',false);
                         return $res;
                     }else{
                         $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
