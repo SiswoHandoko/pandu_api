@@ -20,6 +20,14 @@ class InfoPaymentController extends Controller
         // $this->middleware('auth');
     }
 
+    private $field_where = array(
+        'id',
+        'bank',
+        'no_rek',
+        'name',
+        'status'
+    );
+
     /**
     * Display a listing of the resource.
     *
@@ -32,17 +40,45 @@ class InfoPaymentController extends Controller
         $limit = $req->input('limit') ? $req->input('limit') : 255;
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $where_by = $req->input('where_by') ? $req->input('where_by') : null;
+        $where_value = $req->input('where_value') ? $req->input('where_value') : null;
 
-        $infopayment = InfoPayment::where('status', '!=', 'deleted')
-            ->where('bank', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        $explode_by = explode('|', $where_by);
+        $explode_value = explode('|', $where_value);
 
-        $result = $this->generate_response($infopayment, 200, 'All Data.', false);
+        if (($where_by!=null) && ($where_value!=null) && (count($explode_by)==count($explode_value)) && ($this->check_where($explode_by))) {
+            $infopayment = new InfoPayment;
+            $infopayment = $infopayment->where('status', '!=', 'deleted');
+            $infopayment = $infopayment->where('bank', 'LIKE', '%'.$search_query.'%');
 
-        return response()->json($result, 200);
+            foreach ($explode_by as $key => $value) {
+                $infopayment = $infopayment->where($explode_by[$key], '=', $explode_value[$key]);
+            }
+
+            $infopayment = $infopayment->orderBy($order_by, $order_type);
+            $infopayment = $infopayment->offset($offset);
+            $infopayment = $infopayment->limit($limit);
+            $infopayment = $infopayment->get();
+
+            $result = $this->generate_response($infopayment, 200, 'All Data.', false);
+
+            return response()->json($result, 200);
+        } else {
+            $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
+
+            return response()->json($result, 400);
+        }
+    }
+
+    private function check_where($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->field_where)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
