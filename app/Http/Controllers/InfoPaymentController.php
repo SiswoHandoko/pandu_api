@@ -46,27 +46,29 @@ class InfoPaymentController extends Controller
         $explode_by = explode('|', $where_by);
         $explode_value = explode('|', $where_value);
 
-        if (($where_by!=null) && ($where_value!=null) && (count($explode_by)==count($explode_value)) && ($this->check_where($explode_by))) {
-            $infopayment = new InfoPayment;
-            $infopayment = $infopayment->where('status', '!=', 'deleted');
-            $infopayment = $infopayment->where('bank', 'LIKE', '%'.$search_query.'%');
+        if (($where_by!=null) && ($where_value!=null)) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by))) {
+                $infopayment = new InfoPayment;
+                $infopayment = $infopayment->where('status', '!=', 'deleted');
+                $infopayment = $infopayment->where('bank', 'LIKE', '%'.$search_query.'%');
 
-            foreach ($explode_by as $key => $value) {
-                $infopayment = $infopayment->where($explode_by[$key], '=', $explode_value[$key]);
+                foreach ($explode_by as $key => $value) {
+                    $infopayment = $infopayment->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+
+                $infopayment = $infopayment->orderBy($order_by, $order_type);
+                $infopayment = $infopayment->offset($offset);
+                $infopayment = $infopayment->limit($limit);
+                $infopayment = $infopayment->get();
+
+                $result = $this->generate_response($infopayment, 200, 'All Data.', false);
+
+                return response()->json($result, 200);
+            } else {
+                $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
             }
-
-            $infopayment = $infopayment->orderBy($order_by, $order_type);
-            $infopayment = $infopayment->offset($offset);
-            $infopayment = $infopayment->limit($limit);
-            $infopayment = $infopayment->get();
-
-            $result = $this->generate_response($infopayment, 200, 'All Data.', false);
-
-            return response()->json($result, 200);
-        } else {
-            $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
-
-            return response()->json($result, 400);
         }
     }
 
