@@ -209,3 +209,10 @@ $router->get('/infopayment/delete/{id}', 'InfoPaymentController@destroy');
  | ------------------------------------------
  */
 $router->post('/mail/sendmail', 'MailController@sendmail');
+
+/*
+ | ------------------------------------------
+ | FCM CONNECTION
+ | ------------------------------------------
+ */
+$router->post('/fcm/pushnotif', 'FcmController@sendnotif');
