@@ -4,11 +4,34 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\City;
-use App\Model\Province;
 use App\Model\TourismPlace;
 
 class CityController extends Controller
 {
+    private $fields_cities = array(
+        'id',
+        'province_id',
+        'name',
+        'image_url',
+        'rate',
+        'status'
+    );
+
+    private $fields_tourismplaces = array(
+        'id',
+        'city_id',
+        'name',
+        'description',
+        'adult_price',
+        'child_price',
+        'infant_price',
+        'tourist_price',
+        'longitude',
+        'latitude',
+        'facilities',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -25,22 +48,69 @@ class CityController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $city = new City;
+        $city = $city->where('status', '!=', 'deleted');
 
-        $city = City::where('status','!=','deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-        $result = $this->generate_response($city,200,'All Data.',false);
+            $city = $city->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_cities($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $city = $city->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($city, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_cities)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $city = $city->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($city, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $city = $city->offset($offset);
+            $city = $city->limit($limit);
+        }
+
+        $city = $city->get();
+
+        $result = $this->generate_response($city, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_cities($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_cities)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -148,23 +218,70 @@ class CityController extends Controller
     */
     public function tourismplace_by_city(Request $req, $id)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $tourismplace = new TourismPlace;
+        $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
+        $tourismplace = $tourismplace->where('city_id', $id);
+        $tourismplace = $tourismplace->where('status', '!=', 'deleted');
 
-        $tourismplace = TourismPlace::with('city.province', 'picture', 'event')
-            ->where('city_id', $id)
-            ->where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $tourismplace = $tourismplace->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_tourismplaces($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $tourismplace = $tourismplace->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_tourismplaces)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $tourismplace = $tourismplace->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $tourismplace = $tourismplace->offset($offset);
+            $tourismplace = $tourismplace->limit($limit);
+        }
+
+        $tourismplace = $tourismplace->get();
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_tourismplaces($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_tourismplaces)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

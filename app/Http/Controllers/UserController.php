@@ -7,6 +7,42 @@ use App\Model\Plan;
 
 class UserController extends Controller
 {
+    private $fields_users = array(
+        'id',
+        'role_id',
+        'firstname',
+        'lastname',
+        'contact',
+        'address',
+        'birthdate',
+        'username',
+        'password',
+        'email',
+        'web_token',
+        'android_token',
+        'ios_token',
+        'photo',
+        'is_login',
+        'status'
+    );
+
+    private $fields_plans = array(
+        'id',
+        'user_id',
+        'guide_id',
+        'total_adult',
+        'total_child',
+        'total_infant',
+        'total_tourist',
+        'days',
+        'start_date',
+        'end_date',
+        'total_price',
+        'receipt',
+        'type',
+        'status'
+    );
+
     /**
     * Display a listing of the resource.
     *
@@ -14,22 +50,69 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $user = new Plan;
+        $user = $user->where('status', '!=', 'deleted');
 
-        $user = User::where('status','!=','deleted')
-            ->where('username', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-        $result = $this->generate_response($user,200,'All Data.',false);
+            $user = $user->where('username', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_users($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $user = $user->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($user, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_users)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $user = $user->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($user, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $user = $user->offset($offset);
+            $user = $user->limit($limit);
+        }
+
+        $user = $user->get();
+
+        $result = $this->generate_response($user, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_users($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_users)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -319,23 +402,70 @@ class UserController extends Controller
     */
     public function user_by_plan(Request $req, $id)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $plan = new Plan;
+        $plan = $plan->with('user', 'guide');
+        $plan = $plan->where('user_id', $id);
+        $plan = $plan->where('status', '!=', 'deleted');
 
-        $picture = Plan::with('user', 'guide')
-            ->where('user_id', $id)
-            ->where('status', '!=', 'deleted')
-            ->where('start_date', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-        $result = $this->generate_response($picture, 200, 'All Data.', false);
+            $plan = $plan->where('start_date', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_plans($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $plan = $plan->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($plan, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_plans)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $plan = $plan->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($plan, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $plan = $plan->offset($offset);
+            $plan = $plan->limit($limit);
+        }
+
+        $plan = $plan->get();
+
+        $result = $this->generate_response($plan, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_plans($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_plans)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

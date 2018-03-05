@@ -7,6 +7,16 @@ use App\Model\PackageDetail;
 
 class PackageDetailController extends Controller
 {
+    private $fields_packagedetails = array(
+        'id',
+        'package_id',
+        'tourism_place_id',
+        'start_time',
+        'end_time',
+        'day',
+        'city_id'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -23,23 +33,70 @@ class PackageDetailController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $packagedetail = new PackageDetail;
+        $packagedetail = $packagedetail->with('package', 'tourismplace');
+        $packagedetail = $packagedetail->where('status', '!=', 'deleted');
 
-        $packagedetail = PackageDetail::with('package', 'tourismplace')
-            ->where('status', '!=', 'deleted')
-            ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $packagedetail = $packagedetail->where('start_time', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_packagedetails($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $packagedetail = $packagedetail->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_packagedetails)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $packagedetail = $packagedetail->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $packagedetail = $packagedetail->offset($offset);
+            $packagedetail = $packagedetail->limit($limit);
+        }
+
+        $packagedetail = $packagedetail->get();
 
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_packagedetails($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_packagedetails)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

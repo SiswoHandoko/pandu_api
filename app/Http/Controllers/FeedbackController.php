@@ -7,6 +7,13 @@ use App\Model\Feedback;
 
 class FeedbackController extends Controller
 {
+    private $fields_feedbacks = array(
+        'id',
+        'name',
+        'description',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -24,22 +31,69 @@ class FeedbackController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
-        
-        $feedback = Feedback::where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
-        
+        $feedback = new Feedback;
+        $feedback = $feedback->where('status', '!=', 'deleted');
+
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $feedback = $feedback->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where_feedbacks($explode_by))) {
+                foreach ($explode_by as $key => $value) {
+                    $feedback = $feedback->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_feedbacks)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $feedback = $feedback->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $feedback = $feedback->offset($offset);
+            $feedback = $feedback->limit($limit);
+        }
+
+        $feedback = $feedback->get();
+
         $result = $this->generate_response($feedback, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_where_feedbacks($where_by)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $this->fields_feedbacks)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
