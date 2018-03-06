@@ -49,7 +49,7 @@ class PackageDetailController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_packagedetails($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_packagedetails))) {
                 foreach ($explode_by as $key => $value) {
                     $packagedetail = $packagedetail->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -86,17 +86,6 @@ class PackageDetailController extends Controller
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where_packagedetails($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_packagedetails)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
@@ -231,5 +220,16 @@ class PackageDetailController extends Controller
             
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

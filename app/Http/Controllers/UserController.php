@@ -65,7 +65,7 @@ class UserController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_users($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_users))) {
                 foreach ($explode_by as $key => $value) {
                     $user = $user->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -102,17 +102,6 @@ class UserController extends Controller
         $result = $this->generate_response($user, 200, 'All Data.', false);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where_users($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_users)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
@@ -419,7 +408,7 @@ class UserController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_plans($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_plans))) {
                 foreach ($explode_by as $key => $value) {
                     $plan = $plan->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -458,10 +447,10 @@ class UserController extends Controller
         return response()->json($result, 200);
     }
 
-    private function check_where_plans($where_by)
+    private function check_where($where_by, $where_fields)
     {
         foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_plans)) {
+            if (!in_array($value, $where_fields)) {
                 return false;
             }
         }

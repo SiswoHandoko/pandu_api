@@ -74,7 +74,7 @@ class TourismPlaceController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_tourismplaces($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_tourismplaces))) {
                 foreach ($explode_by as $key => $value) {
                     $tourismplace = $tourismplace->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -111,17 +111,6 @@ class TourismPlaceController extends Controller
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where_tourismplaces($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_tourismplaces)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
@@ -296,7 +285,7 @@ class TourismPlaceController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_events($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_events))) {
                 foreach ($explode_by as $key => $value) {
                     $event = $event->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -335,17 +324,6 @@ class TourismPlaceController extends Controller
         return response()->json($result, 200);
     }
 
-    private function check_where_events($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_events)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     /**
     * Display a listing of the resource.
     *
@@ -370,7 +348,7 @@ class TourismPlaceController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_pictures($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_pictures))) {
                 foreach ($explode_by as $key => $value) {
                     $picture = $picture->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -409,10 +387,10 @@ class TourismPlaceController extends Controller
         return response()->json($result, 200);
     }
 
-    private function check_where_pictures($where_by)
+    private function check_where($where_by, $where_fields)
     {
         foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_pictures)) {
+            if (!in_array($value, $where_fields)) {
                 return false;
             }
         }

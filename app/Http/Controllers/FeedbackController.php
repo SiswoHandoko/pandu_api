@@ -46,7 +46,7 @@ class FeedbackController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_feedbacks($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_feedbacks))) {
                 foreach ($explode_by as $key => $value) {
                     $feedback = $feedback->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -83,17 +83,6 @@ class FeedbackController extends Controller
         $result = $this->generate_response($feedback, 200, 'All Data.', false);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where_feedbacks($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_feedbacks)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
@@ -211,5 +200,16 @@ class FeedbackController extends Controller
 
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

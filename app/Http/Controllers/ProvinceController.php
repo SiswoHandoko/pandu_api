@@ -53,7 +53,7 @@ class ProvinceController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_provinces($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_provinces))) {
                 foreach ($explode_by as $key => $value) {
                     $province = $province->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -90,17 +90,6 @@ class ProvinceController extends Controller
         $result = $this->generate_response($province, 200, 'All Data.', false);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where_provinces($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_provinces)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
@@ -224,7 +213,7 @@ class ProvinceController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where_cities($explode_by))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_cities))) {
                 foreach ($explode_by as $key => $value) {
                     $city = $city->where($explode_by[$key], '=', $explode_value[$key]);
                 }
@@ -263,10 +252,10 @@ class ProvinceController extends Controller
         return response()->json($result, 200);
     }
 
-    private function check_where_cities($where_by)
+    private function check_where($where_by, $where_fields)
     {
         foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->fields_cities)) {
+            if (!in_array($value, $where_fields)) {
                 return false;
             }
         }
