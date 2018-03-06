@@ -17,12 +17,12 @@ class SpecialDealsTableSeeder extends Seeder
         $data = [
             [
             	'tourism_place_id' => 1,
-            	'package_id' => 0,
+            	'package_id' => 1,
                 'rate' => 2,
                 'status' => 'active'
             ],
             [
-            	'tourism_place_id' => 0,
+            	'tourism_place_id' => 1,
             	'package_id' => 1,
                 'rate' => 3,
                 'status' => 'active'

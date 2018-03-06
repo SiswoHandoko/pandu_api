@@ -1159,7 +1159,7 @@
 		{
 			"id": "7891c1cb-54f1-4ff4-86ff-a29ebaa6ed76",
 			"name": "Get Special Deal",
-			"url": "{{url}}/public/tiptrick/1",
+			"url": "{{url}}/public/specialdeal/1",
 			"description": "Get Province By Id",
 			"data": null,
 			"dataMode": "params",
@@ -1397,7 +1397,7 @@
 		{
 			"id": "94f192cf-5827-4550-9839-8e8eff1431c3",
 			"name": "Get Special Deals",
-			"url": "{{url}}/public/tiptrick",
+			"url": "{{url}}/public/specialdeal",
 			"description": "Get Province By Id",
 			"data": null,
 			"dataMode": "params",
