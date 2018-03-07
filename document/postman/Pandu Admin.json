@@ -1139,7 +1139,7 @@
 		{
 			"id": "377e1f17-50fd-4378-b78e-a2be2e97655c",
 			"name": "Get Special Deals",
-			"url": "{{url}}/public/tiptrick",
+			"url": "{{url}}/public/specialdeal",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -1448,7 +1448,7 @@
 		{
 			"id": "44d2228a-0afd-4e04-b522-bfc82b4b8078",
 			"name": "Get Special Deal",
-			"url": "{{url}}/public/tiptrick/1",
+			"url": "{{url}}/public/specialdeal/1",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2003,7 +2003,7 @@
 		{
 			"id": "67df1e2e-ed1c-46e1-a4e8-6358c12ef66e",
 			"name": "Create Special Deal",
-			"url": "{{url}}/public/tiptrick/create",
+			"url": "{{url}}/public/specialdeal/create",
 			"description": "Get Province By Id",
 			"data": [
 				{
@@ -3378,6 +3378,13 @@
 					"type": "text",
 					"enabled": false,
 					"description": "no mandatory"
+				},
+				{
+					"key": "package_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "params",
