@@ -55,6 +55,7 @@ $router->post('/city/create', 'CityController@store');
 $router->put('/city/update/{id}', 'CityController@update');
 $router->get('/city/delete/{id}', 'CityController@destroy');
 $router->get('/city/{id}/tourismplaces', 'CityController@tourismplace_by_city');
+$router->get('/city/{id}/package', 'CityController@package_by_city');
 
 /*
  | ------------------------------------------

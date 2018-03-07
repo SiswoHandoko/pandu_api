@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Picture;
-use App\Model\City;
 
 class PictureController extends Controller
 {
+    private $fields_pictures = array(
+        'id',
+        'tourism_place_id',
+        'image_url',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -25,19 +31,55 @@ class PictureController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $picture = new Picture;
+        $picture = $picture->with('tourismplace');
+        $picture = $picture->where('status', '!=', 'deleted');
 
-        $picture = Picture::with('tourismplace')
-            ->where('status', '!=', 'deleted')
-            ->where('image_url', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $picture = $picture->where('image_url', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_pictures))) {
+                foreach ($explode_by as $key => $value) {
+                    $picture = $picture->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($picture, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_pictures)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $picture = $picture->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($picture, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $picture = $picture->offset($offset);
+            $picture = $picture->limit($limit);
+        }
+
+        $picture = $picture->get();
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
@@ -167,5 +209,16 @@ class PictureController extends Controller
 
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

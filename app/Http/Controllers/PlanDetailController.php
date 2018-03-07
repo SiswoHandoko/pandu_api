@@ -7,6 +7,21 @@ use App\Model\PlanDetail;
 
 class PlanDetailController extends Controller
 {
+    private $fields_plandetails = array(
+        'id',
+        'plan_id',
+        'tourism_place_id',
+        'start_time',
+        'end_time',
+        'day',
+        'total_price_adult',
+        'total_price_child',
+        'total_price_infant',
+        'total_price_tourist',
+        'no_ticket',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -23,20 +38,56 @@ class PlanDetailController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $plandetail = new PlanDetail;
+        $plandetail = $plandetail->with('plan', 'tourismplace');
+        $plandetail = $plandetail->where('status', '!=', 'deleted');
 
-        $plandetail = PlanDetail::with('plan', 'tourismplace')
-            ->where('status', '!=', 'deleted')
-            ->where('start_time', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
+            $plandetail = $plandetail->where('start_time', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_plandetails))) {
+                foreach ($explode_by as $key => $value) {
+                    $plandetail = $plandetail->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_plandetails)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $plandetail = $plandetail->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $plandetail = $plandetail->offset($offset);
+            $plandetail = $plandetail->limit($limit);
+        }
+
+        $plandetail = $plandetail->get();
+        
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 
         return response()->json($result, 200);
@@ -188,5 +239,16 @@ class PlanDetailController extends Controller
 
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

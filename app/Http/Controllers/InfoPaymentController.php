@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\InfoPayment;
-use App\Model\City;
-use App\Model\Event;
-use App\Model\Picture;
 
 class InfoPaymentController extends Controller
 {
+    private $fields_infopayments = array(
+        'id',
+        'bank',
+        'no_rek',
+        'name',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -20,14 +25,6 @@ class InfoPaymentController extends Controller
         // $this->middleware('auth');
     }
 
-    private $field_where = array(
-        'id',
-        'bank',
-        'no_rek',
-        'name',
-        'status'
-    );
-
     /**
     * Display a listing of the resource.
     *
@@ -35,52 +32,58 @@ class InfoPaymentController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
-        $where_by = $req->input('where_by') ? $req->input('where_by') : null;
-        $where_value = $req->input('where_value') ? $req->input('where_value') : null;
+        $infopayment = new InfoPayment;
+        $infopayment = $infopayment->where('status', '!=', 'deleted');
 
-        $explode_by = explode('|', $where_by);
-        $explode_value = explode('|', $where_value);
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-        if (($where_by!=null) && ($where_value!=null)) {
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by))) {
-                $infopayment = new InfoPayment;
-                $infopayment = $infopayment->where('status', '!=', 'deleted');
-                $infopayment = $infopayment->where('bank', 'LIKE', '%'.$search_query.'%');
+            $infopayment = $infopayment->where('bank', 'LIKE', '%'.$search_query.'%');
+        }
 
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_infopayments))) {
                 foreach ($explode_by as $key => $value) {
                     $infopayment = $infopayment->where($explode_by[$key], '=', $explode_value[$key]);
                 }
-
-                $infopayment = $infopayment->orderBy($order_by, $order_type);
-                $infopayment = $infopayment->offset($offset);
-                $infopayment = $infopayment->limit($limit);
-                $infopayment = $infopayment->get();
-
-                $result = $this->generate_response($infopayment, 200, 'All Data.', false);
-
-                return response()->json($result, 200);
             } else {
                 $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
 
                 return response()->json($result, 400);
             }
         }
-    }
 
-    private function check_where($where_by)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $this->field_where)) {
-                return false;
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_infopayments)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $infopayment = $infopayment->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
             }
         }
 
-        return true;
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $infopayment = $infopayment->offset($offset);
+            $infopayment = $infopayment->limit($limit);
+        }
+        
+        $infopayment = $infopayment->get();
+
+        $result = $this->generate_response($infopayment, 200, 'All Data.', false);
+
+        return response()->json($result, 200);
     }
 
     /**
@@ -206,5 +209,16 @@ class InfoPaymentController extends Controller
 
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

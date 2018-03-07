@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Event;
-use App\Model\City;
 
 class EventController extends Controller
 {
+    private $fields_events = array(
+        'id',
+        'tourism_place_id',
+        'name',
+        'description',
+        'start_date',
+        'end_date',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -25,20 +34,56 @@ class EventController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $event = new Event;
+        $event = $event->with('tourismplace');
+        $event = $event->where('status', '!=', 'deleted');
 
-        $event = Event::with('tourismplace')
-            ->where('status', '!=', 'deleted')
-            ->where('name', 'LIKE', '%'.$search_query.'%')
-            ->orderBy($order_by, $order_type)
-            ->offset($offset)
-            ->limit($limit)
-            ->get();
-        
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $event = $event->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_events))) {
+                foreach ($explode_by as $key => $value) {
+                    $event = $event->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($event, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_events)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $event = $event->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($event, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $event = $event->offset($offset);
+            $event = $event->limit($limit);
+        }
+
+        $event = $event->get();
+
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
         return response()->json($result, 200);
@@ -171,5 +216,16 @@ class EventController extends Controller
 
             return response()->json($result, 200);
         }
+    }
+
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

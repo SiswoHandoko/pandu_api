@@ -7,6 +7,13 @@ use App\Model\TipTrick;
 
 class TipTrickController extends Controller
 {
+    private $fields_tiptricks = array(
+        'id',
+        'title',
+        'description',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -23,8 +30,57 @@ class TipTrickController extends Controller
     */
     public function index(Request $req)
     {
-        $tiptrick = TipTrick::where('status','!=','deleted')->get();
-        $result = $this->generate_response($tiptrick,200,'All Data.',false);
+        $tiptrick = new SpecialDeal;
+        $tiptrick = $tiptrick->where('status', '!=', 'deleted');
+        
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $tiptrick = $tiptrick->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_tiptricks))) {
+                foreach ($explode_by as $key => $value) {
+                    $tiptrick = $tiptrick->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($tiptrick, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_tiptricks)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $tiptrick = $tiptrick->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($tiptrick, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $tiptrick = $tiptrick->offset($offset);
+            $tiptrick = $tiptrick->limit($limit);
+        }
+
+        $tiptrick = $tiptrick->get();
+
+        $result = $this->generate_response($tiptrick, 200, 'All Data.', false);
+
         return response()->json($result, 200);
     }
 
@@ -130,4 +186,14 @@ class TipTrickController extends Controller
         }
     }
 
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

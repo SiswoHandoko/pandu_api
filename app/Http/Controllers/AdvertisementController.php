@@ -3,8 +3,18 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Advertisement;
+
 class AdvertisementController extends Controller
 {
+    private $fields_advertisements = array(
+        'id',
+        'image_url',
+        'title',
+        'caption',
+        'type',
+        'status'
+    );
+
     /**
     * Create a new auth instance.
     *
@@ -21,26 +31,53 @@ class AdvertisementController extends Controller
     */
     public function index(Request $req)
     {
-        $search_query = $req->input('search_query') ? $req->input('search_query') : '';
-        $offset = $req->input('offset') ? $req->input('offset') : 0;
-        $limit = $req->input('limit') ? $req->input('limit') : 255;
-        $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
-        $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+        $advertisement = new Advertisement;
+        $advertisement = $advertisement->where('status', '!=', 'deleted');
+        
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-        $advertisement = Advertisement::where('status','!=','deleted');
-        $advertisement = $advertisement->where('title', 'LIKE', '%'.$search_query.'%');
-
-        /* Filter */
-        if($req->input('type')){
-            $advertisement = $advertisement->where('type', $req->input('type'));
-        }
-        if($req->input('status')){
-            $advertisement = $advertisement->where('status', $req->input('status'));
+            $advertisement = $advertisement->where('title', 'LIKE', '%'.$search_query.'%');
         }
 
-        $advertisement = $advertisement->orderBy($order_by, $order_type);
-        $advertisement = $advertisement->offset($offset);
-        $advertisement = $advertisement->limit($limit);
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_advertisements))) {
+                foreach ($explode_by as $key => $value) {
+                    $advertisement = $advertisement->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_advertisements)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $advertisement = $advertisement->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $advertisement = $advertisement->offset($offset);
+            $advertisement = $advertisement->limit($limit);
+        }
+
         $advertisement = $advertisement->get();
 
         $result = $this->generate_response($advertisement,200,'All Data.',false);
@@ -161,4 +198,14 @@ class AdvertisementController extends Controller
         }
     }
 
+    private function check_where($where_by, $where_fields)
+    {
+        foreach ($where_by as $key => $value) {
+            if (!in_array($value, $where_fields)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
