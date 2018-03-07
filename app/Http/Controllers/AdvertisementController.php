@@ -75,7 +75,7 @@ class AdvertisementController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $advertisement = $advertisement->offset($offset);
-            $advertisement = $advertisement->limit($limit);
+            $advertisement = $advertisement->limit($req->input('limit'));
         }
 
         $advertisement = $advertisement->get();

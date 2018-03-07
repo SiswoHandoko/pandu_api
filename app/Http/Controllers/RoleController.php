@@ -74,7 +74,7 @@ class RoleController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $role = $role->offset($offset);
-            $role = $role->limit($limit);
+            $role = $role->limit($req->input('limit'));
         }
 
         $role = $role->get();

@@ -76,7 +76,7 @@ class PictureController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $picture = $picture->offset($offset);
-            $picture = $picture->limit($limit);
+            $picture = $picture->limit($req->input('limit'));
         }
 
         $picture = $picture->get();

@@ -79,7 +79,7 @@ class EventController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $event = $event->offset($offset);
-            $event = $event->limit($limit);
+            $event = $event->limit($req->input('limit'));
         }
 
         $event = $event->get();

@@ -94,7 +94,7 @@ class UserController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $user = $user->offset($offset);
-            $user = $user->limit($limit);
+            $user = $user->limit($req->input('limit'));
         }
 
         $user = $user->get();
@@ -437,7 +437,7 @@ class UserController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $plan = $plan->offset($offset);
-            $plan = $plan->limit($limit);
+            $plan = $plan->limit($req->input('limit'));
         }
 
         $plan = $plan->get();

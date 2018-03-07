@@ -103,7 +103,7 @@ class TourismPlaceController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $tourismplace = $tourismplace->offset($offset);
-            $tourismplace = $tourismplace->limit($limit);
+            $tourismplace = $tourismplace->limit($req->input('limit'));
         }
 
         $tourismplace = $tourismplace->get();
@@ -314,7 +314,7 @@ class TourismPlaceController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $event = $event->offset($offset);
-            $event = $event->limit($limit);
+            $event = $event->limit($req->input('limit'));
         }
 
         $event = $event->get();
@@ -377,7 +377,7 @@ class TourismPlaceController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $picture = $picture->offset($offset);
-            $picture = $picture->limit($limit);
+            $picture = $picture->limit($req->input('limit'));
         }
 
         $picture = $picture->get();

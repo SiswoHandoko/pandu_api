@@ -99,7 +99,7 @@ class PackageController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $package = $package->offset($offset);
-            $package = $package->limit($limit);
+            $package = $package->limit($req->input('limit'));
         }
 
         $package = $package->get();
@@ -297,7 +297,7 @@ class PackageController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $packagedetail = $packagedetail->offset($offset);
-            $packagedetail = $packagedetail->limit($limit);
+            $packagedetail = $packagedetail->limit($req->input('limit'));
         }
 
         $packagedetail = $packagedetail->get();

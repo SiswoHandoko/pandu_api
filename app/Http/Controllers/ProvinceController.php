@@ -82,7 +82,7 @@ class ProvinceController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $province = $province->offset($offset);
-            $province = $province->limit($limit);
+            $province = $province->limit($req->input('limit'));
         }
 
         $province = $province->get();
@@ -242,7 +242,7 @@ class ProvinceController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $city = $city->offset($offset);
-            $city = $city->limit($limit);
+            $city = $city->limit($req->input('limit'));
         }
 
         $city = $city->get();

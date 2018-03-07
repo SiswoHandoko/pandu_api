@@ -105,7 +105,7 @@ class CityController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $city = $city->offset($offset);
-            $city = $city->limit($limit);
+            $city = $city->limit($req->input('limit'));
         }
 
         $city = $city->get();
@@ -266,7 +266,7 @@ class CityController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $tourismplace = $tourismplace->offset($offset);
-            $tourismplace = $tourismplace->limit($limit);
+            $tourismplace = $tourismplace->limit($req->input('limit'));
         }
 
         $tourismplace = $tourismplace->get();
@@ -331,7 +331,7 @@ class CityController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $package = $package->offset($offset);
-            $package = $package->limit($limit);
+            $package = $package->limit($req->input('limit'));
         }
 
         $package = $package->get();

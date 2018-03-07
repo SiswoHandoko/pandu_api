@@ -101,7 +101,7 @@ class PlanController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $plan = $plan->offset($offset);
-            $plan = $plan->limit($limit);
+            $plan = $plan->limit($req->input('limit'));
         }
 
         $plan = $plan->get();
@@ -316,7 +316,7 @@ class PlanController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $plandetail = $plandetail->offset($offset);
-            $plandetail = $plandetail->limit($limit);
+            $plandetail = $plandetail->limit($req->input('limit'));
         }
 
         $plandetail = $plandetail->get();

@@ -75,7 +75,7 @@ class FeedbackController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $feedback = $feedback->offset($offset);
-            $feedback = $feedback->limit($limit);
+            $feedback = $feedback->limit($req->input('limit'));
         }
 
         $feedback = $feedback->get();

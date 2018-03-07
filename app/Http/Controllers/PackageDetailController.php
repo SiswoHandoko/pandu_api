@@ -78,7 +78,7 @@ class PackageDetailController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $packagedetail = $packagedetail->offset($offset);
-            $packagedetail = $packagedetail->limit($limit);
+            $packagedetail = $packagedetail->limit($req->input('limit'));
         }
 
         $packagedetail = $packagedetail->get();

@@ -76,7 +76,7 @@ class InfoPaymentController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $infopayment = $infopayment->offset($offset);
-            $infopayment = $infopayment->limit($limit);
+            $infopayment = $infopayment->limit($req->input('limit'));
         }
         
         $infopayment = $infopayment->get();

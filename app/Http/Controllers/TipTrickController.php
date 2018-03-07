@@ -74,7 +74,7 @@ class TipTrickController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $tiptrick = $tiptrick->offset($offset);
-            $tiptrick = $tiptrick->limit($limit);
+            $tiptrick = $tiptrick->limit($req->input('limit'));
         }
 
         $tiptrick = $tiptrick->get();

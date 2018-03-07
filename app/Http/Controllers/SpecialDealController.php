@@ -76,7 +76,7 @@ class SpecialDealController extends Controller
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
             $specialdeal = $specialdeal->offset($offset);
-            $specialdeal = $specialdeal->limit($limit);
+            $specialdeal = $specialdeal->limit($req->input('limit'));
         }
 
         $specialdeal = $specialdeal->get();
