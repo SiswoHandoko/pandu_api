@@ -14,7 +14,7 @@ class PlanDetailController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
     /**
     * Display a listing of the resource.
@@ -28,7 +28,7 @@ class PlanDetailController extends Controller
         $limit = $req->input('limit') ? $req->input('limit') : 255;
         $order_by = $req->input('order_by') ? $req->input('order_by') : 'id';
         $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
-        
+
         $plandetail = PlanDetail::with('plan', 'tourismplace')
             ->where('status', '!=', 'deleted')
             ->where('start_time', 'LIKE', '%'.$search_query.'%')
@@ -135,7 +135,7 @@ class PlanDetailController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
-            
+
             return response()->json($result, 400);
         }else{
             $plandetail = PlanDetail::where('status', '!=', 'deleted')->find($id);
@@ -181,11 +181,11 @@ class PlanDetailController extends Controller
             return response()->json($result, 404);
         } else {
             $plandetail->status = 'deleted';
-            
+
             $plandetail->save();
-            
+
             $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.', false);
-            
+
             return response()->json($result, 200);
         }
     }

@@ -15,7 +15,7 @@ class PlanController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
     /**
     * Display a listing of the resource.
@@ -161,7 +161,7 @@ class PlanController extends Controller
                 $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt, $plan->receipt) : $plan->receipt;
                 $plan->status = $req->has('status') ? $req->status : $plan->status;
                 $plan->type = $req->has('type') ? $req->type : $plan->type;
-                
+
                 $plan->save();
 
                 $result = $this->generate_response($plan, 200, 'Data Has Been Updated.', false);
