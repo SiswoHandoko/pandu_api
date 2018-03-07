@@ -5,6 +5,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Model\City;
 use App\Model\TourismPlace;
+use App\Model\Package;
 
 class CityController extends Controller
 {
@@ -30,6 +31,18 @@ class CityController extends Controller
         'latitude',
         'facilities',
         'status'
+    );
+
+    private $fields_packages = array(
+        'id',
+        'name',
+        'description',
+        'days',
+        'start_date',
+        'end_date',
+        'image_url',
+        'status',
+        'city_id'
     );
 
     /**
@@ -259,6 +272,71 @@ class CityController extends Controller
         $tourismplace = $tourismplace->get();
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
+
+        return response()->json($result, 200);
+    }
+
+    /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function package_by_city(Request $req, $id)
+    {
+        $package = new Package;
+        $package = $package->with('packagedetail.tourismplace.city');
+        $package = $package->where('status', '!=', 'deleted');
+        $package = $package->whereHas('packagedetail.tourismplace.city', function($query) use ($id) {
+            $query->where('id' , $id);
+        });
+
+        // search query
+        if ($req->input('search_query')) {
+            $search_query = $req->input('search_query') ? $req->input('search_query') : '';
+
+            $package = $package->where('name', 'LIKE', '%'.$search_query.'%');
+        }
+
+        // where custom
+        if ($req->input('where_by') && $req->input('where_value')) {
+            $explode_by = explode('|', $req->input('where_by'));
+            $explode_value = explode('|', $req->input('where_value'));
+
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_packages))) {
+                foreach ($explode_by as $key => $value) {
+                    $package = $package->where($explode_by[$key], '=', $explode_value[$key]);
+                }
+            } else {
+                $result = $this->generate_response($package, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // order
+        if ($req->input('order_by')) {
+            if (in_array($req->input('order_by'), $this->fields_packages)) {
+                $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
+
+                $package = $package->orderBy($req->input('order_by'), $order_type);
+            } else {
+                $result = $this->generate_response($package, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
+        }
+
+        // limit
+        if ($req->input('limit')) {
+            $offset = $req->input('offset') ? $req->input('offset') : 0;
+
+            $package = $package->offset($offset);
+            $package = $package->limit($limit);
+        }
+
+        $package = $package->get();
+
+        $result = $this->generate_response($package, 200, 'All Data.', false);
 
         return response()->json($result, 200);
     }

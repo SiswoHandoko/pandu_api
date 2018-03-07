@@ -16,7 +16,7 @@ class TourismPlacesTableSeeder extends Seeder
     	
         $data = [
             [
-            	'city_id' => 1,
+            	'city_id' => 227,
             	'name' => 'Borobudur',
             	'description' => 'This is borobudur',
                 'adult_price' => 10000,
@@ -29,7 +29,7 @@ class TourismPlacesTableSeeder extends Seeder
             	'status' => 'active'
             ],
             [
-                'city_id' => 1,
+                'city_id' => 227,
                 'name' => 'Prambanan',
                 'description' => 'This is prambanan',
                 'adult_price' => 10000,
