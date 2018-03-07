@@ -92,4 +92,41 @@ class Controller extends BaseController
   {
       return rtrim(app()->basePath('public/' . $path), '/');
   }
+
+  /**
+  * Get All Table Name
+  *
+  * @return \Illuminate\Http\Response
+  */
+  function get_table()
+  {
+      $table[] = 'advertisements';
+      $table[] = 'cities';
+      $table[] = 'events';
+      $table[] = 'feedbacks';
+      $table[] = 'info_payments';
+      $table[] = 'messages';
+      $table[] = 'migrations';
+      $table[] = 'packages';
+      $table[] = 'package_cities';
+      $table[] = 'package_details';
+      $table[] = 'pictures';
+      $table[] = 'plans';
+      $table[] = 'plan_details';
+      $table[] = 'provinces';
+      $table[] = 'roles';
+      $table[] = 'special_deals';
+      $table[] = 'tip_tricks';
+      $table[] = 'tourism_places';
+      $table[] = 'users';
+
+      $result = '';
+      $i      = 0;
+      foreach($table as $t){
+          $result .= (count($table)-1)==$i ? $t : $t.',';
+          $i++;
+      }
+
+      return $result;
+  }
 }

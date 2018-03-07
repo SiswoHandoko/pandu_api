@@ -216,3 +216,10 @@ $router->post('/mail/sendmail', 'MailController@sendmail');
  | ------------------------------------------
  */
 $router->post('/fcm/pushnotif', 'FcmController@sendnotif');
+
+/*
+ | ------------------------------------------
+ | CUSTOM API REQUEST
+ | ------------------------------------------
+ */
+$router->put('/custom/updatestatus/{id}', 'CustomController@update_status');
