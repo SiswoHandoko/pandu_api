@@ -14,7 +14,7 @@ class PackageDetailController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
     /**
     * Display a listing of the resource.
@@ -125,7 +125,7 @@ class PackageDetailController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
-            
+
             return response()->json($result, 400);
         }else{
             $packagedetail = PackageDetail::where('status', '!=', 'deleted')->find($id);
@@ -167,11 +167,11 @@ class PackageDetailController extends Controller
             return response()->json($result, 404);
         } else {
             $packagedetail->status = 'deleted';
-        
+
             $packagedetail->save();
-            
+
             $result = $this->generate_response($packagedetail, 200, 'Data Has Been Deleted.', false);
-            
+
             return response()->json($result, 200);
         }
     }
