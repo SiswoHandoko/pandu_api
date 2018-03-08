@@ -30,7 +30,7 @@ class TipTrickController extends Controller
     */
     public function index(Request $req)
     {
-        $tiptrick = new SpecialDeal;
+        $tiptrick = new TipTrick;
         $tiptrick = $tiptrick->where('status', '!=', 'deleted');
         
         // search query
