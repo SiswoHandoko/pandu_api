@@ -26,7 +26,7 @@ class Package extends Model
      * @var array
      */
     protected $hidden = [
-        'packagedetail', 'created_at', 'updated_at'
+        'created_at', 'updated_at'
     ];
 
     /**

@@ -58,7 +58,19 @@ class PackageController extends Controller
 
             $package = $package->where('name', 'LIKE', '%'.$search_query.'%');
         }
-        
+
+        /* Deep Filter */
+        if($req->input('day')){
+            $package = $package->where('days',$req->input('day'));
+        }
+
+        if($req->input('city_id')){
+            $city_id = $req->input('city_id');
+            $package = $package->whereHas('packagedetail.tourismplace.city', function($query) use ($city_id) {
+                            $query->where('id' , $city_id);
+                        });
+        }
+
         // where custom
         if ($req->input('where_by') && $req->input('where_value')) {
             $explode_by = explode('|', $req->input('where_by'));
