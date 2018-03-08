@@ -201,7 +201,8 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        $city = City::find($id);
+        $city = City::where('status', '!=', 'deleted')->find($id);
+        
         if(!$city){
             $result = $this->generate_response($city, 404, 'Data Not Found.', true);
             return response()->json($result, 404);

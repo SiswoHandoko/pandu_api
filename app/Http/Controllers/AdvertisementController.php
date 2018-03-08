@@ -186,7 +186,8 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
-        $advertisement = Advertisement::find($id);
+        $advertisement = Advertisement::where('status', '!=', 'deleted')->find($id);
+        
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
             return response()->json($result, 404);

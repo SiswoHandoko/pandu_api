@@ -122,6 +122,7 @@ class TipTrickController extends Controller
     public function show($id)
     {
         $tiptrick = TipTrick::where('status','!=','deleted')->find($id);
+
         if(!$tiptrick){
             $result = $this->generate_response($tiptrick, 404, 'Data Not Found.', true);
             return response()->json($result, 404);
@@ -174,7 +175,8 @@ class TipTrickController extends Controller
      */
     public function destroy($id)
     {
-        $tiptrick = TipTrick::find($id);
+        $tiptrick = TipTrick::where('status','!=','deleted')->find($id);
+        
         if(!$tiptrick){
             $result = $this->generate_response($tiptrick, 404, 'Data Not Found.', true);
             return response()->json($result, 404);

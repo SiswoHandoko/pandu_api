@@ -108,10 +108,10 @@ class PlanDetailController extends Controller
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
             'day' => 'required|numeric|min:0',
-            'total_price_adult' => 'required|numeric|min:0',
-            'total_price_child' => 'required|numeric|min:0',
-            'total_price_infant' => 'required|numeric|min:0',
-            'total_price_tourist' => 'required|numeric|min:0'
+            'adult_price' => 'required|numeric|min:0',
+            'child_price' => 'required|numeric|min:0',
+            'infant_price' => 'required|numeric|min:0',
+            'tourist_price' => 'required|numeric|min:0'
         ]);
 
         if ($validator->fails()) {
@@ -126,10 +126,10 @@ class PlanDetailController extends Controller
             $plandetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
             $plandetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
             $plandetail->day = $req->has('day') ? $req->day : 0;
-            $plandetail->total_price_adult = $req->has('total_price_adult') ? $req->total_price_adult : 0;
-            $plandetail->total_price_child = $req->has('total_price_child') ? $req->total_price_child : 0;
-            $plandetail->total_price_infant = $req->has('total_price_infant') ? $req->total_price_infant : 0;
-            $plandetail->total_price_tourist = $req->has('total_price_tourist') ? $req->total_price_tourist : 0;
+            $plandetail->adult_price = $req->has('adult_price') ? $req->adult_price : 0;
+            $plandetail->child_price = $req->has('child_price') ? $req->child_price : 0;
+            $plandetail->infant_price = $req->has('infant_price') ? $req->infant_price : 0;
+            $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : 0;
             $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
             $plandetail->status = $req->has('status') ? $req->status : 'active';
 
@@ -178,10 +178,10 @@ class PlanDetailController extends Controller
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
             'day' => 'required|numeric|min:0',
-            'total_price_adult' => 'required|numeric|min:0',
-            'total_price_child' => 'required|numeric|min:0',
-            'total_price_infant' => 'required|numeric|min:0',
-            'total_price_tourist' => 'required|numeric|min:0'
+            'adult_price' => 'required|numeric|min:0',
+            'child_price' => 'required|numeric|min:0',
+            'infant_price' => 'required|numeric|min:0',
+            'tourist_price' => 'required|numeric|min:0'
         ]);
 
         if($validator->fails()) {
@@ -200,10 +200,10 @@ class PlanDetailController extends Controller
                 $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
                 $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
                 $plandetail->day = $req->has('day') ? $req->day : $plandetail->day;
-                $plandetail->total_price_adult = $req->has('total_price_adult') ? $req->total_price_adult : $plandetail->total_price_adult;
-                $plandetail->total_price_child = $req->has('total_price_child') ? $req->total_price_child : $plandetail->total_price_child;
-                $plandetail->total_price_infant = $req->has('total_price_infant') ? $req->total_price_infant : $plandetail->total_price_infant;
-                $plandetail->total_price_tourist = $req->has('total_price_tourist') ? $req->total_price_tourist : $plandetail->total_price_tourist;
+                $plandetail->adult_price = $req->has('adult_price') ? $req->adult_price : $plandetail->adult_price;
+                $plandetail->child_price = $req->has('child_price') ? $req->child_price : $plandetail->child_price;
+                $plandetail->infant_price = $req->has('infant_price') ? $req->infant_price : $plandetail->infant_price;
+                $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : $plandetail->tourist_price;
                 $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
                 $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
 

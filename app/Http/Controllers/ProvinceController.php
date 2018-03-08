@@ -178,6 +178,8 @@ class ProvinceController extends Controller
      */
     public function destroy($id)
     {
+        $province = Province::where('status', '!=', 'deleted')->find($id);
+
         if(!$province){
             $result = $this->generate_response($province, 404, 'Data Not Found.', true);
             return response()->json($result, 404);

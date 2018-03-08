@@ -50,7 +50,7 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
-        $user = new Plan;
+        $user = new User;
         $user = $user->where('status', '!=', 'deleted');
 
         // search query
@@ -262,7 +262,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::where('status', '!=', 'deleted')->find($id);
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
             return response()->json($result, 404);

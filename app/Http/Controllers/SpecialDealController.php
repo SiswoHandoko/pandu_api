@@ -180,7 +180,8 @@ class SpecialDealController extends Controller
      */
     public function destroy($id)
     {
-        $specialdeal = SpecialDeal::find($id);
+        $specialdeal = SpecialDeal::where('status', '!=', 'deleted')->find($id);
+        
         if(!$specialdeal){
             $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
             return response()->json($result, 404);

@@ -149,7 +149,7 @@ class PackageController extends Controller
             $package->name = $req->has('name') ? $req->name : '';
             $package->description = $req->has('description') ? $req->description : '';
             $package->days = $req->has('days') ? $req->days : '';
-            $package->image_url = $value ? $this->uploadFile($this->public_path(). "/images/packages/", $value) : 'default_img.png';
+            $package->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/packages/", $req->image_url) : 'default_img.png';
             $package->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
             $package->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
             $package->status = $req->has('status') ? $req->status : 'active';
