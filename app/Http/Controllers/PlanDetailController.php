@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\PlanDetail;
+use App\Model\TourismPlace;
 
 class PlanDetailController extends Controller
 {
@@ -107,37 +108,44 @@ class PlanDetailController extends Controller
             'tourism_place_id' => 'required|numeric|min:0',
             'start_time' => 'required|date_format:"H:i"',
             'end_time' => 'required|date_format:"H:i"',
-            'day' => 'required|numeric|min:0',
-            'adult_price' => 'required|numeric|min:0',
-            'child_price' => 'required|numeric|min:0',
-            'infant_price' => 'required|numeric|min:0',
-            'tourist_price' => 'required|numeric|min:0'
+            'day' => 'required|numeric|min:0'
         ]);
-
+        
         if ($validator->fails()) {
-            $result = $this->generate_response($plandetail,400,'Bad Request.',true);
+            $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
             return response()->json($result, 400);
         } else {
-            $plandetail = new PlanDetail();
+            $tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
 
-            $plandetail->plan_id = $req->has('plan_id') ? $req->plan_id : 0;
-            $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
-            $plandetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
-            $plandetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
-            $plandetail->day = $req->has('day') ? $req->day : 0;
-            $plandetail->adult_price = $req->has('adult_price') ? $req->adult_price : 0;
-            $plandetail->child_price = $req->has('child_price') ? $req->child_price : 0;
-            $plandetail->infant_price = $req->has('infant_price') ? $req->infant_price : 0;
-            $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : 0;
-            $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
-            $plandetail->status = $req->has('status') ? $req->status : 'active';
+            $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->find($tourism_place_id);
+            $tourismplace = collect($tourismplace)->toArray();
 
-            $plandetail->save();
+            if ($tourismplace) {
+                $plandetail = new PlanDetail();
 
-            $result = $this->generate_response($plandetail, 200, 'Data Has Been Saved.', false);
+                $plandetail->plan_id = $req->has('plan_id') ? $req->plan_id : 0;
+                $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
+                $plandetail->start_time = $req->has('start_time') ? $req->start_time : '00:00';
+                $plandetail->end_time = $req->has('end_time') ? $req->end_time : '00:00';
+                $plandetail->day = $req->has('day') ? $req->day : 0;
+                $plandetail->adult_price = $tourismplace['adult_price'];
+                $plandetail->child_price = $tourismplace['child_price'];
+                $plandetail->infant_price = $tourismplace['infant_price'];
+                $plandetail->tourist_price = $tourismplace['tourist_price'];
+                $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
+                $plandetail->status = $req->has('status') ? $req->status : 'active';
 
-            return response()->json($result, 200);
+                $plandetail->save();
+
+                $result = $this->generate_response($plandetail, 200, 'Data Has Been Saved.', false);
+
+                return response()->json($result, 200);
+            } else {
+                $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
+
+                return response()->json($result, 400);
+            }
         }
     }
 

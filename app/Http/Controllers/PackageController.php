@@ -262,7 +262,7 @@ class PackageController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function packagedetail_by_packages(Request $req, $id)
+    public function packagedetail_by_package(Request $req, $id)
     {
         $packagedetail = new PackageDetail;
         $packagedetail = $packagedetail->where('package_id', $id);
