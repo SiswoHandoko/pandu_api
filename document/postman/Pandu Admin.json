@@ -55,10 +55,11 @@
 			"order": [
 				"dcbefb82-3d12-4ffa-9c36-8855298ab769",
 				"d3a4b4a5-23cb-4d27-bf0f-7972dbbe7225",
-				"71aca183-cee9-4271-9309-b05468a88f99",
 				"32c08079-a146-4e6d-a17d-6db9c6931616",
 				"3a7facac-5580-4417-95aa-5e6129791de8",
-				"576fd94f-c5a9-4373-98eb-a40b3832ef63"
+				"576fd94f-c5a9-4373-98eb-a40b3832ef63",
+				"71aca183-cee9-4271-9309-b05468a88f99",
+				"a65a9be1-ec70-4432-98dd-5d429ff36264"
 			],
 			"folders_order": []
 		},
@@ -149,8 +150,7 @@
 				"fe32a9b1-3493-46c5-a663-d603d776be13",
 				"91f0a5a0-6177-4e3d-ab13-91d478a9b666",
 				"ef255e51-774b-4a5a-92cf-e2b71f752459",
-				"817e91bf-e994-49c1-81cd-a5dfd69a77d1",
-				"a65a9be1-ec70-4432-98dd-5d429ff36264"
+				"817e91bf-e994-49c1-81cd-a5dfd69a77d1"
 			],
 			"folders_order": []
 		},
@@ -729,34 +729,6 @@
 				{
 					"key": "day",
 					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "adult_price",
-					"value": "2",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "child_price",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "infant_price",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "tourist_price",
-					"value": "0",
 					"type": "text",
 					"enabled": true,
 					"description": ""
@@ -2244,7 +2216,7 @@
 		},
 		{
 			"id": "817e91bf-e994-49c1-81cd-a5dfd69a77d1",
-			"name": "Get Package Details by Plan",
+			"name": "Get Package Details by Package",
 			"url": "{{url}}/public/package/1/packagedetails",
 			"description": "Get Province By Id",
 			"data": [],
@@ -3263,7 +3235,7 @@
 			],
 			"auth": null,
 			"events": [],
-			"folder": "d295baa8-c861-4866-8aed-3151970ceede",
+			"folder": "22a0583c-f8e1-4dd6-8539-0497db83c0b6",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
