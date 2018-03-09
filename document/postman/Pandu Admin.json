@@ -2504,34 +2504,6 @@
 					"description": ""
 				},
 				{
-					"key": "adult_price",
-					"value": "2",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "child_price",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "infant_price",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "tourist_price",
-					"value": "0",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
 					"key": "no_ticket",
 					"value": "",
 					"type": "text",
