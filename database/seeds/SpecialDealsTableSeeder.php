@@ -22,8 +22,26 @@ class SpecialDealsTableSeeder extends Seeder
                 'status' => 'active'
             ],
             [
-            	'tourism_place_id' => 1,
-            	'package_id' => 1,
+            	'tourism_place_id' => 2,
+            	'package_id' => 2,
+                'rate' => 3,
+                'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 3,
+            	'package_id' => 3,
+                'rate' => 3,
+                'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 4,
+            	'package_id' => 4,
+                'rate' => 3,
+                'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 5,
+            	'package_id' => 5,
                 'rate' => 3,
                 'status' => 'active'
             ]

@@ -13,7 +13,7 @@ class TourismPlacesTableSeeder extends Seeder
     public function run()
     {
         DB::table('tourism_places')->truncate();
-    	
+
         $data = [
             [
             	'city_id' => 227,
@@ -40,9 +40,48 @@ class TourismPlacesTableSeeder extends Seeder
                 'latitude' => -1,
                 'facilities' => 'toilet, mushola, wifi',
                 'status' => 'active'
+            ],
+            [
+                'city_id' => 227,
+                'name' => 'Laut Selatan',
+                'description' => 'This is Laut Selatan',
+                'adult_price' => 10000,
+                'child_price' => 9000,
+                'infant_price' => 8000,
+                'tourist_price' => 15000,
+                'longitude' => 1,
+                'latitude' => -1,
+                'facilities' => 'toilet, mushola, wifi',
+                'status' => 'active'
+            ],
+            [
+                'city_id' => 160,
+                'name' => 'Ancol',
+                'description' => 'This is Ancol',
+                'adult_price' => 10000,
+                'child_price' => 9000,
+                'infant_price' => 8000,
+                'tourist_price' => 15000,
+                'longitude' => 1,
+                'latitude' => -1,
+                'facilities' => 'toilet, mushola, wifi',
+                'status' => 'active'
+            ],
+            [
+                'city_id' => 159,
+                'name' => 'TMII',
+                'description' => 'This is TMII',
+                'adult_price' => 10000,
+                'child_price' => 9000,
+                'infant_price' => 8000,
+                'tourist_price' => 15000,
+                'longitude' => 1,
+                'latitude' => -1,
+                'facilities' => 'toilet, mushola, wifi',
+                'status' => 'active'
             ]
         ];
-        
+
         TourismPlace::insert($data);
     }
 }

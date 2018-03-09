@@ -17,7 +17,27 @@ class PicturesTableSeeder extends Seeder
         $data = [
             [
             	'tourism_place_id' => 1,
-            	'image_url' => 'picture_1_1.jpg',
+            	'image_url' => 'default_place.png',
+            	'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 1,
+            	'image_url' => 'default_place.png',
+            	'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 1,
+            	'image_url' => 'default_place.png',
+            	'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 2,
+            	'image_url' => 'default_place.png',
+            	'status' => 'active'
+            ],
+            [
+            	'tourism_place_id' => 3,
+            	'image_url' => 'default_place.png',
             	'status' => 'active'
             ]
         ];
