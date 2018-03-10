@@ -277,7 +277,8 @@
 				"78b3a23b-7254-4c2c-b017-e39673bdb83a",
 				"03054a6e-3100-4187-bdc3-ac313a7743ae",
 				"601fe80b-2fcf-458e-b503-242de3db4d9b",
-				"7ddfaedc-54ee-4196-a729-a789b9b1265d"
+				"7ddfaedc-54ee-4196-a729-a789b9b1265d",
+				"b5ca93fa-a7ae-48ae-9691-6f68a34dad88"
 			],
 			"folders_order": []
 		}
@@ -1961,6 +1962,58 @@
 			"events": [],
 			"folder": "3d02c3cf-ff14-48da-a0f9-08447ee2f676",
 			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "b5ca93fa-a7ae-48ae-9691-6f68a34dad88",
+			"name": "Get Plan by User",
+			"url": "{{url}}/public/user/3/plans?where_by=type&where_value=single",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "where_by",
+					"value": "type",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				},
+				{
+					"key": "where_value",
+					"value": "single",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "064e4dd7-2b9a-40bf-976b-dc82134b73d8",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
 		{

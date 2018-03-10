@@ -327,7 +327,8 @@
 				"372d6100-2d1b-471c-901e-35e0d34baa1c",
 				"14db2a65-66ae-435b-bbe2-b81781d03731",
 				"5faab098-062c-4e03-9c39-9450de64d0d4",
-				"6308a29d-1f62-4398-89f9-a6416b9f7fcd"
+				"6308a29d-1f62-4398-89f9-a6416b9f7fcd",
+				"2968d1b5-aedb-4b4b-b5a7-78f45f90d9dd"
 			],
 			"folders_order": []
 		}
@@ -478,7 +479,7 @@
 				},
 				{
 					"key": "day",
-					"value": "2",
+					"value": "1",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -940,6 +941,44 @@
 			"events": [],
 			"folder": "51e7dd0a-e775-4c85-8397-c9356ab9f3fe",
 			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2968d1b5-aedb-4b4b-b5a7-78f45f90d9dd",
+			"name": "Get Plan by User",
+			"url": "{{url}}/public/user/3/plans",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": false,
+					"equals": true,
+					"key": "",
+					"value": ""
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "fbfc95d9-bc24-44b6-96a3-60747eb769bb",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
 		{
@@ -2217,7 +2256,7 @@
 		{
 			"id": "817e91bf-e994-49c1-81cd-a5dfd69a77d1",
 			"name": "Get Package Details by Package",
-			"url": "{{url}}/public/package/1/packagedetails",
+			"url": "{{url}}/public/package/3/packagedetails",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
