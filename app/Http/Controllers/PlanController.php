@@ -418,9 +418,31 @@ class PlanController extends Controller
 
         $plandetail = $plandetail->get();
 
+        $plandetail = $this->convert_data($plandetail);
+        
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function convert_data($plandetail)
+    {
+        $result = array();
+        $index = 0;
+        $day = 0;
+
+        foreach ($plandetail as $key => $value) {
+            if ($value->day != $day) {
+                $index++;
+                $day = $value->day;
+
+                $result['day'.$index][] = $value;
+            } else {
+                $result['day'.$index][] = $value;
+            }
+        }
+
+        return $result;
     }
 
     private function check_where($where_by, $where_fields)

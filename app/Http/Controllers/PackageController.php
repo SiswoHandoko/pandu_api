@@ -265,6 +265,8 @@ class PackageController extends Controller
     public function packagedetail_by_package(Request $req, $id)
     {
         $packagedetail = new PackageDetail;
+        $packagedetail = $packagedetail->with('package', 'tourismplace');
+        $packagedetail = $packagedetail->orderBy('day', 'asc');
         $packagedetail = $packagedetail->where('package_id', $id);
         $packagedetail = $packagedetail->where('status', '!=', 'deleted');
 
@@ -314,9 +316,31 @@ class PackageController extends Controller
 
         $packagedetail = $packagedetail->get();
 
+        $packagedetail = $this->convert_data($packagedetail);
+
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function convert_data($packagedetail)
+    {
+        $result = array();
+        $index = 0;
+        $day = 0;
+
+        foreach ($packagedetail as $key => $value) {
+            if ($value->day != $day) {
+                $index++;
+                $day = $value->day;
+
+                $result['day'.$index][] = $value;
+            } else {
+                $result['day'.$index][] = $value;
+            }
+        }
+
+        return $result;
     }
 
     private function check_where($where_by, $where_fields)
