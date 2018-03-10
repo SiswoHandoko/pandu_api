@@ -340,6 +340,12 @@ class PackageController extends Controller
             }
         }
 
+        $index++;
+
+        for ($i=$index; $i <= 7; $i++) { 
+            $result['day'.$i] = array();
+        }
+
         return $result;
     }
 
