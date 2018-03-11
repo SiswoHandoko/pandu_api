@@ -25,7 +25,8 @@ class TourismPlacesTableSeeder extends Seeder
             	'tourist_price' => 15000,
             	'longitude' => 1,
             	'latitude' => -1,
-            	'facilities' => 'toilet, mushola, wifi',
+                'facilities' => 'toilet, mushola, wifi',
+            	'rate' => 1,
             	'status' => 'active'
             ],
             [
@@ -39,6 +40,7 @@ class TourismPlacesTableSeeder extends Seeder
                 'longitude' => 1,
                 'latitude' => -1,
                 'facilities' => 'toilet, mushola, wifi',
+                'rate' => 2,
                 'status' => 'active'
             ],
             [
@@ -52,6 +54,7 @@ class TourismPlacesTableSeeder extends Seeder
                 'longitude' => 1,
                 'latitude' => -1,
                 'facilities' => 'toilet, mushola, wifi',
+                'rate' => 3,
                 'status' => 'active'
             ],
             [
@@ -65,6 +68,7 @@ class TourismPlacesTableSeeder extends Seeder
                 'longitude' => 1,
                 'latitude' => -1,
                 'facilities' => 'toilet, mushola, wifi',
+                'rate' => 1,
                 'status' => 'active'
             ],
             [
@@ -78,6 +82,7 @@ class TourismPlacesTableSeeder extends Seeder
                 'longitude' => 1,
                 'latitude' => -1,
                 'facilities' => 'toilet, mushola, wifi',
+                'rate' => 2,
                 'status' => 'active'
             ]
         ];

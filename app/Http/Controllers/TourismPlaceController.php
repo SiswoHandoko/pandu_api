@@ -21,6 +21,7 @@ class TourismPlaceController extends Controller
         'longitude',
         'latitude',
         'facilities',
+        'rate',
         'status'
     );
 
@@ -108,10 +109,104 @@ class TourismPlaceController extends Controller
 
         $tourismplace = $tourismplace->get();
 
+        // if ($req->input('latitude') && $req->input('longitude')) {
+        //     $tourismplace = $this->sort_distance($tourismplace, $req->input('latitude'), $req->input('longitude'));
+        // }
+
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
     }
+
+    // private function sort_distance($tourismplace, $latitude, $longitude)
+    // {
+    //     $arr_distance = array();
+
+    //     foreach ($tourismplace as $key => $value) {
+    //         $distance = $this->haversineGreatCircleDistance($latitude, $longitude, $value->latitude, $value->longitude);
+    //         $tourismplace[$key]['distance'] = $distance;
+    //         $arr_distance[$key] = $distance;
+    //     }
+
+    //     $tourismplace = $this->quick_sort($tourismplace);
+        
+    //     $tourismplace = collect($tourismplace)->toArray();
+    //     print_r($tourismplace);exit;
+        
+    //     return $tourismplace;
+    // }
+
+    // private function quick_sort($array)
+    // {
+    //     // find array size
+    //     $length = count($array);
+        
+    //     // base case test, if array of length 0 then just return array to caller
+    //     if ($length <= 1) {
+    //         return $array;
+    //     } else {
+    //         // select an item to act as our pivot point, since list is unsorted first position is easiest
+    //         $pivot = $array[0]['distance'];
+            
+    //         // declare our two arrays to act as partitions
+    //         $left = $right = array();
+            
+    //         // loop and compare each item in the array to the pivot value, place item in appropriate partition
+    //         for($i = 1; $i < count($array); $i++)
+    //         {
+    //             if ($array[$i]['distance'] < $pivot) {
+    //                 $left[] = $array[$i];
+    //             } else {
+    //                 $right[] = $array[$i];
+    //             }
+    //         }
+
+    //         // use recursion to now sort the left and right lists
+    //         return array_merge($this->quick_sort($left), array($pivot), $this->quick_sort($right));
+    //     }
+    // }
+
+    // private function quicksort($lower, $upper) {
+    //     global $data;
+    //     if ($lower >= $upper) {
+    //         return;
+    //     }
+    //     $m = $lower;
+    //     echo str_repeat("=", 80), PHP_EOL;
+    //     // partition the array on $data[$lower]
+    //     for ($i=$lower+1; $i<=$upper; $i++) {
+    //         if ($data[$i] < $data[$lower]) {
+    //             $tmp = $data[++$m];
+    //             $data[$m] = $data[$i];
+    //             $data[$i] = $tmp;
+    //             print_array($data);
+    //         }
+    //     }
+    //     // swap the sential node with $data[$m]
+    //     $tmp = $data[$m];
+    //     $data[$m] = $data[$lower];
+    //     $data[$lower] = $tmp;
+    //     print_array($data);
+    //     // quick sort the tow parts recursively
+    //     quicksort($lower, $m-1);
+    //     quicksort($m+1, $upper);
+    // }
+
+    // private function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    // {
+    //     // convert from degrees to radians
+    //     $latFrom = deg2rad($latitudeFrom);
+    //     $lonFrom = deg2rad($longitudeFrom);
+    //     $latTo = deg2rad($latitudeTo);
+    //     $lonTo = deg2rad($longitudeTo);
+
+    //     $latDelta = $latTo - $latFrom;
+    //     $lonDelta = $lonTo - $lonFrom;
+
+    //     $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) + cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        
+    //     return $angle * $earthRadius;
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -131,6 +226,7 @@ class TourismPlaceController extends Controller
             'tourist_price' => 'required|min:0',
             'longitude' => 'required',
             'latitude' => 'required',
+            'rate' => 'required'
         ]);
 
         if($validator->fails()) {
@@ -150,6 +246,7 @@ class TourismPlaceController extends Controller
             $tourismplace->longitude = $req->has('longitude') ? $req->longitude : '';
             $tourismplace->latitude = $req->has('latitude') ? $req->latitude : '';
             $tourismplace->facilities = $req->has('facilities') ? $req->facilities : '';
+            $tourismplace->rate = $req->has('rate') ? $req->rate : 0;
             $tourismplace->status = 'active';
 
             $tourismplace->save();
@@ -201,6 +298,7 @@ class TourismPlaceController extends Controller
             'tourist_price' => 'required|min:0',
             'longitude' => 'required',
             'latitude' => 'required',
+            'rate' => 'required'
         ]);
 
 
@@ -226,6 +324,8 @@ class TourismPlaceController extends Controller
                 $tourismplace->longitude = $req->has('longitude') ? $req->longitude : $tourismplace->longitude;
                 $tourismplace->latitude = $req->has('latitude') ? $req->latitude : $tourismplace->latitude;
                 $tourismplace->facilities = $req->has('facilities') ? $req->facilities : $tourismplace->facilities;
+                $tourismplace->rate = $req->has('rate') ? $req->rate : $tourismplace->rate;
+                $tourismplace->status = $req->has('status') ? $req->status : $tourismplace->status;
 
                 $tourismplace->save();
 

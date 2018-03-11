@@ -1414,7 +1414,7 @@
 		{
 			"id": "431e6ae7-529a-4773-84ef-04109b843eab",
 			"name": "Update Tourism Place",
-			"url": "{{url}}/public/tourismplace/update/4",
+			"url": "{{url}}/public/tourismplace/update/6",
 			"description": "Get Province By Id",
 			"data": [
 				{
@@ -1486,6 +1486,13 @@
 					"type": "text",
 					"enabled": false,
 					"description": "no mandatory"
+				},
+				{
+					"key": "rate",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "urlencoded",
@@ -2239,7 +2246,7 @@
 		{
 			"id": "77a81630-e44b-45b9-97e8-cd74318fd483",
 			"name": "Delete Tourism Place",
-			"url": "{{url}}/public/tourismplace/delete/4",
+			"url": "{{url}}/public/tourismplace/delete/6",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -3147,6 +3154,13 @@
 					"description": "no mandatory",
 					"type": "text",
 					"enabled": false
+				},
+				{
+					"key": "rate",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "params",

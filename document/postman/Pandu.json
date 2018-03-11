@@ -412,7 +412,7 @@
 		{
 			"id": "16c804eb-ea5f-4f85-9668-8972568611dd",
 			"name": "Get Tourism Places by City",
-			"url": "{{url}}/public/city/1/tourismplaces",
+			"url": "{{url}}/public/city/227/tourismplaces",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -1457,7 +1457,7 @@
 		{
 			"id": "725c0320-fdda-44b1-8636-656a2b7bde51",
 			"name": "Get Packages",
-			"url": "{{url}}/public/package?city_id=227&day=2",
+			"url": "{{url}}/public/package?city_id=227&day=1",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -1494,7 +1494,7 @@
 				},
 				{
 					"key": "day",
-					"value": "2",
+					"value": "1",
 					"equals": true,
 					"description": "",
 					"enabled": true
