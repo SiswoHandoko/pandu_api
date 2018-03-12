@@ -135,6 +135,8 @@ class PlanController extends Controller
                 'total_child' => 'required|numeric|min:0',
                 'total_infant' => 'required|numeric|min:0',
                 'total_tourist' => 'required|numeric|min:0',
+                'start_date' => 'required|date_format:"Y-m-d"',
+                'end_date' => 'required|date_format:"Y-m-d"',
                 'package_id' => 'required'
             ]);
         } else {
@@ -188,8 +190,9 @@ class PlanController extends Controller
                     'total_price' => $total_price,
                     'type' => 'package',
                     'days' => $package['days'],
-                    'start_date' => $package['start_date'],
-                    'end_date' => $package['end_date']
+                    'start_date' => $req->has('start_date') ? $req->start_date : '000-00-00',
+                    'end_date' => $req->has('end_date') ? $req->end_date : '000-00-00',
+                    'status' => $req->has('status') ? $req->status : 'active'
                 );
 
                 $plan_id = $plan->insertGetId($insert_plan);

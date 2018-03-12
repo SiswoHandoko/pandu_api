@@ -37,8 +37,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'child_price' => 9000,
                 'infant_price' => 8000,
                 'tourist_price' => 15000,
-                'longitude' => 1,
-                'latitude' => -1,
+                'longitude' => 2,
+                'latitude' => -2,
                 'facilities' => 'toilet, mushola, wifi',
                 'rate' => 2,
                 'status' => 'active'
@@ -51,8 +51,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'child_price' => 9000,
                 'infant_price' => 8000,
                 'tourist_price' => 15000,
-                'longitude' => 1,
-                'latitude' => -1,
+                'longitude' => 4,
+                'latitude' => -4,
                 'facilities' => 'toilet, mushola, wifi',
                 'rate' => 3,
                 'status' => 'active'
@@ -65,8 +65,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'child_price' => 9000,
                 'infant_price' => 8000,
                 'tourist_price' => 15000,
-                'longitude' => 1,
-                'latitude' => -1,
+                'longitude' => 2,
+                'latitude' => -2,
                 'facilities' => 'toilet, mushola, wifi',
                 'rate' => 1,
                 'status' => 'active'
@@ -79,8 +79,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'child_price' => 9000,
                 'infant_price' => 8000,
                 'tourist_price' => 15000,
-                'longitude' => 1,
-                'latitude' => -1,
+                'longitude' => 3,
+                'latitude' => -3,
                 'facilities' => 'toilet, mushola, wifi',
                 'rate' => 2,
                 'status' => 'active'

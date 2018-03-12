@@ -735,9 +735,9 @@
 				{
 					"key": "package_id",
 					"value": "1",
-					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": true,
+					"description": ""
 				},
 				{
 					"key": "total_adult",
@@ -779,6 +779,20 @@
 					"value": "active",
 					"type": "text",
 					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "start_date",
+					"value": "2018-01-10",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "end_date",
+					"value": "2018-01-15",
+					"type": "text",
+					"enabled": true,
 					"description": ""
 				}
 			],

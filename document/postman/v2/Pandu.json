@@ -1329,8 +1329,8 @@
 								{
 									"key": "package_id",
 									"value": "1",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "total_adult",
@@ -1369,6 +1369,18 @@
 									"type": "text",
 									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2018-01-10",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "end_date",
+									"value": "2018-01-15",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},

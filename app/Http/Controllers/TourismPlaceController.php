@@ -59,6 +59,23 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
+        // $data[] = array('volume' => 67, 'edition' => 2);
+        // $data[] = array('volume' => 86, 'edition' => 1);
+        // $data[] = array('volume' => 85, 'edition' => 6);
+        // $data[] = array('volume' => 98, 'edition' => 2);
+        // $data[] = array('volume' => 86, 'edition' => 6);
+        // $data[] = array('volume' => 67, 'edition' => 7);
+
+        // // Obtain a list of columns
+        // foreach ($data as $key => $row) {
+        //     $volume[$key]  = $row['volume'];
+        // }
+
+        // // Sort the data with volume descending, edition ascending
+        // // Add $data as the last parameter, to sort by the common key
+        // array_multisort($volume, SORT_ASC, $data);
+        // print_r($volume);exit;
+
         $tourismplace = new TourismPlace;
         $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
         $tourismplace = $tourismplace->where('status', '!=', 'deleted');
@@ -109,104 +126,81 @@ class TourismPlaceController extends Controller
 
         $tourismplace = $tourismplace->get();
 
-        // if ($req->input('latitude') && $req->input('longitude')) {
-        //     $tourismplace = $this->sort_distance($tourismplace, $req->input('latitude'), $req->input('longitude'));
-        // }
+        if ($req->input('latitude') && $req->input('longitude')) {
+            $tourismplace = $this->sort_distance($tourismplace, $req->input('latitude'), $req->input('longitude'));
+        }
+
+        // print_r($tourismplace);exit;
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
     }
 
-    // private function sort_distance($tourismplace, $latitude, $longitude)
-    // {
-    //     $arr_distance = array();
+    private function sort_distance($tourismplace, $latitude, $longitude)
+    {
+        $arr_distance = array();
 
-    //     foreach ($tourismplace as $key => $value) {
-    //         $distance = $this->haversineGreatCircleDistance($latitude, $longitude, $value->latitude, $value->longitude);
-    //         $tourismplace[$key]['distance'] = $distance;
-    //         $arr_distance[$key] = $distance;
-    //     }
+        foreach ($tourismplace as $key => $value) {
+            $distance = $this->haversineGreatCircleDistance($latitude, $longitude, $value->latitude, $value->longitude);
+            $tourismplace[$key]['distance'] = $distance;
+            $arr_distance[$key] = $distance;
+        }
 
-    //     $tourismplace = $this->quick_sort($tourismplace);
+        // $tourismplace = collect($tourismplace)->toArray();
+
+        $result = $this->array_msort($tourismplace, array('distance'=>SORT_ASC));
+
+        $result = array_values($result);
+
+        return $result;
+    }
+
+    private function array_msort($array, $cols)
+    {
+        $colarr = array();
+
+        foreach ($cols as $col => $order) {
+            $colarr[$col] = array();
+            foreach ($array as $k => $row) { $colarr[$col]['_'.$k] = strtolower($row[$col]); }
+        }
+
+        $eval = 'array_multisort(';
+
+        foreach ($cols as $col => $order) {
+            $eval .= '$colarr[\''.$col.'\'],'.$order.',';
+        }
+
+        $eval = substr($eval,0,-1).');';
+        eval($eval);
+        $ret = array();
         
-    //     $tourismplace = collect($tourismplace)->toArray();
-    //     print_r($tourismplace);exit;
+        foreach ($colarr as $col => $arr) {
+            foreach ($arr as $k => $v) {
+                $k = substr($k,1);
+                if (!isset($ret[$k])) $ret[$k] = $array[$k];
+                $ret[$k][$col] = $array[$k][$col];
+            }
+        }
+
+        return $ret;
+    }
+
+    private function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    {
+        // convert from degrees to radians
+        $latFrom = deg2rad($latitudeFrom);
+        $lonFrom = deg2rad($longitudeFrom);
+        $latTo = deg2rad($latitudeTo);
+        $lonTo = deg2rad($longitudeTo);
+
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
+
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) + cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
         
-    //     return $tourismplace;
-    // }
-
-    // private function quick_sort($array)
-    // {
-    //     // find array size
-    //     $length = count($array);
-        
-    //     // base case test, if array of length 0 then just return array to caller
-    //     if ($length <= 1) {
-    //         return $array;
-    //     } else {
-    //         // select an item to act as our pivot point, since list is unsorted first position is easiest
-    //         $pivot = $array[0]['distance'];
-            
-    //         // declare our two arrays to act as partitions
-    //         $left = $right = array();
-            
-    //         // loop and compare each item in the array to the pivot value, place item in appropriate partition
-    //         for($i = 1; $i < count($array); $i++)
-    //         {
-    //             if ($array[$i]['distance'] < $pivot) {
-    //                 $left[] = $array[$i];
-    //             } else {
-    //                 $right[] = $array[$i];
-    //             }
-    //         }
-
-    //         // use recursion to now sort the left and right lists
-    //         return array_merge($this->quick_sort($left), array($pivot), $this->quick_sort($right));
-    //     }
-    // }
-
-    // private function quicksort($lower, $upper) {
-    //     global $data;
-    //     if ($lower >= $upper) {
-    //         return;
-    //     }
-    //     $m = $lower;
-    //     echo str_repeat("=", 80), PHP_EOL;
-    //     // partition the array on $data[$lower]
-    //     for ($i=$lower+1; $i<=$upper; $i++) {
-    //         if ($data[$i] < $data[$lower]) {
-    //             $tmp = $data[++$m];
-    //             $data[$m] = $data[$i];
-    //             $data[$i] = $tmp;
-    //             print_array($data);
-    //         }
-    //     }
-    //     // swap the sential node with $data[$m]
-    //     $tmp = $data[$m];
-    //     $data[$m] = $data[$lower];
-    //     $data[$lower] = $tmp;
-    //     print_array($data);
-    //     // quick sort the tow parts recursively
-    //     quicksort($lower, $m-1);
-    //     quicksort($m+1, $upper);
-    // }
-
-    // private function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
-    // {
-    //     // convert from degrees to radians
-    //     $latFrom = deg2rad($latitudeFrom);
-    //     $lonFrom = deg2rad($longitudeFrom);
-    //     $latTo = deg2rad($latitudeTo);
-    //     $lonTo = deg2rad($longitudeTo);
-
-    //     $latDelta = $latTo - $latFrom;
-    //     $lonDelta = $lonTo - $lonFrom;
-
-    //     $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) + cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
-        
-    //     return $angle * $earthRadius;
-    // }
+        return $angle * $earthRadius;
+    }
 
     /**
      * Store a newly created resource in storage.

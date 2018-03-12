@@ -2646,20 +2646,6 @@
 					"enabled": true
 				},
 				{
-					"key": "start_date",
-					"value": "2018-01-10",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "end_date",
-					"value": "2018-01-15",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"description": "",
@@ -2953,9 +2939,9 @@
 				{
 					"key": "package_id",
 					"value": "1",
-					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": true,
+					"description": ""
 				},
 				{
 					"key": "total_adult",
@@ -2997,6 +2983,20 @@
 					"value": "active",
 					"type": "text",
 					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "start_date",
+					"value": "2018-01-10",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "end_date",
+					"value": "2018-01-15",
+					"type": "text",
+					"enabled": true,
 					"description": ""
 				}
 			],
@@ -3561,14 +3561,29 @@
 		{
 			"id": "c7509135-58f2-4075-93a7-850dc94b27de",
 			"name": "Get Tourism Places",
-			"url": "{{url}}/public/tourismplace",
+			"url": "{{url}}/public/tourismplace?latitude=1&longitude=-1",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
 			"headerData": [],
 			"method": "GET",
 			"pathVariableData": [],
-			"queryParams": [],
+			"queryParams": [
+				{
+					"key": "latitude",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "longitude",
+					"value": "-1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
 			"auth": null,
 			"events": [],
 			"folder": "2929c2cf-3e1c-46e2-b883-fbfff5f4f158",
@@ -3975,7 +3990,7 @@
 		{
 			"id": "ef255e51-774b-4a5a-92cf-e2b71f752459",
 			"name": "Update Package",
-			"url": "{{url}}/public/package/update/3",
+			"url": "{{url}}/public/package/update/6",
 			"description": "Get Province By Id",
 			"data": [
 				{
@@ -4002,20 +4017,6 @@
 				{
 					"key": "days",
 					"value": "5",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "start_date",
-					"value": "2018-01-10",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "end_date",
-					"value": "2018-01-15",
 					"type": "text",
 					"enabled": true,
 					"description": ""
