@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Advertisement;
+use App\Model\AccessLog;
 
 class AdvertisementController extends Controller
 {
@@ -31,6 +32,14 @@ class AdvertisementController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'advertisement_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $advertisement = new Advertisement;
         $advertisement = $advertisement->where('status', '!=', 'deleted');
         
@@ -53,6 +62,8 @@ class AdvertisementController extends Controller
             } else {
                 $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -65,6 +76,8 @@ class AdvertisementController extends Controller
                 $advertisement = $advertisement->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -82,6 +95,8 @@ class AdvertisementController extends Controller
 
         $result = $this->generate_response($advertisement,200,'All Data.',false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -93,6 +108,14 @@ class AdvertisementController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'advertisement_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'image_url' => 'max:2048',
@@ -103,6 +126,9 @@ class AdvertisementController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($advertisement,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $advertisement = new Advertisement();
@@ -113,7 +139,10 @@ class AdvertisementController extends Controller
             $advertisement->type = $req->has('type') ? $req->type : '';
             $advertisement->status = 'active';
             $advertisement->save();
+
             $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -127,12 +156,27 @@ class AdvertisementController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'advertisement_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $advertisement = Advertisement::where('status','!=','deleted')->find($id);
+
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($advertisement, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -145,8 +189,16 @@ class AdvertisementController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $req,$id)
+    public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'advertisement_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'image_url' => 'max:2048',
@@ -158,11 +210,16 @@ class AdvertisementController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($advertisement,400,'Bad Request.',true);
+
             return response()->json($result, 400);
         }else{
             $advertisement = Advertisement::find($id);
+
             if(!$advertisement){
                 $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 404);
             }else{
                 /* upload process */
@@ -172,7 +229,11 @@ class AdvertisementController extends Controller
                 $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
                 $advertisement->status = 'active';
                 $advertisement->save();
+
                 $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -186,15 +247,31 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'advertisement_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $advertisement = Advertisement::where('status', '!=', 'deleted')->find($id);
         
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $advertisement->status = 'deleted';
+
             $advertisement->save();
+
             $result = $this->generate_response($advertisement,200,'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -208,5 +285,21 @@ class AdvertisementController extends Controller
         }
 
         return true;
+    }
+
+    private function create_access_log($params)
+    {
+        $result = AccessLog::create($params);
+
+        return $result->id;
+    }
+
+    private function update_access_log($access_log_id, $arr_result)
+    {
+        $access_log = AccessLog::find($access_log_id);
+
+        $access_log->result = json_encode($arr_result);
+
+        $access_log->save();
     }
 }
