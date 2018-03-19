@@ -153,7 +153,7 @@ class UserController extends Controller
                 /* Email Process */
                 $data['to']         = $req->input('email');
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'REGISTRATION INFO';
+                $data['subject']    = 'INFO REGISTRASI';
                 $data['content']    = "Selamat akun anda telah terdaftar pada Pandu Apps. <br/> Silahkan login pada applikasi untuk mulai membuat Plan.";
                 $data['name']       = $req->input('username');
 
@@ -248,13 +248,17 @@ class UserController extends Controller
                     $result = $this->generate_response($user,404,'Data Not Found.',true);
                     return response()->json($result, 404);
                 }else{
+                    /* bundling data */
+                    $hasher = app()->make('hash');
+                    $new_password = $hasher->make($req->password);
+
                     $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
                     $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
                     $user->contact = $req->has('contact') ? $req->contact : $user->contact;
                     $user->address = $req->has('address') ? $req->address : $user->address;
                     $user->birthdate = $req->has('birthdate') ? $req->birthdate : $user->birthdate;
                     $user->username = $req->has('username') ? $req->username : $user->username;
-                    $user->password = $req->has('password') ? $req->password : $user->password;
+                    $user->password = $req->has('password') ? $new_password : $user->password;
                     $user->email = $req->has('email') ? $req->email : $user->email;
                     $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
                     $user->status = $req->has('status') ? $req->status : $user->status;
@@ -470,5 +474,60 @@ class UserController extends Controller
         }
 
         return true;
+    }
+
+    /**
+     * For Forgot Password
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+
+    public function forgot_password(Request $request)
+    {
+        /* Validation */
+        $validator = Validator::make($request->all(), [
+          'email' => 'required|max:255',
+        ]);
+
+        if($validator->fails()) {
+            $result = $this->generate_response($user,400,'Bad Request.',true);
+            return response()->json($result, 400);
+        }else{
+            $select = new User;
+            $select = $select->where('status', '!=', 'deleted')->where('email', $request->email)->first();
+
+            if(!$select){
+                $result = $this->generate_response($user,404,'Email Not Found.',true);
+                return response()->json($result, 400);
+            }else{
+                /* bundling data */
+                $new_password = str_random(8);
+                $hasher = app()->make('hash');
+                $password = $hasher->make($new_password);
+
+                /* replace password */
+                $user = User::find($select->id);
+                $user->password = $password;
+                $user->save();
+                $user->new_password = $new_password;
+
+                /* Email Process */
+                $data['to']         = $select->email;
+                $data['alias']      = 'Admin Pandu';
+                $data['subject']    = 'LUPA PASSWORD';
+                $data['content']    = "Password anda telah di ganti. <br/> Silahkan Login dengan password baru anda. <br/> Password Baru anda : <strong>".$new_password."</strong>";
+                $data['name']       = $select->username;
+
+                $email              = $data;
+                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                    $send->to($email['to'])->subject($email['subject']);
+                    $send->from('admin@pandu.com', $email['alias']);
+                });
+
+                $result = $this->generate_response($user, 200, 'Success Change Password.', false);
+                return response()->json($result, 200);
+            }
+        }
     }
 }

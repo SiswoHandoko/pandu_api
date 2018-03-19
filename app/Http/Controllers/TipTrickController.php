@@ -110,7 +110,7 @@ class TipTrickController extends Controller
             foreach($user as $u){
                 $data['to']         = $u['email'];
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'NEW TIPS AND TRICKS';
+                $data['subject']    = 'TIPS DAN TRICK BARU ';
                 $data['content']    = "Segera Check HP anda Terdapat Tips And Tricks Baru. <br/> Silahkan buka Apps kamu untuk mengecek nya secara langsung.";
                 $data['name']       = $u['username'];
 
