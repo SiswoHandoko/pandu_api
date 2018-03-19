@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Pandu Admin",
-		"_postman_id": "0989d1e8-5430-472e-af67-adcac7037cba",
+		"_postman_id": "fd2da618-bbc8-4c9b-92b4-02812aac307f",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -712,6 +712,32 @@
 			"name": "User",
 			"description": "",
 			"item": [
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "cs.siswo.handoko@gmail.com",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/public/forgotpassword",
+						"description": ""
+					},
+					"response": []
+				},
 				{
 					"name": "Login",
 					"request": {
