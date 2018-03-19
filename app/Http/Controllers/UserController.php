@@ -4,6 +4,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Model\User;
 use App\Model\Plan;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -148,7 +149,20 @@ class UserController extends Controller
                 /* bundling data */
                 $hasher = app()->make('hash');
                 $password = $hasher->make($req->input('password'));
+                
+                /* Email Process */
+                $data['to']         = $req->input('email');
+                $data['alias']      = 'Admin Pandu';
+                $data['subject']    = 'REGISTRATION INFO';
+                $data['content']    = "Selamat akun anda telah terdaftar pada Pandu Apps. <br/> Silahkan login pada applikasi untuk mulai membuat Plan.";
+                $data['name']       = $req->input('username');
 
+                $email              = $data;
+                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                    $send->to($email['to'])->subject($email['subject']);
+                    $send->from('admin@pandu.com', $email['alias']);
+                });
+                
                 $user = new User();
                 $user->firstname = $req->has('firstname') ? $req->firstname : '';
                 $user->lastname = $req->has('lastname') ? $req->lastname : '';

@@ -294,11 +294,12 @@ Sizes: [
 																			<tr>
 																				<td valign="top" class="textContent" >
 																					<h4 style="color:#5F5F5F;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;"><b>Hello, {{ $params["name"] }} </b></h4>
+																					<br/>
 																					<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">
-                                                                                        {{ $params["content"] }}
+                                                                                        <?php echo $params["content"] ?>
                                                                                     	<br>
                                                                                     	<br>
-                                                                                    	Thanks
+                                                                                    	Terimakasih
 																					</div>
 																				</td>
 																			</tr>

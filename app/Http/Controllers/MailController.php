@@ -38,7 +38,7 @@ class MailController extends Controller
             $email              = $data;
             Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
                 $send->to($email['to'])->subject($email['subject']);
-                $send->from('noreply@dipanduapp.com', $email['alias']);
+                $send->from('admin@pandu.com', $email['alias']);
             });
 
             if(Mail::failures()) {

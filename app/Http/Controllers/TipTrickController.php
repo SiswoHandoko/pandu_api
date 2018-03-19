@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\TipTrick;
+use App\Model\User;
+use Illuminate\Support\Facades\Mail;
 
 class TipTrickController extends Controller
 {
@@ -102,6 +104,23 @@ class TipTrickController extends Controller
             $result = $this->generate_response($tiptrick,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
+            $user = new User;
+            $user = $user->where('status', '!=', 'deleted')->get();
+            
+            foreach($user as $u){
+                $data['to']         = $u['email'];
+                $data['alias']      = 'Admin Pandu';
+                $data['subject']    = 'NEW TIPS AND TRICKS';
+                $data['content']    = "Segera Check HP anda Terdapat Tips And Tricks Baru. <br/> Silahkan buka Apps kamu untuk mengecek nya secara langsung.";
+                $data['name']       = $u['username'];
+
+                $email              = $data;
+                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                    $send->to($email['to'])->subject($email['subject']);
+                    $send->from('admin@pandu.com', $email['alias']);
+                });
+            }
+            
             $tiptrick = new TipTrick();
             $tiptrick->title = $req->has('title') ? $req->title : '';
             $tiptrick->description = $req->has('description') ? $req->description : '';
