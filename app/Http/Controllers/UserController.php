@@ -220,8 +220,8 @@ class UserController extends Controller
             'address' => 'required|max:255',
             'birthdate' => 'required|max:255',
             'username' => 'required|max:255',
-            'password' => 'required|max:255',
-            'repassword' => 'required|max:255',
+            'password' => 'max:255',
+            'repassword' => 'max:255',
             'email' => 'required|max:255',
             'role_id' => 'required|max:255|in:1,2,3',
             'status' => 'required|max:255',
@@ -248,9 +248,26 @@ class UserController extends Controller
                     $result = $this->generate_response($user,404,'Data Not Found.',true);
                     return response()->json($result, 404);
                 }else{
-                    /* bundling data */
-                    $hasher = app()->make('hash');
-                    $new_password = $hasher->make($req->password);
+                    /* Change Password */
+                    if($req->has('password') && $req->has('repassword')){
+                        $hasher = app()->make('hash');
+                        $new_password = $hasher->make($req->password);
+
+                        if($new_password!=$user->password){
+                            /* Email Process */
+                            $data['to']         = 'cs.siswo.handoko@gmail.com';
+                            $data['alias']      = 'Admin Pandu';
+                            $data['subject']    = 'GANTI PASSWORD';
+                            $data['content']    = "Password anda telah di ganti. <br/> Silahkan Login dengan password baru anda. <br/> Password Baru anda : <strong>".$req->password."</strong>";
+                            $data['name']       = $user->username;
+                            
+                            $email              = $data;
+                            Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                                $send->to($email['to'])->subject($email['subject']);
+                                $send->from('admin@pandu.com', $email['alias']);
+                            });
+                        }
+                    }
 
                     $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
                     $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
