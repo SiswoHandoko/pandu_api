@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Feedback;
+use App\Model\AccessLog;
 
 class FeedbackController extends Controller
 {
@@ -31,6 +32,14 @@ class FeedbackController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'event_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $feedback = new Feedback;
         $feedback = $feedback->where('status', '!=', 'deleted');
 
@@ -53,6 +62,8 @@ class FeedbackController extends Controller
             } else {
                 $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -65,6 +76,8 @@ class FeedbackController extends Controller
                 $feedback = $feedback->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -82,6 +95,8 @@ class FeedbackController extends Controller
 
         $result = $this->generate_response($feedback, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -93,6 +108,14 @@ class FeedbackController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'event_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required|max:255',
@@ -100,6 +123,8 @@ class FeedbackController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         }else{
@@ -113,6 +138,8 @@ class FeedbackController extends Controller
 
             $result = $this->generate_response($feedback, 200, 'Data Has Been Saved.', false);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -125,14 +152,26 @@ class FeedbackController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'event_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
         
         if (!$feedback) {
             $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($feedback, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -148,6 +187,14 @@ class FeedbackController extends Controller
 
     public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'event_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required|max:255',
@@ -156,12 +203,16 @@ class FeedbackController extends Controller
         if($validator->fails()) {
             $result = $this->generate_response($feedback, 400, 'Bad Request.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
 
             if (!$feedback) {
                 $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             } else {
@@ -171,6 +222,8 @@ class FeedbackController extends Controller
                 $feedback->save();
 
                 $result = $this->generate_response($feedback, 200, 'Data Has Been Updated.', false);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 200);
             }
@@ -185,10 +238,20 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'event_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $feedback = Feedback::where('status', '!=', 'deleted')->find($id);
 
         if (!$feedback) {
             $result = $this->generate_response($feedback, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
@@ -197,6 +260,8 @@ class FeedbackController extends Controller
             $feedback->save();
             
             $result = $this->generate_response($feedback, 200, 'Data Has Been Deleted.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -211,5 +276,21 @@ class FeedbackController extends Controller
         }
 
         return true;
+    }
+
+    private function create_access_log($params)
+    {
+        $result = AccessLog::create($params);
+
+        return $result->id;
+    }
+
+    private function update_access_log($access_log_id, $arr_result)
+    {
+        $access_log = AccessLog::find($access_log_id);
+
+        $access_log->result = json_encode($arr_result);
+
+        $access_log->save();
     }
 }

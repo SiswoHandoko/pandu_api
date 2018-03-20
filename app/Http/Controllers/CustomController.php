@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Mail;
+use App\Model\AccessLog;
 
 class CustomController extends Controller
 {
@@ -15,6 +16,14 @@ class CustomController extends Controller
      */
     public function update_status(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'custom_package',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $tables = $this->get_table();
         /* Validation */
         $validator = Validator::make($req->all(), [
@@ -25,6 +34,9 @@ class CustomController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($update,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $modeldir   = "App\Model\ ";
@@ -34,6 +46,9 @@ class CustomController extends Controller
             $update = $model::find($id);
             if(!$update){
                 $result = $this->generate_response($update, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 404);
             }else{
                 $update->status = $req->has('status') ? $req->status : '';
@@ -99,9 +114,27 @@ class CustomController extends Controller
                 }
 
                 $result = $this->generate_response($update,200,'Data Has Been Updated.',false);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
     }
 
+    private function create_access_log($params)
+    {
+        $result = AccessLog::create($params);
+
+        return $result->id;
+    }
+
+    private function update_access_log($access_log_id, $arr_result)
+    {
+        $access_log = AccessLog::find($access_log_id);
+
+        $access_log->result = json_encode($arr_result);
+
+        $access_log->save();
+    }
 }

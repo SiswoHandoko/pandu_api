@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Pandu Admin",
-		"_postman_id": "fd2da618-bbc8-4c9b-92b4-02812aac307f",
+		"_postman_id": "0989d1e8-5430-472e-af67-adcac7037cba",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -268,7 +268,7 @@
 									"key": "image_url[0]",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "/images/pictures"
 								},
 								{
 									"key": "image_url[1]",
@@ -308,7 +308,7 @@
 									"key": "image_url",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "/images/pictures"
 								}
 							]
 						},
@@ -351,7 +351,7 @@
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"url": "{{url}}/public/event/delete/2",
+						"url": "{{url}}/public/event/delete/6",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -448,7 +448,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/event/update/2",
+						"url": "{{url}}/public/event/update/6",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -524,70 +524,88 @@
 								{
 									"key": "city_id",
 									"value": "227",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "name",
 									"value": "Prambanan",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "description",
 									"value": "This is prambanan",
-									"description": "no mandatory",
 									"type": "text",
+									"description": "no mandatory",
 									"disabled": true
 								},
 								{
 									"key": "adult_price",
 									"value": "7000",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "child_price",
 									"value": "8000",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "infant_price",
 									"value": "9000",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "tourist_price",
 									"value": "10000",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "longitude",
 									"value": "1",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "latitude",
 									"value": "-1",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
 								},
 								{
 									"key": "facilities",
 									"value": "toilet, mushola, wifi",
-									"description": "no mandatory",
 									"type": "text",
+									"description": "no mandatory",
 									"disabled": true
 								},
 								{
 									"key": "rate",
 									"value": "1",
-									"description": "",
-									"type": "text"
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "address",
+									"value": "Jl. Setiabudi",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "phone",
+									"value": "082132222333",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "category",
+									"value": "wisata",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -674,6 +692,24 @@
 								{
 									"key": "rate",
 									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "address",
+									"value": "Jl. Setiabudi",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "phone",
+									"value": "082132222333",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "category",
+									"value": "wisata",
 									"description": "",
 									"type": "text"
 								}
@@ -712,32 +748,6 @@
 			"name": "User",
 			"description": "",
 			"item": [
-				{
-					"name": "Forgot Password",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "cs.siswo.handoko@gmail.com",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": "{{url}}/public/forgotpassword",
-						"description": ""
-					},
-					"response": []
-				},
 				{
 					"name": "Login",
 					"request": {
@@ -1323,6 +1333,26 @@
 					"response": []
 				},
 				{
+					"name": "Get Tourism Places by City",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/city/227/tourismplaces",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete City",
 					"request": {
 						"method": "GET",
@@ -1337,7 +1367,7 @@
 							}
 						],
 						"body": {},
-						"url": "{{url}}/public/city/delete/515",
+						"url": "{{url}}/public/city/delete/516",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1401,27 +1431,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/city/update/515",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Tourism Places by City",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/city/1/tourismplaces",
+						"url": "{{url}}/public/city/update/516",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1579,7 +1589,7 @@
 							}
 						],
 						"body": {},
-						"url": "{{url}}/public/advertisement/delete/2",
+						"url": "{{url}}/public/advertisement/delete/7",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1615,7 +1625,7 @@
 									"key": "image_url",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "/images/advertisements"
 								},
 								{
 									"key": "caption",
@@ -1667,7 +1677,7 @@
 									"key": "image_url",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "/images/advertisements"
 								},
 								{
 									"key": "caption",
@@ -1689,7 +1699,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/advertisement/update/2",
+						"url": "{{url}}/public/advertisement/update/7",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -2684,7 +2694,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package?city_id=227&day=2",
+							"raw": "{{url}}/public/package",
 							"host": [
 								"{{url}}"
 							],
@@ -2694,20 +2704,10 @@
 							],
 							"query": [
 								{
-									"key": "city_id",
-									"value": "227",
-									"equals": true
-								},
-								{
 									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
-								},
-								{
-									"key": "day",
-									"value": "2",
-									"equals": true
 								}
 							]
 						},
@@ -2860,7 +2860,7 @@
 									"key": "image_url",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "/images/packages"
 								}
 							]
 						},

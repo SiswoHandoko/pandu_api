@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\City;
 use App\Model\TourismPlace;
 use App\Model\Package;
+use App\Model\AccessLog;
 
 class CityController extends Controller
 {
@@ -61,6 +62,14 @@ class CityController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'city_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $city = new City;
         $city = $city->where('status', '!=', 'deleted');
 
@@ -83,6 +92,8 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -95,6 +106,8 @@ class CityController extends Controller
                 $city = $city->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -112,6 +125,8 @@ class CityController extends Controller
 
         $result = $this->generate_response($city, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -123,6 +138,14 @@ class CityController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'city_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'name' => 'required|max:255',
@@ -130,13 +153,19 @@ class CityController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($city,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $city = new City();
             $city->name = $req->has('name') ? $req->name : '';
             $city->status = 'active';
             $city->save();
+
             $result = $this->generate_response($city,200,'Data Has Been Saved.',false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -150,12 +179,27 @@ class CityController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'city_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $city = City::where('status','!=','deleted')->find($id);
+
         if(!$city){
             $result = $this->generate_response($city, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($city, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -170,6 +214,14 @@ class CityController extends Controller
 
     public function update(Request $req,$id)
     {
+        $param_insert = array(
+            'name' => 'city_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'name' => 'required|max:255',
@@ -177,17 +229,27 @@ class CityController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($city,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $city = City::find($id);
             if(!$city){
                 $result = $this->generate_response($city, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 404);
             }else{
                 $city->name = $req->has('name') ? $req->name : $city->name;
                 $city->status = $req->has('status') ? $req->status : $city->status;
                 $city->save();
+
                 $result = $this->generate_response($city,200,'Data Has Been Updated.',false);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -201,15 +263,30 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'city_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $city = City::where('status', '!=', 'deleted')->find($id);
         
         if(!$city){
             $result = $this->generate_response($city, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $city->status = 'deleted';
             $city->save();
+
             $result = $this->generate_response($city,200,'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -221,6 +298,14 @@ class CityController extends Controller
     */
     public function tourismplace_by_city(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'city_tourismplace',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $tourismplace = new TourismPlace;
         $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
         $tourismplace = $tourismplace->where('city_id', $id);
@@ -245,6 +330,8 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -257,6 +344,8 @@ class CityController extends Controller
                 $tourismplace = $tourismplace->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -274,6 +363,8 @@ class CityController extends Controller
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -284,6 +375,14 @@ class CityController extends Controller
     */
     public function package_by_city(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'city_package',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $package = new Package;
         $package = $package->with('packagedetail.tourismplace.city');
         $package = $package->where('status', '!=', 'deleted');
@@ -310,6 +409,8 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -322,6 +423,8 @@ class CityController extends Controller
                 $package = $package->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -339,6 +442,8 @@ class CityController extends Controller
 
         $result = $this->generate_response($package, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -351,5 +456,21 @@ class CityController extends Controller
         }
 
         return true;
+    }
+
+    private function create_access_log($params)
+    {
+        $result = AccessLog::create($params);
+
+        return $result->id;
+    }
+
+    private function update_access_log($access_log_id, $arr_result)
+    {
+        $access_log = AccessLog::find($access_log_id);
+
+        $access_log->result = json_encode($arr_result);
+
+        $access_log->save();
     }
 }
