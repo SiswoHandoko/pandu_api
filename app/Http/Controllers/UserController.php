@@ -255,7 +255,7 @@ class UserController extends Controller
 
                         if($new_password!=$user->password){
                             /* Email Process */
-                            $data['to']         = 'cs.siswo.handoko@gmail.com';
+                            $data['to']         = $user->email;
                             $data['alias']      = 'Admin Pandu';
                             $data['subject']    = 'GANTI PASSWORD';
                             $data['content']    = "Password anda telah di ganti. <br/> Silahkan Login dengan password baru anda. <br/> Password Baru anda : <strong>".$req->password."</strong>";
