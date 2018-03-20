@@ -27,9 +27,9 @@ class CreateTourismPlacesTable extends Migration
             $table->double('latitude')->default(0);
             $table->text('facilities')->default('');
             $table->integer('rate')->default(0);
-            $table->string('status')->default('');
             $table->text('address')->default('');
             $table->string('phone')->default('');
+            $table->string('status')->default('');
             $table->timestamps();
         });
     }
