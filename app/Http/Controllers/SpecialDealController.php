@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\SpecialDeal;
+use App\Model\User;
+use Illuminate\Support\Facades\Mail;
 
 class SpecialDealController extends Controller
 {
@@ -81,9 +83,28 @@ class SpecialDealController extends Controller
 
         $specialdeal = $specialdeal->get();
 
+        $specialdeal = $this->check_data($specialdeal);
+
         $result = $this->generate_response($specialdeal, 200, 'All Data.', false);
 
         return response()->json($result, 200);
+    }
+
+    private function check_data($specialdeal)
+    {
+        $specialdeal = collect($specialdeal)->toArray();
+
+        foreach ($specialdeal as $key => $value) {
+            if ($value['tourismplace'] == null) {
+                $specialdeal[$key]['tourismplace'] = array();
+            }
+
+            if ($value['package'] == null) {
+                $specialdeal[$key]['package'] = array();
+            }
+        }
+        
+        return $specialdeal;
     }
 
     /**
@@ -105,6 +126,26 @@ class SpecialDealController extends Controller
             $result = $this->generate_response($specialdeal,400,'Bad Request.',true);
             return response()->json($result, 400);
         }else{
+            $user = new User;
+            $user = $user->where('status', '!=', 'deleted')->get();
+
+            foreach($user as $u){
+                $data['to']         = $u['email'];
+                // $data['to']         = "code.lab.indonesia@gmail.com";
+                $data['alias']      = 'Admin Pandu';
+                $data['subject']    = 'SPECIAL DEAL BARU ';
+                $data['content']    = "Segera Check HP anda Terdapat Special Deal Baru. <br/> Silahkan buka Apps kamu untuk mengecek nya secara langsung.";
+                $data['name']       = $u['username'];
+                // $data['name']       = "asepmulyadi";
+
+                $email              = $data;
+
+                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                    $send->to($email['to'])->subject($email['subject']);
+                    $send->from('admin@pandu.com', $email['alias']);
+                });
+            }
+
             $specialdeal = new SpecialDeal();
             $specialdeal->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '';
             $specialdeal->package_id = $req->has('package_id') ? $req->package_id : '';

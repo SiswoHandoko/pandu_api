@@ -59,23 +59,6 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
-        // $data[] = array('volume' => 67, 'edition' => 2);
-        // $data[] = array('volume' => 86, 'edition' => 1);
-        // $data[] = array('volume' => 85, 'edition' => 6);
-        // $data[] = array('volume' => 98, 'edition' => 2);
-        // $data[] = array('volume' => 86, 'edition' => 6);
-        // $data[] = array('volume' => 67, 'edition' => 7);
-
-        // // Obtain a list of columns
-        // foreach ($data as $key => $row) {
-        //     $volume[$key]  = $row['volume'];
-        // }
-
-        // // Sort the data with volume descending, edition ascending
-        // // Add $data as the last parameter, to sort by the common key
-        // array_multisort($volume, SORT_ASC, $data);
-        // print_r($volume);exit;
-
         $tourismplace = new TourismPlace;
         $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
         $tourismplace = $tourismplace->where('status', '!=', 'deleted');
@@ -130,8 +113,6 @@ class TourismPlaceController extends Controller
             $tourismplace = $this->sort_distance($tourismplace, $req->input('latitude'), $req->input('longitude'));
         }
 
-        // print_r($tourismplace);exit;
-
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         return response()->json($result, 200);
@@ -146,8 +127,6 @@ class TourismPlaceController extends Controller
             $tourismplace[$key]['distance'] = $distance;
             $arr_distance[$key] = $distance;
         }
-
-        // $tourismplace = collect($tourismplace)->toArray();
 
         $result = $this->array_msort($tourismplace, array('distance'=>SORT_ASC));
 
@@ -242,6 +221,9 @@ class TourismPlaceController extends Controller
             $tourismplace->facilities = $req->has('facilities') ? $req->facilities : '';
             $tourismplace->rate = $req->has('rate') ? $req->rate : 0;
             $tourismplace->status = 'active';
+            $tourismplace->address = $req->has('address') ? $req->address : '';
+            $tourismplace->phone = $req->has('phone') ? $req->phone : '';
+            $tourismplace->category = $req->has('category') ? $req->category : '';
 
             $tourismplace->save();
 
@@ -320,6 +302,9 @@ class TourismPlaceController extends Controller
                 $tourismplace->facilities = $req->has('facilities') ? $req->facilities : $tourismplace->facilities;
                 $tourismplace->rate = $req->has('rate') ? $req->rate : $tourismplace->rate;
                 $tourismplace->status = $req->has('status') ? $req->status : $tourismplace->status;
+                $tourismplace->address = $req->has('address') ? $req->address : $tourismplace->address;
+                $tourismplace->phone = $req->has('phone') ? $req->phone : $tourismplace->phone;
+                $tourismplace->category = $req->has('category') ? $req->category : $tourismplace->category;
 
                 $tourismplace->save();
 
