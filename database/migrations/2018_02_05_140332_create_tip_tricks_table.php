@@ -15,6 +15,7 @@ class CreateTipTricksTable extends Migration
     {
         Schema::create('tip_tricks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('city_id')->default(0);
             $table->string('title')->default('');
             $table->text('description')->default('');
             $table->string('status')->default('');

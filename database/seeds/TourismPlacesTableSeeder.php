@@ -16,7 +16,8 @@ class TourismPlacesTableSeeder extends Seeder
 
         $data = [
             [
-            	'city_id' => 227,
+                'city_id' => 227,
+            	'category' => '',
             	'name' => 'Borobudur',
             	'description' => 'This is borobudur',
                 'adult_price' => 10000,
@@ -31,6 +32,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
+                'category' => '',
                 'name' => 'Prambanan',
                 'description' => 'This is prambanan',
                 'adult_price' => 10000,
@@ -45,6 +47,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
+                'category' => '',
                 'name' => 'Laut Selatan',
                 'description' => 'This is Laut Selatan',
                 'adult_price' => 10000,
@@ -58,7 +61,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'status' => 'active'
             ],
             [
-                'city_id' => 160,
+                'city_id' => 515,
+                'category' => '',
                 'name' => 'Ancol',
                 'description' => 'This is Ancol',
                 'adult_price' => 10000,
@@ -72,7 +76,8 @@ class TourismPlacesTableSeeder extends Seeder
                 'status' => 'active'
             ],
             [
-                'city_id' => 159,
+                'city_id' => 515,
+                'category' => '',
                 'name' => 'TMII',
                 'description' => 'This is TMII',
                 'adult_price' => 10000,

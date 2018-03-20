@@ -97,7 +97,7 @@ class TipTrickController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
           'title' => 'required|max:255',
-          'description' => 'required|max:255',
+          'description' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -164,7 +164,7 @@ class TipTrickController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'title' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
         ]);
 
         if($validator->fails()) {

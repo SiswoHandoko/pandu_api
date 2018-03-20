@@ -949,31 +949,31 @@ class CitiesTableSeeder extends Seeder
                 'province_id' => 11,
                 'name' => 'KOTA JAKARTA SELATAN',
                 'rate' => 0,
-                'status' => 'active'
+                'status' => 'deleted'
             ],
             [
                 'province_id' => 11,
                 'name' => 'KOTA JAKARTA TIMUR',
                 'rate' => 0,
-                'status' => 'active'
+                'status' => 'deleted'
             ],
             [
                 'province_id' => 11,
                 'name' => 'KOTA JAKARTA PUSAT',
                 'rate' => 0,
-                'status' => 'active'
+                'status' => 'deleted'
             ],
             [
                 'province_id' => 11,
                 'name' => 'KOTA JAKARTA BARAT',
                 'rate' => 0,
-                'status' => 'active'
+                'status' => 'deleted'
             ],
             [
                 'province_id' => 11,
                 'name' => 'KOTA JAKARTA UTARA',
                 'rate' => 0,
-                'status' => 'active'
+                'status' => 'deleted'
             ],
             [
                 'province_id' => 12,
@@ -3098,7 +3098,13 @@ class CitiesTableSeeder extends Seeder
                 'name' => 'KOTA JAYAPURA',
                 'rate' => 0,
                 'status' => 'deleted'
-            ]
+            ],
+            [
+                'province_id' => 11,
+                'name' => 'KOTA JAKARTA',
+                'rate' => 0,
+                'status' => 'active'
+            ],
         ];
         
         City::insert($data);

@@ -16,6 +16,7 @@ class CreateTourismPlacesTable extends Migration
         Schema::create('tourism_places', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('city_id')->default(0);
+            $table->string('category')->default('');
             $table->string('name')->default('');
             $table->text('description')->default('');
             $table->bigInteger('adult_price')->default(0);
