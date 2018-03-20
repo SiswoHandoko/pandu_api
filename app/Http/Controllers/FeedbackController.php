@@ -33,7 +33,7 @@ class FeedbackController extends Controller
     public function index(Request $req)
     {
         $param_insert = array(
-            'name' => 'event_index',
+            'name' => 'feedback_index',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
@@ -109,7 +109,7 @@ class FeedbackController extends Controller
     public function store(Request $req)
     {
         $param_insert = array(
-            'name' => 'event_store',
+            'name' => 'feedback_store',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
@@ -153,7 +153,7 @@ class FeedbackController extends Controller
     public function show($id)
     {
         $param_insert = array(
-            'name' => 'event_show',
+            'name' => 'feedback_show',
             'params' => '',
             'result' => ''
         );
@@ -188,7 +188,7 @@ class FeedbackController extends Controller
     public function update(Request $req, $id)
     {
         $param_insert = array(
-            'name' => 'event_update',
+            'name' => 'feedback_update',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
@@ -239,7 +239,7 @@ class FeedbackController extends Controller
     public function destroy($id)
     {
         $param_insert = array(
-            'name' => 'event_destroy',
+            'name' => 'feedback_destroy',
             'params' => '',
             'result' => ''
         );

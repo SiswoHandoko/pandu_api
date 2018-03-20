@@ -8,6 +8,7 @@
 	"order": [],
 	"folders_order": [
 		"51e7dd0a-e775-4c85-8397-c9356ab9f3fe",
+		"eefb3286-05d5-491f-ad47-47250c61cbdd",
 		"23245bb7-0297-4a6d-9b93-25166cf87303",
 		"5313c6a3-5a8f-4e76-8eda-5ae027641c39",
 		"260d49b6-2668-49db-8df9-ed298b5bf62d",
@@ -120,6 +121,23 @@
 				"9d9073a4-0bfc-432f-a1ce-07729a1ec887",
 				"8be1b9c8-3eb7-4750-a0cb-ac4edf9a8e69",
 				"81f47d56-35c5-4c07-bf9f-f644b450283d"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"name": "Info Payment",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "0989d1e8-5430-472e-af67-adcac7037cba",
+			"folder": null,
+			"order": [
+				"efd9e2ab-7378-4253-bdcb-12b1e5117ae3",
+				"43715995-26d1-4e92-af8e-d40e36ec41a7",
+				"3e5434ee-fb99-47b5-9579-8001a1728e0d",
+				"b81a7ebb-0bbe-48b8-abb1-e39a6e07a158",
+				"5ef2bda3-bb28-40dd-9841-1a758c0bc2b3"
 			],
 			"folders_order": []
 		},
@@ -1315,6 +1333,23 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "3e5434ee-fb99-47b5-9579-8001a1728e0d",
+			"name": "Delete Info Payment",
+			"url": "{{url}}/public/infopayment/delete/7",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
 			"id": "3f1852c1-3b06-4794-91bc-42fe2d49f8f0",
 			"name": "Get Roles",
 			"url": "{{url}}/public/role",
@@ -1518,6 +1553,36 @@
 			"events": [],
 			"folder": "2929c2cf-3e1c-46e2-b883-fbfff5f4f158",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "43715995-26d1-4e92-af8e-d40e36ec41a7",
+			"name": "Get Info Payment",
+			"url": "{{url}}/public/infopayment/1",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "android",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
 			"pathVariables": {}
 		},
 		{
@@ -1850,6 +1915,59 @@
 			"events": [],
 			"folder": "22a0583c-f8e1-4dd6-8539-0497db83c0b6",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5ef2bda3-bb28-40dd-9841-1a758c0bc2b3",
+			"name": "Update Info Payment",
+			"url": "{{url}}/public/infopayment/update/7",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "bank",
+					"value": "BRI",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "no_rek",
+					"value": "0123456789",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "name",
+					"value": "New Admin Bank",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"pathVariables": {}
 		},
 		{
@@ -3418,6 +3536,52 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "b81a7ebb-0bbe-48b8-abb1-e39a6e07a158",
+			"name": "Create Info Payment",
+			"url": "{{url}}/public/infopayment/create",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "bank",
+					"value": "BRI",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "no_rek",
+					"value": "0123456789",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "name",
+					"value": "New Admin Bank",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
 			"id": "b8812572-f6e5-4683-85af-39b121b8e71b",
 			"name": "Get Plan",
 			"url": "{{url}}/public/plan/7",
@@ -3589,29 +3753,14 @@
 		{
 			"id": "c7509135-58f2-4075-93a7-850dc94b27de",
 			"name": "Get Tourism Places",
-			"url": "{{url}}/public/tourismplace?latitude=1&longitude=-1",
+			"url": "{{url}}/public/tourismplace",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
 			"headerData": [],
 			"method": "GET",
 			"pathVariableData": [],
-			"queryParams": [
-				{
-					"key": "latitude",
-					"value": "1",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "longitude",
-					"value": "-1",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
+			"queryParams": [],
 			"auth": null,
 			"events": [],
 			"folder": "2929c2cf-3e1c-46e2-b883-fbfff5f4f158",
@@ -4085,6 +4234,23 @@
 			"events": [],
 			"folder": "d295baa8-c861-4866-8aed-3151970ceede",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "efd9e2ab-7378-4253-bdcb-12b1e5117ae3",
+			"name": "Get Info Payments",
+			"url": "{{url}}/public/infopayment",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eefb3286-05d5-491f-ad47-47250c61cbdd",
+			"headers": "",
 			"pathVariables": {}
 		},
 		{

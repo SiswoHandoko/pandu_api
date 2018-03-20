@@ -1,7 +1,7 @@
 {
 	"info": {
-		"name": "Pandu Admin",
 		"_postman_id": "0989d1e8-5430-472e-af67-adcac7037cba",
+		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -95,6 +95,139 @@
 							]
 						},
 						"url": "{{url}}/public/role/update/4",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Info Payment",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Info Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/infopayment",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info Payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c"
+							},
+							{
+								"key": "device-type",
+								"value": "android"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/infopayment/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Info Payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/infopayment/delete/7",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Info Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bank",
+									"value": "BRI",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "no_rek",
+									"value": "0123456789",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "name",
+									"value": "New Admin Bank",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/infopayment/create",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Info Payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "bank",
+									"value": "BRI",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "no_rek",
+									"value": "0123456789",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "name",
+									"value": "New Admin Bank",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/infopayment/update/7",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -465,28 +598,7 @@
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"url": {
-							"raw": "{{url}}/public/tourismplace?latitude=1&longitude=-1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"tourismplace"
-							],
-							"query": [
-								{
-									"key": "latitude",
-									"value": "1",
-									"equals": true
-								},
-								{
-									"key": "longitude",
-									"value": "-1",
-									"equals": true
-								}
-							]
-						},
+						"url": "{{url}}/public/tourismplace",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -782,8 +894,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/login",
-						"description": ""
+						"url": "{{url}}/public/login"
 					},
 					"response": []
 				},
@@ -823,7 +934,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/user",
+							"raw": "{{url}}/public/user?",
 							"host": [
 								"{{url}}"
 							],
@@ -833,7 +944,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -859,8 +969,7 @@
 							}
 						],
 						"body": {},
-						"url": "{{url}}/public/user/1",
-						"description": ""
+						"url": "{{url}}/public/user/1"
 					},
 					"response": []
 				},
@@ -965,8 +1074,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/user/create",
-						"description": ""
+						"url": "{{url}}/public/user/create"
 					},
 					"response": []
 				},
@@ -1086,7 +1194,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/user/3/plans",
+							"raw": "{{url}}/public/user/3/plans?",
 							"host": [
 								"{{url}}"
 							],
@@ -1098,7 +1206,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1291,7 +1398,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/city",
+							"raw": "{{url}}/public/city?",
 							"host": [
 								"{{url}}"
 							],
@@ -1301,7 +1408,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1465,13 +1571,11 @@
 							"query": [
 								{
 									"key": "where_by",
-									"value": "days",
-									"equals": true
+									"value": "days"
 								},
 								{
 									"key": "where_value",
-									"value": "2",
-									"equals": true
+									"value": "2"
 								}
 							]
 						},
@@ -1533,7 +1637,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/advertisement",
+							"raw": "{{url}}/public/advertisement?",
 							"host": [
 								"{{url}}"
 							],
@@ -1543,7 +1647,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1726,7 +1829,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/specialdeal",
+							"raw": "{{url}}/public/specialdeal?",
 							"host": [
 								"{{url}}"
 							],
@@ -1736,7 +1839,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1897,7 +1999,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/tiptrick",
+							"raw": "{{url}}/public/tiptrick?",
 							"host": [
 								"{{url}}"
 							],
@@ -1907,7 +2009,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2062,7 +2163,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/plan",
+							"raw": "{{url}}/public/plan?",
 							"host": [
 								"{{url}}"
 							],
@@ -2072,7 +2173,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2339,7 +2439,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/plan/1/plandetails",
+							"raw": "{{url}}/public/plan/1/plandetails?",
 							"host": [
 								"{{url}}"
 							],
@@ -2351,7 +2451,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2477,7 +2576,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/plandetail",
+							"raw": "{{url}}/public/plandetail?",
 							"host": [
 								"{{url}}"
 							],
@@ -2487,7 +2586,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2694,7 +2792,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package",
+							"raw": "{{url}}/public/package?",
 							"host": [
 								"{{url}}"
 							],
@@ -2704,7 +2802,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2885,7 +2982,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package/3/packagedetails",
+							"raw": "{{url}}/public/package/3/packagedetails?",
 							"host": [
 								"{{url}}"
 							],
@@ -2897,7 +2994,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -2930,7 +3026,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/packagedetail",
+							"raw": "{{url}}/public/packagedetail?",
 							"host": [
 								"{{url}}"
 							],
@@ -2940,7 +3036,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true

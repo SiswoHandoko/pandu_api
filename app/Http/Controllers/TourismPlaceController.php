@@ -277,7 +277,6 @@ class TourismPlaceController extends Controller
             'rate' => 'required'
         ]);
 
-
         if($validator->fails()) {
             $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
