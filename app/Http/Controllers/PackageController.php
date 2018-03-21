@@ -48,6 +48,14 @@ class PackageController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'package_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $package = new Package;
         $package = $package->with('packagedetail.tourismplace.city');
         $package = $package->where('status', '!=', 'deleted');
@@ -89,6 +97,8 @@ class PackageController extends Controller
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -101,6 +111,8 @@ class PackageController extends Controller
                 $package = $package->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -118,6 +130,8 @@ class PackageController extends Controller
 
         $result = $this->generate_response($package, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -129,6 +143,14 @@ class PackageController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'package_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required',
@@ -141,6 +163,8 @@ class PackageController extends Controller
 
         if ($validator->fails()) {
             $result = $this->generate_response($package, 400, 'Bad Request.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         } else {
@@ -158,6 +182,8 @@ class PackageController extends Controller
 
             $result = $this->generate_response($package, 200, 'Data Has Been Saved.', false);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -170,14 +196,26 @@ class PackageController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'package_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $package = Package::with('packagedetail')->where('status', '!=', 'deleted')->find($id);
 
         if (!$package) {
             $result = $this->generate_response($package, 404, 'Data Not Found.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($package, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -193,6 +231,14 @@ class PackageController extends Controller
 
     public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'package_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required',
@@ -206,12 +252,16 @@ class PackageController extends Controller
         if($validator->fails()) {
             $result = $this->generate_response($package, 400, 'Bad Request.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $package = Package::where('status', '!=', 'deleted')->find($id);
 
             if (!$package) {
                 $result = $this->generate_response($package, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             } else {
@@ -227,7 +277,9 @@ class PackageController extends Controller
 
                 $result = $this->generate_response($package, 200, 'Data Has Been Updated.', false);
 
-                return response()->json($result, 200);
+                $this->update_access_log($access_log_id, $result);
+
+                return Response()->json($result, 200);
             }
         }
     }
@@ -240,10 +292,20 @@ class PackageController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'package_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $package = Package::where('status', '!=', 'deleted')->find($id);
 
         if (!$package) {
             $result = $this->generate_response($package, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
@@ -252,6 +314,8 @@ class PackageController extends Controller
             $package->save();
 
             $result = $this->generate_response($package,200,'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -264,6 +328,14 @@ class PackageController extends Controller
     */
     public function packagedetail_by_package(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_by_package',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $packagedetail = new PackageDetail;
         $packagedetail = $packagedetail->with('package', 'tourismplace');
         $packagedetail = $packagedetail->orderBy('day', 'asc');
@@ -289,6 +361,8 @@ class PackageController extends Controller
             } else {
                 $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -301,6 +375,8 @@ class PackageController extends Controller
                 $packagedetail = $packagedetail->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -319,6 +395,8 @@ class PackageController extends Controller
         $packagedetail = $this->convert_data($packagedetail);
 
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

@@ -2553,6 +2553,189 @@
 						"description": "Get Province By Id"
 					},
 					"response": []
+				},
+				{
+					"name": "Update Plandetail by Plan",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "day1[0][plandetail_id]",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day1[0][tourism_place_id]",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day1[0][start_time]",
+									"value": "08:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day1[0][end_time]",
+									"value": "10:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day1[0][day]",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day1[0][no_ticket]",
+									"value": "",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day1[0][status]",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day2[0][plandetail_id]",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day2[0][tourism_place_id]",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day2[0][start_time]",
+									"value": "09:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day2[0][end_time]",
+									"value": "12:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day2[0][day]",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day2[0][no_ticket]",
+									"value": "",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day2[0][status]",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day3[0][plandetail_id]",
+									"value": "3",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day3[0][tourism_place_id]",
+									"value": "3",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day3[0][start_time]",
+									"value": "10:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day3[0][end_time]",
+									"value": "12:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day3[0][day]",
+									"value": "3",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day3[0][no_ticket]",
+									"value": "",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day3[0][status]",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "day4",
+									"value": "",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day5",
+									"value": "",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day6",
+									"value": "",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day7",
+									"value": "",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"url": "{{url}}/public/plan/update/1/plandetails"
+					},
+					"response": []
 				}
 			]
 		},

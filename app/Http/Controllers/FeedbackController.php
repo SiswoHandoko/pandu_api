@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\Feedback;
-use App\Model\AccessLog;
 
 class FeedbackController extends Controller
 {
@@ -276,21 +275,5 @@ class FeedbackController extends Controller
         }
 
         return true;
-    }
-
-    private function create_access_log($params)
-    {
-        $result = AccessLog::create($params);
-
-        return $result->id;
-    }
-
-    private function update_access_log($access_log_id, $arr_result)
-    {
-        $access_log = AccessLog::find($access_log_id);
-
-        $access_log->result = json_encode($arr_result);
-
-        $access_log->save();
     }
 }

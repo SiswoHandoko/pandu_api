@@ -16,6 +16,14 @@ class MailController extends Controller
      */
     public function sendmail(Request $req)
     {
+        $param_insert = array(
+            'name' => 'mail_sendmail',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'to' => 'required|max:255',
@@ -27,6 +35,9 @@ class MailController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($mails,400,'Bad Request.',true);
+            
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $data['to']         = $req->to;
@@ -43,12 +54,17 @@ class MailController extends Controller
 
             if(Mail::failures()) {
                 $result = $this->generate_response($mails,409,'Something Wrong, email Can not sent.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }else{
                 $result = $this->generate_response($email, 200, 'All Data.', false);
+
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 200);
             }
         }
     }
-
 }

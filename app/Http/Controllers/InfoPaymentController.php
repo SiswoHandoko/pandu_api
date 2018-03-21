@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\InfoPayment;
-use App\Model\AccessLog;
 
 class InfoPaymentController extends Controller
 {
@@ -40,7 +39,7 @@ class InfoPaymentController extends Controller
         );
 
         $access_log_id = $this->create_access_log($param_insert);
-
+        
         $infopayment = new InfoPayment;
         $infopayment = $infopayment->where('status', '!=', 'deleted');
 
@@ -287,19 +286,5 @@ class InfoPaymentController extends Controller
         return true;
     }
 
-    private function create_access_log($params)
-    {
-        $result = AccessLog::create($params);
-
-        return $result->id;
-    }
-
-    private function update_access_log($access_log_id, $arr_result)
-    {
-        $access_log = AccessLog::find($access_log_id);
-
-        $access_log->result = json_encode($arr_result);
-
-        $access_log->save();
-    }
+    
 }

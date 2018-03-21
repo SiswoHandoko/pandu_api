@@ -197,7 +197,8 @@
 				"4bdb2f50-2e68-4a88-af38-c4b3a7c5b7c9",
 				"54f86a7f-8c00-4eac-967b-a52a0d5c5d67",
 				"8c4998b0-54ec-47d2-984d-4071c9a56519",
-				"d218ec93-5526-43dc-b63b-a0b8153f8642"
+				"d218ec93-5526-43dc-b63b-a0b8153f8642",
+				"9fd68bd7-09bb-4319-b2d4-f503037baf60"
 			],
 			"folders_order": []
 		},
@@ -1585,7 +1586,7 @@
 		{
 			"id": "7b8bce11-03c6-44fd-8a0f-08218a70d346",
 			"name": "Get Tourism Place",
-			"url": "{{url}}/public/tourismplace/4",
+			"url": "{{url}}/public/tourismplace/3",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -1871,6 +1872,217 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "9fd68bd7-09bb-4319-b2d4-f503037baf60",
+			"name": "Update Plandetail by Plan",
+			"url": "{{url}}/public/plan/update/1/plandetails",
+			"description": "",
+			"data": [
+				{
+					"key": "day1[0][plandetail_id]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][tourism_place_id]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][start_time]",
+					"value": "08:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][end_time]",
+					"value": "10:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][day]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day1[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day2[0][plandetail_id]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][tourism_place_id]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][start_time]",
+					"value": "09:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][end_time]",
+					"value": "12:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][day]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day2[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day3[0][plandetail_id]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][tourism_place_id]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][start_time]",
+					"value": "10:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][end_time]",
+					"value": "12:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][day]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day3[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day4",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day5",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day6",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day7",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3033f03c-e4d6-447a-b8cf-f812189f3381",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "a148d55c-ea43-4599-a4dc-369f35b2abed",
 			"name": "Get Package Details",
 			"url": "{{url}}/public/packagedetail",
@@ -2043,7 +2255,7 @@
 		{
 			"id": "b5ca93fa-a7ae-48ae-9691-6f68a34dad88",
 			"name": "Get Plan by User",
-			"url": "{{url}}/public/user/3/plans?where_by=type&where_value=single",
+			"url": "{{url}}/public/user/3/plans",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2065,25 +2277,11 @@
 			"pathVariableData": [],
 			"queryParams": [
 				{
-					"key": "where_by",
-					"value": "type",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
 					"description": "",
 					"enabled": false,
 					"equals": true,
 					"key": "",
 					"value": ""
-				},
-				{
-					"key": "where_value",
-					"value": "single",
-					"equals": true,
-					"description": "",
-					"enabled": true
 				}
 			],
 			"auth": null,

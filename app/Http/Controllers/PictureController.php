@@ -31,6 +31,14 @@ class PictureController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'picture_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $picture = new Picture;
         $picture = $picture->with('tourismplace');
         $picture = $picture->where('status', '!=', 'deleted');
@@ -54,6 +62,8 @@ class PictureController extends Controller
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -66,6 +76,8 @@ class PictureController extends Controller
                 $picture = $picture->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -83,6 +95,8 @@ class PictureController extends Controller
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -94,6 +108,14 @@ class PictureController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'picture_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
@@ -102,6 +124,8 @@ class PictureController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($picture, 400, 'Bad Request.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         }else{
@@ -123,6 +147,8 @@ class PictureController extends Controller
             
             $result = $this->generate_response($arr_picture, 200, 'Data Has Been Saved.', false);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -135,14 +161,26 @@ class PictureController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'picture_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$picture) {
             $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($picture, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -158,6 +196,14 @@ class PictureController extends Controller
 
     public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'picture_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'image_url' => 'max:2048',
@@ -166,12 +212,16 @@ class PictureController extends Controller
         if($validator->fails()) {
             $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $picture = Picture::where('status', '!=', 'deleted')->find($id);
 
             if (!$picture) {
                 $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             } else {
@@ -180,6 +230,8 @@ class PictureController extends Controller
                 $picture->save();
 
                 $result = $this->generate_response($picture, 200, 'Data Has Been Updated.', false);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 200);
             }
@@ -194,10 +246,20 @@ class PictureController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'picture_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $picture = Picture::where('status', '!=', 'deleted')->find($id);
 
         if (!$picture) {
             $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
@@ -206,6 +268,8 @@ class PictureController extends Controller
             $picture->save();
             
             $result = $this->generate_response($picture, 200, 'Data Has Been Deleted.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }

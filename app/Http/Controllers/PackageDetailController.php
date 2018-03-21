@@ -33,6 +33,14 @@ class PackageDetailController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $packagedetail = new PackageDetail;
         $packagedetail = $packagedetail->with('package', 'tourismplace');
         $packagedetail = $packagedetail->where('status', '!=', 'deleted');
@@ -56,6 +64,8 @@ class PackageDetailController extends Controller
             } else {
                 $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -68,6 +78,8 @@ class PackageDetailController extends Controller
                 $packagedetail = $packagedetail->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -85,6 +97,8 @@ class PackageDetailController extends Controller
 
         $result = $this->generate_response($packagedetail, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -96,6 +110,14 @@ class PackageDetailController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'package_id' => 'required|numeric|min:0',
@@ -108,6 +130,8 @@ class PackageDetailController extends Controller
 
         if ($validator->fails()) {
             $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         } else {
@@ -125,6 +149,8 @@ class PackageDetailController extends Controller
 
             $result = $this->generate_response($packagedetail, 200, 'Data Has Been Saved.', false);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -137,14 +163,26 @@ class PackageDetailController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $packagedetail = PackageDetail::with('package', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
 
         if (!$packagedetail) {
             $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($packagedetail, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -160,6 +198,14 @@ class PackageDetailController extends Controller
 
     public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|numeric|min:0',
@@ -172,12 +218,16 @@ class PackageDetailController extends Controller
         if($validator->fails()) {
             $result = $this->generate_response($packagedetail, 400, 'Bad Request.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $packagedetail = PackageDetail::where('status', '!=', 'deleted')->find($id);
 
             if (!$packagedetail) {
                 $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             } else {
@@ -192,6 +242,8 @@ class PackageDetailController extends Controller
 
                 $result = $this->generate_response($packagedetail, 200, 'Data Has Been Updated.', false);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -205,10 +257,20 @@ class PackageDetailController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'packagedetail_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $packagedetail = PackageDetail::where('status', '!=', 'deleted')->find($id);
 
         if (!$packagedetail) {
             $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
@@ -217,6 +279,8 @@ class PackageDetailController extends Controller
             $packagedetail->save();
 
             $result = $this->generate_response($packagedetail, 200, 'Data Has Been Deleted.', false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }

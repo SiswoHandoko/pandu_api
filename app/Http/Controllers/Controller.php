@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Model\AccessLog;
 
 class Controller extends BaseController
 {
@@ -76,12 +77,28 @@ class Controller extends BaseController
   * @return \Illuminate\Http\Response
   */
 
-  public function getBytesFromHexString($hexdata)
-  {
-      for($count = 0; $count < strlen($hexdata); $count+=2)
-      $bytes[] = chr(hexdec(substr($hexdata, $count, 2)));
-      return implode($bytes);
-  }
+      public function getBytesFromHexString($hexdata)
+      {
+          for($count = 0; $count < strlen($hexdata); $count+=2)
+          $bytes[] = chr(hexdec(substr($hexdata, $count, 2)));
+          return implode($bytes);
+      }
+
+    public function create_access_log($params)
+    {
+        $result = AccessLog::create($params);
+
+        return $result->id;
+    }
+
+    public function update_access_log($access_log_id, $arr_result)
+    {
+        $access_log = AccessLog::find($access_log_id);
+
+        $access_log->result = json_encode($arr_result);
+
+        $access_log->save();
+    }
 
   /**
   * Access public path on lumen.

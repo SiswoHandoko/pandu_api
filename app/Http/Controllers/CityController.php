@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Model\City;
 use App\Model\TourismPlace;
 use App\Model\Package;
-use App\Model\AccessLog;
 
 class CityController extends Controller
 {
@@ -361,11 +360,62 @@ class CityController extends Controller
 
         $tourismplace = $tourismplace->get();
 
+        if ($req->input('latitude') && $req->input('longitude')) {
+            $tourismplace = $this->sort_distance($tourismplace, $req->input('latitude'), $req->input('longitude'));
+        }
+
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
         $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
+    }
+
+    private function sort_distance($tourismplace, $latitude, $longitude)
+    {
+        $arr_distance = array();
+
+        foreach ($tourismplace as $key => $value) {
+            $distance = $this->haversineGreatCircleDistance($latitude, $longitude, $value->latitude, $value->longitude);
+            $tourismplace[$key]['distance'] = $distance;
+            $arr_distance[$key] = $distance;
+        }
+
+        $result = $this->array_msort($tourismplace, array('distance'=>SORT_ASC));
+
+        $result = array_values($result);
+
+        return $result;
+    }
+
+    private function array_msort($array, $cols)
+    {
+        $colarr = array();
+
+        foreach ($cols as $col => $order) {
+            $colarr[$col] = array();
+            foreach ($array as $k => $row) { $colarr[$col]['_'.$k] = strtolower($row[$col]); }
+        }
+
+        $eval = 'array_multisort(';
+
+        foreach ($cols as $col => $order) {
+            $eval .= '$colarr[\''.$col.'\'],'.$order.',';
+        }
+
+        $eval = substr($eval,0,-1).');';
+        eval($eval);
+        $ret = array();
+        
+        foreach ($colarr as $col => $arr) {
+            foreach ($arr as $k => $v) {
+                $k = substr($k,1);
+                if (!isset($ret[$k])) $ret[$k] = $array[$k];
+                $ret[$k][$col] = $array[$k][$col];
+            }
+        }
+
+        return $ret;
     }
 
     /**
@@ -456,21 +506,5 @@ class CityController extends Controller
         }
 
         return true;
-    }
-
-    private function create_access_log($params)
-    {
-        $result = AccessLog::create($params);
-
-        return $result->id;
-    }
-
-    private function update_access_log($access_log_id, $arr_result)
-    {
-        $access_log = AccessLog::find($access_log_id);
-
-        $access_log->result = json_encode($arr_result);
-
-        $access_log->save();
     }
 }

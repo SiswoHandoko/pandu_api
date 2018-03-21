@@ -82,8 +82,8 @@ class SpecialDealController extends Controller
         }
 
         $specialdeal = $specialdeal->get();
-
-        $specialdeal = $this->check_data($specialdeal);
+        
+        // $specialdeal = $this->check_data($specialdeal);
 
         $result = $this->generate_response($specialdeal, 200, 'All Data.', false);
 

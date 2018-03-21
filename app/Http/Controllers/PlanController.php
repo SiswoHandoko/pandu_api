@@ -59,6 +59,14 @@ class PlanController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'plan_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $plan = new Plan;
         $plan = $plan->with('user', 'guide', 'plandetail');
         $plan = $plan->where('status', '!=', 'deleted');
@@ -82,6 +90,8 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+                
                 return response()->json($result, 400);
             }
         }
@@ -94,6 +104,8 @@ class PlanController extends Controller
                 $plan = $plan->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -117,6 +129,8 @@ class PlanController extends Controller
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -128,6 +142,14 @@ class PlanController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'plan_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         if ($req->has('package_id')) {
             $validator = Validator::make($req->all(), [
@@ -157,6 +179,8 @@ class PlanController extends Controller
 
         if ($validator->fails()) {
             $result = $this->generate_response($plan,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         } else {
@@ -228,9 +252,13 @@ class PlanController extends Controller
                         $plan = $this->validate_relation($plan);
                         $result = $this->generate_response($plan, 200, 'Detail Data.', false);
 
+                        $this->update_access_log($access_log_id, $result);
+
                         return response()->json($result, 200);
                     } else {
                         $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
+                        $this->update_access_log($access_log_id, $result);
 
                         return response()->json($result, 404);
                     }
@@ -254,6 +282,8 @@ class PlanController extends Controller
 
                 $result = $this->generate_response($plan, 200, 'Data Has Been Saved.', false);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -267,15 +297,27 @@ class PlanController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'plan_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
 
         if ($plan) {
             $plan = $this->validate_relation($plan);
             $result = $this->generate_response($plan, 200, 'Detail Data.', false);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         } else {
             $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }
@@ -291,6 +333,14 @@ class PlanController extends Controller
 
     public function update(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'plan_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'total_adult' => 'required|numeric|min:0',
@@ -307,12 +357,16 @@ class PlanController extends Controller
         if($validator->fails()) {
             $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $plan = Plan::where('status', '!=', 'deleted')->find($id);
 
             if (!$plan) {
                 $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             } else {
@@ -390,6 +444,8 @@ class PlanController extends Controller
 
                 $result = $this->generate_response($plan, 200, 'Data Has Been Updated.', false);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -403,10 +459,20 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'plan_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $plan = Plan::where('status', '!=', 'deleted')->find($id);
 
         if (!$plan) {
             $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
@@ -415,6 +481,8 @@ class PlanController extends Controller
             $plan->save();
 
             $result = $this->generate_response($plan, 200, 'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -427,9 +495,18 @@ class PlanController extends Controller
     */
     public function plandetail_by_plan(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'plandetail_by_plan',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $plandetail = new PlanDetail;
         $plandetail = $plandetail->with('plan', 'tourismplace');
         $plandetail = $plandetail->where('status', '!=', 'deleted');
+        $plandetail = $plandetail->where('plan_id', '=', $id);
 
         // search query
         if ($req->input('search_query')) {
@@ -450,6 +527,8 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -462,6 +541,8 @@ class PlanController extends Controller
                 $plandetail = $plandetail->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -480,6 +561,59 @@ class PlanController extends Controller
         $plandetail = $this->convert_data($plandetail);
         
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
+
+        return response()->json($result, 200);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Plan  $plan
+     * @return \Illuminate\Http\Response
+     */
+
+    public function update_plandetail_by_plan(Request $req, $id)
+    {
+        $param_insert = array(
+            'name' => 'update_plandetail_by_plan',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
+        $req_arr = collect($req)->toArray();
+
+        foreach ($req_arr as $key_req => $value_req) {
+            if ($value_req) {
+                foreach ($value_req as $key_pd => $value_pd) {
+                    $plandetail = new PlanDetail;
+                    $plandetail = $plandetail->where('id', '=', $value_pd['plandetail_id']);
+                    $plandetail = $plandetail->update([
+                        'tourism_place_id' => $value_pd['tourism_place_id'],
+                        'start_time' => $value_pd['start_time'],
+                        'end_time' => $value_pd['end_time'],
+                        'day' => $value_pd['day'],
+                    ]);
+                }
+            }
+        }
+
+        $plandetail = new PlanDetail;
+        $plandetail = $plandetail->with('plan', 'tourismplace');
+        $plandetail = $plandetail->where('status', '!=', 'deleted');
+        $plandetail = $plandetail->where('plan_id', '=', $id);
+        
+        $plandetail = $plandetail->get();
+
+        $plandetail = $this->convert_data($plandetail);
+        
+        $result = $this->generate_response($plandetail, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

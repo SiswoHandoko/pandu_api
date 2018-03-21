@@ -18,7 +18,7 @@ class PackagesTableSeeder extends Seeder
             [
                 'name' => 'Paket A',
             	'description' => 'This is Paket A',
-                'days' => 1,
+                'days' => 3,
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-11',
                 // 'total_price' => 74000,

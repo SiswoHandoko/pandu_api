@@ -221,7 +221,8 @@
 				"c00d6305-a1d7-4abb-8233-ad3795a76b15",
 				"993fc76e-57ef-477a-ad98-e12b0ac17146",
 				"92213ff6-3934-430c-a0f5-e64794b75ad4",
-				"9b2e516a-2a8b-4a88-86a2-dad5b022b483"
+				"9b2e516a-2a8b-4a88-86a2-dad5b022b483",
+				"8e049e84-dbb2-474d-9643-176328b4a0fc"
 			],
 			"folders_order": []
 		},
@@ -2716,6 +2717,217 @@
 			"auth": null,
 			"events": [],
 			"folder": "d7e7c0fd-d638-4bf0-8043-3b3ec3a7628d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8e049e84-dbb2-474d-9643-176328b4a0fc",
+			"name": "Update Plandetail by Plan",
+			"url": "{{url}}/public/plan/update/1/plandetails",
+			"description": "",
+			"data": [
+				{
+					"key": "day1[0][plandetail_id]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][tourism_place_id]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][start_time]",
+					"value": "08:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][end_time]",
+					"value": "10:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][day]",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day1[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day1[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day2[0][plandetail_id]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][tourism_place_id]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][start_time]",
+					"value": "09:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][end_time]",
+					"value": "12:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][day]",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day2[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day2[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day3[0][plandetail_id]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][tourism_place_id]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][start_time]",
+					"value": "10:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][end_time]",
+					"value": "12:00",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][day]",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day3[0][no_ticket]",
+					"value": "",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day3[0][status]",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "day4",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day5",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day6",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "day7",
+					"value": "",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
