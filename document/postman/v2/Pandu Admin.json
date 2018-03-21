@@ -1558,7 +1558,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/city/227/package?where_by=days&where_value=2",
+							"raw": "{{url}}/public/city/227/package?where_by=days&where_value=3",
 							"host": [
 								"{{url}}"
 							],
@@ -1575,7 +1575,7 @@
 								},
 								{
 									"key": "where_value",
-									"value": "2"
+									"value": "3"
 								}
 							]
 						},
@@ -2621,7 +2621,7 @@
 								},
 								{
 									"key": "day2[0][plandetail_id]",
-									"value": "2",
+									"value": "4",
 									"type": "text",
 									"description": ""
 								},
@@ -2665,7 +2665,7 @@
 								},
 								{
 									"key": "day3[0][plandetail_id]",
-									"value": "3",
+									"value": "6",
 									"type": "text",
 									"description": ""
 								},
@@ -3165,14 +3165,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package/3/packagedetails?",
+							"raw": "{{url}}/public/package/1/packagedetails?",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
 								"package",
-								"3",
+								"1",
 								"packagedetails"
 							],
 							"query": [

@@ -970,7 +970,7 @@
 								},
 								{
 									"key": "day2[0][plandetail_id]",
-									"value": "2",
+									"value": "4",
 									"type": "text",
 									"description": ""
 								},
@@ -1014,7 +1014,7 @@
 								},
 								{
 									"key": "day3[0][plandetail_id]",
-									"value": "3",
+									"value": "6",
 									"type": "text",
 									"description": ""
 								},

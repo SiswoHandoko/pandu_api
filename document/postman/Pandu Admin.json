@@ -2389,7 +2389,7 @@
 		{
 			"id": "817e91bf-e994-49c1-81cd-a5dfd69a77d1",
 			"name": "Get Package Details by Package",
-			"url": "{{url}}/public/package/3/packagedetails",
+			"url": "{{url}}/public/package/1/packagedetails",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2777,7 +2777,7 @@
 				},
 				{
 					"key": "day2[0][plandetail_id]",
-					"value": "2",
+					"value": "4",
 					"type": "text",
 					"enabled": true,
 					"description": ""
@@ -2826,7 +2826,7 @@
 				},
 				{
 					"key": "day3[0][plandetail_id]",
-					"value": "3",
+					"value": "6",
 					"type": "text",
 					"enabled": true,
 					"description": ""
@@ -3580,7 +3580,7 @@
 		{
 			"id": "a65a9be1-ec70-4432-98dd-5d429ff36264",
 			"name": "Get Package by City",
-			"url": "{{url}}/public/city/227/package?where_by=days&where_value=2",
+			"url": "{{url}}/public/city/227/package?where_by=days&where_value=3",
 			"description": "Get Province By Id",
 			"data": null,
 			"dataMode": "params",
@@ -3610,7 +3610,7 @@
 				},
 				{
 					"key": "where_value",
-					"value": "2",
+					"value": "3",
 					"equals": true,
 					"description": "",
 					"enabled": true
