@@ -175,7 +175,7 @@ class UserController extends Controller
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
                 $user->status = 'active';
                 /* upload process */
-                $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo) : 'default_img.png';
+                $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
 
@@ -280,7 +280,7 @@ class UserController extends Controller
                     $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
                     $user->status = $req->has('status') ? $req->status : $user->status;
                     /* upload process */
-                    $user->photo = $req->has('photo') ? $this->uploadFile($this->public_path(). "/images/users/", $req->photo, $user->photo) : $user->photo;
+                    $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo, $user->photo) : $user->photo;
                     $user->save();
                     $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
                     return response()->json($result, 200);

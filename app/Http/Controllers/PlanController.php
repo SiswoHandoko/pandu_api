@@ -246,7 +246,7 @@ class PlanController extends Controller
                 $plan->start_date = $req->has('start_date') ? $req->start_date : '000-00-00';
                 $plan->end_date = $req->has('end_date') ? $req->end_date : '000-00-00';
                 $plan->total_price = $req->has('total_price') ? $req->total_price : 0;
-                $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '';
+                $plan->receipt = $req->has('receipt') ? env('BACKEND_URL').'public/images/plans/'.$this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '';
                 $plan->type = $req->has('type') ? $req->type : 'single';
                 $plan->status = $req->has('status') ? $req->status : 'active';
 
@@ -324,7 +324,7 @@ class PlanController extends Controller
                 $plan->start_date = $req->has('start_date') ? $req->start_date : $plan->start_date;
                 $plan->end_date = $req->has('end_date') ? $req->end_date : $plan->end_date;
                 $plan->total_price = $req->has('total_price') ? $req->total_price : $plan->total_price;
-                $plan->receipt = $req->has('receipt') ? $this->uploadFile($this->public_path(). "/images/plans/", $req->receipt, $plan->receipt) : $plan->receipt;
+                $plan->receipt = $req->has('receipt') ? env('BACKEND_URL').'public/images/plans/'.$this->uploadFile($this->public_path(). "/images/plans/", $req->receipt, $plan->receipt) : $plan->receipt;
                 $plan->status = $req->has('status') ? $req->status : $plan->status;
                 $plan->type = $req->has('type') ? $req->type : $plan->type;
 

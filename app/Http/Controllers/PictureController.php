@@ -113,7 +113,7 @@ class PictureController extends Controller
                 $picture = new Picture();
 
                 $picture->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
-                $picture->image_url = $value ? $this->uploadFile($this->public_path(). "/images/places/", $value) : 'default_img.png';
+                $picture->image_url = $value ? env('BACKEND_URL').'public/images/places/'.$this->uploadFile($this->public_path(). "/images/places/", $value) : env('BACKEND_URL').'public/images/places/default_img.png';
                 $picture->status = 'active';
 
                 $picture->save();
@@ -175,7 +175,7 @@ class PictureController extends Controller
 
                 return response()->json($result, 404);
             } else {
-                $picture->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/places/", $req->image_url, $picture->image_url) : $picture->image_url;
+                $picture->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/places/'.$this->uploadFile($this->public_path(). "/images/places/", $req->image_url, $picture->image_url) : $picture->image_url;
                 
                 $picture->save();
 

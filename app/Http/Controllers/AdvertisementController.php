@@ -133,7 +133,7 @@ class AdvertisementController extends Controller
         }else{
             $advertisement = new Advertisement();
             /* upload process */
-            $advertisement->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url) : 'default_advertisement.png';
+            $advertisement->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/advertisements/'.$this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url) : env('BACKEND_URL').'public/images/advertisements/default_advertisement.png';
             $advertisement->title = $req->has('title') ? $req->title : '';
             $advertisement->caption = $req->has('caption') ? $req->caption : '';
             $advertisement->type = $req->has('type') ? $req->type : '';
@@ -223,7 +223,7 @@ class AdvertisementController extends Controller
                 return response()->json($result, 404);
             }else{
                 /* upload process */
-                $advertisement->image_url = $req->has('image_url') ? $this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url, $advertisement->image_url) :  $advertisement->image_url;
+                $advertisement->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/advertisements/'.$this->uploadFile($this->public_path(). "/images/advertisements/", $req->image_url, $advertisement->image_url) :  $advertisement->image_url;
                 $advertisement->title = $req->has('title') ? $req->title : $advertisement->title;
                 $advertisement->caption = $req->has('caption') ? $req->caption : $advertisement->title;
                 $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
