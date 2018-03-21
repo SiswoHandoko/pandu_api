@@ -338,10 +338,11 @@ class PackageController extends Controller
 
         $packagedetail = new PackageDetail;
         $packagedetail = $packagedetail->with('package', 'tourismplace');
-        $packagedetail = $packagedetail->orderBy('day', 'asc');
         $packagedetail = $packagedetail->where('package_id', $id);
         $packagedetail = $packagedetail->where('status', '!=', 'deleted');
-
+        $packagedetail = $packagedetail->orderBy('day', 'asc');
+        $packagedetail = $packagedetail->orderBy('start_time', 'asc');
+        
         // search query
         if ($req->input('search_query')) {
             $search_query = $req->input('search_query') ? $req->input('search_query') : '';

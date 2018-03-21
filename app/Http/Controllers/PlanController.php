@@ -508,6 +508,7 @@ class PlanController extends Controller
         $plandetail = $plandetail->where('status', '!=', 'deleted');
         $plandetail = $plandetail->where('plan_id', '=', $id);
         $plandetail = $plandetail->orderBy('day', 'asc');
+        $plandetail = $plandetail->orderBy('start_time', 'asc');
 
         // search query
         if ($req->input('search_query')) {
@@ -608,6 +609,7 @@ class PlanController extends Controller
         $plandetail = $plandetail->where('status', '!=', 'deleted');
         $plandetail = $plandetail->where('plan_id', '=', $id);
         $plandetail = $plandetail->orderBy('day', 'asc');
+        $plandetail = $plandetail->orderBy('start_time', 'asc');
         
         $plandetail = $plandetail->get();
 
