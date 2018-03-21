@@ -22,7 +22,7 @@ class PackagesTableSeeder extends Seeder
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-11',
                 // 'total_price' => 74000,
-                'image_url' => 'default_package.png',
+                'image_url' => 'http://api.dipanduapp.com/public/images/packages/default_package.png',
             	'status' => 'active'
             ],
             [
@@ -32,7 +32,7 @@ class PackagesTableSeeder extends Seeder
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-10',
                 // 'total_price' => 37000,
-                'image_url' => 'default_package.png',
+                'image_url' => 'http://api.dipanduapp.com/public/images/packages/default_package.png',
             	'status' => 'active'
             ],
             [
@@ -42,7 +42,7 @@ class PackagesTableSeeder extends Seeder
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-10',
                 // 'total_price' => 37000,
-                'image_url' => 'default_package.png',
+                'image_url' => 'http://api.dipanduapp.com/public/images/packages/default_package.png',
             	'status' => 'active'
             ],
             [
@@ -52,7 +52,7 @@ class PackagesTableSeeder extends Seeder
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-10',
                 // 'total_price' => 37000,
-                'image_url' => 'default_package.png',
+                'image_url' => 'http://api.dipanduapp.com/public/images/packages/default_package.png',
             	'status' => 'active'
             ],
             [
@@ -62,7 +62,7 @@ class PackagesTableSeeder extends Seeder
                 // 'start_date' => '2018-01-10',
                 // 'end_date' => '2018-01-10',
                 // 'total_price' => 37000,
-                'image_url' => 'default_package.png',
+                'image_url' => 'http://api.dipanduapp.com/public/images/packages/default_package.png',
             	'status' => 'active'
             ]
         ];

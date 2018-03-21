@@ -335,7 +335,7 @@ class PlanController extends Controller
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'DRAFT PLAN';
-                    $data['content']    = "Status plan anda saat ini masih <strong>Draft</strong> segera selesaikan dan submit plan anda.";
+                    $data['content']    = "Your Current Plan status is <strong>Draft</strong> immediately finish and submit your plan.";
                     $data['name']       = $update->user->username;
 
                     $email              = $data;
@@ -349,7 +349,7 @@ class PlanController extends Controller
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'ORDER PLAN';
-                    $data['content']    = "Status plan anda saat ini adalah <strong>Order</strong> segera selesaikan dan konfirmasi pembayaran.";
+                    $data['content']    = "Your Current Plan status is <strong>Order</strong> immediately complete and confirm payment.";
                     $data['name']       = $update->user->username;
 
                     $email              = $data;
@@ -362,7 +362,7 @@ class PlanController extends Controller
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'ISSUED PLAN';
-                    $data['content']    = "Status plan anda saat ini adalah <strong>Issued</strong> Silahkan tunggu konfirmasi dan info selanjutnya dari Pandu Admin.";
+                    $data['content']    = "Your Current Plan status is <strong>Issued</strong> Please wait for confirmation and more info from Pandu Admin.";
                     $data['name']       = $update->user->username;
 
                     $email              = $data;
@@ -375,7 +375,7 @@ class PlanController extends Controller
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'TICKETED PLAN';
-                    $data['content']    = "Status plan anda saat ini adalah <strong>Ticketed</strong> Silahkan Check detail order dan itinerary anda pada aplikasi.";
+                    $data['content']    = "Your Current Plan status is <strong>Ticketed</strong> Please Check details of your order and itinerary on the application.";
                     $data['name']       = $update->user->username;
 
                     $email              = $data;

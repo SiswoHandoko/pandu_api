@@ -111,7 +111,7 @@ class TipTrickController extends Controller
                 $data['to']         = $u['email'];
                 $data['alias']      = 'Admin Pandu';
                 $data['subject']    = 'TIPS DAN TRICK BARU ';
-                $data['content']    = "Segera Check HP anda Terdapat Tips And Tricks Baru. <br/> Silahkan buka Apps kamu untuk mengecek nya secara langsung.";
+                $data['content']    = "Check Your Cell Soon There are New Tips And Tricks. <br/> Please open your Apps to check it directly.";
                 $data['name']       = $u['username'];
 
                 $email              = $data;

@@ -154,7 +154,7 @@ class UserController extends Controller
                 $data['to']         = $req->input('email');
                 $data['alias']      = 'Admin Pandu';
                 $data['subject']    = 'INFO REGISTRASI';
-                $data['content']    = "Selamat akun anda telah terdaftar pada Pandu Apps. <br/> Silahkan login pada applikasi untuk mulai membuat Plan.";
+                $data['content']    = "Congratulations your account has been registered with Pandu Apps. <br/> Please login on the application to start creating Plan.";
                 $data['name']       = $req->input('username');
 
                 $email              = $data;
@@ -258,7 +258,7 @@ class UserController extends Controller
                             $data['to']         = $user->email;
                             $data['alias']      = 'Admin Pandu';
                             $data['subject']    = 'GANTI PASSWORD';
-                            $data['content']    = "Password anda telah di ganti. <br/> Silahkan Login dengan password baru anda. <br/> Password Baru anda : <strong>".$req->password."</strong>";
+                            $data['content']    = "Your password has been changed. <br/> Please Login with your new password. <br/> Your New Password: <strong>".$req->password."</strong>";
                             $data['name']       = $user->username;
                             
                             $email              = $data;
@@ -533,7 +533,7 @@ class UserController extends Controller
                 $data['to']         = $select->email;
                 $data['alias']      = 'Admin Pandu';
                 $data['subject']    = 'LUPA PASSWORD';
-                $data['content']    = "Password anda telah di ganti. <br/> Silahkan Login dengan password baru anda. <br/> Password Baru anda : <strong>".$new_password."</strong>";
+                $data['content']    = "Your password has been changed. <br/> Please Login with your new password. <br/> Your New Password: <strong>".$new_password."</strong>";
                 $data['name']       = $select->username;
 
                 $email              = $data;

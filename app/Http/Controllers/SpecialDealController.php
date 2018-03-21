@@ -134,7 +134,7 @@ class SpecialDealController extends Controller
                 // $data['to']         = "code.lab.indonesia@gmail.com";
                 $data['alias']      = 'Admin Pandu';
                 $data['subject']    = 'SPECIAL DEAL BARU ';
-                $data['content']    = "Segera Check HP anda Terdapat Special Deal Baru. <br/> Silahkan buka Apps kamu untuk mengecek nya secara langsung.";
+                $data['content']    = "Immediately Check your mobile phone There is a New Deal Special. <br/> Please open your Apps to check it directly.";
                 $data['name']       = $u['username'];
                 // $data['name']       = "asepmulyadi";
 

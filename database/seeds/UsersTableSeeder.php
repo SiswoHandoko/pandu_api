@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
@@ -67,7 +67,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
@@ -85,7 +85,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
@@ -103,7 +103,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
@@ -121,7 +121,7 @@ class UsersTableSeeder extends Seeder
                 'web_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'android_token' => '77a64fae487baef2ae395a80db6b82549723219a',
                 'ios_token' => '77a64fae487baef2ae395a80db6b82549723219a',
-                'photo' => 'default_img.png',
+                'photo' => 'http://api.dipanduapp.com/public/images/users/default_img.png',
                 'is_login' => false,
                 'status' => 'active',
             	'remember_token' => '-'
