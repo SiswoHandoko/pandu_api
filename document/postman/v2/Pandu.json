@@ -1,221 +1,32 @@
 {
 	"info": {
+		"_postman_id": "382271e0-84be-4db8-8996-fe2a991469a6",
 		"name": "Pandu",
-		"_postman_id": "f2430af7-883e-4517-aa43-700472bf565d",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Feedback",
+			"name": "User",
 			"description": "",
 			"item": [
 				{
-					"name": "Get Feedbacks",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/feedback",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Feedback",
+					"name": "Delete User",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "api-token",
-								"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c"
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
 							},
-							{
-								"key": "device-type",
-								"value": "android"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/feedback/1",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Feedback",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "aksan maulana",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "-",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": "{{url}}/public/feedback/create",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Picture",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Pictures",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/picture",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Picture",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/picture/1",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Event",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Events",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/event",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Event",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/event/1",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Tourism Place",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Tourism Places",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/tourismplace",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Tourism Place",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/tourismplace/4",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Events by Tourism Place",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/tourismplace/1/events",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Pictures by Tourism Places",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": "{{url}}/public/tourismplace/1/pictures",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "User",
-			"description": "",
-			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [
 							{
 								"key": "device-type",
 								"value": "web"
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "username",
-									"value": "siswohandoko",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "qwerty",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "force_login",
-									"value": "true",
-									"description": "Untuk force login web",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": "{{url}}/public/login",
-						"description": ""
+						"body": {},
+						"url": "{{url}}/public/user/delete/7",
+						"description": "Get Province By Id"
 					},
 					"response": []
 				},
@@ -255,7 +66,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/user",
+							"raw": "{{url}}/public/user?",
 							"host": [
 								"{{url}}"
 							],
@@ -265,53 +76,12 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
 								}
 							]
 						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get User",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/user/1",
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Delete User",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/user/delete/7",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -397,8 +167,64 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/user/create",
-						"description": ""
+						"url": "{{url}}/public/user/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/user/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "siswohandoko",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "force_login",
+									"value": "true",
+									"description": "Untuk force login web",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/login"
 					},
 					"response": []
 				},
@@ -531,408 +357,19 @@
 							"query": [
 								{
 									"key": "where_by",
-									"value": "type",
-									"equals": true
+									"value": "type"
 								},
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
-								},
-								{
-									"key": "where_value",
-									"value": "single",
-									"equals": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Forgot Password",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "cs.siswo.handoko@gmail.com",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": "{{url}}/public/forgotpassword",
-						"description": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Province",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Provinces",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/province",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Province",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/province/1",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Cities By Province",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"description": "",
-									"key": "",
-									"type": "text",
-									"value": ""
-								}
-							]
-						},
-						"url": "{{url}}/public/province/1/cities",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "City",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Cities",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/city",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"city"
-							],
-							"query": [
-								{
-									"equals": true,
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get City",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/city/227",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Tourism Places by City",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/city/227/tourismplaces",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Package by City",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/city/227/package?where_by=days&where_value=2",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"city",
-								"227",
-								"package"
-							],
-							"query": [
-								{
-									"key": "where_by",
-									"value": "days",
-									"equals": true
 								},
 								{
 									"key": "where_value",
-									"value": "2",
-									"equals": true
+									"value": "single"
 								}
 							]
 						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "FCM",
-			"description": "",
-			"item": [
-				{
-					"name": "Send Push Notification",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"description": "",
-									"key": "token",
-									"type": "text",
-									"value": "test_token"
-								}
-							]
-						},
-						"url": "{{url}}/public/fcm/pushnotif",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Advertisement",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Advertisements",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/advertisement",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"advertisement"
-							],
-							"query": [
-								{
-									"equals": true,
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Advertisement",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/advertisement/1",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Special Deal",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Special Deals",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/specialdeal",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"specialdeal"
-							],
-							"query": [
-								{
-									"equals": true,
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Special Deal",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/specialdeal/1",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -959,7 +396,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/tiptrick",
+							"raw": "{{url}}/public/tiptrick?",
 							"host": [
 								"{{url}}"
 							],
@@ -969,7 +406,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1003,11 +439,11 @@
 			]
 		},
 		{
-			"name": "Plan",
+			"name": "Special Deal",
 			"description": "",
 			"item": [
 				{
-					"name": "Get Plans",
+					"name": "Get Special Deals",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1022,17 +458,16 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/plan",
+							"raw": "{{url}}/public/specialdeal?",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
-								"plan"
+								"specialdeal"
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1044,7 +479,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Plan",
+					"name": "Get Special Deal",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1058,11 +493,17 @@
 							}
 						],
 						"body": {},
-						"url": "{{url}}/public/plan/7",
+						"url": "{{url}}/public/specialdeal/1",
 						"description": "Get Province By Id"
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Plan",
+			"description": "",
+			"item": [
 				{
 					"name": "Delete Plan",
 					"request": {
@@ -1079,6 +520,233 @@
 						],
 						"body": {},
 						"url": "{{url}}/public/plan/delete/7",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Plan Details by Plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/plan/1/plandetails?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"plan",
+								"1",
+								"plandetails"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan by Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "guide_id",
+									"value": "1",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "receipt",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2018-01-10",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "end_date",
+									"value": "2018-01-15",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"url": "{{url}}/public/plan/create",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "start_date",
+									"value": "2018-01-10",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "end_date",
+									"value": "2018-01-15",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_price",
+									"value": "0",
+									"type": "text",
+									"description": "no mandatory"
+								},
+								{
+									"key": "receipt",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "single",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "days",
+									"value": "5",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"url": "{{url}}/public/plan/update/7",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1188,7 +856,149 @@
 					"response": []
 				},
 				{
-					"name": "Update Plan",
+					"name": "Get Plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/plan/7",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Plans",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/plan?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"plan"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom",
+			"description": "",
+			"item": [
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "table",
+									"value": "users",
+									"description": "advertisements||cities||events||feedbacks||info_payments||messages||migrations||packages||package_cities||package_details||pictures||plans||plan_details||provinces||roles||special_deals||tip_tricks||tourism_places||users",
+									"type": "text"
+								},
+								{
+									"key": "field",
+									"value": "status",
+									"description": "status",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/public/custom/updatestatus/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/event/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/event",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plan Detail",
+			"description": "",
+			"item": [
+				{
+					"name": "Update Plan Detail",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1209,50 +1019,32 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "total_adult",
-									"value": "2",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_child",
+									"key": "tourism_place_id",
 									"value": "1",
 									"type": "text",
 									"description": ""
 								},
 								{
-									"key": "total_infant",
+									"key": "start_time",
+									"value": "15:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "end_time",
+									"value": "16:00",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "day",
 									"value": "1",
 									"type": "text",
 									"description": ""
 								},
 								{
-									"key": "total_tourist",
-									"value": "0",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "start_date",
-									"value": "2018-01-10",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "end_date",
-									"value": "2018-01-15",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_price",
-									"value": "0",
-									"type": "text",
-									"description": "no mandatory"
-								},
-								{
-									"key": "receipt",
-									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+									"key": "no_ticket",
+									"value": "",
 									"type": "text",
 									"description": "",
 									"disabled": true
@@ -1263,197 +1055,10 @@
 									"type": "text",
 									"description": "",
 									"disabled": true
-								},
-								{
-									"key": "type",
-									"value": "single",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "days",
-									"value": "5",
-									"type": "text",
-									"description": ""
 								}
 							]
 						},
-						"url": "{{url}}/public/plan/update/7",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Plan Details by Plan",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/plan/1/plandetails",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"plan",
-								"1",
-								"plandetails"
-							],
-							"query": [
-								{
-									"equals": true,
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Plan by Package",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "2",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "guide_id",
-									"value": "1",
-									"type": "text",
-									"description": "",
-									"disabled": true
-								},
-								{
-									"key": "package_id",
-									"value": "1",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_adult",
-									"value": "2",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_child",
-									"value": "1",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_infant",
-									"value": "1",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "total_tourist",
-									"value": "0",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "receipt",
-									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
-									"type": "text",
-									"description": "",
-									"disabled": true
-								},
-								{
-									"key": "status",
-									"value": "active",
-									"type": "text",
-									"description": "",
-									"disabled": true
-								},
-								{
-									"key": "start_date",
-									"value": "2018-01-10",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "end_date",
-									"value": "2018-01-15",
-									"type": "text",
-									"description": ""
-								}
-							]
-						},
-						"url": "{{url}}/public/plan/create",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Plan Detail",
-			"description": "",
-			"item": [
-				{
-					"name": "Get Plan Details",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/plandetail",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"plandetail"
-							],
-							"query": [
-								{
-									"equals": true,
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
+						"url": "{{url}}/public/plandetail/update/15",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1474,26 +1079,6 @@
 						],
 						"body": {},
 						"url": "{{url}}/public/plandetail/3",
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Plan Detail",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/public/plandetail/delete/15",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1567,14 +1152,10 @@
 					"response": []
 				},
 				{
-					"name": "Update Plan Detail",
+					"name": "Delete Plan Detail",
 					"request": {
-						"method": "PUT",
+						"method": "GET",
 						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							},
 							{
 								"key": "api-token",
 								"value": "77a64fae487baef2ae395a80db6b82549723219a"
@@ -1584,62 +1165,14 @@
 								"value": "web"
 							}
 						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "tourism_place_id",
-									"value": "1",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "start_time",
-									"value": "15:00",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "end_time",
-									"value": "16:00",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "day",
-									"value": "1",
-									"type": "text",
-									"description": ""
-								},
-								{
-									"key": "no_ticket",
-									"value": "",
-									"type": "text",
-									"description": "",
-									"disabled": true
-								},
-								{
-									"key": "status",
-									"value": "active",
-									"type": "text",
-									"description": "",
-									"disabled": true
-								}
-							]
-						},
-						"url": "{{url}}/public/plandetail/update/15",
+						"body": {},
+						"url": "{{url}}/public/plandetail/delete/15",
 						"description": "Get Province By Id"
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Package",
-			"description": "",
-			"item": [
+				},
 				{
-					"name": "Get Packages",
+					"name": "Get Plan Details",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1654,30 +1187,63 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package?city_id=227&day=1",
+							"raw": "{{url}}/public/plandetail?",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
-								"package"
+								"plandetail"
 							],
 							"query": [
 								{
-									"key": "city_id",
-									"value": "227",
-									"equals": true
-								},
-								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
-								},
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Package Details by Package",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/package/1/packagedetails?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"package",
+								"1",
+								"packagedetails"
+							],
+							"query": [
 								{
-									"key": "day",
-									"value": "1",
-									"equals": true
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						},
@@ -1706,7 +1272,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Package Details by Package",
+					"name": "Get Packages",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1721,25 +1287,62 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/package/1/packagedetails",
+							"raw": "{{url}}/public/package?city_id=227&day=1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
-								"package",
-								"1",
-								"packagedetails"
+								"package"
 							],
 							"query": [
 								{
-									"equals": true,
+									"key": "city_id",
+									"value": "227"
+								},
+								{
 									"key": "",
 									"value": "",
 									"disabled": true
+								},
+								{
+									"key": "day",
+									"value": "1"
 								}
 							]
 						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FCM",
+			"description": "",
+			"item": [
+				{
+					"name": "Send Push Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"description": "",
+									"key": "token",
+									"type": "text",
+									"value": "test_token"
+								}
+							]
+						},
+						"url": "{{url}}/public/fcm/pushnotif",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1766,7 +1369,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/packagedetail",
+							"raw": "{{url}}/public/packagedetail?",
 							"host": [
 								"{{url}}"
 							],
@@ -1776,7 +1379,6 @@
 							],
 							"query": [
 								{
-									"equals": true,
 									"key": "",
 									"value": "",
 									"disabled": true
@@ -1803,6 +1405,347 @@
 						],
 						"body": {},
 						"url": "{{url}}/public/packagedetail/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Province",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Provinces",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/province",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities By Province",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"description": "",
+									"key": "",
+									"type": "text",
+									"value": ""
+								}
+							]
+						},
+						"url": "{{url}}/public/province/1/cities",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Province",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/province/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Picture",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Picture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/picture/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pictures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/picture",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Tourism Places by City",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/city/227/tourismplaces",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/city?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"city"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get City",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/city/227",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Package by City",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/city/227/package?where_by=days&where_value=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"city",
+								"227",
+								"package"
+							],
+							"query": [
+								{
+									"key": "where_by",
+									"value": "days"
+								},
+								{
+									"key": "where_value",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Feedbacks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/feedback",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feedback",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c"
+							},
+							{
+								"key": "device-type",
+								"value": "android"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/feedback/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Feedback",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "aksan maulana",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "-",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/public/feedback/create",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tourism Place",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Events by Tourism Place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/tourismplace/1/events",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pictures by Tourism Places",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/tourismplace/1/pictures",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tourism Place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/tourismplace/4",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tourism Places",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/tourismplace",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -1870,13 +1813,13 @@
 			]
 		},
 		{
-			"name": "Custom",
+			"name": "Advertisement",
 			"description": "",
 			"item": [
 				{
-					"name": "Update Status",
+					"name": "Get Advertisement",
 					"request": {
-						"method": "PUT",
+						"method": "GET",
 						"header": [
 							{
 								"key": "api-token",
@@ -1885,36 +1828,91 @@
 							{
 								"key": "device-type",
 								"value": "web"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
 							}
 						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+						"body": {},
+						"url": "{{url}}/public/advertisement/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advertisements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/advertisement?where_by=status|type&where_value=active|main_slide",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"advertisement"
+							],
+							"query": [
 								{
-									"key": "table",
-									"value": "users",
-									"description": "advertisements||cities||events||feedbacks||info_payments||messages||migrations||packages||package_cities||package_details||pictures||plans||plan_details||provinces||roles||special_deals||tip_tricks||tourism_places||users",
-									"type": "text"
+									"key": "where_by",
+									"value": "status|type"
 								},
 								{
-									"key": "field",
-									"value": "status",
-									"description": "status",
-									"type": "text"
+									"key": "where_value",
+									"value": "active|main_slide"
 								},
 								{
-									"key": "status",
-									"value": "active",
-									"description": "",
-									"type": "text"
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						},
-						"url": "{{url}}/public/custom/updatestatus/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Info Payment",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Info Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{url}}/public/infopayment",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info Payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "309ac0b38e16dbedc8c99b30594131bdd12ea67c"
+							},
+							{
+								"key": "device-type",
+								"value": "android"
+							}
+						],
+						"body": {},
+						"url": "{{url}}/public/infopayment/1",
 						"description": "Get Province By Id"
 					},
 					"response": []
