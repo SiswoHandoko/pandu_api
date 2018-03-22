@@ -51,6 +51,14 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'user_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $user = new User;
         $user = $user->where('status', '!=', 'deleted');
 
@@ -73,6 +81,8 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($user, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -85,6 +95,8 @@ class UserController extends Controller
                 $user = $user->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($user, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -102,6 +114,8 @@ class UserController extends Controller
 
         $result = $this->generate_response($user, 200, 'All Data.', false);
 
+        $this->update_access_log($access_log_id, $result);
+
         return response()->json($result, 200);
     }
 
@@ -113,6 +127,14 @@ class UserController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'user_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+        
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'firstname' => 'required|max:255',
@@ -130,6 +152,9 @@ class UserController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($user,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
 
@@ -141,9 +166,15 @@ class UserController extends Controller
 
             if($unique_validator->errors()->first('username')!='') {
                 $result = $this->generate_response($user,1,'This Username already taken by others.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }elseif($unique_validator->errors()->first('email')!='') {
                 $result = $this->generate_response($user,2,'This Email already taken by others.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }else{
                 /* bundling data */
@@ -177,7 +208,10 @@ class UserController extends Controller
                 /* upload process */
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
+
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 200);
             }
@@ -192,12 +226,27 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'user_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $user = User::where('status','!=','deleted')->find($id);
+
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($user,200,'Detail Data.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -212,6 +261,14 @@ class UserController extends Controller
 
     public function update(Request $req,$id)
     {
+        $param_insert = array(
+            'name' => 'user_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'firstname' => 'required|max:255',
@@ -230,6 +287,9 @@ class UserController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($user,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             /* Custom Unique Field Validation */
@@ -238,14 +298,23 @@ class UserController extends Controller
 
             if($username) {
                 $result = $this->generate_response($user,1,'This Username already taken by others.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }elseif($email) {
                 $result = $this->generate_response($user,2,'This Email already taken by others.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }else{
                 $user = User::find($id);
                 if(!$user){
                     $result = $this->generate_response($user,404,'Data Not Found.',true);
+
+                    $this->update_access_log($access_log_id, $result);
+
                     return response()->json($result, 404);
                 }else{
                     /* Change Password */
@@ -282,7 +351,11 @@ class UserController extends Controller
                     /* upload process */
                     $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo, $user->photo) : $user->photo;
                     $user->save();
+
                     $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
+
+                    $this->update_access_log($access_log_id, $result);
+
                     return response()->json($result, 200);
                 }
             }
@@ -297,14 +370,30 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'user_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $user = User::where('status', '!=', 'deleted')->find($id);
+
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $user->status = 'deleted';
             $user->save();
+
             $result = $this->generate_response($user,200,'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -318,6 +407,14 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+        $param_insert = array(
+            'name' => 'user_login',
+            'params' => json_encode(collect($request)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($request->all(), [
           'username' => 'required|max:255',
@@ -326,9 +423,14 @@ class UserController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($city,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $result = $this->authentication($request);
+
+            $this->update_access_log($access_log_id, $result);
         }
         return response()->json($result, 200);
     }
@@ -341,15 +443,31 @@ class UserController extends Controller
      */
     public function logout($id)
     {
+        $param_insert = array(
+            'name' => 'user_logout',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $user = User::find($id);
+
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $user->is_login = 0;
             $user->web_token = '';
             $user->save();
+
             $result = $this->generate_response($user,200,'You are already logout.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -362,6 +480,14 @@ class UserController extends Controller
      */
 
     public function authentication($request){
+        $param_insert = array(
+            'name' => 'user_authentication',
+            'params' => json_encode(collect($request)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* bundling data */
         $hasher = app()->make('hash');
         $username = $request->input('username');
@@ -374,6 +500,9 @@ class UserController extends Controller
         if (!$login) {
             /* Username Not Found */
             $res = $this->generate_response($login,1,'Your username or password incorrect!',true);
+
+            $this->update_access_log($access_log_id, $res);
+
             return $res;
         }else{
             if ($hasher->check($password, $login->password)) {
@@ -382,6 +511,9 @@ class UserController extends Controller
                     /* Force Login Web */
                     if(!$request->input('force_login') && $login->is_login=='1'){
                         $res = $this->generate_response($login,201,'Your account is login on other device!',false);
+
+                        $this->update_access_log($access_log_id, $res);
+
                         return $res;
                     }else{
                         $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
@@ -390,6 +522,9 @@ class UserController extends Controller
                             $login['token'] = $api_token;
                             $login['is_login'] = 1;
                             $res = $this->generate_response($login,200,'Success Login on Web!',false);
+
+                            $this->update_access_log($access_log_id, $res);
+
                             return $res;
                         }
                     }
@@ -399,6 +534,9 @@ class UserController extends Controller
                         /* Set Android Token As Result */
                         $login['token'] = $api_token;
                         $res = $this->generate_response($login,200,'Success Login on Android!',false);
+
+                        $this->update_access_log($access_log_id, $res);
+
                         return $res;
                     }
                 }elseif($request->header('device-type')=='ios'){
@@ -407,6 +545,9 @@ class UserController extends Controller
                         /* Set IOS Token As Result */
                         $login['token'] = $api_token;
                         $res = $this->generate_response($login,200,'Success Login on IOS!',false);
+
+                        $this->update_access_log($access_log_id, $res);
+
                         return $res;
                     }
                 }
@@ -414,6 +555,9 @@ class UserController extends Controller
                 /* Password Incorrect */
                 $login = null;
                 $res = $this->generate_response($login,1,'Your username or password incorrect!',true);
+
+                $this->update_access_log($access_log_id, $res);
+
                 return $res;
             }
         }
@@ -426,6 +570,14 @@ class UserController extends Controller
     */
     public function user_by_plan(Request $req, $id)
     {
+        $param_insert = array(
+            'name' => 'user_by_plan',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $plan = new Plan;
         $plan = $plan->with('user', 'guide');
         $plan = $plan->where('user_id', $id);
@@ -450,6 +602,8 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -462,6 +616,8 @@ class UserController extends Controller
                 $plan = $plan->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -478,6 +634,8 @@ class UserController extends Controller
         $plan = $plan->get();
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -502,6 +660,14 @@ class UserController extends Controller
 
     public function forgot_password(Request $request)
     {
+        $param_insert = array(
+            'name' => 'user_forgot_password',
+            'params' => json_encode(collect($request)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($request->all(), [
           'email' => 'required|max:255',
@@ -509,6 +675,9 @@ class UserController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($user,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $select = new User;
@@ -516,6 +685,9 @@ class UserController extends Controller
 
             if(!$select){
                 $result = $this->generate_response($user,404,'Email Not Found.',true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }else{
                 /* bundling data */
@@ -543,6 +715,9 @@ class UserController extends Controller
                 });
 
                 $result = $this->generate_response($user, 200, 'Success Change Password.', false);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }

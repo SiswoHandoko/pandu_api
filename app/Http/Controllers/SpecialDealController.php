@@ -33,6 +33,14 @@ class SpecialDealController extends Controller
     */
     public function index(Request $req)
     {
+        $param_insert = array(
+            'name' => 'specialdeal_index',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $specialdeal = new SpecialDeal;
         $specialdeal = $specialdeal->with('tourismplace', 'package');
         $specialdeal = $specialdeal->where('status', '!=', 'deleted');
@@ -56,6 +64,8 @@ class SpecialDealController extends Controller
             } else {
                 $result = $this->generate_response($specialdeal, 400, 'Bad Request.', true);
 
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 400);
             }
         }
@@ -68,6 +78,8 @@ class SpecialDealController extends Controller
                 $specialdeal = $specialdeal->orderBy($req->input('order_by'), $order_type);
             } else {
                 $result = $this->generate_response($specialdeal, 400, 'Bad Request.', true);
+
+                $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -86,6 +98,8 @@ class SpecialDealController extends Controller
         // $specialdeal = $this->check_data($specialdeal);
 
         $result = $this->generate_response($specialdeal, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -115,6 +129,14 @@ class SpecialDealController extends Controller
      */
     public function store(Request $req)
     {
+        $param_insert = array(
+            'name' => 'specialdeal_store',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
           'tourism_place_id' => 'required|max:255',
@@ -124,6 +146,9 @@ class SpecialDealController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($specialdeal,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $user = new User;
@@ -152,7 +177,10 @@ class SpecialDealController extends Controller
             $specialdeal->rate = $req->has('rate') ? $req->rate : '';
             $specialdeal->status = 'active';
             $specialdeal->save();
+
             $result = $this->generate_response($specialdeal,200,'Data Has Been Saved.',false);
+
+            $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -166,12 +194,27 @@ class SpecialDealController extends Controller
      */
     public function show($id)
     {
+        $param_insert = array(
+            'name' => 'specialdeal_show',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $specialdeal = SpecialDeal::with('tourismplace','package')->where('status','!=','deleted')->find($id);
+
         if(!$specialdeal){
             $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($specialdeal, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
@@ -186,6 +229,14 @@ class SpecialDealController extends Controller
 
     public function update(Request $req,$id)
     {
+        $param_insert = array(
+            'name' => 'specialdeal_update',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|max:255',
@@ -195,11 +246,18 @@ class SpecialDealController extends Controller
 
         if($validator->fails()) {
             $result = $this->generate_response($specialdeal,400,'Bad Request.',true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 400);
         }else{
             $specialdeal = SpecialDeal::find($id);
+
             if(!$specialdeal){
                 $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 404);
             }else{
                 $specialdeal->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $specialdeal->tourism_place_id;
@@ -207,7 +265,11 @@ class SpecialDealController extends Controller
                 $specialdeal->rate = $req->has('rate') ? $req->rate : $specialdeal->rate;
                 $specialdeal->status = $req->has('status') ? $req->status : $specialdeal->status;
                 $specialdeal->save();
+
                 $result = $this->generate_response($specialdeal,200,'Data Has Been Updated.',false);
+
+                $this->update_access_log($access_log_id, $result);
+
                 return response()->json($result, 200);
             }
         }
@@ -221,15 +283,30 @@ class SpecialDealController extends Controller
      */
     public function destroy($id)
     {
+        $param_insert = array(
+            'name' => 'specialdeal_destroy',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
         $specialdeal = SpecialDeal::where('status', '!=', 'deleted')->find($id);
         
         if(!$specialdeal){
             $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 404);
         }else{
             $specialdeal->status = 'deleted';
             $specialdeal->save();
+
             $result = $this->generate_response($specialdeal,200,'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
             return response()->json($result, 200);
         }
     }
