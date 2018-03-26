@@ -15,6 +15,8 @@ class CreatePlansTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->default('');
+            $table->string('background')->default('');
             $table->integer('user_id')->default(0);
             $table->integer('guide_id')->default(0);
             $table->integer('total_adult')->default(0);

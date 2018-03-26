@@ -16,6 +16,8 @@ class PlansTableSeeder extends Seeder
 
         $data = [
             [
+                'name' => 'Plan A',
+                'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
             	'user_id' => 3,
                 'guide_id' => 2,
                 'total_adult' => 2,
@@ -31,6 +33,8 @@ class PlansTableSeeder extends Seeder
             	'status' => 'hold'
             ],
             [
+                'name' => 'Plan B',
+                'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 3,
                 'guide_id' => 2,
                 'total_adult' => 2,
@@ -46,6 +50,8 @@ class PlansTableSeeder extends Seeder
                 'status' => 'hold'
             ],
             [
+                'name' => 'Plan C',
+                'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 3,
                 'guide_id' => 2,
                 'total_adult' => 2,
@@ -61,6 +67,8 @@ class PlansTableSeeder extends Seeder
                 'status' => 'hold'
             ],
             [
+                'name' => 'Plan D',
+                'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 4,
                 'guide_id' => 2,
                 'total_adult' => 2,
@@ -76,6 +84,8 @@ class PlansTableSeeder extends Seeder
                 'status' => 'hold'
             ],
             [
+                'name' => 'Plan E',
+                'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 5,
                 'guide_id' => 2,
                 'total_adult' => 2,

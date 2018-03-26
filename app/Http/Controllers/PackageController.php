@@ -427,15 +427,4 @@ class PackageController extends Controller
 
         return $result;
     }
-
-    private function check_where($where_by, $where_fields)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $where_fields)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
 }

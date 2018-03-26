@@ -226,3 +226,10 @@ $router->post('/fcm/pushnotif', 'FcmController@sendnotif');
  | ------------------------------------------
  */
 $router->put('/custom/updatestatus/{id}', 'CustomController@update_status');
+
+/*
+ | ------------------------------------------
+ | CUSTOM API REQUEST
+ | ------------------------------------------
+ */
+$router->get('/accesslog', 'AccessLogController@index');
