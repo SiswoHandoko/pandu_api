@@ -179,7 +179,7 @@ class PlanController extends Controller
 
         if ($validator->fails()) {
             $result = $this->generate_response($plan,400,'Bad Request.',true);
-
+            
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
@@ -208,11 +208,14 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
+                    'name' => $req->has('name') ? $req->name : '',
+                    'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
                     'total_adult' => $req->has('total_adult') ? $req->total_adult : 0,
                     'total_child' => $req->has('total_child') ? $req->total_child : 0,
                     'total_infant' => $req->has('total_infant') ? $req->total_infant : 0,
                     'total_tourist' => $req->has('total_tourist') ? $req->total_tourist : 0,
                     'total_price' => $total_price,
+                    'receipt' => $req->has('receipt') ? env('BACKEND_URL').'public/images/plans/'.$this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '',
                     'type' => 'package',
                     'days' => $package['days'],
                     'start_date' => $req->has('start_date') ? $req->start_date : '000-00-00',
@@ -266,6 +269,8 @@ class PlanController extends Controller
             } else {
                 $plan->user_id = $req->has('user_id') ? $req->user_id : 0;
                 $plan->guide_id = $req->has('guide_id') ? $req->guide_id : 0;
+                $plan->name = $req->has('name') ? $req->name : '';
+                $plan->receipt = $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '';
                 $plan->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
                 $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
                 $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
@@ -646,17 +651,6 @@ class PlanController extends Controller
         }
         
         return $result;
-    }
-
-    private function check_where($where_by, $where_fields)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $where_fields)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     private function validate_relation($result)

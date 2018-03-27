@@ -227,3 +227,10 @@ $router->post('/fcm/testSetFunction', 'FcmController@testSetFunction');
  | ------------------------------------------
  */
 $router->put('/custom/updatestatus/{id}', 'CustomController@update_status');
+
+/*
+ | ------------------------------------------
+ | CUSTOM API REQUEST
+ | ------------------------------------------
+ */
+$router->get('/accesslog', 'AccessLogController@index');

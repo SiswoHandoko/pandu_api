@@ -418,6 +418,22 @@ class CityController extends Controller
         return $ret;
     }
 
+    private function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    {
+        // convert from degrees to radians
+        $latFrom = deg2rad($latitudeFrom);
+        $lonFrom = deg2rad($longitudeFrom);
+        $latTo = deg2rad($latitudeTo);
+        $lonTo = deg2rad($longitudeTo);
+
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
+
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) + cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        
+        return $angle * $earthRadius;
+    }
+
     /**
     * Display a listing of the resource.
     *
@@ -495,16 +511,5 @@ class CityController extends Controller
         $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
-    }
-
-    private function check_where($where_by, $where_fields)
-    {
-        foreach ($where_by as $key => $value) {
-            if (!in_array($value, $where_fields)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

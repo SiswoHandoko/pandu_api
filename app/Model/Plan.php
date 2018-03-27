@@ -17,7 +17,7 @@ class Plan extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'guide_id', 'total_adult', 'total_child', 'total_infant', 'total_tourist', 'days', 'start_date', 'end_date', 'total_price', 'receipt', 'type', 'status'
+        'user_id', 'guide_id', 'total_adult', 'total_child', 'total_infant', 'total_tourist', 'days', 'start_date', 'end_date', 'total_price', 'receipt', 'type', 'status', 'name', 'background'
     ];
 
     /**
