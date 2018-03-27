@@ -147,7 +147,7 @@ class UserController extends Controller
           'repassword' => 'required|max:255',
           'email' => 'required|max:255',
           'role_id' => 'required|max:255|in:1,2,3',
-          'photo' => 'max:2048',
+        //   'photo' => 'max:20480',
         ]);
 
         if($validator->fails()) {
@@ -282,7 +282,7 @@ class UserController extends Controller
             'email' => 'required|max:255',
             'role_id' => 'required|max:255|in:1,2,3',
             'status' => 'required|max:255',
-            'photo' => 'max:2048',
+            // 'photo' => 'max:20480',
         ]);
 
         if($validator->fails()) {

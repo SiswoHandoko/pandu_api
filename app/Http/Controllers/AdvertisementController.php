@@ -117,7 +117,7 @@ class AdvertisementController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'image_url' => 'max:2048',
+          //'image_url' => 'max:20480',
           'title' => 'required|max:255',
           'caption' => 'required|max:255',
           'type' => 'required|max:255',
@@ -200,13 +200,12 @@ class AdvertisementController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'image_url' => 'max:2048',
+          //'image_url' => 'max:20480',
           'title' => 'required|max:255',
           'caption' => 'required|max:255',
           'type' => 'required|max:255',
           'status' => 'required|max:255',
         ]);
-
         if($validator->fails()) {
             $result = $this->generate_response($advertisement,400,'Bad Request.',true);
 
