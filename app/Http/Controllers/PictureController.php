@@ -119,7 +119,7 @@ class PictureController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
-            'image_url' => 'max:2048',
+            // 'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {
@@ -206,7 +206,7 @@ class PictureController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-            'image_url' => 'max:2048',
+            // 'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {

@@ -247,7 +247,7 @@ class CityController extends Controller
                 return response()->json($result, 404);
             }else{
                 $city->name = $req->has('name') ? $req->name : $city->name;
-                $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url) : $city->image_url;
+                $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url,$city->image_url) : $city->image_url;
                 $city->status = $req->has('status') ? $req->status : $city->status;
                 $city->save();
 

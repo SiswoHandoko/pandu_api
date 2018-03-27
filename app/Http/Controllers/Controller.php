@@ -39,9 +39,8 @@ class Controller extends BaseController
         /** Explode Image Full Path into name only */
         $temp_image = explode('/',$last_image);
         $last_image = $temp_image[count($temp_image)-1];
-
         if(file_put_contents($destinationPath, $data)){
-            if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png'){
+            if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png' && $last_image != 'default_city.png'){
                 $path = str_replace('/','\\',$path);
                 @unlink($path.$last_image);
             }
