@@ -147,19 +147,23 @@ class CityController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
+          'province_id' => 'required',
           'name' => 'required|max:255',
+          'image_url' => 'required'
         ]);
 
         if($validator->fails()) {
             $result = $this->generate_response($city,400,'Bad Request.',true);
-
+            
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         }else{
             $city = new City();
+            $city->province_id = $req->has('province_id') ? $req->province_id : 0;
             $city->name = $req->has('name') ? $req->name : '';
             $city->status = 'active';
+            $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url) : env('BACKEND_URL').'public/images/cities/default_img.png';
             $city->save();
 
             $result = $this->generate_response($city,200,'Data Has Been Saved.',false);
@@ -223,7 +227,8 @@ class CityController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'name' => 'required|max:255',
+            'name' => 'required|max:255',
+            'image_url' => 'required'
         ]);
 
         if($validator->fails()) {
@@ -242,6 +247,7 @@ class CityController extends Controller
                 return response()->json($result, 404);
             }else{
                 $city->name = $req->has('name') ? $req->name : $city->name;
+                $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url) : $city->image_url;
                 $city->status = $req->has('status') ? $req->status : $city->status;
                 $city->save();
 
