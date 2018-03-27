@@ -344,14 +344,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/user/3/plans?",
+							"raw": "{{url}}/public/user/2/plans?",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
 								"user",
-								"3",
+								"2",
 								"plans"
 							],
 							"query": [
@@ -742,7 +742,7 @@
 									"key": "type",
 									"value": "single",
 									"type": "text",
-									"description": ""
+									"description": "single = thing to do, package = one to seven days"
 								},
 								{
 									"key": "days",
@@ -860,7 +860,7 @@
 									"key": "type",
 									"value": "single",
 									"type": "text",
-									"description": "single = thing to do, many = one to seven days, package = package"
+									"description": "single = thing to do, package = one to seven days"
 								},
 								{
 									"key": "days",

@@ -160,6 +160,7 @@ class PlanController extends Controller
                 'total_tourist' => 'required|numeric|min:0',
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
+                'background' => 'max:2048',
                 'package_id' => 'required'
             ]);
         } else {
@@ -173,6 +174,7 @@ class PlanController extends Controller
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
                 'total_price' => 'required|numeric|min:0',
+                'background' => 'max:2048',
                 'type' => 'required'
             ]);
         }
@@ -270,7 +272,7 @@ class PlanController extends Controller
                 $plan->user_id = $req->has('user_id') ? $req->user_id : 0;
                 $plan->guide_id = $req->has('guide_id') ? $req->guide_id : 0;
                 $plan->name = $req->has('name') ? $req->name : '';
-                $plan->receipt = $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '';
+                $plan->background = $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '';
                 $plan->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
                 $plan->total_child = $req->has('total_child') ? $req->total_child : 0;
                 $plan->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
@@ -356,6 +358,8 @@ class PlanController extends Controller
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'required|numeric|min:0',
+            'background' => 'max:2048',
+            'receipt' => 'max:2048',
             'type' => 'required',
         ]);
 

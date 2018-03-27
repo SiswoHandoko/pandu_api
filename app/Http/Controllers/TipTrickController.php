@@ -120,6 +120,7 @@ class TipTrickController extends Controller
         $validator = Validator::make($req->all(), [
           'title' => 'required|max:255',
           'description' => 'required',
+          'image_url' => 'max:2048',
         ]);
 
         if($validator->fails()) {
@@ -149,6 +150,7 @@ class TipTrickController extends Controller
             $tiptrick = new TipTrick();
             $tiptrick->title = $req->has('title') ? $req->title : '';
             $tiptrick->description = $req->has('description') ? $req->description : '';
+            $tiptrick->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/tiptricks/'.$this->uploadFile($this->public_path(). "/images/tiptricks/", $req->image_url) : env('BACKEND_URL').'public/images/tiptricks/default_img.png';
             $tiptrick->status = 'active';
             $tiptrick->save();
 
@@ -215,6 +217,7 @@ class TipTrickController extends Controller
         $validator = Validator::make($req->all(), [
             'title' => 'required|max:255',
             'description' => 'required',
+            'image_url' => 'max:2048',
         ]);
 
         if($validator->fails()) {
@@ -234,6 +237,7 @@ class TipTrickController extends Controller
             }else{
                 $tiptrick->title = $req->has('title') ? $req->title : $tiptrick->title;
                 $tiptrick->description = $req->has('description') ? $req->description : $tiptrick->description;
+                $tiptrick->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/tiptricks/'.$this->uploadFile($this->public_path(). "/images/tiptricks/", $req->image_url, $tiptrick->image_url) : $tiptrick->image_url;
                 $tiptrick->status = $req->has('status') ? $req->status : $tiptrick->status;
                 $tiptrick->save();
 

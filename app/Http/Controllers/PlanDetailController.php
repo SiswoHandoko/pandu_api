@@ -48,7 +48,7 @@ class PlanDetailController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = new PlanDetail;
-        $plandetail = $plandetail->with('plan', 'tourismplace');
+        $plandetail = $plandetail->with('plan', 'tourismplace.picture');
         $plandetail = $plandetail->where('status', '!=', 'deleted');
 
         // search query

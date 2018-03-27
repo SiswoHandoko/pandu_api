@@ -149,7 +149,7 @@ class CityController extends Controller
         $validator = Validator::make($req->all(), [
           'province_id' => 'required',
           'name' => 'required|max:255',
-          'image_url' => 'required'
+          'image_url' => 'max:2048'
         ]);
 
         if($validator->fails()) {
@@ -224,11 +224,11 @@ class CityController extends Controller
         );
 
         $access_log_id = $this->create_access_log($param_insert);
-
+        
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required|max:255',
-            'image_url' => 'required'
+            'image_url' => 'max:2048'
         ]);
 
         if($validator->fails()) {
