@@ -30,19 +30,25 @@ class Controller extends BaseController
   }
 
   public function uploadFile($path, $base64,$last_image = ''){
-      /* Upload function */
-      $data = base64_decode($base64);
-      $extension = $this->getImageMimeType($data);
-      $filename = sha1(time()).".".$extension;
-      $destinationPath = $path . $filename;
-      if(file_put_contents($destinationPath, $data)){
-          if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png'){
-              @unlink($path.$last_image);
-          }
-          return $filename;
-      }else{
-          return false;
-      };
+        /* Upload function */
+        $data = base64_decode($base64);
+        $extension = $this->getImageMimeType($data);
+        $filename = sha1(time()).".".$extension;
+        $destinationPath = $path . $filename;
+
+        /** Explode Image Full Path into name only */
+        $temp_image = explode('/',$last_image);
+        $last_image = $temp_image[count($temp_image)-1];
+
+        if(file_put_contents($destinationPath, $data)){
+            if($last_image!='' && $last_image != 'default_advertisement.png' && $last_image != 'default_place.png' && $last_image != 'default_img.png'){
+                $path = str_replace('/','\\',$path);
+                @unlink($path.$last_image);
+            }
+            return $filename;
+        }else{
+            return false;
+        };
   }
 
   /**

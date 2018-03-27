@@ -6,6 +6,14 @@ use Validator;
 
 class FcmController extends Controller
 {
+    /**
+     * @var FirebaseInterface
+     */
+    private $firebase;
+    protected function getPackageProviders($app)
+    {
+        return ['SafeStudio\Firebase\FirebaseServiceProvider'];
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -56,4 +64,46 @@ class FcmController extends Controller
         }
     }
 
+    public function saveToFirebase($notification, $orderId, $user) {
+        $config = [
+            'api_key' => 'AIzaSyASD5vZNA-DeS93cFU8oz40nycp1CIZ3bg',
+            'auth_domain' => 'coal-trade-dev.firebaseapp.com',
+            'database_url' => 'https://coal-trade-dev.firebaseio.com/dev/bib',
+            'secret' => 'f8wEJWpGWfTw9n3oOZdVjw95woQrnzPQR5csRR35',
+            'storage_bucket' => 'coal-trade-dev.appspot.com',
+            'messaging_sender_id' => '328150955221'
+        ];
+
+        $firebaseClient = new FirebaseLib(config('services.firebase.database_url'), config('services.firebase.secret'));
+        $FIREBASE_API_ACCESS_KEY = config('services.firebase_dev.api_key');
+    }
+
+    public function testSetFunction()
+    {
+        $firebase = new \Geckob\Firebase\Firebase('C:\xampp\htdocs\pandu_api\firebaseConfig.json');
+        
+        // Set the parent node. 
+        $firebase = $firebase->setPath('dev/');
+
+        // Create Custom Object If the node already exist, it will update the value
+        // $firebase->set('production2','testValue');
+        
+        /* Create Custom Object with multiple nodes, if it doesnt exist, it will create the node
+        // $firebase->set('testObject/testKey', 'testValueObject');
+
+        /* Create Object with auto key. This requires to call setPath first to identify the parent */
+        $firebase->push([
+            'test_1' => 'value_1',
+            'test_2' => 'value_2'
+        ]);
+        
+        /* Delete Data Sample */
+        // $firebase->delete('-L8SbKa9vNiPEVTRrNeN');
+        // $firebase->delete('testObject/testKey');
+
+        /* Get data by Key  */
+        $data = json_decode($firebase->get('-L8Scd1bYx0JNBmquJIQ'));
+    
+        return response()->json($data);
+    }
 }

@@ -219,6 +219,7 @@ $router->post('/mail/sendmail', 'MailController@sendmail');
  | ------------------------------------------
  */
 $router->post('/fcm/pushnotif', 'FcmController@sendnotif');
+$router->post('/fcm/testSetFunction', 'FcmController@testSetFunction');
 
 /*
  | ------------------------------------------
