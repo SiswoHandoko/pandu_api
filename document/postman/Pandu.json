@@ -956,7 +956,7 @@
 					"value": "single",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "single = thing to do, package = one to seven days"
 				},
 				{
 					"key": "days",
@@ -1115,7 +1115,7 @@
 					"value": "single",
 					"type": "text",
 					"enabled": true,
-					"description": "single = thing to do, many = one to seven days, package = package"
+					"description": "single = thing to do, package = one to seven days"
 				},
 				{
 					"key": "days",
@@ -2312,7 +2312,7 @@
 		{
 			"id": "b5ca93fa-a7ae-48ae-9691-6f68a34dad88",
 			"name": "Get Plan by User",
-			"url": "{{url}}/public/user/3/plans",
+			"url": "{{url}}/public/user/2/plans",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",

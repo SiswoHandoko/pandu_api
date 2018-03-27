@@ -3216,7 +3216,7 @@
 					"value": "single",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "single = thing to do, package = one to seven days"
 				},
 				{
 					"key": "days",
@@ -4014,7 +4014,7 @@
 				{
 					"key": "type",
 					"value": "single",
-					"description": "single = thing to do, many = one to seven days, package = package",
+					"description": "single = thing to do, package = one to seven days",
 					"type": "text",
 					"enabled": true
 				},
