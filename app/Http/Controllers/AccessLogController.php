@@ -49,7 +49,6 @@ class AccessLogController extends Controller
                     $accesslog = $accesslog->where($explode_by[$key], '=', $explode_value[$key]);
                 }
             } else {
-                echo 'masuk';exit;
                 $result = $this->generate_response($accesslog, 400, 'Bad Request.', true);
 
                 return response()->json($result, 400);
@@ -63,7 +62,6 @@ class AccessLogController extends Controller
 
                 $accesslog = $accesslog->orderBy($req->input('order_by'), $order_type);
             } else {
-                echo 'masuk1';exit;
                 $result = $this->generate_response($accesslog, 400, 'Bad Request.', true);
 
                 return response()->json($result, 400);
