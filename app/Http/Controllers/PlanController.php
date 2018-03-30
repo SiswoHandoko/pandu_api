@@ -7,6 +7,7 @@ use App\Model\Plan;
 use App\Model\PlanDetail;
 use App\Model\Package;
 use App\Model\PackageDetail;
+use App\Model\TourismPlace;
 use Illuminate\Support\Facades\Mail;
 
 class PlanController extends Controller
@@ -163,6 +164,21 @@ class PlanController extends Controller
                 'background' => 'max:2048',
                 'package_id' => 'required'
             ]);
+        } else if ($req->has('tourism_place_id')) {
+            $validator = Validator::make($req->all(), [
+                'user_id' => 'required|numeric|min:0',
+                'total_adult' => 'required|numeric|min:0',
+                'total_child' => 'required|numeric|min:0',
+                'total_infant' => 'required|numeric|min:0',
+                'total_tourist' => 'required|numeric|min:0',
+                'start_date' => 'required|date_format:"Y-m-d"',
+                'end_date' => 'required|date_format:"Y-m-d"',
+                'background' => 'max:2048',
+
+                'tourism_place_id' => 'required|numeric|min:0',
+                'start_time' => 'required|date_format:"H:i"',
+                'end_time' => 'required|date_format:"H:i"'
+            ]);
         } else {
             $validator = Validator::make($req->all(), [
                 'user_id' => 'required|numeric|min:0',
@@ -230,7 +246,6 @@ class PlanController extends Controller
                 if ($plan_id)  {
                     $insert_plandetail = array();
                     
-                    
                     foreach ($packagedetail as $key => $value) {
                         $insert_plandetail[] = array(
                             'plan_id' => $plan_id,
@@ -267,6 +282,79 @@ class PlanController extends Controller
 
                         return response()->json($result, 404);
                     }
+                } else {
+                    $result = $this->generate_response($plan,400,'Bad Request.',true);
+            
+                    $this->update_access_log($access_log_id, $result);
+
+                    return response()->json($result, 400);
+                }
+            } else if ($req->has('tourism_place_id')) {
+                $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->find($req->tourism_place_id);
+
+                $total_price = ($req->total_adult * $tourismplace->adult_price) + ($req->total_child * $tourismplace->child_price) + ($req->total_infant * $tourismplace->infant_price) + ($req->total_tourist * $tourismplace->tourist_price);
+
+                $insert_plan = array(
+                    'user_id' => $req->user_id,
+                    'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
+                    'name' => $req->has('name') ? $req->name : '',
+                    'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    'total_adult' => $req->has('total_adult') ? $req->total_adult : 0,
+                    'total_child' => $req->has('total_child') ? $req->total_child : 0,
+                    'total_infant' => $req->has('total_infant') ? $req->total_infant : 0,
+                    'total_tourist' => $req->has('total_tourist') ? $req->total_tourist : 0,
+                    'total_price' => $total_price,
+                    'receipt' => $req->has('receipt') ? env('BACKEND_URL').'public/images/plans/'.$this->uploadFile($this->public_path(). "/images/plans/", $req->receipt) : '',
+                    'type' => 'single',
+                    'days' => 1,
+                    'start_date' => $req->has('start_date') ? $req->start_date : '000-00-00',
+                    'end_date' => $req->has('end_date') ? $req->end_date : '000-00-00',
+                    'status' => $req->has('status') ? $req->status : 'active'
+                );
+
+                $plan_id = $plan->insertGetId($insert_plan);
+
+                if ($plan_id)  {
+                    $insert_plandetail = array(
+                        'plan_id' => $plan_id,
+                        'tourism_place_id' => $req->tourism_place_id,
+                        'start_time' => $req->start_time,
+                        'end_time' => $req->end_time,
+                        'day' => 1,
+                        'adult_price' => $tourismplace->adult_price,
+                        'child_price' => $tourismplace->child_price,
+                        'infant_price' => $tourismplace->infant_price,
+                        'tourist_price' => $tourismplace->tourist_price,
+                        'no_ticket' => $req->has('no_ticket') ? $req->no_ticket : '',
+                        'status' => $req->has('status') ? $req->status : 'active'
+                    );
+
+                    $plandetail = new PlanDetail();
+
+                    $plandetail->insert($insert_plandetail);
+                    
+                    $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($plan_id);
+
+                    if ($plan) {
+                        $plan = $this->validate_relation($plan);
+                        $result = $this->generate_response($plan, 200, 'Detail Data.', false);
+
+                        $this->update_access_log($access_log_id, $result);
+
+                        return response()->json($result, 200);
+                    } else {
+                        $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
+
+                        $this->update_access_log($access_log_id, $result);
+
+                        return response()->json($result, 404);
+                    }
+                } else {
+                    $result = $this->generate_response($plan,400,'Bad Request.',true);
+            
+                    $this->update_access_log($access_log_id, $result);
+
+                    return response()->json($result, 400);
                 }
             } else {
                 $plan->user_id = $req->has('user_id') ? $req->user_id : 0;
@@ -357,10 +445,9 @@ class PlanController extends Controller
             'days' => 'required|numeric|min:0',
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
-            'total_price' => 'required|numeric|min:0',
+            'total_price' => 'numeric|min:0',
             'background' => 'max:2048',
             'receipt' => 'max:2048',
-            'type' => 'required',
         ]);
 
         if($validator->fails()) {

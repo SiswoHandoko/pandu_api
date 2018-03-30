@@ -151,7 +151,7 @@ class TipTrickController extends Controller
             $tiptrick->title = $req->has('title') ? $req->title : '';
             $tiptrick->description = $req->has('description') ? $req->description : '';
             $tiptrick->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/tiptricks/'.$this->uploadFile($this->public_path(). "/images/tiptricks/", $req->image_url) : env('BACKEND_URL').'public/images/tiptricks/default_img.png';
-            $tiptrick->status = 'active';
+            $tiptrick->status = $req->has('status') ? $req->status : 'active';
             $tiptrick->save();
 
             $result = $this->generate_response($tiptrick,200,'Data Has Been Saved.',false);

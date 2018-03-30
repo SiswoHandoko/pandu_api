@@ -135,8 +135,8 @@ class InfoPaymentController extends Controller
             $infopayment->bank = $req->has('bank') ? $req->bank : 0;
             $infopayment->no_rek = $req->has('no_rek') ? $req->no_rek : '';
             $infopayment->name = $req->has('name') ? $req->name : '';
-            $infopayment->status = 'active';
-
+            $infopayment->status = $req->has('status') ? $req->status : 'active';
+            
             $infopayment->save();
 
             $result = $this->generate_response($infopayment, 200, 'Data Has Been Saved.', false);

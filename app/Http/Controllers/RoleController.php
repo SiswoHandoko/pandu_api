@@ -129,7 +129,7 @@ class RoleController extends Controller
             $role = new Role();
 
             $role->name = $req->has('name') ? $req->name : '';
-            $role->status = 'active';
+            $role->status = $req->has('status') ? $req->status : 'active';
 
             $role->save();
 

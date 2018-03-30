@@ -136,7 +136,7 @@ class ProvinceController extends Controller
         }else{
             $province = new Province();
             $province->name = $req->has('name') ? $req->name : '';
-            $province->status = 'active';
+            $province->status = $req->has('status') ? $req->status : 'active';
             $province->save();
 
             $result = $this->generate_response($province,200,'Data Has Been Saved.',false);

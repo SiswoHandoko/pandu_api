@@ -131,8 +131,8 @@ class FeedbackController extends Controller
 
             $feedback->name = $req->has('name') ? $req->name : '';
             $feedback->description = $req->has('description') ? $req->description : '';
-            $feedback->status = 'active';
-
+            $feedback->status = $req->has('status') ? $req->status : 'active';
+            
             $feedback->save();
 
             $result = $this->generate_response($feedback, 200, 'Data Has Been Saved.', false);
@@ -217,6 +217,7 @@ class FeedbackController extends Controller
             } else {
                 $feedback->name = $req->has('name') ? $req->name : $feedback->name;
                 $feedback->description = $req->has('description') ? $req->description : $feedback->description;
+                $feedback->status = $req->has('status') ? $req->status : $feedback->status;
                                         
                 $feedback->save();
 

@@ -204,7 +204,7 @@ class UserController extends Controller
                 $user->password = $password;
                 $user->email = $req->has('email') ? $req->email : '';
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
-                $user->status = 'active';
+                $user->status = $req->has('status') ? $req->status : 'active';
                 /* upload process */
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();

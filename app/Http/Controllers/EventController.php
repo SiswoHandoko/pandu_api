@@ -141,7 +141,7 @@ class EventController extends Controller
             $event->description = $req->has('description') ? $req->description : '';
             $event->start_date = $req->has('start_date') ? $req->start_date : 0;
             $event->end_date = $req->has('end_date') ? $req->end_date : 0;
-            $event->status = 'active';
+            $event->status = $req->has('status') ? $req->status : 'active';
 
             $event->save();
 
@@ -228,11 +228,11 @@ class EventController extends Controller
 
                 return response()->json($result, 404);
             } else {
-                $event->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
-                $event->name = $req->has('name') ? $req->name : '';
-                $event->description = $req->has('description') ? $req->description : '';
-                $event->start_date = $req->has('start_date') ? $req->start_date : 0;
-                $event->end_date = $req->has('end_date') ? $req->end_date : 0;
+                $event->name = $req->has('name') ? $req->name : $event->name;
+                $event->description = $req->has('description') ? $req->description : $event->description;
+                $event->start_date = $req->has('start_date') ? $req->start_date : $event->start_date;
+                $event->end_date = $req->has('end_date') ? $req->end_date : $event->end_date;
+                $event->status = $req->has('status') ? $req->status : $event->status;
                             
                 $event->save();
 

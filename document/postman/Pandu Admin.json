@@ -236,6 +236,7 @@
 				"993fc76e-57ef-477a-ad98-e12b0ac17146",
 				"92213ff6-3934-430c-a0f5-e64794b75ad4",
 				"9b2e516a-2a8b-4a88-86a2-dad5b022b483",
+				"eefab645-60da-40e3-8402-c52f2e69a83b",
 				"8e049e84-dbb2-474d-9643-176328b4a0fc"
 			],
 			"folders_order": []
@@ -408,35 +409,28 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
-				},
-				{
-					"key": "no_ticket",
-					"value": "",
-					"type": "text",
-					"enabled": false,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
@@ -487,42 +481,35 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "tourism_place_id",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "1",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
-				},
-				{
-					"key": "no_ticket",
-					"value": "",
-					"type": "text",
-					"enabled": false,
-					"description": ""
 				},
 				{
 					"key": "status",
@@ -652,7 +639,14 @@
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": "/images/pictures"
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -682,37 +676,44 @@
 				{
 					"key": "tourism_place_id",
 					"value": "1",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "name",
 					"value": "Festival Kembang Api",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
 					"value": "",
-					"description": "no mandatory",
+					"description": "",
 					"type": "text",
 					"enabled": false
 				},
 				{
 					"key": "start_date",
 					"value": "2018-02-20 08:00:00",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "end_date",
 					"value": "2018-02-25 16:00:00",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -737,39 +738,39 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "tourism_place_id",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "no_ticket",
-					"value": "",
+					"value": "T001",
 					"type": "text",
 					"enabled": false,
 					"description": ""
@@ -832,6 +833,13 @@
 					"type": "text",
 					"enabled": true,
 					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1055,28 +1063,35 @@
 					"value": "Advertisement Dummy",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": "/images/advertisements"
+					"description": "Required"
 				},
 				{
 					"key": "caption",
 					"value": "Caption Advertisement",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "type",
 					"value": "main_slider",
 					"type": "text",
 					"enabled": true,
-					"description": "main_slider"
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -1318,12 +1333,12 @@
 				{
 					"key": "province_id",
 					"value": "12",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
-					"description": "",
+					"description": "Required",
 					"enabled": true,
 					"key": "name",
 					"type": "text",
@@ -1332,9 +1347,16 @@
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
-					"description": "images/cities",
+					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -1402,7 +1424,7 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"description": "",
+					"description": "Required",
 					"enabled": true,
 					"key": "to",
 					"type": "text",
@@ -1411,28 +1433,28 @@
 				{
 					"key": "alias",
 					"value": "handokok",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "subject",
 					"value": "subject mail",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "content",
 					"value": "ini content nya",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "name",
 					"value": "handokooos",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				}
@@ -1472,98 +1494,105 @@
 					"value": "227",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
 					"value": "Prambanan",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "This is prambanan",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "adult_price",
 					"value": "7000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "child_price",
 					"value": "8000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "infant_price",
 					"value": "9000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "tourist_price",
 					"value": "10000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "longitude",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "latitude",
 					"value": "-1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "facilities",
 					"value": "toilet, mushola, wifi",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "rate",
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "address",
 					"value": "Jl. Setiabudi",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "phone",
 					"value": "082132222333",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "category",
 					"value": "wisata",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1651,25 +1680,32 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"description": "",
-					"enabled": true,
 					"key": "title",
+					"value": "Tip and trick2",
 					"type": "text",
-					"value": "Tip and trick2"
+					"enabled": true,
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "Description Of Tip And Tricks",
-					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "image_url",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "status",
 					"value": "active",
-					"description": "",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1781,35 +1817,35 @@
 					"value": "Advertisement Dummy Update",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": "/images/advertisements"
+					"description": "Required"
 				},
 				{
 					"key": "caption",
 					"value": "Caption Advertisement",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "type",
 					"value": "main_slider",
 					"type": "text",
 					"enabled": true,
-					"description": "main_slider"
+					"description": "Required"
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1849,39 +1885,39 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"key": "tourism_place_id",
-					"value": "1",
-					"type": "text",
-					"enabled": true,
-					"description": ""
-				},
-				{
 					"key": "name",
 					"value": "Festival Kembang Api",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "start_date",
 					"value": "2018-02-20 08:00:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_date",
 					"value": "2018-02-25 16:00:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1913,14 +1949,21 @@
 					"value": "New City Name",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
-					"enabled": true,
+					"enabled": false,
 					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -1964,21 +2007,21 @@
 					"value": "BRI",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "no_rek",
 					"value": "0123456789",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
 					"value": "New Admin Bank",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
@@ -2017,77 +2060,77 @@
 					"value": "Ghiffary",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "lastname",
 					"value": "Muhammad",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "email",
 					"value": "ghiffary@gmail.com",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "contact",
 					"value": "089687476161",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "address",
 					"value": "Jl. Kusuma Wandani No 13",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "birthdate",
 					"value": "1991-01-11",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "photo",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "username",
 					"value": "ghiffary",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "password",
 					"value": "qwerty",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "repassword",
 					"value": "qwerty",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "role_id",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": "1(tourist) || 2(guide) || 3(admin)"
+					"description": "Required ||1(tourist) || 2(guide) || 3(admin)"
 				}
 			],
 			"dataMode": "params",
@@ -2119,84 +2162,91 @@
 					"value": "Ghiffary",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "lastname",
 					"value": "Muhammad",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "email",
 					"value": "ghiffary@gmail.com",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "contact",
 					"value": "089687476161",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "address",
 					"value": "Jl. Kusuma Wandani No 13",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "birthdate",
 					"value": "1991-01-11",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "photo",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "username",
 					"value": "ghiffary",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "password",
 					"value": "qwerty",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "repassword",
 					"value": "qwerty",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "role_id",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": "1(tourist) || 2(guide) || 3(admin)"
+					"description": "Required||1(tourist) || 2(guide) || 3(admin)"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -2236,7 +2286,7 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"description": "",
+					"description": "Required",
 					"enabled": true,
 					"key": "tourism_place_id",
 					"type": "text",
@@ -2245,16 +2295,23 @@
 				{
 					"key": "package_id",
 					"value": "1",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "rate",
 					"value": "3",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -2322,7 +2379,7 @@
 		{
 			"id": "6ea8df04-098d-45e1-9c59-2064990b468b",
 			"name": "Get Access Logs",
-			"url": "{{url}}/public/accesslog?where_by=name&where_value=plan_index&order_by=created_at&order_type=desc",
+			"url": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=10",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2330,20 +2387,6 @@
 			"method": "GET",
 			"pathVariableData": [],
 			"queryParams": [
-				{
-					"key": "where_by",
-					"value": "name",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "where_value",
-					"value": "plan_index",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
 				{
 					"key": "order_by",
 					"value": "created_at",
@@ -2354,6 +2397,13 @@
 				{
 					"key": "order_type",
 					"value": "desc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "10",
 					"equals": true,
 					"description": "",
 					"enabled": true
@@ -2419,11 +2469,18 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"description": "",
+					"description": "Required",
 					"enabled": true,
 					"key": "name",
 					"type": "text",
 					"value": "New Province Name"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -2516,14 +2573,21 @@
 					"value": "aksan maulana",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "i like this app",
 					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -2585,11 +2649,18 @@
 			"description": "Get Province By Id",
 			"data": [
 				{
-					"description": "",
+					"description": "Required",
 					"enabled": true,
 					"key": "name",
 					"type": "text",
 					"value": "New Province Name"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -2661,7 +2732,7 @@
 				{
 					"key": "name",
 					"value": "aksan maulana",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
@@ -2670,7 +2741,14 @@
 					"value": "-",
 					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -2733,32 +2811,32 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "no_ticket",
-					"value": "",
+					"value": "T002",
 					"type": "text",
 					"enabled": false,
 					"description": ""
@@ -2812,35 +2890,35 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day1[0][tourism_place_id]",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day1[0][start_time]",
 					"value": "08:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day1[0][end_time]",
 					"value": "10:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day1[0][day]",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day1[0][no_ticket]",
@@ -2861,35 +2939,35 @@
 					"value": "4",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day2[0][tourism_place_id]",
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day2[0][start_time]",
 					"value": "09:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day2[0][end_time]",
 					"value": "12:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day2[0][day]",
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day2[0][no_ticket]",
@@ -2910,35 +2988,35 @@
 					"value": "6",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day3[0][tourism_place_id]",
 					"value": "3",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day3[0][start_time]",
 					"value": "10:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day3[0][end_time]",
 					"value": "12:00",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day3[0][day]",
 					"value": "3",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "day3[0][no_ticket]",
@@ -3040,26 +3118,26 @@
 					"value": "Paket C",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "Paket C",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "days",
 					"value": "5",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
@@ -3068,7 +3146,7 @@
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"description": "",
 					"type": "text",
-					"enabled": true
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -3174,49 +3252,49 @@
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_child",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_infant",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_tourist",
 					"value": "0",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_date",
 					"value": "2018-01-10",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_date",
 					"value": "2018-01-15",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_price",
 					"value": "0",
 					"type": "text",
-					"enabled": true,
-					"description": "no mandatory"
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "receipt",
@@ -3233,18 +3311,11 @@
 					"description": ""
 				},
 				{
-					"key": "type",
-					"value": "single",
-					"type": "text",
-					"enabled": true,
-					"description": "single = thing to do, package = one to seven days"
-				},
-				{
 					"key": "days",
 					"value": "5",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
@@ -3300,9 +3371,16 @@
 				{
 					"key": "name",
 					"value": "-",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -3359,49 +3437,49 @@
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "guide_id",
 					"value": "1",
 					"type": "text",
 					"enabled": false,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "package_id",
 					"value": "3",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_adult",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_child",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_infant",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_tourist",
 					"value": "3",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "receipt",
@@ -3422,14 +3500,14 @@
 					"value": "2018-02-27",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_date",
 					"value": "2018-03-02",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
@@ -3536,98 +3614,105 @@
 					"value": "227",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
 					"value": "Prambanan",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "This is prambanan",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "adult_price",
 					"value": "7000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "child_price",
 					"value": "8000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "infant_price",
 					"value": "9000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "tourist_price",
 					"value": "10000",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "longitude",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "latitude",
 					"value": "-1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "facilities",
 					"value": "toilet, mushola, wifi",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "rate",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "address",
 					"value": "Jl. Setiabudi",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "phone",
 					"value": "082132222333",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "category",
 					"value": "wisata",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -3652,20 +3737,20 @@
 					"value": "Tip and Trick",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "Description of Tips and Tricks",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
-					"enabled": true,
+					"enabled": false,
 					"description": ""
 				},
 				{
@@ -3822,21 +3907,21 @@
 				{
 					"key": "table",
 					"value": "users",
-					"description": "advertisements||cities||events||feedbacks||info_payments||messages||migrations||packages||package_cities||package_details||pictures||plans||plan_details||provinces||roles||special_deals||tip_tricks||tourism_places||users",
+					"description": "Required||advertisements||cities||events||feedbacks||info_payments||messages||migrations||packages||package_cities||package_details||pictures||plans||plan_details||provinces||roles||special_deals||tip_tricks||tourism_places||users",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "field",
 					"value": "status",
-					"description": "status",
+					"description": "Required | status",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "status",
 					"value": "active",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				}
@@ -3881,21 +3966,21 @@
 					"value": "BRI",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "no_rek",
 					"value": "0123456789",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "name",
 					"value": "New Admin Bank",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
@@ -3974,63 +4059,63 @@
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "guide_id",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_adult",
 					"value": "2",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_child",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_infant",
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_tourist",
 					"value": "0",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "start_date",
 					"value": "2018-01-10",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "end_date",
 					"value": "2018-01-15",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "total_price",
 					"value": "0",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "receipt",
@@ -4049,14 +4134,14 @@
 				{
 					"key": "type",
 					"value": "single",
-					"description": "single = thing to do, package = one to seven days",
+					"description": "Required | single = thing to do, package = one to seven days",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "days",
 					"value": "5",
-					"description": "",
+					"description": "Required",
 					"type": "text",
 					"enabled": true
 				},
@@ -4285,14 +4370,14 @@
 					"value": "1",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url[0]",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
 					"enabled": true,
-					"description": "/images/pictures"
+					"description": "Required"
 				},
 				{
 					"key": "image_url[1]",
@@ -4304,9 +4389,16 @@
 				{
 					"key": "image_url[2]",
 					"value": "",
+					"description": "",
 					"type": "text",
-					"enabled": false,
-					"description": ""
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "params",
@@ -4330,7 +4422,7 @@
 		{
 			"id": "de852ead-b9f3-4954-a4da-9739d1489b2f",
 			"name": "Get Tourism Place",
-			"url": "{{url}}/public/tourismplace/4",
+			"url": "{{url}}/public/tourismplace/1",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -4385,7 +4477,14 @@
 					"value": "This is role",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
 				}
 			],
 			"dataMode": "urlencoded",
@@ -4514,6 +4613,142 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "eefab645-60da-40e3-8402-c52f2e69a83b",
+			"name": "Create Plan by Tourism Place",
+			"url": "{{url}}/public/plan/create",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "guide_id",
+					"value": "1",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "total_adult",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "total_child",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "total_infant",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "total_tourist",
+					"value": "3",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "receipt",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "start_date",
+					"value": "2018-02-27",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "end_date",
+					"value": "2018-03-02",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "name",
+					"value": "Plan X",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "background",
+					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "tourism_place_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "start_time",
+					"value": "15:00",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "end_time",
+					"value": "16:00",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "ef255e51-774b-4a5a-92cf-e2b71f752459",
 			"name": "Update Package",
 			"url": "{{url}}/public/package/update/6",
@@ -4524,35 +4759,35 @@
 					"value": "Paket C",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "Paket C",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
 					"enabled": false,
-					"description": "no mandatory"
+					"description": ""
 				},
 				{
 					"key": "days",
 					"value": "5",
 					"type": "text",
 					"enabled": true,
-					"description": ""
+					"description": "Required"
 				},
 				{
 					"key": "image_url",
 					"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 					"type": "text",
-					"enabled": true,
-					"description": "/images/packages"
+					"enabled": false,
+					"description": ""
 				}
 			],
 			"dataMode": "urlencoded",

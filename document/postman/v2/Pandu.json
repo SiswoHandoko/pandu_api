@@ -103,67 +103,67 @@
 									"key": "firstname",
 									"value": "Ghiffary",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "lastname",
 									"value": "Muhammad",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "email",
 									"value": "ghiffary@gmail.com",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "contact",
 									"value": "089687476161",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "address",
 									"value": "Jl. Kusuma Wandani No 13",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "birthdate",
 									"value": "1991-01-11",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "username",
 									"value": "ghiffary",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "password",
 									"value": "qwerty",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "repassword",
 									"value": "qwerty",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "role_id",
 									"value": "1",
 									"type": "text",
-									"description": "1(tourist) || 2(guide) || 3(admin)"
+									"description": "Required | 1(tourist) || 2(guide) || 3(admin)"
 								}
 							]
 						},
@@ -206,13 +206,13 @@
 								{
 									"key": "username",
 									"value": "siswohandoko",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "qwerty",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
@@ -253,73 +253,73 @@
 									"key": "firstname",
 									"value": "Ghiffary",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "lastname",
 									"value": "Muhammad",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "email",
 									"value": "ghiffary@gmail.com",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "contact",
 									"value": "089687476161",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "address",
 									"value": "Jl. Kusuma Wandani No 13",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "birthdate",
 									"value": "1991-01-11",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "username",
 									"value": "ghiffary",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "password",
 									"value": "qwerty",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "repassword",
 									"value": "qwerty",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "role_id",
 									"value": "1",
 									"type": "text",
-									"description": "1(tourist) || 2(guide) || 3(admin)"
+									"description": "Required | 1(tourist) || 2(guide) || 3(admin)"
 								}
 							]
 						},
@@ -575,7 +575,7 @@
 									"key": "user_id",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "guide_id",
@@ -588,31 +588,31 @@
 									"key": "package_id",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_adult",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_child",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_infant",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_tourist",
 									"value": "0",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "receipt",
@@ -632,13 +632,13 @@
 									"key": "start_date",
 									"value": "2018-01-10",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "end_date",
 									"value": "2018-01-15",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "name",
@@ -686,43 +686,44 @@
 									"key": "total_adult",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_child",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_infant",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_tourist",
 									"value": "0",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "start_date",
 									"value": "2018-01-10",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "end_date",
 									"value": "2018-01-15",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_price",
 									"value": "0",
 									"type": "text",
-									"description": "no mandatory"
+									"description": "",
+									"disabled": true
 								},
 								{
 									"key": "receipt",
@@ -742,13 +743,14 @@
 									"key": "type",
 									"value": "single",
 									"type": "text",
-									"description": "single = thing to do, package = one to seven days"
+									"description": "single = thing to do, package = one to seven days",
+									"disabled": true
 								},
 								{
 									"key": "days",
 									"value": "5",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "name",
@@ -762,6 +764,13 @@
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
 									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "",
+									"type": "text",
 									"disabled": true
 								}
 							]
@@ -792,55 +801,55 @@
 									"key": "user_id",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "guide_id",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_adult",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_child",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_infant",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_tourist",
 									"value": "0",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "start_date",
 									"value": "2018-01-10",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "end_date",
 									"value": "2018-01-11",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "total_price",
 									"value": "0",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "receipt",
@@ -853,20 +862,20 @@
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": "no mandatory",
+									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "type",
 									"value": "single",
 									"type": "text",
-									"description": "single = thing to do, package = one to seven days"
+									"description": "Required | single = thing to do, package = one to seven days"
 								},
 								{
 									"key": "days",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "name",
@@ -970,31 +979,31 @@
 									"key": "day1[0][plandetail_id]",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day1[0][tourism_place_id]",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day1[0][start_time]",
 									"value": "08:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day1[0][end_time]",
 									"value": "10:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day1[0][day]",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day1[0][no_ticket]",
@@ -1014,31 +1023,31 @@
 									"key": "day2[0][plandetail_id]",
 									"value": "4",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day2[0][tourism_place_id]",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day2[0][start_time]",
 									"value": "09:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day2[0][end_time]",
 									"value": "12:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day2[0][day]",
 									"value": "2",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day2[0][no_ticket]",
@@ -1058,31 +1067,31 @@
 									"key": "day3[0][plandetail_id]",
 									"value": "6",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day3[0][tourism_place_id]",
 									"value": "3",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day3[0][start_time]",
 									"value": "10:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day3[0][end_time]",
 									"value": "12:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day3[0][day]",
 									"value": "3",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day3[0][no_ticket]",
@@ -1125,6 +1134,125 @@
 							]
 						},
 						"url": "{{url}}/public/plan/update/1/plandetails"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan by Tourism Place",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "guide_id",
+									"value": "1",
+									"type": "text",
+									"description": "Required",
+									"disabled": true
+								},
+								{
+									"key": "total_adult",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "total_tourist",
+									"value": "3",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "receipt",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2018-02-27",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "end_date",
+									"value": "2018-03-02",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "name",
+									"value": "Plan X",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "background",
+									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
+									"type": "text",
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "tourism_place_id",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "start_time",
+									"value": "15:00",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "end_time",
+									"value": "16:00",
+									"type": "text",
+									"description": "Required"
+								}
+							]
+						},
+						"url": "{{url}}/public/plan/create",
+						"description": "Get Province By Id"
 					},
 					"response": []
 				}
@@ -1239,29 +1367,29 @@
 									"key": "tourism_place_id",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "start_time",
 									"value": "15:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "end_time",
 									"value": "16:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "no_ticket",
-									"value": "",
+									"value": "T002",
 									"type": "text",
 									"description": "",
 									"disabled": true
@@ -1321,35 +1449,35 @@
 									"key": "plan_id",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "tourism_place_id",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "start_time",
 									"value": "15:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "end_time",
 									"value": "16:00",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "day",
 									"value": "1",
 									"type": "text",
-									"description": ""
+									"description": "Required"
 								},
 								{
 									"key": "no_ticket",
-									"value": "",
+									"value": "T001",
 									"type": "text",
 									"description": "",
 									"disabled": true
@@ -1922,14 +2050,22 @@
 								{
 									"key": "name",
 									"value": "aksan maulana",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
 									"key": "description",
 									"value": "-",
 									"description": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -2012,7 +2148,7 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"description": "",
+									"description": "Required",
 									"key": "to",
 									"type": "text",
 									"value": "handoko@volantech.io"
@@ -2020,25 +2156,25 @@
 								{
 									"key": "alias",
 									"value": "handokok",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
 									"key": "subject",
 									"value": "subject mail",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
 									"key": "content",
 									"value": "ini content nya",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								},
 								{
 									"key": "name",
 									"value": "handokooos",
-									"description": "",
+									"description": "Required",
 									"type": "text"
 								}
 							]

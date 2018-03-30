@@ -175,7 +175,7 @@ class SpecialDealController extends Controller
             $specialdeal->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : '';
             $specialdeal->package_id = $req->has('package_id') ? $req->package_id : '';
             $specialdeal->rate = $req->has('rate') ? $req->rate : '';
-            $specialdeal->status = 'active';
+            $specialdeal->status = $req->has('status') ? $req->status : 'active';
             $specialdeal->save();
 
             $result = $this->generate_response($specialdeal,200,'Data Has Been Saved.',false);

@@ -119,7 +119,7 @@ class PictureController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|min:0',
-            // 'image_url' => 'max:20480',
+            'image_url' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -138,7 +138,7 @@ class PictureController extends Controller
 
                 $picture->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
                 $picture->image_url = $value ? env('BACKEND_URL').'public/images/places/'.$this->uploadFile($this->public_path(). "/images/places/", $value) : env('BACKEND_URL').'public/images/places/default_img.png';
-                $picture->status = 'active';
+                $picture->status = $req->has('status') ? $req->status : 'active';
 
                 $picture->save();
 
@@ -206,7 +206,7 @@ class PictureController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-            // 'image_url' => 'max:20480',
+            'image_url' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -226,6 +226,7 @@ class PictureController extends Controller
                 return response()->json($result, 404);
             } else {
                 $picture->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/places/'.$this->uploadFile($this->public_path(). "/images/places/", $req->image_url, $picture->image_url) : $picture->image_url;
+                $picture->status = $req->has('status') ? $req->status : $picture->status;
                 
                 $picture->save();
 

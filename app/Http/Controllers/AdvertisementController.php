@@ -136,7 +136,7 @@ class AdvertisementController extends Controller
             $advertisement->title = $req->has('title') ? $req->title : '';
             $advertisement->caption = $req->has('caption') ? $req->caption : '';
             $advertisement->type = $req->has('type') ? $req->type : '';
-            $advertisement->status = 'active';
+            $advertisement->status = $req->has('status') ? $req->status : 'active';
             $advertisement->save();
 
             $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);
@@ -225,7 +225,7 @@ class AdvertisementController extends Controller
                 $advertisement->title = $req->has('title') ? $req->title : $advertisement->title;
                 $advertisement->caption = $req->has('caption') ? $req->caption : $advertisement->title;
                 $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
-                $advertisement->status = 'active';
+                $advertisement->status = $req->has('status') ? $req->status : $advertisement->status;
                 $advertisement->save();
 
                 $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);

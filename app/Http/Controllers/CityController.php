@@ -162,7 +162,7 @@ class CityController extends Controller
             $city = new City();
             $city->province_id = $req->has('province_id') ? $req->province_id : 0;
             $city->name = $req->has('name') ? $req->name : '';
-            $city->status = 'active';
+            $city->status = $req->has('status') ? $req->status : 'active';
             $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url) : env('BACKEND_URL').'public/images/cities/default_img.png';
             $city->save();
 

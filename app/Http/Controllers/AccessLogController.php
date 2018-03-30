@@ -11,7 +11,9 @@ class AccessLogController extends Controller
         'id',
         'name',
         'params',
-        'result'
+        'result',
+        'created_at',
+        'updated_at'
     );
 
     /**
@@ -75,6 +77,8 @@ class AccessLogController extends Controller
             $accesslog = $accesslog->offset($offset);
             $accesslog = $accesslog->limit($req->input('limit'));
         }
+
+        $accesslog = $accesslog->get();
 
         $result = $this->generate_response($accesslog, 200, 'All Data.', false);
 
