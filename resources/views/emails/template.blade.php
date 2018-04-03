@@ -299,7 +299,7 @@ Sizes: [
                                                                                         <?php echo $params["content"] ?>
                                                                                     	<br>
                                                                                     	<br>
-                                                                                    	Terimakasih
+                                                                                    	Thanks
 																					</div>
 																				</td>
 																			</tr>
