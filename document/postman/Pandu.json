@@ -192,6 +192,7 @@
 			"folder": null,
 			"order": [
 				"2b674c44-e533-426a-b875-d63e414c163b",
+				"42bbd31d-2229-49cc-b3fe-2b5e186d34d6",
 				"47946ae1-e921-4bb0-988a-875a99c457d8",
 				"490ee3ed-ca40-4141-b7b6-23fb1bdb0cea",
 				"4bdb2f50-2e68-4a88-af38-c4b3a7c5b7c9",
@@ -671,7 +672,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "3fb42d0d-9f5b-49c5-a8b9-8adbdbc49dfa",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -691,6 +692,44 @@
 			"events": [],
 			"folder": "9b97520c-d746-481a-815e-65d9e7b20f2e",
 			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "42bbd31d-2229-49cc-b3fe-2b5e186d34d6",
+			"name": "Delete Plandetail by Plan",
+			"url": "{{url}}/public/plan/delete/1/plandetails?plandetail_id=3",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "plandetail_id",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "3033f03c-e4d6-447a-b8cf-f812189f3381",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
 		{
@@ -769,7 +808,7 @@
 			"data": [
 				{
 					"key": "user_id",
-					"value": "2",
+					"value": "1",
 					"type": "text",
 					"enabled": true,
 					"description": "Required"
@@ -878,7 +917,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "3033f03c-e4d6-447a-b8cf-f812189f3381",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -1369,7 +1408,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "3fb42d0d-9f5b-49c5-a8b9-8adbdbc49dfa",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -2248,16 +2287,31 @@
 		{
 			"id": "a70c623c-bb98-4401-91fc-e554a531273c",
 			"name": "Get Tourism Places",
-			"url": "{{url}}/public/tourismplace",
+			"url": "{{url}}/public/tourismplace?latitude=1&longitude=-1",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
 			"headerData": [],
 			"method": "GET",
 			"pathVariableData": [],
-			"queryParams": [],
+			"queryParams": [
+				{
+					"key": "latitude",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "longitude",
+					"value": "-1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "bd6ba446-7480-40ec-b402-3cf6aadf45bc",
 			"headers": "",
 			"pathVariables": {}
@@ -2320,7 +2374,7 @@
 		{
 			"id": "b5ca93fa-a7ae-48ae-9691-6f68a34dad88",
 			"name": "Get Plan by User",
-			"url": "{{url}}/public/user/2/plans",
+			"url": "{{url}}/public/user/1/plans",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2350,7 +2404,7 @@
 				}
 			],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "064e4dd7-2b9a-40bf-976b-dc82134b73d8",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}

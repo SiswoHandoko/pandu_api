@@ -174,7 +174,6 @@ class PlanController extends Controller
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
                 'background' => 'max:2048',
-
                 'tourism_place_id' => 'required|numeric|min:0',
                 'start_time' => 'required|date_format:"H:i"',
                 'end_time' => 'required|date_format:"H:i"'
@@ -226,8 +225,11 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
-                    'name' => $req->has('name') ? $req->name : '',
-                    'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    // 'name' => $req->has('name') ? $req->name : '',
+                    // 'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    'description' => $package['description'],
+                    'name' => $package['name'].' - Custom',
+                    'background' => $package['image_url'],
                     'total_adult' => $req->has('total_adult') ? $req->total_adult : 0,
                     'total_child' => $req->has('total_child') ? $req->total_child : 0,
                     'total_infant' => $req->has('total_infant') ? $req->total_infant : 0,
@@ -577,6 +579,62 @@ class PlanController extends Controller
             $plan->save();
 
             $result = $this->generate_response($plan, 200, 'Data Has Been Deleted.',false);
+
+            $this->update_access_log($access_log_id, $result);
+
+            return response()->json($result, 200);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Plan  $plan
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy_plandetail_by_plan(Request $req, $id)
+    {
+        $param_insert = array(
+            'name' => 'destroy_plandetail_by_plan',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
+        $plandetail = new PlanDetail;
+        $plandetail = $plandetail->where('status', '!=', 'deleted');
+        $plandetail = $plandetail->where('plan_id', '=', $id);
+
+        if ($req->has('day')) {
+            $plandetail = $plandetail->where('day', '=', $req->day);
+        }
+
+        if ($req->has('plandetail_id')) {
+            $plandetail = $plandetail->where('id', '=', $req->plandetail_id);
+        }
+
+        if (!$plandetail) {
+            $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
+            return response()->json($result, 404);
+        } else {
+            $plandetail = $plandetail->update(['status' => 'deleted']);
+
+            $plandetail = new PlanDetail;
+            $plandetail = $plandetail->with('plan', 'tourismplace');
+            $plandetail = $plandetail->where('status', '!=', 'deleted');
+            $plandetail = $plandetail->where('plan_id', '=', $id);
+            $plandetail = $plandetail->orderBy('day', 'asc');
+            $plandetail = $plandetail->orderBy('start_time', 'asc');
+
+            $plandetail = $plandetail->get();
+
+            $plandetail = $this->convert_data($plandetail);
+
+            $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.',false);
 
             $this->update_access_log($access_log_id, $result);
 

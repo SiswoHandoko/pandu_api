@@ -68,6 +68,7 @@ $router->get('/plan/{id}', 'PlanController@show');
 $router->post('/plan/create', 'PlanController@store');
 $router->put('/plan/update/{id}', 'PlanController@update');
 $router->get('/plan/delete/{id}', 'PlanController@destroy');
+$router->get('/plan/delete/{id}/plandetails', 'PlanController@destroy_plandetail_by_plan');
 $router->get('/plan/{id}/plandetails', 'PlanController@plandetail_by_plan');
 $router->put('/plan/update/{id}/plandetails', 'PlanController@update_plandetail_by_plan');
 

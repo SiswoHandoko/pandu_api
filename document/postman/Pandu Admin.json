@@ -230,6 +230,7 @@
 			"collection": "0d186107-59af-46a0-9048-3bf9ac2f344e",
 			"folder": null,
 			"order": [
+<<<<<<< HEAD
 				"6579d59a-7661-47df-9c67-eb0b51cd6f1f",
 				"d9b2e8a0-9262-4378-94d3-9fd2d0b19572",
 				"234029e2-219b-4a10-a9c8-d0bd6c290156",
@@ -239,6 +240,18 @@
 				"ed190224-e95b-4d95-b1f2-80bc951f59e5",
 				"b8a7d063-8127-4d2b-b32b-c03078cc28fc",
 				"a1c20610-9574-41f0-8945-5424ece416b4"
+=======
+				"2178a151-6939-4337-88db-40c9f9eb5112",
+				"b8812572-f6e5-4683-85af-39b121b8e71b",
+				"ec42f107-59ef-45a2-ad45-c13e68dd424f",
+				"c00d6305-a1d7-4abb-8233-ad3795a76b15",
+				"993fc76e-57ef-477a-ad98-e12b0ac17146",
+				"92213ff6-3934-430c-a0f5-e64794b75ad4",
+				"9b2e516a-2a8b-4a88-86a2-dad5b022b483",
+				"eefab645-60da-40e3-8402-c52f2e69a83b",
+				"8e049e84-dbb2-474d-9643-176328b4a0fc",
+				"d0c089a7-b61f-40b0-b2cc-d5377c51ea8e"
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			],
 			"folders_order": []
 		},
@@ -538,9 +551,15 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "db02459e-af7a-4bdf-9c7b-ecea147551e9",
 			"headers": "",
+=======
+			"events": null,
+			"folder": "e0f14542-99c3-4844-90db-de7b8b56854a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariables": {}
 		},
 		{
@@ -610,9 +629,15 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "0083797a-9cf3-4734-ba68-d31b873bf0a9",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\nContent-Type: application/x-www-form-urlencoded\n",
+=======
+			"events": null,
+			"folder": "e0f14542-99c3-4844-90db-de7b8b56854a",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariables": {}
 		},
 		{
@@ -683,12 +708,36 @@
 					"description": "Required"
 				},
 				{
+<<<<<<< HEAD
 					"key": "email",
 					"value": "ghiffary@gmail.com",
 					"type": "text",
 					"enabled": true,
 					"description": "Required"
 				},
+=======
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "5313c6a3-5a8f-4e76-8eda-5ae027641c39",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "15c29745-8262-4079-ba0d-d7559eefcd47",
+			"name": "Create Event",
+			"url": "{{url}}/public/event/create",
+			"description": "Get Province By Id",
+			"data": [
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 				{
 					"key": "contact",
 					"value": "089687476161",
@@ -805,9 +854,15 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "dea58e93-1194-4600-9b1c-5246dc086e10",
 			"headers": "",
+=======
+			"events": null,
+			"folder": "d7e7c0fd-d638-4bf0-8043-3b3ec3a7628d",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariables": {}
 		},
 		{
@@ -1605,9 +1660,15 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "db02459e-af7a-4bdf-9c7b-ecea147551e9",
 			"headers": "",
+=======
+			"events": null,
+			"folder": "eb94fcca-fea6-4627-8aea-618a77efd86d",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariables": {}
 		},
 		{
@@ -2519,9 +2580,15 @@
 			"pathVariables": {}
 		},
 		{
+<<<<<<< HEAD
 			"id": "959300dc-4962-4517-8f5d-4b6b5d77a6f4",
 			"name": "Update Special Deal",
 			"url": "{{url}}/public/specialdeal/update/3",
+=======
+			"id": "6ea8df04-098d-45e1-9c59-2064990b468b",
+			"name": "Get Access Logs",
+			"url": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=20",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"description": "Get Province By Id",
 			"data": [
 				{
@@ -2539,6 +2606,7 @@
 					"description": ""
 				},
 				{
+<<<<<<< HEAD
 					"key": "rate",
 					"value": "3",
 					"type": "text",
@@ -2548,12 +2616,33 @@
 				{
 					"key": "status",
 					"value": "active",
+=======
+					"key": "limit",
+					"value": "20",
+					"equals": true,
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 					"description": "",
 					"type": "text",
 					"enabled": false
 				}
 			],
+<<<<<<< HEAD
 			"dataMode": "urlencoded",
+=======
+			"auth": null,
+			"events": null,
+			"folder": "a10a840a-1a7a-40c7-89c7-289fdadbab2e",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "71aca183-cee9-4271-9309-b05468a88f99",
+			"name": "Get Tourism Places by City",
+			"url": "{{url}}/public/city/227/tourismplaces",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -3334,16 +3423,28 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "c49b8f4f-b9d5-482d-bb97-8d84973b00a2",
+=======
+			"events": null,
+			"folder": "d7e7c0fd-d638-4bf0-8043-3b3ec3a7628d",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
 		{
+<<<<<<< HEAD
 			"id": "ac122447-db48-4be3-92a9-e7553a90981a",
 			"name": "Create Plan",
 			"url": "{{url}}/public/plan/create",
 			"description": "Get Province By Id",
+=======
+			"id": "8e049e84-dbb2-474d-9643-176328b4a0fc",
+			"name": "Update Plandetail by Plan",
+			"url": "{{url}}/public/plan/update/1/plandetails",
+			"description": null,
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"data": [
 				{
 					"key": "user_id",
@@ -3466,7 +3567,28 @@
 					"enabled": true
 				}
 			],
+<<<<<<< HEAD
 			"method": "POST",
+=======
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8e187c6c-f395-45e7-ad3b-a4f89f45985e",
+			"name": "Get Pictures by Tourism Places",
+			"url": "{{url}}/public/tourismplace/1/pictures",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
@@ -4189,6 +4311,58 @@
 					"value": "web",
 					"description": "",
 					"enabled": true
+<<<<<<< HEAD
+=======
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "469659ff-6125-4792-8b5f-9358bc04e969",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b81a7ebb-0bbe-48b8-abb1-e39a6e07a158",
+			"name": "Create Info Payment",
+			"url": "{{url}}/public/infopayment/create",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "bank",
+					"value": "BRI",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "no_rek",
+					"value": "0123456789",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "name",
+					"value": "New Admin Bank",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"type": "text",
+					"enabled": false,
+					"description": ""
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 				}
 			],
 			"method": "POST",
@@ -4362,6 +4536,71 @@
 					"enabled": true
 				},
 				{
+<<<<<<< HEAD
+=======
+					"key": "device-type",
+					"value": "android",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "23245bb7-0297-4a6d-9b93-25166cf87303",
+			"headers": "api-token: 309ac0b38e16dbedc8c99b30594131bdd12ea67c\ndevice-type: android\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d0c089a7-b61f-40b0-b2cc-d5377c51ea8e",
+			"name": "Delete Plandetail by Plan",
+			"url": "{{url}}/public/plan/delete/1/plandetails?plandetail_id=3",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "plandetail_id",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d3a4b4a5-23cb-4d27-bf0f-7972dbbe7225",
+			"name": "Get City",
+			"url": "{{url}}/public/city/227",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 					"key": "api-token",
 					"value": "77a64fae487baef2ae395a80db6b82549723219a",
 					"description": "",
@@ -4504,8 +4743,13 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "b3c6b4d2-675b-4b3d-bc57-21ed0d9b98b4",
+=======
+			"events": null,
+			"folder": "5313c6a3-5a8f-4e76-8eda-5ae027641c39",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"pathVariables": {}
 		},
@@ -4862,9 +5106,15 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
+<<<<<<< HEAD
 			"events": [],
 			"folder": "c49b8f4f-b9d5-482d-bb97-8d84973b00a2",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+=======
+			"events": null,
+			"folder": "d295baa8-c861-4866-8aed-3151970ceede",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+>>>>>>> e11b38e04c366ab3e40b671cb9f81b58e8ef8e0a
 			"pathVariables": {}
 		},
 		{

@@ -344,14 +344,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/user/2/plans?",
+							"raw": "{{url}}/public/user/1/plans?",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
 								"user",
-								"2",
+								"1",
 								"plans"
 							],
 							"query": [
@@ -517,6 +517,44 @@
 					"response": []
 				},
 				{
+					"name": "Delete Plandetail by Plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/plan/delete/1/plandetails?plandetail_id=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"plan",
+								"delete",
+								"1",
+								"plandetails"
+							],
+							"query": [
+								{
+									"key": "plandetail_id",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
 					"name": "Get Plan Details by Plan",
 					"request": {
 						"method": "GET",
@@ -573,7 +611,7 @@
 							"formdata": [
 								{
 									"key": "user_id",
-									"value": "2",
+									"value": "1",
 									"type": "text",
 									"description": "Required"
 								},
@@ -2119,7 +2157,26 @@
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"url": "{{url}}/public/tourismplace",
+						"url": {
+							"raw": "{{url}}/public/tourismplace?latitude=1&longitude=-1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"tourismplace"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "1"
+								},
+								{
+									"key": "longitude",
+									"value": "-1"
+								}
+							]
+						},
 						"description": "Get Province By Id"
 					},
 					"response": []
