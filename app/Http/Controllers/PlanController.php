@@ -174,7 +174,6 @@ class PlanController extends Controller
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
                 'background' => 'max:2048',
-
                 'tourism_place_id' => 'required|numeric|min:0',
                 'start_time' => 'required|date_format:"H:i"',
                 'end_time' => 'required|date_format:"H:i"'
@@ -226,8 +225,11 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
-                    'name' => $req->has('name') ? $req->name : '',
-                    'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    // 'name' => $req->has('name') ? $req->name : '',
+                    // 'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    'description' => $package['description'],
+                    'name' => $package['name'].' - Custom',
+                    'background' => $package['image_url'],
                     'total_adult' => $req->has('total_adult') ? $req->total_adult : 0,
                     'total_child' => $req->has('total_child') ? $req->total_child : 0,
                     'total_infant' => $req->has('total_infant') ? $req->total_infant : 0,
