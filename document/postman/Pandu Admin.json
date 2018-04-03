@@ -237,7 +237,8 @@
 				"92213ff6-3934-430c-a0f5-e64794b75ad4",
 				"9b2e516a-2a8b-4a88-86a2-dad5b022b483",
 				"eefab645-60da-40e3-8402-c52f2e69a83b",
-				"8e049e84-dbb2-474d-9643-176328b4a0fc"
+				"8e049e84-dbb2-474d-9643-176328b4a0fc",
+				"d0c089a7-b61f-40b0-b2cc-d5377c51ea8e"
 			],
 			"folders_order": []
 		},
@@ -465,7 +466,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "e0f14542-99c3-4844-90db-de7b8b56854a",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -538,7 +539,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "e0f14542-99c3-4844-90db-de7b8b56854a",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -662,7 +663,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "5313c6a3-5a8f-4e76-8eda-5ae027641c39",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"pathVariables": {}
@@ -802,7 +803,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "d7e7c0fd-d638-4bf0-8043-3b3ec3a7628d",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -1478,7 +1479,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "eb94fcca-fea6-4627-8aea-618a77efd86d",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -2379,7 +2380,7 @@
 		{
 			"id": "6ea8df04-098d-45e1-9c59-2064990b468b",
 			"name": "Get Access Logs",
-			"url": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=10",
+			"url": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=20",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": "params",
@@ -2403,14 +2404,14 @@
 				},
 				{
 					"key": "limit",
-					"value": "10",
+					"value": "20",
 					"equals": true,
 					"description": "",
 					"enabled": true
 				}
 			],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "a10a840a-1a7a-40c7-89c7-289fdadbab2e",
 			"headers": "",
 			"pathVariables": {}
@@ -2874,7 +2875,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "d7e7c0fd-d638-4bf0-8043-3b3ec3a7628d",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -2883,7 +2884,7 @@
 			"id": "8e049e84-dbb2-474d-9643-176328b4a0fc",
 			"name": "Update Plandetail by Plan",
 			"url": "{{url}}/public/plan/update/1/plandetails",
-			"description": "",
+			"description": null,
 			"data": [
 				{
 					"key": "day1[0][plandetail_id]",
@@ -3085,7 +3086,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
@@ -3950,7 +3951,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "469659ff-6125-4792-8b5f-9358bc04e969",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\nContent-Type: application/x-www-form-urlencoded\n",
 			"pathVariables": {}
@@ -4232,6 +4233,44 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "d0c089a7-b61f-40b0-b2cc-d5377c51ea8e",
+			"name": "Delete Plandetail by Plan",
+			"url": "{{url}}/public/plan/delete/1/plandetails?plandetail_id=3",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device-type",
+					"value": "web",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "plandetail_id",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "213805a4-4522-4f63-8674-c2c942faad03",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "d3a4b4a5-23cb-4d27-bf0f-7972dbbe7225",
 			"name": "Get City",
 			"url": "{{url}}/public/city/227",
@@ -4414,7 +4453,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "5313c6a3-5a8f-4e76-8eda-5ae027641c39",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"pathVariables": {}
@@ -4815,7 +4854,7 @@
 			"pathVariableData": [],
 			"queryParams": [],
 			"auth": null,
-			"events": [],
+			"events": null,
 			"folder": "d295baa8-c861-4866-8aed-3151970ceede",
 			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}

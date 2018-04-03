@@ -126,7 +126,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=10",
+							"raw": "{{url}}/public/accesslog?order_by=created_at&order_type=desc&limit=20",
 							"host": [
 								"{{url}}"
 							],
@@ -145,7 +145,7 @@
 								},
 								{
 									"key": "limit",
-									"value": "10"
+									"value": "20"
 								}
 							]
 						},
@@ -3095,6 +3095,44 @@
 							]
 						},
 						"url": "{{url}}/public/plan/update/1/plandetails"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plandetail by Plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/plan/delete/1/plandetails?plandetail_id=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"plan",
+								"delete",
+								"1",
+								"plandetails"
+							],
+							"query": [
+								{
+									"key": "plandetail_id",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Get Province By Id"
 					},
 					"response": []
 				}
