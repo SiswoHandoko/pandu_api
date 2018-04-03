@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0989d1e8-5430-472e-af67-adcac7037cba",
+		"_postman_id": "0d186107-59af-46a0-9048-3bf9ac2f344e",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -3818,6 +3818,42 @@
 			"name": "Custom",
 			"description": "",
 			"item": [
+				{
+					"name": "Get Dashboard Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/city?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"city"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
 				{
 					"name": "Update Status",
 					"request": {

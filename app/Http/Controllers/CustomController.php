@@ -2,6 +2,12 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
+use App\Model\TourismPlace;
+use App\Model\Package;
+use App\Model\Plan;
+use App\Model\PlanDetail;
+use App\Model\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class CustomController extends Controller
@@ -119,5 +125,39 @@ class CustomController extends Controller
                 return response()->json($result, 200);
             }
         }
+    }
+
+    /**
+    * Display all dashboard data.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function dashboard(Request $req)
+    {
+        $param_insert = array(
+            'name' => 'dashboard_data',
+            'params' => json_encode(collect($req)->toArray()),
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+
+        $result['tourism_place']            = TourismPlace::where('status', 'active')->count();
+        $result['package']                  = Package::where('status', 'active')->count();
+        $result['plan']                     = Plan::count();
+        $result['user']                     = User::where('status', 'active')->count();
+        $result['last_ten_transactions']    = Plan::orderBy('created_at', 'desc')->get();
+        $result['top_five_tourism_places']  = DB::table('plan_details')
+                                                ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                ->select('tourism_places.*', DB::raw('count(*) as total'))
+                                                ->groupBy('tourism_place_id')
+                                                ->orderBy('total', 'desc')
+                                                ->get();
+        
+        $result = $this->generate_response($result, 200, 'All Data.', false);
+
+        $this->update_access_log($access_log_id, $result);
+
+        return response()->json($result, 200);
     }
 }

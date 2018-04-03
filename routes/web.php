@@ -227,6 +227,7 @@ $router->post('/fcm/testSetFunction', 'FcmController@testSetFunction');
  | ------------------------------------------
  */
 $router->put('/custom/updatestatus/{id}', 'CustomController@update_status');
+$router->get('/custom/dashboard', 'CustomController@dashboard');
 
 /*
  | ------------------------------------------
