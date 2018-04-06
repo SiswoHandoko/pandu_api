@@ -122,11 +122,11 @@ class PlanController extends Controller
 
         $plan = $plan->get();
 
-        $plan = collect($plan)->toArray();
+        // $plan = collect($plan)->toArray();
 
-        foreach ($plan as $key => $value) {
-            $plan[$key] = $this->validate_relation($plan[$key]);
-        }
+        // foreach ($plan as $key => $value) {
+        //     $plan[$key] = $this->validate_relation($plan[$key]);
+        // }
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
 
@@ -405,7 +405,7 @@ class PlanController extends Controller
         $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
 
         if ($plan) {
-            $plan = $this->validate_relation($plan);
+            // $plan = $this->validate_relation($plan);
             $result = $this->generate_response($plan, 200, 'Detail Data.', false);
 
             $this->update_access_log($access_log_id, $result);
@@ -538,7 +538,7 @@ class PlanController extends Controller
                 }
                 
                 $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
-                $plan = $this->validate_relation($plan);
+                // $plan = $this->validate_relation($plan);
 
                 $result = $this->generate_response($plan, 200, 'Data Has Been Updated.', false);
 
