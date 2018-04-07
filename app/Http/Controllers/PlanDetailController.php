@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
+use App\Model\Plan;
 use App\Model\PlanDetail;
 use App\Model\TourismPlace;
 
@@ -164,6 +165,8 @@ class PlanDetailController extends Controller
 
                 $plandetail->save();
 
+                $this->update_day_plan($plandetail);
+
                 $result = $this->generate_response($plandetail, 200, 'Data Has Been Saved.', false);
 
                 $this->update_access_log($access_log_id, $result);
@@ -176,6 +179,25 @@ class PlanDetailController extends Controller
 
                 return response()->json($result, 400);
             }
+        }
+    }
+
+    private function update_day_plan($plandetail)
+    {
+        $max_day = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plandetail->plan->id)->orderBy('day', 'desc')->get();
+        $max_day = collect($max_day)->toArray();
+
+        $plan = new Plan();
+        $plan = Plan::where('status', '!=', 'deleted')->find($plandetail->plan->id);
+
+        if ($plan) {
+            if ($max_day) {
+                $plan->days = $max_day[0]['day'];
+            } else {
+                $plan->days = 0;
+            }
+
+            $plan->save();
         }
     }
 
@@ -196,11 +218,6 @@ class PlanDetailController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
-
-        // $max_day = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plandetail->plan->id)->max('day')->get();
-        // $max_day = PlanDetail::raw('MAX(day) as day')->with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plandetail->plan->id)->get();
-
-        // print_r(collect($max_day)->toArray());exit;
 
         if (!$plandetail) {
             $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
@@ -315,6 +332,8 @@ class PlanDetailController extends Controller
             $plandetail->status = 'deleted';
 
             $plandetail->save();
+
+            $this->update_day_plan($plandetail);
 
             $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.', false);
 

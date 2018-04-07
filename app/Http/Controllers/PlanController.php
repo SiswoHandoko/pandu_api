@@ -634,11 +634,38 @@ class PlanController extends Controller
 
             $plandetail = $this->convert_data($plandetail);
 
+            $this->update_day_plan($id);
+
             $result = $this->generate_response($plandetail, 200, 'Data Has Been Deleted.',false);
 
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
+        }
+    }
+
+    private function update_day_plan($plan_id)
+    {
+        $max_day = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plan_id)->orderBy('day', 'desc')->get();
+        $max_day = collect($max_day)->toArray();
+
+        $plan = new Plan();
+        $plan = Plan::where('status', '!=', 'deleted')->find($plan_id);
+
+        if ($plan) {
+            if ($max_day) {
+                $plan->days = $max_day[0]['day'];
+            } else {
+                $plan->days = 0;
+
+                // $plan = Plan::where('status', '!=', 'deleted')->find($plan_id);
+
+                // $plan->status = 'deleted';
+
+                // $plan->save();
+            }
+
+            $plan->save();
         }
     }
 
