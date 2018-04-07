@@ -3918,18 +3918,16 @@
 								"value": "web"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
-							"raw": "{{url}}/public/city?",
+							"raw": "{{url}}/public/custom/dashboard",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"public",
-								"city"
+								"custom",
+								"dashboard"
 							],
 							"query": [
 								{

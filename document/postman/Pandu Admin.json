@@ -4880,10 +4880,10 @@
 		{
 			"id": "f481b04f-16df-43b4-ac14-771abcef2082",
 			"name": "Get Dashboard Data",
-			"url": "{{url}}/public/city?",
+			"url": "{{url}}/public/custom/dashboard",
 			"description": "Get Province By Id",
 			"data": [],
-			"dataMode": null,
+			"dataMode": "params",
 			"headerData": [
 				{
 					"key": "api-token",
