@@ -128,8 +128,10 @@ class PlanDetailController extends Controller
         $validator = Validator::make($req->all(), [
             'plan_id' => 'required|numeric|min:0',
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required|date_format:"H:i"',
-            'end_time' => 'required|date_format:"H:i"',
+            // 'start_time' => 'required|date_format:"H:i:s"',
+            // 'end_time' => 'required|date_format:"H:i:s"',
+            'start_time' => 'required',
+            'end_time' => 'required',
             'day' => 'required|numeric|min:0'
         ]);
         
@@ -195,6 +197,11 @@ class PlanDetailController extends Controller
 
         $plandetail = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
 
+        // $max_day = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plandetail->plan->id)->max('day')->get();
+        // $max_day = PlanDetail::raw('MAX(day) as day')->with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plandetail->plan->id)->get();
+
+        // print_r(collect($max_day)->toArray());exit;
+
         if (!$plandetail) {
             $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
 
@@ -231,8 +238,10 @@ class PlanDetailController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'tourism_place_id' => 'required|numeric|min:0',
-            'start_time' => 'required|date_format:"H:i"',
-            'end_time' => 'required|date_format:"H:i"',
+            // 'start_time' => 'required|date_format:"H:i:s"',
+            // 'end_time' => 'required|date_format:"H:i:s"',
+            'start_time' => 'required',
+            'end_time' => 'required',
             'day' => 'required|numeric|min:0',
             'adult_price' => 'required|numeric|min:0',
             'child_price' => 'required|numeric|min:0',
