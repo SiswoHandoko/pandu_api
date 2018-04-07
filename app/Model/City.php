@@ -36,6 +36,11 @@ class City extends Model
         return $this->hasMany(TourismPlace::class);
     }
 
+    public function tiptrick()
+    {
+        return $this->hasMany(TipTrick::class);
+    }
+
     /**
     * Belongs To Relation
     */
