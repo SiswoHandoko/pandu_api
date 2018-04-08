@@ -11,6 +11,7 @@ class TipTrickController extends Controller
 {
     private $fields_tiptricks = array(
         'id',
+        'city_id',
         'title',
         'description',
         'status'
