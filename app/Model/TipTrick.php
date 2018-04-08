@@ -26,6 +26,13 @@ class TipTrick extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at'
+        'city_id', 'created_at', 'updated_at'
     ];
+
+    /**
+    * Belongs To Relation
+    */
+    public function city() {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

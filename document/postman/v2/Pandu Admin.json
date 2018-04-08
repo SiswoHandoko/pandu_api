@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0d186107-59af-46a0-9048-3bf9ac2f344e",
+		"_postman_id": "0989d1e8-5430-472e-af67-adcac7037cba",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -1152,7 +1152,8 @@
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": "Required"
+									"description": "",
+									"disabled": true
 								},
 								{
 									"key": "username",
@@ -1245,7 +1246,8 @@
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": "Required"
+									"description": "",
+									"disabled": true
 								},
 								{
 									"key": "username",
@@ -3249,13 +3251,13 @@
 								},
 								{
 									"key": "start_time",
-									"value": "15:00",
+									"value": "15:00:00",
 									"type": "text",
 									"description": "Required"
 								},
 								{
 									"key": "end_time",
-									"value": "16:00",
+									"value": "16:00:00",
 									"type": "text",
 									"description": "Required"
 								},
@@ -3315,13 +3317,13 @@
 								},
 								{
 									"key": "start_time",
-									"value": "15:00",
+									"value": "15:00:00",
 									"type": "text",
 									"description": "Required"
 								},
 								{
 									"key": "end_time",
-									"value": "16:00",
+									"value": "16:00:00",
 									"type": "text",
 									"description": "Required"
 								},
@@ -3857,42 +3859,6 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Get Dashboard Data",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "api-token",
-								"value": "77a64fae487baef2ae395a80db6b82549723219a"
-							},
-							{
-								"key": "device-type",
-								"value": "web"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{url}}/public/city?",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"public",
-								"city"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Get Province By Id"
-					},
-					"response": []
-				},
-				{
 					"name": "Update Status",
 					"request": {
 						"method": "PUT",
@@ -3934,6 +3900,43 @@
 							]
 						},
 						"url": "{{url}}/public/custom/updatestatus/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dashboard Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/public/custom/dashboard",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"custom",
+								"dashboard"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
 						"description": "Get Province By Id"
 					},
 					"response": []

@@ -180,7 +180,7 @@ class TipTrickController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $tiptrick = TipTrick::where('status','!=','deleted')->find($id);
+        $tiptrick = TipTrick::where('status','!=','deleted')->with('city.province')->find($id);
 
         if(!$tiptrick){
             $result = $this->generate_response($tiptrick, 404, 'Data Not Found.', true);
