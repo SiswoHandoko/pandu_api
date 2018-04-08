@@ -121,6 +121,7 @@ class TipTrickController extends Controller
           'title' => 'required|max:255',
           'description' => 'required',
           'image_url' => 'max:2048',
+          'city_id' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -152,6 +153,7 @@ class TipTrickController extends Controller
             $tiptrick->description = $req->has('description') ? $req->description : '';
             $tiptrick->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/tiptricks/'.$this->uploadFile($this->public_path(). "/images/tiptricks/", $req->image_url) : env('BACKEND_URL').'public/images/tiptricks/default_img.png';
             $tiptrick->status = $req->has('status') ? $req->status : 'active';
+            $tiptrick->city_id = $req->has('city_id') ? $req->city_id : '0';
             $tiptrick->save();
 
             $result = $this->generate_response($tiptrick,200,'Data Has Been Saved.',false);
@@ -239,6 +241,7 @@ class TipTrickController extends Controller
                 $tiptrick->description = $req->has('description') ? $req->description : $tiptrick->description;
                 $tiptrick->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/tiptricks/'.$this->uploadFile($this->public_path(). "/images/tiptricks/", $req->image_url, $tiptrick->image_url) : $tiptrick->image_url;
                 $tiptrick->status = $req->has('status') ? $req->status : $tiptrick->status;
+                $tiptrick->city_id = $req->has('city_id') ? $req->city_id : $tiptrick->city_id;
                 $tiptrick->save();
 
                 $result = $this->generate_response($tiptrick,200,'Data Has Been Updated.',false);
