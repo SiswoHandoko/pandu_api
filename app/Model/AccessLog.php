@@ -26,6 +26,5 @@ class AccessLog extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at'
     ];
 }
