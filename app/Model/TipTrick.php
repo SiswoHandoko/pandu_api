@@ -26,7 +26,7 @@ class TipTrick extends Model
      * @var array
      */
     protected $hidden = [
-        'city_id', 'created_at', 'updated_at'
+        'created_at', 'updated_at'
     ];
 
     /**
