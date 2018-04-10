@@ -311,6 +311,7 @@ class PlanController extends Controller
                     'days' => 1,
                     'start_date' => $req->has('start_date') ? $req->start_date : '000-00-00',
                     'end_date' => $req->has('end_date') ? $req->end_date : '000-00-00',
+                    'description' => $req->has('description') ? $req->description : '',
                     'status' => $req->has('status') ? $req->status : 'active'
                 );
 
@@ -320,8 +321,8 @@ class PlanController extends Controller
                     $insert_plandetail = array(
                         'plan_id' => $plan_id,
                         'tourism_place_id' => $req->tourism_place_id,
-                        'start_time' => $req->start_time,
-                        'end_time' => $req->end_time,
+                        'start_time' => $req->has('start_time') ? $req->start_time : '00:00:00',
+                        'end_time' => $req->has('end_time') ? $req->end_time : '00:00:00',
                         'day' => 1,
                         'adult_price' => $tourismplace->adult_price,
                         'child_price' => $tourismplace->child_price,
@@ -435,7 +436,7 @@ class PlanController extends Controller
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
-
+        
         $access_log_id = $this->create_access_log($param_insert);
 
         /* Validation */
@@ -478,6 +479,7 @@ class PlanController extends Controller
                 $plan->total_price = $req->has('total_price') ? $req->total_price : $plan->total_price;
                 $plan->receipt = $req->has('receipt') ? env('BACKEND_URL').'public/images/plans/'.$this->uploadFile($this->public_path(). "/images/plans/", $req->receipt, $plan->receipt) : $plan->receipt;
                 $plan->status = $req->has('status') ? $req->status : $plan->status;
+                $plan->description = $req->has('description') ? $req->description : $plan->description;
                 $plan->type = $req->has('type') ? $req->type : $plan->type;
 
                 $plan->save();
