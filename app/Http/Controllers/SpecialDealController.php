@@ -267,7 +267,7 @@ class SpecialDealController extends Controller
                 $specialdeal->package_id = $req->has('package_id') ? $req->package_id : $specialdeal->package_id;
                 $specialdeal->rate = $req->has('rate') ? $req->rate : $specialdeal->rate;
                 $specialdeal->status = $req->has('status') ? $req->status : $specialdeal->status;
-                $specialdeal->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/specialdeals'.$this->uploadFile($this->public_path(). "/images/specialdeals/", $req->image_url, $specialdeal->image_url) : $specialdeal->image_url;
+                $specialdeal->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/specialdeals/'.$this->uploadFile($this->public_path(). "/images/specialdeals/", $req->image_url, $specialdeal->image_url) : $specialdeal->image_url;
                 $specialdeal->save();
 
                 $result = $this->generate_response($specialdeal,200,'Data Has Been Updated.',false);
