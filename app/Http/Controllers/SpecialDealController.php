@@ -142,7 +142,7 @@ class SpecialDealController extends Controller
             'tourism_place_id' => 'required|max:255',
             'package_id' => 'required|max:255',
             'rate' => 'required|max:255',
-            'image_url' => 'max:20480',
+            // 'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {
@@ -244,7 +244,7 @@ class SpecialDealController extends Controller
             'tourism_place_id' => 'required|max:255',
             'package_id' => 'required|max:255',
             'rate' => 'required|max:255',
-            'image_url' => 'max:20480',
+            // 'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {
