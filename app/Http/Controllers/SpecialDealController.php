@@ -139,9 +139,10 @@ class SpecialDealController extends Controller
 
         /* Validation */
         $validator = Validator::make($req->all(), [
-          'tourism_place_id' => 'required|max:255',
-          'package_id' => 'required|max:255',
-          'rate' => 'required|max:255',
+            'tourism_place_id' => 'required|max:255',
+            'package_id' => 'required|max:255',
+            'rate' => 'required|max:255',
+            'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {
@@ -176,6 +177,7 @@ class SpecialDealController extends Controller
             $specialdeal->package_id = $req->has('package_id') ? $req->package_id : '';
             $specialdeal->rate = $req->has('rate') ? $req->rate : '';
             $specialdeal->status = $req->has('status') ? $req->status : 'active';
+            $specialdeal->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/specialdeals/'.$this->uploadFile($this->public_path(). "/images/specialdeals/", $req->image_url) : env('BACKEND_URL').'public/images/specialdeals/default_img.png';
             $specialdeal->save();
 
             $result = $this->generate_response($specialdeal,200,'Data Has Been Saved.',false);
@@ -242,6 +244,7 @@ class SpecialDealController extends Controller
             'tourism_place_id' => 'required|max:255',
             'package_id' => 'required|max:255',
             'rate' => 'required|max:255',
+            'image_url' => 'max:20480',
         ]);
 
         if($validator->fails()) {
@@ -264,6 +267,7 @@ class SpecialDealController extends Controller
                 $specialdeal->package_id = $req->has('package_id') ? $req->package_id : $specialdeal->package_id;
                 $specialdeal->rate = $req->has('rate') ? $req->rate : $specialdeal->rate;
                 $specialdeal->status = $req->has('status') ? $req->status : $specialdeal->status;
+                $specialdeal->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/specialdeals'.$this->uploadFile($this->public_path(). "/images/specialdeals/", $req->image_url, $specialdeal->image_url) : $specialdeal->image_url;
                 $specialdeal->save();
 
                 $result = $this->generate_response($specialdeal,200,'Data Has Been Updated.',false);
