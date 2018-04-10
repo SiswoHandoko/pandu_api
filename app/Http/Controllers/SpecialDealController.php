@@ -42,7 +42,7 @@ class SpecialDealController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $specialdeal = new SpecialDeal;
-        $specialdeal = $specialdeal->with('tourismplace', 'package');
+        $specialdeal = $specialdeal->with('tourismplace.picture', 'package');
         $specialdeal = $specialdeal->where('status', '!=', 'deleted');
 
         // search query
@@ -204,7 +204,7 @@ class SpecialDealController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $specialdeal = SpecialDeal::with('tourismplace','package')->where('status','!=','deleted')->find($id);
+        $specialdeal = SpecialDeal::with('tourismplace.picture','package')->where('status','!=','deleted')->find($id);
 
         if(!$specialdeal){
             $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
