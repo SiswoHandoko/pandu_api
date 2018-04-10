@@ -175,8 +175,8 @@ class PlanController extends Controller
                 'end_date' => 'required|date_format:"Y-m-d"',
                 'background' => 'max:20480',
                 'tourism_place_id' => 'required|numeric|min:0',
-                'start_time' => 'required|date_format:"H:i"',
-                'end_time' => 'required|date_format:"H:i"'
+                // 'start_time' => 'required|date_format:"H:i"',
+                // 'end_time' => 'required|date_format:"H:i"'
             ]);
         } else {
             $validator = Validator::make($req->all(), [
