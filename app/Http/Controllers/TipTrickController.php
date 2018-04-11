@@ -121,7 +121,7 @@ class TipTrickController extends Controller
         $validator = Validator::make($req->all(), [
           'title' => 'required|max:255',
           'description' => 'required',
-          'image_url' => 'max:2048',
+          // 'image_url' => 'max:2048',
           'city_id' => 'required',
         ]);
 
@@ -220,7 +220,7 @@ class TipTrickController extends Controller
         $validator = Validator::make($req->all(), [
             'title' => 'required|max:255',
             'description' => 'required',
-            'image_url' => 'max:2048',
+            // 'image_url' => 'max:2048',
         ]);
 
         if($validator->fails()) {
