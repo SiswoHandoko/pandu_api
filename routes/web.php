@@ -209,6 +209,17 @@ $router->get('/infopayment/delete/{id}', 'InfoPaymentController@destroy');
 
 /*
  | ------------------------------------------
+ | PRIVATE GUIDE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/privateguide', 'PrivateGuideController@index');
+$router->get('/privateguide/{id}', 'PrivateGuideController@show');
+$router->post('/privateguide/create', 'PrivateGuideController@store');
+$router->put('/privateguide/update/{id}', 'PrivateGuideController@update');
+$router->get('/privateguide/delete/{id}', 'PrivateGuideController@destroy');
+
+/*
+ | ------------------------------------------
  | CUSTOM SENDING EMAIL
  | ------------------------------------------
  */

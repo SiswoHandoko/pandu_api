@@ -484,53 +484,51 @@ class PlanController extends Controller
 
                 $plan->save();
 
-                if(strtolower($req->status) == 'draft'){
+                if(strtolower($plan->status) == 'draft'){
                     /* Email Process */
-                    $data['to']         = $update->user->email;
+                    $data['to']         = $plan->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'DRAFT PLAN';
                     $data['content']    = "Your Current Plan status is <strong>Draft</strong> immediately finish and submit your plan.";
-                    $data['name']       = $update->user->username;
-
+                    $data['name']       = $plan->user->username;
                     $email              = $data;
                     Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
-
-                }elseif(strtolower($req->status) == 'order'){
+                }elseif(strtolower($plan->status) == 'order'){
                     /* Email Process */
-                    $data['to']         = $update->user->email;
+                    $data['to']         = $plan->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'ORDER PLAN';
                     $data['content']    = "Your Current Plan status is <strong>Order</strong> immediately complete and confirm payment.";
-                    $data['name']       = $update->user->username;
+                    $data['name']       = $plan->user->username;
 
                     $email              = $data;
                     Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
-                }elseif(strtolower($req->status) == 'issued'){
+                }elseif(strtolower($plan->status) == 'issued'){
                     /* Email Process */
-                    $data['to']         = $update->user->email;
+                    $data['to']         = $plan->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'ISSUED PLAN';
                     $data['content']    = "Your Current Plan status is <strong>Issued</strong> Please wait for confirmation and more info from Pandu Admin.";
-                    $data['name']       = $update->user->username;
+                    $data['name']       = $plan->user->username;
 
                     $email              = $data;
                     Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
-                }elseif(strtolower($req->status) == 'ticketed'){
+                }elseif(strtolower($plan->status) == 'ticketed'){
                     /* Email Process */
-                    $data['to']         = $update->user->email;
+                    $data['to']         = $plan->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'TICKETED PLAN';
                     $data['content']    = "Your Current Plan status is <strong>Ticketed</strong> Please Check details of your order and itinerary on the application.";
-                    $data['name']       = $update->user->username;
+                    $data['name']       = $plan->user->username;
 
                     $email              = $data;
                     Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
@@ -538,7 +536,6 @@ class PlanController extends Controller
                         $send->from('admin@pandu.com', $email['alias']);
                     });
                 }
-                
                 $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
                 // $plan = $this->validate_relation($plan);
 
