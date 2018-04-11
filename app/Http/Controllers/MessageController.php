@@ -137,6 +137,7 @@ class MessageController extends Controller
             $message->title = $req->has('title') ? $req->title : '';
             $message->description = $req->has('description') ? $req->description : '';
             $message->status = $req->has('status') ? $req->status : 'active';
+            $message->created_by = 1;
             $message->save();
 
             $result = $this->generate_response($message,200,'Data Has Been Saved.',false);

@@ -4,6 +4,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Model\User;
 use App\Model\Plan;
+use App\Model\Message;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -184,7 +185,7 @@ class UserController extends Controller
                 /* Email Process */
                 $data['to']         = $req->input('email');
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'INFO REGISTRASI';
+                $data['subject']    = 'REGISTRATION INFO';
                 $data['content']    = "Congratulations your account has been registered with Pandu Apps. <br/> Please login on the application to start creating Plan.";
                 $data['name']       = $req->input('username');
 
@@ -208,6 +209,15 @@ class UserController extends Controller
                 /* upload process */
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
+
+                /** Insert Into Table Message */
+                $message = new Message();
+                $message->user_id = $user->id;
+                $message->title = 'REGISTRATION INFO';
+                $message->description = "Congratulations your account has been registered with Pandu Apps. Please login on the application to start creating Plan.";
+                $message->status = 'active';
+                $message->created_by = '1';
+                $message->save();
 
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
 
@@ -326,7 +336,7 @@ class UserController extends Controller
                             /* Email Process */
                             $data['to']         = $user->email;
                             $data['alias']      = 'Admin Pandu';
-                            $data['subject']    = 'GANTI PASSWORD';
+                            $data['subject']    = 'CHANGE PASSWORD';
                             $data['content']    = "Your password has been changed. <br/> Please Login with your new password. <br/> Your New Password: <strong>".$req->password."</strong>";
                             $data['name']       = $user->username;
                             
@@ -335,6 +345,15 @@ class UserController extends Controller
                                 $send->to($email['to'])->subject($email['subject']);
                                 $send->from('admin@pandu.com', $email['alias']);
                             });
+
+                            /** Insert Into Table Message */
+                            $message = new Message();
+                            $message->user_id = $user->id;
+                            $message->title = 'CHANGE PASSWORD';
+                            $message->description = "Your password has been changed. Please Login with your new password. Your New Password: ".$req->password."";
+                            $message->status = 'active';
+                            $message->created_by = '1';
+                            $message->save();
                         }
                     }
 
@@ -693,7 +712,7 @@ class UserController extends Controller
                 /* Email Process */
                 $data['to']         = $select->email;
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'LUPA PASSWORD';
+                $data['subject']    = 'FORGOT PASSWORD';
                 $data['content']    = "Your password has been changed. <br/> Please Login with your new password. <br/> Your New Password: <strong>".$new_password."</strong>";
                 $data['name']       = $select->username;
 
@@ -702,6 +721,15 @@ class UserController extends Controller
                     $send->to($email['to'])->subject($email['subject']);
                     $send->from('admin@pandu.com', $email['alias']);
                 });
+
+                /** Insert Into Table Message */
+                $message = new Message();
+                $message->user_id = $select->id;
+                $message->title = 'FORGOT PASSWORD';
+                $message->description = "Your password has been changed. Please Login with your new password. Your New Password: ".$new_password."";
+                $message->status = 'active';
+                $message->created_by = '1';
+                $message->save();
 
                 $result = $this->generate_response($user, 200, 'Success Change Password.', false);
 

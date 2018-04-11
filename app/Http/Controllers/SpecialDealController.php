@@ -5,6 +5,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Model\SpecialDeal;
 use App\Model\User;
+use App\Model\Message;
 use Illuminate\Support\Facades\Mail;
 
 class SpecialDealController extends Controller
@@ -159,7 +160,7 @@ class SpecialDealController extends Controller
                 $data['to']         = $u['email'];
                 // $data['to']         = "code.lab.indonesia@gmail.com";
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'SPECIAL DEAL BARU ';
+                $data['subject']    = 'NEW SPECIAL DEAL';
                 $data['content']    = "Immediately Check your mobile phone There is a New Deal Special. <br/> Please open your Apps to check it directly.";
                 $data['name']       = $u['username'];
                 // $data['name']       = "asepmulyadi";
@@ -170,6 +171,15 @@ class SpecialDealController extends Controller
                     $send->to($email['to'])->subject($email['subject']);
                     $send->from('admin@pandu.com', $email['alias']);
                 });
+
+                /** Insert Into Table Message */
+                $message = new Message();
+                $message->user_id = $u['id'];
+                $message->title = 'NEW SPECIAL DEAL';
+                $message->description = "Immediately Check your mobile phone There is a New Deal Special. Please open your Apps to check it directly.";
+                $message->status = 'active';
+                $message->created_by = '1';
+                $message->save();
             }
 
             $specialdeal = new SpecialDeal();
