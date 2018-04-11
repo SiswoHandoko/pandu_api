@@ -8,6 +8,7 @@ use App\Model\PlanDetail;
 use App\Model\Package;
 use App\Model\PackageDetail;
 use App\Model\TourismPlace;
+use App\Model\Message;
 use Illuminate\Support\Facades\Mail;
 
 class PlanController extends Controller
@@ -496,6 +497,16 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
+
+                    /** Insert Into Table Message */
+                    $message = new Message();
+                    $message->user_id = $plan->user->id;
+                    $message->title = 'DRAFT PLAN';
+                    $message->description = "Your Current Plan status is Draft immediately finish and submit your plan.";
+                    $message->status = 'active';
+                    $message->created_by = '1';
+                    $message->save();
+
                 }elseif(strtolower($plan->status) == 'order'){
                     /* Email Process */
                     $data['to']         = $plan->user->email;
@@ -509,6 +520,16 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
+
+                    /** Insert Into Table Message */
+                    $message = new Message();
+                    $message->user_id = $plan->user->id;
+                    $message->title = 'ORDER PLAN';
+                    $message->description = "Your Current Plan status is Order immediately complete and confirm payment.";
+                    $message->status = 'active';
+                    $message->created_by = '1';
+                    $message->save();
+
                 }elseif(strtolower($plan->status) == 'issued'){
                     /* Email Process */
                     $data['to']         = $plan->user->email;
@@ -522,6 +543,15 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
+
+                    /** Insert Into Table Message */
+                    $message = new Message();
+                    $message->user_id = $plan->user->id;
+                    $message->title = 'ISSUED PLAN';
+                    $message->description = "Your Current Plan status is Issued Please wait for confirmation and more info from Pandu Admin.";
+                    $message->status = 'active';
+                    $message->created_by = '1';
+                    $message->save();
                 }elseif(strtolower($plan->status) == 'ticketed'){
                     /* Email Process */
                     $data['to']         = $plan->user->email;
@@ -535,6 +565,15 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
+
+                    /** Insert Into Table Message */
+                    $message = new Message();
+                    $message->user_id = $plan->user->id;
+                    $message->title = 'TICKETED PLAN';
+                    $message->description = "Your Current Plan status is Ticketed Please Check details of your order and itinerary on the application.";
+                    $message->status = 'active';
+                    $message->created_by = '1';
+                    $message->save();
                 }
                 $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
                 // $plan = $this->validate_relation($plan);

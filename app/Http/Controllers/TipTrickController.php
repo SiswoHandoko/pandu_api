@@ -5,6 +5,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Model\TipTrick;
 use App\Model\User;
+use App\Model\Message;
 use Illuminate\Support\Facades\Mail;
 
 class TipTrickController extends Controller
@@ -138,7 +139,7 @@ class TipTrickController extends Controller
             foreach($user as $u){
                 $data['to']         = $u['email'];
                 $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'TIPS DAN TRICK BARU ';
+                $data['subject']    = 'NEW TIP AND TRICK';
                 $data['content']    = "Check Your Cell Soon There are New Tips And Tricks. <br/> Please open your Apps to check it directly.";
                 $data['name']       = $u['username'];
 
@@ -147,6 +148,15 @@ class TipTrickController extends Controller
                     $send->to($email['to'])->subject($email['subject']);
                     $send->from('admin@pandu.com', $email['alias']);
                 });
+
+                /** Insert Into Table Message */
+                $message = new Message();
+                $message->user_id = $u['id'];
+                $message->title = 'NEW TIP AND TRICK';
+                $message->description = "Check Your Cell Soon There are New Tips And Tricks. Please open your Apps to check it directly.";
+                $message->status = 'active';
+                $message->created_by = '1';
+                $message->save();
             }
             
             $tiptrick = new TipTrick();

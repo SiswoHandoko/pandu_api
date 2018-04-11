@@ -247,3 +247,15 @@ $router->get('/custom/dashboard', 'CustomController@dashboard');
  | ------------------------------------------
  */
 $router->get('/accesslog', 'AccessLogController@index');
+
+/*
+ | ------------------------------------------
+ | MESSAGE ROUTE
+ | ------------------------------------------
+ */
+$router->get('/message', 'MessageController@index');
+$router->get('/message/{id}', 'MessageController@show');
+$router->post('/message/create', 'MessageController@store');
+$router->put('/message/update/{id}', 'MessageController@update');
+$router->get('/message/delete/{id}', 'MessageController@destroy');
+$router->get('/message/{id}/user', 'MessageController@get_by_user');

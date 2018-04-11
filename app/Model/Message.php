@@ -17,7 +17,7 @@ class Message extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'title', 'description', 'status', 'created_by'
+        'user_id', 'title', 'description', 'status', 'created_by','is_read'
     ];
 
     /**
@@ -28,4 +28,18 @@ class Message extends Model
     protected $hidden = [
         'created_at', 'updated_at'
     ];
+
+    /**
+    * Belongs To Relation
+    */
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+    * Belongs To Relation
+    */
+    public function admin() {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

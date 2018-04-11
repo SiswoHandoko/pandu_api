@@ -7,6 +7,7 @@ use App\Model\Package;
 use App\Model\Plan;
 use App\Model\PlanDetail;
 use App\Model\User;
+use App\Model\Message;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -76,6 +77,15 @@ class CustomController extends Controller
                             $send->from('admin@pandu.com', $email['alias']);
                         });
 
+                        /** Insert Into Table Message */
+                        $message = new Message();
+                        $message->user_id = $update->user->id;
+                        $message->title = 'DRAFT PLAN';
+                        $message->description = "Your Current Plan status is Draft immediately finish and submit your plan.";
+                        $message->status = 'active';
+                        $message->created_by = '1';
+                        $message->save();
+
                     }elseif(strtolower($req->status) == 'order'){
                         /* Email Process */
                         $data['to']         = $update->user->email;
@@ -89,6 +99,15 @@ class CustomController extends Controller
                             $send->to($email['to'])->subject($email['subject']);
                             $send->from('admin@pandu.com', $email['alias']);
                         });
+
+                        /** Insert Into Table Message */
+                        $message = new Message();
+                        $message->user_id = $update->user->id;
+                        $message->title = 'ORDER PLAN';
+                        $message->description = "Your Current Plan status is Order immediately complete and confirm payment.";
+                        $message->status = 'active';
+                        $message->created_by = '1';
+                        $message->save();
                     }elseif(strtolower($req->status) == 'issued'){
                         /* Email Process */
                         $data['to']         = $update->user->email;
@@ -102,6 +121,16 @@ class CustomController extends Controller
                             $send->to($email['to'])->subject($email['subject']);
                             $send->from('admin@pandu.com', $email['alias']);
                         });
+
+                        /** Insert Into Table Message */
+                        $message = new Message();
+                        $message->user_id = $update->user->id;
+                        $message->title = 'ISSUED PLAN';
+                        $message->description = "Your Current Plan status is Issued Please wait for confirmation and more info from Pandu Admin.";
+                        $message->status = 'active';
+                        $message->created_by = '1';
+                        $message->save();
+                        
                     }elseif(strtolower($req->status) == 'ticketed'){
                         /* Email Process */
                         $data['to']         = $update->user->email;
@@ -115,6 +144,15 @@ class CustomController extends Controller
                             $send->to($email['to'])->subject($email['subject']);
                             $send->from('admin@pandu.com', $email['alias']);
                         });
+
+                        /** Insert Into Table Message */
+                        $message = new Message();
+                        $message->user_id = $update->user->id;
+                        $message->title = 'TICKETED PLAN';
+                        $message->description = "Your Current Plan status is Ticketed Please Check details of your order and itinerary on the application.";
+                        $message->status = 'active';
+                        $message->created_by = '1';
+                        $message->save();
                     }
                 }
 
