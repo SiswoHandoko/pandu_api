@@ -162,7 +162,7 @@ class PlanController extends Controller
                 'total_tourist' => 'required|numeric|min:0',
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
-                'background' => 'max:20480',
+                // 'background' => 'max:20480',
                 'package_id' => 'required'
             ]);
         } else if ($req->has('tourism_place_id')) {
@@ -174,7 +174,7 @@ class PlanController extends Controller
                 'total_tourist' => 'required|numeric|min:0',
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
-                'background' => 'max:20480',
+                // 'background' => 'max:20480',
                 'tourism_place_id' => 'required|numeric|min:0',
                 // 'start_time' => 'required|date_format:"H:i"',
                 // 'end_time' => 'required|date_format:"H:i"'
@@ -190,7 +190,7 @@ class PlanController extends Controller
                 'start_date' => 'required|date_format:"Y-m-d"',
                 'end_date' => 'required|date_format:"Y-m-d"',
                 'total_price' => 'required|numeric|min:0',
-                'background' => 'max:20480',
+                // 'background' => 'max:20480',
                 'type' => 'required'
             ]);
         }

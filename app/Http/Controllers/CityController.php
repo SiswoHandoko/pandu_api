@@ -149,7 +149,7 @@ class CityController extends Controller
         $validator = Validator::make($req->all(), [
           'province_id' => 'required',
           'name' => 'required|max:255',
-          'image_url' => 'max:2048'
+          // 'image_url' => 'max:2048'
         ]);
 
         if($validator->fails()) {
@@ -228,7 +228,7 @@ class CityController extends Controller
         /* Validation */
         $validator = Validator::make($req->all(), [
             'name' => 'required|max:255',
-            'image_url' => 'max:2048'
+            // 'image_url' => 'max:2048'
         ]);
 
         if($validator->fails()) {

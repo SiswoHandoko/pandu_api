@@ -156,7 +156,7 @@ class PackageController extends Controller
             'name' => 'required',
             'description' => 'required',
             'days' => 'required',
-            'image_url' => 'max:2048',
+            // 'image_url' => 'max:2048',
             // 'start_date' => 'required',
             // 'end_date' => 'required'
         ]);
@@ -244,7 +244,7 @@ class PackageController extends Controller
             'name' => 'required',
             'description' => 'required',
             'days' => 'required',
-            'image_url' => 'max:2048',
+            // 'image_url' => 'max:2048',
             // 'start_date' => 'required',
             // 'end_date' => 'required'
         ]);
