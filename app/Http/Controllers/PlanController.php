@@ -484,7 +484,7 @@ class PlanController extends Controller
 
                 $plan->save();
 
-                if(strtolower($req->status) == 'draft'){
+                if(strtolower($plan->status) == 'draft'){
                     /* Email Process */
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
@@ -498,7 +498,7 @@ class PlanController extends Controller
                         $send->from('admin@pandu.com', $email['alias']);
                     });
 
-                }elseif(strtolower($req->status) == 'order'){
+                }elseif(strtolower($plan->status) == 'order'){
                     /* Email Process */
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
@@ -511,7 +511,7 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
-                }elseif(strtolower($req->status) == 'issued'){
+                }elseif(strtolower($plan->status) == 'issued'){
                     /* Email Process */
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
@@ -524,7 +524,7 @@ class PlanController extends Controller
                         $send->to($email['to'])->subject($email['subject']);
                         $send->from('admin@pandu.com', $email['alias']);
                     });
-                }elseif(strtolower($req->status) == 'ticketed'){
+                }elseif(strtolower($plan->status) == 'ticketed'){
                     /* Email Process */
                     $data['to']         = $update->user->email;
                     $data['alias']      = 'Admin Pandu';
@@ -538,7 +538,6 @@ class PlanController extends Controller
                         $send->from('admin@pandu.com', $email['alias']);
                     });
                 }
-                
                 $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
                 // $plan = $this->validate_relation($plan);
 
