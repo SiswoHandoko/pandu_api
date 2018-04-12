@@ -739,4 +739,37 @@ class UserController extends Controller
             }
         }
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Message  $message
+     * @return \Illuminate\Http\Response
+     */
+    public function message_by_user($id)
+    {
+        $param_insert = array(
+            'name' => 'message_by_user',
+            'params' => '',
+            'result' => ''
+        );
+
+        $access_log_id = $this->create_access_log($param_insert);
+  
+        $message = Message::where('status','!=','deleted')->where('user_id',$id)->get();
+
+        if(!$message){
+            $result = $this->generate_response($message, 404, 'Data Not Found.', true);
+
+            $this->update_access_log($access_log_id, $result);
+
+            return response()->json($result, 404);
+        }else{
+            $result = $this->generate_response($message, 200, 'Detail Data.', false);
+
+            $this->update_access_log($access_log_id, $result);
+
+            return response()->json($result, 200);
+        }
+    }
 }

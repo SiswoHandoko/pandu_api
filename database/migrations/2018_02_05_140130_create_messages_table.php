@@ -20,7 +20,6 @@ class CreateMessagesTable extends Migration
             $table->text('description')->default('');
             $table->string('status')->default('');
             $table->integer('created_by')->default(0);
-            $table->boolean('is_read')->default(0);
             $table->timestamps();
         });
     }

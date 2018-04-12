@@ -32,6 +32,7 @@ $router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserContr
 $router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);
 $router->get('/user/{id}/plans', 'UserController@user_by_plan');
 $router->post('/user/forgotpassword', 'UserController@forgot_password');
+$router->get('/user/{id}/message', 'UserController@message_by_user');
 
 /*
  | ------------------------------------------
@@ -258,4 +259,3 @@ $router->get('/message/{id}', 'MessageController@show');
 $router->post('/message/create', 'MessageController@store');
 $router->put('/message/update/{id}', 'MessageController@update');
 $router->get('/message/delete/{id}', 'MessageController@destroy');
-$router->get('/message/{id}/user', 'MessageController@get_by_user');
