@@ -204,8 +204,8 @@ class AdvertisementController extends Controller
           'title' => 'required|max:255',
           'caption' => 'required|max:255',
           'type' => 'required|max:255',
-          'status' => 'required|max:255',
         ]);
+        
         if($validator->fails()) {
             $result = $this->generate_response($advertisement,400,'Bad Request.',true);
 
