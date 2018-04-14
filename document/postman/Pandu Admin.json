@@ -22,6 +22,7 @@
 		"d0aa951b-3bf0-45ea-9b22-cb46a5546300",
 		"d5db4266-d9d5-4a09-a161-44ed7afa6ddd",
 		"a5184550-6f91-4139-9bcc-af1b03022dfa",
+		"4bcd9758-d37b-4063-9e56-bf514c853243",
 		"a8af780f-83d2-4c6c-85c0-d7cc9083e9ac",
 		"e4fa6162-3c47-4a81-9a13-14c9d425386c",
 		"6b288c9c-d6d5-430e-aff4-ee01d0cca98f",
@@ -293,6 +294,23 @@
 				"7e48dfed-c54e-4d70-b390-ec33c4e59218",
 				"93a5e478-7867-4fad-acb5-de7ea350b289",
 				"19204650-305f-4288-9939-14bd005eb032"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "4bcd9758-d37b-4063-9e56-bf514c853243",
+			"name": "Private User",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"collection": "69cbfdf8-1c04-44df-ba34-ca8a47a1fb01",
+			"folder": null,
+			"order": [
+				"dfba0305-3a5a-42c4-874a-d6d0abad264c",
+				"187b3fd5-3710-46f5-b9ca-6deadff04b2d",
+				"7e2839b5-ba9e-4b6e-b144-0e4be2229908",
+				"8252e8f8-8aa9-467e-9571-3a96a77052ac",
+				"f42395f1-f7b4-439b-b92c-8def97b48ecc"
 			],
 			"folders_order": []
 		},
@@ -693,6 +711,32 @@
 			"auth": null,
 			"events": null,
 			"folder": "e4fa6162-3c47-4a81-9a13-14c9d425386c",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "187b3fd5-3710-46f5-b9ca-6deadff04b2d",
+			"name": "Get Private User",
+			"url": "{{url}}/public/privateuser/1",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+				},
+				{
+					"key": "device-type",
+					"value": "web"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "4bcd9758-d37b-4063-9e56-bf514c853243",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
@@ -1828,7 +1872,7 @@
 		{
 			"id": "51be1990-43bc-40e4-bcf6-fcfebf94f2a8",
 			"name": "Update Advertisement",
-			"url": "{{url}}/public/advertisement/update/7",
+			"url": "{{url}}/public/advertisement/update/12",
 			"description": "Get Province By Id",
 			"data": [
 				{
@@ -2294,7 +2338,7 @@
 		{
 			"id": "722eb756-7c1f-488e-9973-88f9baef32fa",
 			"name": "Get Advertisements",
-			"url": "{{url}}/public/advertisement?",
+			"url": "{{url}}/public/advertisement",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": null,
@@ -2507,9 +2551,35 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "7e2839b5-ba9e-4b6e-b144-0e4be2229908",
+			"name": "Delete Private User",
+			"url": "{{url}}/public/privateuser/delete/1",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+				},
+				{
+					"key": "device-type",
+					"value": "web"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "4bcd9758-d37b-4063-9e56-bf514c853243",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "7e48dfed-c54e-4d70-b390-ec33c4e59218",
 			"name": "Delete Private Guide",
-			"url": "{{url}}/public/tiptrick/delete/3",
+			"url": "{{url}}/public/privateguide/delete/3",
 			"description": "Get Province By Id",
 			"data": [],
 			"dataMode": null,
@@ -2555,6 +2625,47 @@
 			"auth": null,
 			"events": null,
 			"folder": "e7cda8a4-4306-421d-aea5-3ae3bc8201db",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8252e8f8-8aa9-467e-9571-3a96a77052ac",
+			"name": "Create Private User",
+			"url": "{{url}}/public/privateuser/create",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+				},
+				{
+					"key": "device-type",
+					"value": "web"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "4bcd9758-d37b-4063-9e56-bf514c853243",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
@@ -4365,6 +4476,38 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "dfba0305-3a5a-42c4-874a-d6d0abad264c",
+			"name": "Get Private Users",
+			"url": "{{url}}/public/privateuser",
+			"description": "Get Province By Id",
+			"data": [],
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+				},
+				{
+					"key": "device-type",
+					"value": "web"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "",
+					"value": "",
+					"enabled": false
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": "4bcd9758-d37b-4063-9e56-bf514c853243",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "e1debbd8-5734-480a-a5b3-94e446904917",
 			"name": "Update Message",
 			"url": "{{url}}/public/message/update/5",
@@ -4703,6 +4846,51 @@
 			"events": null,
 			"folder": "4ff2501e-41c7-4df2-b2ff-96fb6fdfe0fc",
 			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f42395f1-f7b4-439b-b92c-8def97b48ecc",
+			"name": "Update Private User",
+			"url": "{{url}}/public/privateuser/update/1",
+			"description": "Get Province By Id",
+			"data": [
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
+				},
+				{
+					"key": "status",
+					"value": "active",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				},
+				{
+					"key": "api-token",
+					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+				},
+				{
+					"key": "device-type",
+					"value": "web"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "4bcd9758-d37b-4063-9e56-bf514c853243",
+			"headers": "Content-Type: application/x-www-form-urlencoded\napi-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
 			"pathVariables": {}
 		},
 		{

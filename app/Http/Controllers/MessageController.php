@@ -137,6 +137,7 @@ class MessageController extends Controller
             $message->title = $req->has('title') ? $req->title : '';
             $message->description = $req->has('description') ? $req->description : '';
             $message->status = $req->has('status') ? $req->status : 'active';
+            $message->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/messages/'.$this->uploadFile($this->public_path(). "/images/messages/", $req->image_url) : env('BACKEND_URL').'public/images/messages/default_img.png';
             $message->created_by = 1;
             $message->save();
 

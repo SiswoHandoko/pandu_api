@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrivateguidesTable extends Migration
+class CreatePrivateusersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePrivateguidesTable extends Migration
      */
     public function up()
     {
-        Schema::create('private_guides', function (Blueprint $table) {
+        Schema::create('private_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('private_user_id')->default(0);
-            $table->integer('question_id')->default(0);
-            $table->string('answer')->default('');
+            $table->integer('user_id')->default(0);
             $table->string('status')->default('');
             $table->timestamps();
         });
@@ -30,6 +28,6 @@ class CreatePrivateguidesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('private_guides');
+        Schema::dropIfExists('private_users');
     }
 }

@@ -3,12 +3,12 @@
 namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
-class PrivateGuide extends Model
+class PrivateUser extends Model
 {
     /**
     * Table database
     */
-    protected $table = 'private_guides';
+    protected $table = 'private_users';
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +16,7 @@ class PrivateGuide extends Model
      * @var array
      */
     protected $fillable = [
-        'private_user_id', 'question_id', 'answer', 'status'
+        'user_id', 'status'
     ];
 
     /**
@@ -29,9 +29,10 @@ class PrivateGuide extends Model
     ];
 
     /**
-    * Belongs To Relation
+    * One to Many relationships
     */
-    public function private_user() {
-        return $this->belongsTo(PrivateUser::class, 'private_user_id');
+    public function private_guide()
+    {
+        return $this->hasMany(PrivateGuide::class);
     }
 }

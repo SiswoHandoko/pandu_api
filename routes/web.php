@@ -259,3 +259,14 @@ $router->get('/message/{id}', 'MessageController@show');
 $router->post('/message/create', 'MessageController@store');
 $router->put('/message/update/{id}', 'MessageController@update');
 $router->get('/message/delete/{id}', 'MessageController@destroy');
+
+/*
+ | ------------------------------------------
+ | PRIVATE USER ROUTE
+ | ------------------------------------------
+ */
+$router->get('/privateuser', 'PrivateUserController@index');
+$router->get('/privateuser/{id}', 'PrivateUserController@show');
+$router->post('/privateuser/create', 'PrivateUserController@store');
+$router->put('/privateuser/update/{id}', 'PrivateUserController@update');
+$router->get('/privateuser/delete/{id}', 'PrivateUserController@destroy');

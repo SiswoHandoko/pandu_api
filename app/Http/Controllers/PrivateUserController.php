@@ -7,9 +7,9 @@ use App\Model\PrivateGuide;
 use App\Model\PrivateUser;
 use Illuminate\Support\Facades\Mail;
 
-class PrivateGuideController extends Controller
+class PrivateUserController extends Controller
 {
-    private $fields_privateguides = array(
+    private $fields_privateusers = array(
         'id',
         'private_user_id',
         'question_id',
@@ -34,21 +34,22 @@ class PrivateGuideController extends Controller
     public function index(Request $req)
     {
         $param_insert = array(
-            'name' => 'privateguide_index',
+            'name' => 'privateuser_index',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $privateguide = new PrivateGuide;
-        $privateguide = $privateguide->where('status', '!=', 'deleted');
+        $privateuser = new PrivateUser;
+        $privateuser = $privateuser->with('private_guide');
+        $privateuser = $privateuser->where('status', '!=', 'deleted');
         
         // search query
         if ($req->input('search_query')) {
             $search_query = $req->input('search_query') ? $req->input('search_query') : '';
 
-            $privateguide = $privateguide->where('name', 'LIKE', '%'.$search_query.'%');
+            $privateuser = $privateuser->where('name', 'LIKE', '%'.$search_query.'%');
         }
 
         // where custom
@@ -56,12 +57,12 @@ class PrivateGuideController extends Controller
             $explode_by = explode('|', $req->input('where_by'));
             $explode_value = explode('|', $req->input('where_value'));
 
-            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_privateguides))) {
+            if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_privateusers))) {
                 foreach ($explode_by as $key => $value) {
-                    $privateguide = $privateguide->where($explode_by[$key], '=', $explode_value[$key]);
+                    $privateuser = $privateuser->where($explode_by[$key], '=', $explode_value[$key]);
                 }
             } else {
-                $result = $this->generate_response($privateguide, 400, 'Bad Request.', true);
+                $result = $this->generate_response($privateuser, 400, 'Bad Request.', true);
 
                 $this->update_access_log($access_log_id, $result);
 
@@ -71,12 +72,12 @@ class PrivateGuideController extends Controller
 
         // order
         if ($req->input('order_by')) {
-            if (in_array($req->input('order_by'), $this->fields_privateguides)) {
+            if (in_array($req->input('order_by'), $this->fields_privateusers)) {
                 $order_type = $req->input('order_type') ? $req->input('order_type') : 'asc';
 
-                $privateguide = $privateguide->orderBy($req->input('order_by'), $order_type);
+                $privateuser = $privateuser->orderBy($req->input('order_by'), $order_type);
             } else {
-                $result = $this->generate_response($privateguide, 400, 'Bad Request.', true);
+                $result = $this->generate_response($privateuser, 400, 'Bad Request.', true);
 
                 $this->update_access_log($access_log_id, $result);
 
@@ -88,13 +89,13 @@ class PrivateGuideController extends Controller
         if ($req->input('limit')) {
             $offset = $req->input('offset') ? $req->input('offset') : 0;
 
-            $privateguide = $privateguide->offset($offset);
-            $privateguide = $privateguide->limit($req->input('limit'));
+            $privateuser = $privateuser->offset($offset);
+            $privateuser = $privateuser->limit($req->input('limit'));
         }
 
-        $privateguide = $privateguide->get();
+        $privateuser = $privateuser->get();
 
-        $result = $this->generate_response($privateguide, 200, 'All Data.', false);
+        $result = $this->generate_response($privateuser, 200, 'All Data.', false);
 
         $this->update_access_log($access_log_id, $result);
 
@@ -110,7 +111,7 @@ class PrivateGuideController extends Controller
     public function store(Request $req)
     {
         $param_insert = array(
-            'name' => 'privateguide_store',
+            'name' => 'privateuser_store',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
@@ -124,7 +125,7 @@ class PrivateGuideController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($privateguide,400,'Bad Request.',true);
+            $result = $this->generate_response($privateuser,400,'Bad Request.',true);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -137,39 +138,7 @@ class PrivateGuideController extends Controller
 
             $privateuser->save();
 
-            if ($privateuser) {
-                $i = 1;
-
-                foreach ($req->answer as $key => $value) {
-                    $privateguide = new PrivateGuide();
-
-                    $privateguide->question_id = $i;
-                    $privateguide->private_user_id = $privateuser->id;
-                    $privateguide->answer = $value;
-                    $privateguide->status = $req->has('status') ? $req->status : 'active';
-
-                    $privateguide->save();
-
-                    $arr_privateguide[] = $privateguide;
-
-                    $i++;
-                }
-
-                $result = $this->generate_response($arr_privateguide,200,'Data Has Been Saved.',false);
-            } else {
-                $result = $this->generate_response($privateuser,400,'Bad Request.',true);
-
-                $this->update_access_log($access_log_id, $result);
-
-                return response()->json($result, 400);
-            }
-
-            $privateuser_result = new PrivateUser;
-            $privateuser_result = $privateuser_result->where('status','!=','deleted');
-            $privateuser_result = $privateuser_result->with('private_guide');
-            $privateuser_result = $privateuser_result->find($privateuser->id);
-
-            $result = $this->generate_response($privateuser_result, 200, 'Detail Data.', false);
+            $result = $this->generate_response($privateuser, 200, 'Detail Data.', false);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -180,29 +149,32 @@ class PrivateGuideController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\PrivateGuide  $privateguide
+     * @param  \App\PrivateUser  $privateuser
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $param_insert = array(
-            'name' => 'privateguide_show',
+            'name' => 'privateuser_show',
             'params' => '',
             'result' => ''
         );
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $privateguide = PrivateGuide::where('status','!=','deleted')->find($id);
+        $privateuser = new PrivateUser;
+        $privateuser = $privateuser->where('status','!=','deleted');
+        $privateuser = $privateuser->with('private_guide');
+        $privateuser = $privateuser->find($id);
 
-        if(!$privateguide){
-            $result = $this->generate_response($privateguide, 404, 'Data Not Found.', true);
+        if(!$privateuser){
+            $result = $this->generate_response($privateuser, 404, 'Data Not Found.', true);
 
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
-            $result = $this->generate_response($privateguide, 200, 'Detail Data.', false);
+            $result = $this->generate_response($privateuser, 200, 'Detail Data.', false);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -214,13 +186,13 @@ class PrivateGuideController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PrivateGuide  $privateguide
+     * @param  \App\PrivateUser  $privateuser
      * @return \Illuminate\Http\Response
      */
     public function update(Request $req,$id)
     {
         $param_insert = array(
-            'name' => 'privateguide_update',
+            'name' => 'privateuser_update',
             'params' => json_encode(collect($req)->toArray()),
             'result' => ''
         );
@@ -234,26 +206,25 @@ class PrivateGuideController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($privateguide,400,'Bad Request.',true);
+            $result = $this->generate_response($privateuser,400,'Bad Request.',true);
 
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 400);
         }else{
-            $privateguide = PrivateGuide::find($id);
-            if(!$privateguide){
-                $result = $this->generate_response($privateguide, 404, 'Data Not Found.', true);
+            $privateuser = PrivateUser::find($id);
+            if(!$privateuser){
+                $result = $this->generate_response($privateuser, 404, 'Data Not Found.', true);
 
                 $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 404);
             }else{
-                $privateguide->user_id = $req->has('user_id') ? $req->user_id : $privateguide->user_id;
-                $privateguide->answer = $req->has('answer') ? $req->answer : $privateguide->answer;
-                $privateguide->status = $req->has('status') ? $req->status : $privateguide->status;
-                $privateguide->save();
+                $privateuser->user_id = $req->has('user_id') ? $req->user_id : $privateuser->user_id;
+                $privateuser->status = $req->has('status') ? $req->status : $privateuser->status;
+                $privateuser->save();
 
-                $result = $this->generate_response($privateguide,200,'Data Has Been Updated.',false);
+                $result = $this->generate_response($privateuser,200,'Data Has Been Updated.',false);
 
                 $this->update_access_log($access_log_id, $result);
 
@@ -265,32 +236,32 @@ class PrivateGuideController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\PrivateGuide  $privateguide
+     * @param  \App\PrivateUser  $privateuser
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $param_insert = array(
-            'name' => 'privateguide_destroy',
+            'name' => 'privateuser_destroy',
             'params' => '',
             'result' => ''
         );
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $privateguide = PrivateGuide::where('status','!=','deleted')->find($id);
+        $privateuser = PrivateUser::where('status','!=','deleted')->find($id);
         
-        if(!$privateguide){
-            $result = $this->generate_response($privateguide, 404, 'Data Not Found.', true);
+        if(!$privateuser){
+            $result = $this->generate_response($privateuser, 404, 'Data Not Found.', true);
 
             $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
-            $privateguide->status = 'deleted';
-            $privateguide->save();
+            $privateuser->status = 'deleted';
+            $privateuser->save();
 
-            $result = $this->generate_response($privateguide,200,'Data Has Been Deleted.',false);
+            $result = $this->generate_response($privateuser,200,'Data Has Been Deleted.',false);
 
             $this->update_access_log($access_log_id, $result);
 

@@ -1893,7 +1893,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/public/advertisement?",
+							"raw": "{{url}}/public/advertisement",
 							"host": [
 								"{{url}}"
 							],
@@ -2070,7 +2070,7 @@
 								}
 							]
 						},
-						"url": "{{url}}/public/advertisement/update/7",
+						"url": "{{url}}/public/advertisement/update/12",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -2568,7 +2568,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": "{{url}}/public/tiptrick/delete/3",
+						"url": "{{url}}/public/privateguide/delete/3",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -2683,6 +2683,175 @@
 							]
 						},
 						"url": "{{url}}/public/privateguide/update/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private User",
+			"description": null,
+			"item": [
+				{
+					"name": "Get Private Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/public/privateuser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"privateuser"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Private User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/public/privateuser/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Private User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/public/privateuser/delete/1",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Private User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/privateuser/create",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Private User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/privateuser/update/1",
 						"description": "Get Province By Id"
 					},
 					"response": []
