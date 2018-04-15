@@ -12,6 +12,8 @@ class PrivateUserController extends Controller
     private $fields_privateusers = array(
         'id',
         'user_id',
+        'created_at',
+        'updated_at',
         'status'
     );
 
