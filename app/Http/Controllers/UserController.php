@@ -616,7 +616,11 @@ class UserController extends Controller
 
             if ((count($explode_by)==count($explode_value)) && ($this->check_where($explode_by, $this->fields_plans))) {
                 foreach ($explode_by as $key => $value) {
-                    $plan = $plan->where($explode_by[$key], '=', $explode_value[$key]);
+                    if ($explode_value[$key]=='except_active') {
+                        $plan = $plan->where($explode_by[$key], '!=', 'active');
+                    } else {
+                        $plan = $plan->where($explode_by[$key], '=', $explode_value[$key]);
+                    }
                 }
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
