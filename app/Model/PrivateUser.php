@@ -25,7 +25,7 @@ class PrivateUser extends Model
      * @var array
      */
     protected $hidden = [
-        'user_id', 'created_at', 'updated_at'
+        'user_id', 'updated_at'
     ];
 
     /**
