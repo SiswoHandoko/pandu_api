@@ -36,4 +36,9 @@ class User extends Model
     {
         return $this->hasMany(Plan::class);
     }
+
+    public function private_user()
+    {
+        return $this->hasMany(PrivateUser::class);
+    }
 }

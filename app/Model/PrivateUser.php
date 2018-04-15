@@ -25,7 +25,7 @@ class PrivateUser extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at'
+        'user_id', 'created_at', 'updated_at'
     ];
 
     /**
@@ -34,5 +34,12 @@ class PrivateUser extends Model
     public function private_guide()
     {
         return $this->hasMany(PrivateGuide::class);
+    }
+
+    /**
+    * Belongs To Relation
+    */
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

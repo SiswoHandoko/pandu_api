@@ -11,9 +11,7 @@ class PrivateUserController extends Controller
 {
     private $fields_privateusers = array(
         'id',
-        'private_user_id',
-        'question_id',
-        'answer',
+        'user_id',
         'status'
     );
 
@@ -42,7 +40,7 @@ class PrivateUserController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $privateuser = new PrivateUser;
-        $privateuser = $privateuser->with('private_guide');
+        $privateuser = $privateuser->with('private_guide', 'user');
         $privateuser = $privateuser->where('status', '!=', 'deleted');
         
         // search query
@@ -164,7 +162,7 @@ class PrivateUserController extends Controller
 
         $privateuser = new PrivateUser;
         $privateuser = $privateuser->where('status','!=','deleted');
-        $privateuser = $privateuser->with('private_guide');
+        $privateuser = $privateuser->with('private_guide', 'user');
         $privateuser = $privateuser->find($id);
 
         if(!$privateuser){
