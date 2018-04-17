@@ -152,7 +152,11 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($user,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+
+            $result = $this->generate_response($data,400,$message,true);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -296,7 +300,11 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($user,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+
+            $result = $this->generate_response($data,400,$message,true);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -441,7 +449,11 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($city,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+
+            $result = $this->generate_response($data,400,$message,true);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -686,7 +698,11 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($user,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+
+            $result = $this->generate_response($data,400,$message,true);
 
             $this->update_access_log($access_log_id, $result);
 
