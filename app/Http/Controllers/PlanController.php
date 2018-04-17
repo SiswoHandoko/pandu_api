@@ -344,7 +344,7 @@ class PlanController extends Controller
 
                     $plandetail->insert($insert_plandetail);
                     
-                    $plan = Plan::with('user', 'guide', 'plandetail.tourismplace.picture')->where('status', '!=', 'deleted')->find($plan_id);
+                    $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($plan_id);
 
                     if ($plan) {
                         $plan = $this->validate_relation($plan);
