@@ -304,8 +304,10 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
-                    'name' => $req->has('name') ? $req->name : '',
-                    'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    // 'name' => $req->has('name') ? $req->name : '',
+                    'name' => $tourismplace->name,
+                    // 'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
+                    'background' => $tourismplace->picture[0]->image_url,
                     'total_adult' => $req->has('total_adult') ? $req->total_adult : 0,
                     'total_child' => $req->has('total_child') ? $req->total_child : 0,
                     'total_infant' => $req->has('total_infant') ? $req->total_infant : 0,
@@ -316,7 +318,8 @@ class PlanController extends Controller
                     'days' => 1,
                     'start_date' => $req->has('start_date') ? $req->start_date : '000-00-00',
                     'end_date' => $req->has('end_date') ? $req->end_date : '000-00-00',
-                    'description' => $req->has('description') ? $req->description : '',
+                    // 'description' => $req->has('description') ? $req->description : '',
+                    'description' => $tourismplace->description,
                     'status' => $req->has('status') ? $req->status : 'active'
                 );
 
@@ -341,7 +344,7 @@ class PlanController extends Controller
 
                     $plandetail->insert($insert_plandetail);
                     
-                    $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($plan_id);
+                    $plan = Plan::with('user', 'guide', 'plandetail.tourismplace.picture')->where('status', '!=', 'deleted')->find($plan_id);
 
                     if ($plan) {
                         $plan = $this->validate_relation($plan);
