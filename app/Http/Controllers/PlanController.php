@@ -457,8 +457,8 @@ class PlanController extends Controller
             'start_date' => 'required|date_format:"Y-m-d"',
             'end_date' => 'required|date_format:"Y-m-d"',
             'total_price' => 'numeric|min:0',
-            'background' => 'max:20480',
-            'receipt' => 'max:20480',
+            // 'background' => 'max:20480',
+            // 'receipt' => 'max:20480',
         ]);
 
         if($validator->fails()) {
