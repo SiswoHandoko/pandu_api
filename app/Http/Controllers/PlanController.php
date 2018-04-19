@@ -855,24 +855,15 @@ class PlanController extends Controller
     private function convert_data($plandetail)
     {
         $result = array();
-        $index = 0;
-        $day = 0;
 
-        foreach ($plandetail as $key => $value) {
-            if ($value->day != $day) {
-                $index++;
-                $day = $value->day;
-
-                $result['day'.$index][] = $value;
-            } else {
-                $result['day'.$index][] = $value;
-            }
+        for ($i=1; $i <= 7; $i++) { 
+            $result['day'.$i] = array();    
         }
 
-        $index++;
+        foreach ($plandetail as $key => $value) {
+            $day = $value->day;
 
-        for ($i=$index; $i <= 7; $i++) { 
-            $result['day'.$i] = array();
+            $result['day'.$day][] = $value;
         }
         
         return $result;

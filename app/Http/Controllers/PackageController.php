@@ -405,26 +405,17 @@ class PackageController extends Controller
     private function convert_data($packagedetail)
     {
         $result = array();
-        $index = 0;
-        $day = 0;
+
+        for ($i=1; $i <= 7; $i++) { 
+            $result['day'.$i] = array();    
+        }
 
         foreach ($packagedetail as $key => $value) {
-            if ($value->day != $day) {
-                $index++;
-                $day = $value->day;
+            $day = $value->day;
 
-                $result['day'.$index][] = $value;
-            } else {
-                $result['day'.$index][] = $value;
-            }
+            $result['day'.$day][] = $value;
         }
-
-        $index++;
-
-        for ($i=$index; $i <= 7; $i++) { 
-            $result['day'.$i] = array();
-        }
-
+        
         return $result;
     }
 }
