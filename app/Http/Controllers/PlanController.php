@@ -230,6 +230,7 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
+                    'code' => 'PDN'.str_pad($this->get_last_id(), 4, '0', STR_PAD_LEFT),
                     // 'name' => $req->has('name') ? $req->name : '',
                     // 'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
                     'description' => $package['description'],
@@ -304,6 +305,7 @@ class PlanController extends Controller
                 $insert_plan = array(
                     'user_id' => $req->user_id,
                     'guide_id' => $req->has('guide_id') ? $req->guide_id : 0,
+                    'code' => 'PDN'.str_pad($this->get_last_id(), 4, '0', STR_PAD_LEFT),
                     // 'name' => $req->has('name') ? $req->name : '',
                     'name' => $tourismplace->name,
                     // 'background' => $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '',
@@ -369,6 +371,7 @@ class PlanController extends Controller
                 }
             } else {
                 $plan->user_id = $req->has('user_id') ? $req->user_id : 0;
+                $plan->code = 'PDN'.str_pad($this->get_last_id(), 4, '0', STR_PAD_LEFT);
                 $plan->guide_id = $req->has('guide_id') ? $req->guide_id : 0;
                 $plan->name = $req->has('name') ? $req->name : '';
                 $plan->background = $req->has('background') ? env('BACKEND_URL').'public/images/plans/background/'.$this->uploadFile($this->public_path(). "/images/plans/background/", $req->background) : '';
@@ -885,6 +888,16 @@ class PlanController extends Controller
             $result['plandetail'] = array();
         }
 
+        return $result;
+    }
+
+    private function get_last_id(){
+        $response = Plan::orderBy('created_at', 'desc')->first();
+        if($response){
+            $result = ($response->id+1);
+        }else{
+            $result = 1;
+        }
         return $result;
     }
 }
