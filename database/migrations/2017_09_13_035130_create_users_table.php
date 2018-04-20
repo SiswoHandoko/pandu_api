@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->text('ios_token')->default('');
             $table->string('photo')->default('default_img.png');
             $table->boolean('is_login')->default(false);
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

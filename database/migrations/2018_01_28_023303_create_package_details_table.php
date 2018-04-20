@@ -21,7 +21,7 @@ class CreatePackageDetailsTable extends Migration
             $table->time('end_time')->default('00:00:00');
             $table->integer('day')->default(0);
             // $table->bigInteger('total_price')->default(0);
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreateInfoPaymentsTable extends Migration
             $table->string('bank')->default('');
             $table->string('no_rek')->default('');
             $table->string('name')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

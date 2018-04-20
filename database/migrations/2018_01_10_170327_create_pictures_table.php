@@ -17,7 +17,7 @@ class CreatePicturesTable extends Migration
             $table->increments('id');
             $table->integer('tourism_place_id')->default(0);
             $table->string('image_url')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

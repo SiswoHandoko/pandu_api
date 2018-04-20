@@ -25,7 +25,7 @@ class CreatePlanDetailsTable extends Migration
             $table->bigInteger('infant_price')->default(0);
             $table->bigInteger('tourist_price')->default(0);
             $table->string('no_ticket')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class CreateAdvertisementsTable extends Migration
             $table->string('title')->default('');
             $table->text('caption')->default('');
             $table->string('type')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

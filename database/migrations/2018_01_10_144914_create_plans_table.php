@@ -29,7 +29,7 @@ class CreatePlansTable extends Migration
             $table->bigInteger('total_price')->default(0);
             $table->string('receipt')->default('');
             $table->string('type')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'booking', 'issued', 'ticketed', 'cancel', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

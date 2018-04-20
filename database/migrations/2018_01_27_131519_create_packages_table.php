@@ -22,7 +22,7 @@ class CreatePackagesTable extends Migration
             // $table->date('end_date')->default('0000-00-00');
             // $table->bigInteger('total_price')->default(0);
             $table->string('image_url')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

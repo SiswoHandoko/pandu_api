@@ -63,12 +63,12 @@ class CustomController extends Controller
                 /* If Table is plan */
                 if(strtolower($req->table)=='plans'){
 
-                    if(strtolower($req->status) == 'draft'){
+                    if(strtolower($req->status) == 'active'){
                         /* Email Process */
                         $data['to']         = $update->user->email;
                         $data['alias']      = 'Admin Pandu';
-                        $data['subject']    = 'DRAFT PLAN';
-                        $data['content']    = "Your Current Plan status is <strong>Draft</strong> immediately finish and submit your plan.";
+                        $data['subject']    = 'ACTIVE PLAN';
+                        $data['content']    = "Your Current Plan status is <strong>Active</strong> immediately finish and submit your plan.";
                         $data['name']       = $update->user->username;
 
                         $email              = $data;
@@ -80,18 +80,18 @@ class CustomController extends Controller
                         /** Insert Into Table Message */
                         $message = new Message();
                         $message->user_id = $update->user->id;
-                        $message->title = 'DRAFT PLAN';
-                        $message->description = "Your Current Plan status is Draft immediately finish and submit your plan.";
+                        $message->title = 'ACTIVE PLAN';
+                        $message->description = "Your Current Plan status is Active immediately finish and submit your plan.";
                         $message->status = 'active';
                         $message->created_by = '1';
                         $message->save();
 
-                    }elseif(strtolower($req->status) == 'order'){
+                    }elseif(strtolower($req->status) == 'booking'){
                         /* Email Process */
                         $data['to']         = $update->user->email;
                         $data['alias']      = 'Admin Pandu';
-                        $data['subject']    = 'ORDER PLAN';
-                        $data['content']    = "Your Current Plan status is <strong>Order</strong> immediately complete and confirm payment.";
+                        $data['subject']    = 'BOOKING PLAN';
+                        $data['content']    = "Your Current Plan status is <strong>Booking</strong> immediately complete and confirm payment.";
                         $data['name']       = $update->user->username;
 
                         $email              = $data;
@@ -103,9 +103,9 @@ class CustomController extends Controller
                         /** Insert Into Table Message */
                         $message = new Message();
                         $message->user_id = $update->user->id;
-                        $message->title = 'ORDER PLAN';
-                        $message->description = "Your Current Plan status is Order immediately complete and confirm payment.";
-                        $message->status = 'active';
+                        $message->title = 'BOOKING PLAN';
+                        $message->description = "Your Current Plan status is Booking immediately complete and confirm payment.";
+                        $message->status = 'booking';
                         $message->created_by = '1';
                         $message->save();
                     }elseif(strtolower($req->status) == 'issued'){
@@ -127,7 +127,7 @@ class CustomController extends Controller
                         $message->user_id = $update->user->id;
                         $message->title = 'ISSUED PLAN';
                         $message->description = "Your Current Plan status is Issued Please wait for confirmation and more info from Pandu Admin.";
-                        $message->status = 'active';
+                        $message->status = 'issued';
                         $message->created_by = '1';
                         $message->save();
                         
@@ -150,7 +150,7 @@ class CustomController extends Controller
                         $message->user_id = $update->user->id;
                         $message->title = 'TICKETED PLAN';
                         $message->description = "Your Current Plan status is Ticketed Please Check details of your order and itinerary on the application.";
-                        $message->status = 'active';
+                        $message->status = 'ticketed';
                         $message->created_by = '1';
                         $message->save();
                     }

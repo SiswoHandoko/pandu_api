@@ -18,7 +18,7 @@ class CreateSpecialDealsTable extends Migration
             $table->integer('tourism_place_id')->default(0);
             $table->integer('package_id')->default(0);
             $table->integer('rate')->default(0);
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

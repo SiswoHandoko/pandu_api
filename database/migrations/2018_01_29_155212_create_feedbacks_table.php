@@ -17,7 +17,7 @@ class CreateFeedbacksTable extends Migration
             $table->increments('id');
             $table->string('name')->default('');
             $table->text('description')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

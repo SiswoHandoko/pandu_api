@@ -29,7 +29,7 @@ class CreateTourismPlacesTable extends Migration
             $table->integer('rate')->default(0);
             $table->text('address')->default('');
             $table->string('phone')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreateTipTricksTable extends Migration
             $table->integer('city_id')->default(0);
             $table->string('title')->default('');
             $table->text('description')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

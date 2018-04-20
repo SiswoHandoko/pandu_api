@@ -18,7 +18,7 @@ class CreatePrivateguidesTable extends Migration
             $table->integer('private_user_id')->default(0);
             $table->integer('question_id')->default(0);
             $table->string('answer')->default('');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }

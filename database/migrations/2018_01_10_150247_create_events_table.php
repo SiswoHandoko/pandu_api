@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->text('description')->default('');
             $table->dateTime('start_date')->default('0000-00-00 00:00:00');
             $table->dateTime('end_date')->default('0000-00-00 00:00:00');
-            $table->string('status')->default('');
+            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
         });
     }
