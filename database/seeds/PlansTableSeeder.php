@@ -15,7 +15,8 @@ class PlansTableSeeder extends Seeder
         DB::table('plans')->truncate();
 
         $data = [
-            [
+            [   
+                'code' => 'PND0001',
                 'name' => 'Plan A',
                 'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
             	'user_id' => 3,
@@ -32,7 +33,8 @@ class PlansTableSeeder extends Seeder
                 'type' => 'many',
             	'status' => 'hold'
             ],
-            [
+            [   
+                'code' => 'PND0002',
                 'name' => 'Plan B',
                 'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 3,
@@ -49,7 +51,8 @@ class PlansTableSeeder extends Seeder
                 'type' => 'single',
                 'status' => 'hold'
             ],
-            [
+            [   
+                'code' => 'PND0003',
                 'name' => 'Plan C',
                 'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 3,
@@ -66,7 +69,8 @@ class PlansTableSeeder extends Seeder
                 'type' => 'single',
                 'status' => 'hold'
             ],
-            [
+            [   
+                'code' => 'PND0004',
                 'name' => 'Plan D',
                 'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 4,
@@ -83,7 +87,8 @@ class PlansTableSeeder extends Seeder
                 'type' => 'single',
                 'status' => 'hold'
             ],
-            [
+            [   
+                'code' => 'PND0005',
                 'name' => 'Plan E',
                 'background' => 'http://api.dipanduapp.com/public/images/plans/background/default_plan_background.png',
                 'user_id' => 5,
