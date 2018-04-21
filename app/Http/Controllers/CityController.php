@@ -70,6 +70,7 @@ class CityController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $city = new City;
+        $city = $city->with('province');
         $city = $city->where('status', '!=', 'deleted');
 
         // search query
@@ -190,7 +191,10 @@ class CityController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $city = City::where('status','!=','deleted')->find($id);
+        $city = new City();
+        $city = $city->with('province');
+        $city = $city->where('status','!=','deleted');
+        $city = $city->find($id);
 
         if(!$city){
             $result = $this->generate_response($city, 404, 'Data Not Found.', true);
@@ -249,6 +253,7 @@ class CityController extends Controller
                 $city->name = $req->has('name') ? $req->name : $city->name;
                 $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url,$city->image_url) : $city->image_url;
                 $city->status = $req->has('status') ? $req->status : $city->status;
+                $city->province_id = $req->has('province_id') ? $req->province_id : $city->province_id;
                 $city->save();
 
                 $result = $this->generate_response($city,200,'Data Has Been Updated.',false);

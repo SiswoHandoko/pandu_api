@@ -282,6 +282,7 @@ class ProvinceController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $city = new City;
+        $city = $city->with('province');
         $city = $city->where('province_id', $id);
         $city = $city->where('status', '!=', 'deleted');
 
