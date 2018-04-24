@@ -270,3 +270,14 @@ $router->get('/privateuser/{id}', 'PrivateUserController@show');
 $router->post('/privateuser/create', 'PrivateUserController@store');
 $router->put('/privateuser/update/{id}', 'PrivateUserController@update');
 $router->get('/privateuser/delete/{id}', 'PrivateUserController@destroy');
+
+/*
+ | ------------------------------------------
+ | PRIVATE USER ROUTE
+ | ------------------------------------------
+ */
+$router->get('/category', 'CategoryController@index');
+$router->get('/category/{id}', 'CategoryController@show');
+$router->post('/category/create', 'CategoryController@store');
+$router->put('/category/update/{id}', 'CategoryController@update');
+$router->get('/category/delete/{id}', 'CategoryController@destroy');

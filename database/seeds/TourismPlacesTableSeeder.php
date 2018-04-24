@@ -17,7 +17,7 @@ class TourismPlacesTableSeeder extends Seeder
         $data = [
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Monumen Nasional',
             	'description' => 'The National Monument is a 132 m tower in the centre of Merdeka Square, Central Jakarta, symbolizing the fight for Indonesia. It is the national monument of the Republic of Indonesia, built to commemorate the struggle for Indonesian independence.',
                 'adult_price' => '',
@@ -34,7 +34,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Jakarta History Museum',
             	'description' => 'The Jakarta History Museum, also known as Fatahillah Museum or Batavia Museum, is located in the Old Town of Jakarta, Indonesia. The building was built in 1710 as the Stadhuis of Batavia.',
                 'adult_price' => '',
@@ -51,7 +51,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'National Monumen Indonesia',
             	'description' => 'The National Museum of Indonesia, is an archeological, historical, ethnological, and geographical museum located in Jalan Medan Merdeka Barat, Central Jakarta, right on the west side of Merdeka Square.',
                 'adult_price' => '',
@@ -68,7 +68,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Wayang Museum',
             	'description' => 'The Wayang Museum is a museum dedicated to Javan wayang puppetry. The museum is located in Kota Tua, Jakarta, Indonesia.',
                 'adult_price' => '',
@@ -85,7 +85,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum MACAN (Modern and Contemporary Art in Nusantara)',
             	'description' => '',
                 'adult_price' => '',
@@ -102,7 +102,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman mini indonesia indah',
             	'description' => 'Taman Mini Indonesia Indah is a culture-based recreational area located in East Jakarta, Indonesia. It has an area of about 250 acres. Slogan: Kunjungi Taman Mini, Cintai Indonesia (Visit Taman Mini, Love Indonesia) Did you know: Taman Mini is the brainchild of the late Ibu Tien Soeharto, former Indonesian First Lady.',
                 'adult_price' => '',
@@ -119,7 +119,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum of fine arts and ceramics',
             	'description' => 'The Museum of Fine Arts and Ceramics is a museum in Jakarta, Indonesia. The museum is dedicated especially to the display of traditional fine art and ceramics of Indonesia.                ',
                 'adult_price' => '',
@@ -136,7 +136,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'National gallery of indonesia',
             	'description' => 'The National Gallery of Indonesia is a museum and an art gallery in Jakarta, Indonesia. The National Gallery of Indonesia has existed as a cultural institution in the field of visual arts since May 8, 1999.',
                 'adult_price' => '',
@@ -153,7 +153,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Jakarta planetarium and observatory',
             	'description' => 'Jakarta Planetarium and Observatory is a public planetarium and an observatory, part of the Taman Ismail Marzuki art and science complex in Jakarta, Indonesia. The planetarium is the oldest of the three planetaria in Indonesia.',
                 'adult_price' => '',
@@ -170,7 +170,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Textile museum',
             	'description' => 'The Textile Museum is a museum in Palmerah, West Jakarta, Indonesia. The museum houses a collection of textiles from various islands in Indonesia.',
                 'adult_price' => '',
@@ -187,7 +187,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum Bank Indonesia',
             	'description' => 'Bank Indonesia Museum is a bank museum located in Jakarta, Indonesia. It was founded by Bank Indonesia and opened on 21 July 2009.',
                 'adult_price' => '',
@@ -204,7 +204,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Setu Babakan',
             	'description' => 'Setu Babakan or Lake Babakan (Setu or Situ means Small Lake) is located in Srengseng Sawah, Sub-district of Jagakarsa, Municipality of South Jakarta, Indonesia near Depok or around 5 kilometers southeast of Ragunan Zoo at the center of the Betawi Cultural Village, a site considered part of the cultural heritage of Jakarta, which is devoted to the preservation of the indigenous Betawi culture.[1] The location of the Betawi Cultural Village is replacement of the previous Condet (Betawi) Cultural Village which is eroded by the time.',
                 'adult_price' => '',
@@ -221,7 +221,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Alive Museum Ancol',
             	'description' => '',
                 'adult_price' => '',
@@ -238,7 +238,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Istiqlal Mosque',
             	'description' => 'Istiqlal Mosque in Jakarta, Indonesia is the largest mosque in Southeast Asia and the third largest Sunni mosque in term of capacity.',
                 'adult_price' => '',
@@ -255,7 +255,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Cathedral',
             	'description' => 'also the seat of the Roman Catholic Archbishop of Jakarta, currently Archbishop Ignatius Suharyo Hardjoatmodjo.',
                 'adult_price' => '',
@@ -272,7 +272,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Dian Al-Mahri Mosque',
             	'description' => 'Dian Al-Mahri Mosque, also known as Golden Dome Mosque, is a mosque built on the edge of Raya street, Depok City in West Java, Indonesia. Wikipedia',
                 'adult_price' => '',
@@ -289,7 +289,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Utung Jawa',
             	'description' => 'Utung Jawa is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -306,7 +306,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pramuka Island',
             	'description' => 'Pramuka is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -323,7 +323,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Tidung',
             	'description' => 'Tidung is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -340,7 +340,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Macan',
             	'description' => 'Macan is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -357,7 +357,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Bidadari',
             	'description' => 'Bidadari is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -374,7 +374,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Kotok',
             	'description' => 'Kotok is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -391,7 +391,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Sepa',
             	'description' => 'Sepa is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -408,7 +408,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Kelor',
             	'description' => 'Kelor is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -425,7 +425,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Air',
             	'description' => 'Air is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -442,7 +442,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pulau Papatheo',
             	'description' => 'Papatheo  is an island in the Thousand Islands archipelago. The archipelago lies in the western part of the Java Sea and is located north of Indonesia capital Jakarta.',
                 'adult_price' => '',
@@ -459,7 +459,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Ragunan zoo',
             	'description' => 'Ragunan Zoo is a 140-hectare zoo located in Pasar Minggu, South Jakarta, Indonesia. It is a zoo that has an aviary and included a primate centre, and employs over 450 people.',
                 'adult_price' => '',
@@ -476,7 +476,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sea World Indonesia',
             	'description' => 'Sizable, contemporary aquarium with sharks, various feeding shows, a touch tank & concessions.',
                 'adult_price' => '',
@@ -493,7 +493,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Jakarta Aquarium',
             	'description' => 'Neo SOHO Floor LG 101 - LGM 101, Jalan Letjen S. Parman No.28, Tanjung Duren Selatan, Grogol petamburan, Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470',
                 'adult_price' => '',
@@ -510,7 +510,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Wisata Alam Mangrove',
             	'description' => 'Ragunan Zoo is a 140-hectare zoo located in Pasar Minggu, South Jakarta, Indonesia. It is a zoo that has an aviary and included a primate centre, and employs over 450 people.',
                 'adult_price' => '',
@@ -527,7 +527,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Ayodya',
             	'description' => '',
                 'adult_price' => '',
@@ -544,7 +544,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Rekreasi Wiladatika Cibubur',
             	'description' => '',
                 'adult_price' => '',
@@ -561,7 +561,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Ocean Dream Samudra',
             	'description' => 'Aquatic-themed park featuring an underwater theater, fish tanks & performing sea-animal shows.',
                 'adult_price' => '',
@@ -578,7 +578,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Snow Bay Waterpark TMII',
             	'description' => 'Waterpark with a range of rides & attractions, including pools, tubing & slides.',
                 'adult_price' => '',
@@ -595,7 +595,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Atlantis Water Adventure',
             	'description' => 'Sizable waterpark with lots of greenery & attractions such as a wave pool & floating playground.',
                 'adult_price' => '',
@@ -612,7 +612,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Waterbom Jakarta',
             	'description' => 'Expansive, manicured water park renowned for lots of winding slides, pools & family-friendly fun.',
                 'adult_price' => '',
@@ -629,7 +629,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kidzania Pacific Place',
             	'description' => '',
                 'adult_price' => '',
@@ -646,7 +646,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kalijodo Park',
             	'description' => 'Kalijodo Park, is a newly inaugurated urban park at Penjaringan, Jakarta, Indonesia.The park has a land area of 3.4 hectares and located by the side of Krendang River, which was formally opened on 22 February 2017.',
                 'adult_price' => '',
@@ -663,7 +663,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Nasi Goreng Kambing Kebon Sirih',
             	'description' => 'Tempat makan santai dan sederhana menyajikan menu nasi goreng kambing dan ayam, sop, es buah, sate.',
                 'adult_price' => '',
@@ -680,7 +680,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bubur Kwang Tung',
             	'description' => '',
                 'adult_price' => '',
@@ -697,7 +697,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bubur ayam Barito',
             	'description' => '',
                 'adult_price' => '',
@@ -714,7 +714,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Roti Bakar Eddy',
             	'description' => '',
                 'adult_price' => '',
@@ -731,7 +731,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Cemara',
             	'description' => '',
                 'adult_price' => '',
@@ -748,7 +748,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -765,7 +765,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -782,7 +782,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -799,7 +799,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -816,7 +816,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -833,7 +833,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -850,7 +850,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -867,7 +867,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -884,7 +884,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -901,7 +901,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -918,7 +918,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Boplo',
             	'description' => '',
                 'adult_price' => '',
@@ -935,7 +935,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gado-gado Bon Bin',
             	'description' => '',
                 'adult_price' => '',
@@ -952,7 +952,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Cafe Batavia',
             	'description' => '',
                 'adult_price' => '',
@@ -969,7 +969,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bandar Jakarta',
             	'description' => '',
                 'adult_price' => '',
@@ -986,7 +986,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Warung Nagih',
             	'description' => 'Tempat makan outdoor yg santai menyajikan aneka jajanan khas Indonesia, seperti roti bakar, dll.',
                 'adult_price' => '',
@@ -1003,7 +1003,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gulai Tikungan',
             	'description' => '',
                 'adult_price' => '',
@@ -1020,7 +1020,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Seafood 212 Wiro Sableng',
             	'description' => '',
                 'adult_price' => '',
@@ -1037,7 +1037,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sarang Oci',
             	'description' => 'Rumah makan yg menyajikan masakan khas Manado dengan bahan berkualitas dan layanan home delivery.',
                 'adult_price' => '',
@@ -1054,7 +1054,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Mbah Jingkrak',
             	'description' => 'Tempat makan yg unik dan nyaman,menyajikan aneka hidangan khas Jawa disertai alunan lagu jawa live.',
                 'adult_price' => '',
@@ -1071,7 +1071,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Mamink Daeng Tata',
             	'description' => '',
                 'adult_price' => '',
@@ -1088,7 +1088,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Soto Betawi Haji Amir 21',
             	'description' => '',
                 'adult_price' => '',
@@ -1105,7 +1105,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Ikan Bakar Ujung Pandang',
             	'description' => '',
                 'adult_price' => '',
@@ -1122,7 +1122,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Rumah Makan Pagi Sore',
             	'description' => '',
                 'adult_price' => '',
@@ -1139,7 +1139,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Tahu Pong Semarang',
             	'description' => '',
                 'adult_price' => '',
@@ -1156,7 +1156,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Begor Pondok Suryo',
             	'description' => 'Restoran yg nyaman menghidangkan aneka menu khas Surabaya, terkenal dengan menu nasi bebek goreng.',
                 'adult_price' => '',
@@ -1173,7 +1173,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Ketan Susu Kemayoran',
             	'description' => '',
                 'adult_price' => '',
@@ -1190,7 +1190,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Ragusa Es Italia',
             	'description' => '',
                 'adult_price' => '',
@@ -1207,7 +1207,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Toko Kopi Tuku',
             	'description' => '',
                 'adult_price' => '',
@@ -1224,7 +1224,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Animo Bakery',
             	'description' => '',
                 'adult_price' => '',
@@ -1241,7 +1241,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Huize Trivelli Heritage Resto & Patisserie',
             	'description' => '',
                 'adult_price' => '',
@@ -1258,7 +1258,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 515,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Soto Padang H.St. Mangkuto',
             	'description' => '',
                 'adult_price' => '',
@@ -1275,7 +1275,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
             [
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Sari',
             	'description' => 'Taman Sari Yogyakarta atau Taman Sari Keraton Yogyakarta adalah situs bekas taman atau kebun istana Keraton Ngayogyakarta Hadiningrat, yang dapat dibandingkan dengan Kebun Raya Bogor sebagai kebun Istana Bogor. Wikipedia',
                 'adult_price' => '',
@@ -1292,7 +1292,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Keraton Yogyakarta',
             	'description' => 'Keraton Ngayogyakarta Hadiningrat atau Keraton Yogyakarta merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kini berlokasi di Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia. Wikipedia',
                 'adult_price' => '',
@@ -1309,7 +1309,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Alun-alun kidul Yogyakarta',
             	'description' => 'Lapangan berumput di belakang istana kerajaan ini menjadi lokasi rekreasi ramai pada siang & malam.',
                 'adult_price' => '',
@@ -1326,7 +1326,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Candi Prambanan',
             	'description' => 'Candi Prambanan atau Candi Roro Jonggrang adalah kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Wikipedia',
                 'adult_price' => '',
@@ -1343,7 +1343,7 @@ class TourismPlacesTableSeeder extends Seeder
             ],
             [
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Monumen Jogja Kembali',
             	'description' => 'Museum Monumen Yogya Kembali, adalah sebuah museum sejarah perjuangan kemerdekaan Republik Indonesia yang ada di kota Yogyakarta dan dikelola oleh Departemen Kebudayaan dan Pariwisata. Wikipedia
                 Alamat: Jalan Ring Road Utara, Sari Harjo, Ngaglik, Sariharjo, Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581',
@@ -1361,7 +1361,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Tugu Jogja',
             	'description' => 'Tugu Yogyakarta adalah sebuah tugu atau monumen yang sering dipakai sebagai simbol atau lambang dari kota Yogyakarta. Tugu ini dibangun oleh pemerintah Belanda setelah tugu sebelumnya runtuh akibat gempa yang terjadi waktu itu.Wikipedia',
                 'adult_price' => '',
@@ -1378,7 +1378,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Candi Sari',
             	'description' => 'Candi Sari juga disebut Candi Bendah adalah candi Buddha yang berada tidak jauh dari Candi Sambi Sari, Candi Kalasan dan Candi Prambanan, yaitu di bagian sebelah timur laut dari kota Yogyakarta, dan tidak begitu jauh dari Bandara Adisucipto. Wikipedia',
                 'adult_price' => '',
@@ -1395,7 +1395,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Candi Ijo',
             	'description' => 'Candi Ijo adalah sebuah kompleks percandian bercorak Hindu, berada 4 kilometer arah tenggara dari Candi Ratu Boko atau kira-kira 18 kilometer di sebelah timur kota Yogyakarta. Wikipedia',
                 'adult_price' => '',
@@ -1412,7 +1412,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum Vrederburg',
             	'description' => 'Museum Benteng Vredeburg adalah sebuah benteng yang terletak di depan Gedung Agung dan Kraton Kesultanan Yogyakarta. Sekarang, benteng ini menjadi sebuah museum. Di sejumlah bangunan di dalam benteng ini terdapat diorama mengenai sejarah Indonesia. Wikipedia',
                 'adult_price' => '',
@@ -1429,7 +1429,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum Ullen Sentalu',
             	'description' => 'Museum Ullen Sentalu, terletak di daerah Pakem, Kaliurang, Kabupaten Sleman, adalah museum yang menampilkan budaya dan kehidupan para bangsawan Dinasti Mataram beserta koleksi bermacam-macam batik. Wikipedia',
                 'adult_price' => '',
@@ -1446,7 +1446,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Affandi Museum',
             	'description' => 'Museum Affandi merupakan salah satu museum seni di Provinsi Daerah Istimewa Yogyakarta, Indonesia. Museum yang berada di tepi Sungai Gajah Wong ini menyimpan berbagai macam lukisan karya Affandi. Wikipedia',
                 'adult_price' => '',
@@ -1463,7 +1463,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum Batik Yogyakarta',
             	'description' => 'Museum Batik Yogyakarta adalah museum batik pertama di Yogyakarta didirikan atas prakarsa Hadi Nugroho, pemilik museum. Museum swasta ini terletak di Jalan Dr. Sutomo, Kota Yogyakarta. Wikipedia',
                 'adult_price' => '',
@@ -1480,7 +1480,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'De ARCA Statue Art Museum',
             	'description' => 'Museum dengan patung lilin yang sangat mirip dengan artis, politisi & karakter film internasional.',
                 'adult_price' => '',
@@ -1497,7 +1497,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Museum Ullen Sentalu',
             	'description' => 'Museum Ullen Sentalu, terletak di daerah Pakem, Kaliurang, Kabupaten Sleman, adalah museum yang menampilkan budaya dan kehidupan para bangsawan Dinasti Mataram beserta koleksi bermacam-macam batik.Wikipedia',
                 'adult_price' => '',
@@ -1514,7 +1514,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Mesjid Gedhe Kauman',
             	'description' => 'Mesjid Gedhe Kauman adalah masjid raya Kesultanan Yogyakarta, atau Masjid Besar Yogyakarta, yang terletak di sebelah barat kompleks Alun-alun Utara Kraton Yogyakarta. Wikipedia',
                 'adult_price' => '',
@@ -1531,7 +1531,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Mesjid Agung Kota Gede',
             	'description' => '',
                 'adult_price' => '',
@@ -1548,7 +1548,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gereja Ganjuran',
             	'description' => 'Gereja Hati Kudus Yesus merupakan gereja Katolik Roma di Ganjuran, Bantul, Indonesia. Gereja ini juga dikenal dengan nama Gereja Ganjuran, berdasarkan tempat letaknya. Gereja ini merupakan gereja tertua di Bantul. Wikipedia',
                 'adult_price' => '',
@@ -1565,7 +1565,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sendang Sono',
             	'description' => 'Sendangsono adalah tempat ziarah Goa Maria yang terletak di Desa Banjaroyo, Kecamatan Kalibawang, Kabupaten Kulon Progo, DI Yogyakarta. Gua Maria Sendangsono dikelola oleh Paroki St. Maria Lourdes di Promasan, barat laut Yogyakarta. Wikipedia',
                 'adult_price' => '',
@@ -1582,7 +1582,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pura Vaikuntha Vyomantara',
             	'description' => '',
                 'adult_price' => '',
@@ -1599,7 +1599,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Goa Maria Tritis',
             	'description' => '',
                 'adult_price' => '',
@@ -1616,7 +1616,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Klenteng Gendomanan',
             	'description' => 'Kelenteng Fuk Ling Miau atau Kelenteng Gondomanan merupakan tempat peribadatan umat agama Kong Hu Cu dan agama Buddha yang berlokasi di DI Yogyakarta. Wikipedia',
                 'adult_price' => '',
@@ -1633,7 +1633,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sendang Sriningsih',
             	'description' => '',
                 'adult_price' => '',
@@ -1650,7 +1650,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bukit Doa Emalta',
             	'description' => 'Objek Wisata Bukit Doa Emalta di Pakem Sleman Yogyakarta adalah salah satu tempat wisata yang berada di JL. Telogo Putri, Kaliurang, Desa Hargobinangun, Kecamatan Pakem, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia.',
                 'adult_price' => '',
@@ -1667,7 +1667,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Drini',
             	'description' => 'Pantai Drini adalah salah satu objek wisata yang terletak di Desa Banjarejo, Kecamatan Tanjungsari, Gunungkidul, Yogyakarta. Letaknya di sebelah timur pantai Baron dan berjarak sekitar 1 km ke arah timur Pantai Sepanjang. Wikipedia',
                 'adult_price' => '',
@@ -1684,7 +1684,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Pok Tunggal',
             	'description' => 'Pantai Pok Tunggal masih berada di kawasan Gunungkidul, Yogyakarta. Tepatnya berada di Desa Tepus, Kecamatan Tepus, Kabupaten Gunungkidul, Yogyakarta. Lokasinya berada di antara Pantai Pulang Syawal dan [[Pantai Siung]]. Wikipedia',
                 'adult_price' => '',
@@ -1701,7 +1701,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Sadranan',
             	'description' => '',
                 'adult_price' => '',
@@ -1718,7 +1718,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Nglambor',
             	'description' => '',
                 'adult_price' => '',
@@ -1735,7 +1735,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Baron',
             	'description' => 'Pantai Baron adalah salah satu objek wisata berupa pantai yang terletak di Desa Kemadang, Kecamatan Tanjungsari, Kabupaten Gunungkidul. Lokasi Pantai Baron dapat ditempuh 40 km daeri pusat kota Yogyakarta.Wikipedia',
                 'adult_price' => '',
@@ -1752,7 +1752,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Pulang Syawal',
             	'description' => 'Pantai Pulang Sawal atau disingkat dengan Pantai Pulsa adalah salah satu pantai yang menarik dan eksotis berada di Dusun Ngasem, Desa Sidoharjo, Kecamatan Tepus, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.',
                 'adult_price' => '',
@@ -1769,7 +1769,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Sepanjang',
             	'description' => '',
                 'adult_price' => '',
@@ -1786,7 +1786,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Sadeng',
             	'description' => '',
                 'adult_price' => '',
@@ -1803,7 +1803,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Krakal',
             	'description' => '',
                 'adult_price' => '',
@@ -1820,7 +1820,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pantai Wediombo',
             	'description' => 'Pantai yang termasuk rekomendasi wisata pantai di yogyakarta ini terletak di kelurahan  Jepitu, Kec Girisubo, Kab Gunung Kidul, Yogyakarta. Pantai wedi ombo ini memang terletak agak jauh dari pantai-pantai yang lain, seperti pantai indrayanti, pantai krakal, pantai baron.',
                 'adult_price' => '',
@@ -1837,7 +1837,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => 'Desa Wisata Pentingsari',
+            	'category_id' => 'Desa Wisata Pentingsari',
             	'name' => '',
             	'description' => '',
                 'adult_price' => '',
@@ -1854,7 +1854,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Desa Wisata Pulesari',
             	'description' => '',
                 'adult_price' => '',
@@ -1871,7 +1871,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Wisata Plawangan Turgo',
             	'description' => 'Taman Wisata Plawangan Turgo merupakan tempat wisata alam yang termasuk dalam bagian dari Taman Nasional Gunung Merapi. Secara administratif, letak dari Taman Wisata Plawangan Turgo berada di Desa Hargobinangun Pakem Sleman Yogyakarta. Di Taman Wisata Plawangan Turgo terdapat Bukit Plawangan yang menawarkan keindahan pemandangan Kaliurang dari atas ketinggian. Letak Bukit Plawangan berada di sebelah timur Bukit Turgo dan di sebelah barat Tlogo Muncar. Terdapat dua jalur untuk bisa menuju puncak Bukit Plawangan, yaitu melalui jalur Tlogo Muncar atau yang lebih dikenal dengan Hutan Wisata TNGM Kaliurang. Jalur kedua adalah melalui bekas area Tlogo Nirmala yang berada di sebelah barat bumi perkemahan Kaliurang.',
                 'adult_price' => '',
@@ -1888,7 +1888,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Hutan Pinus Mangunan',
             	'description' => '',
                 'adult_price' => '',
@@ -1905,7 +1905,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Pemandian Tirta Budi',
             	'description' => 'Blue Lagoon Tirta Budi terletak di dusun Dalem, Widodomartani, Ngemplak, Sleman, Yogyakarta. Sebuah kolam ceruk kecil di bawah rimbunnya pohon-pohon bambu bagian dari aliran sungai  dengan air bening segar berwarna biru hingga disebut BLue Lagoon. Kedalamannya bervariasi dari 1 meter sampai 3 meter di lokasi yang paling dalam.',
                 'adult_price' => '',
@@ -1922,7 +1922,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Air Terjun Lepo',
             	'description' => '',
                 'adult_price' => '',
@@ -1939,7 +1939,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Cave Tubing Kalisuci',
             	'description' => 'Wisata Cave tubing Kalisuci akan ditutup saat curah hujan tinggi, karena itu bagi wisatawan yang hendak cave tubing harap menghubungi pengelola yang terdiri dari penduduk lokal beberapa hari sebelumnya untuk memastikan kondisi sungai',
                 'adult_price' => '',
@@ -1956,7 +1956,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kalibiru',
             	'description' => '',
                 'adult_price' => '',
@@ -1973,7 +1973,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gunung Merapi (Jeep Lava Tour)',
             	'description' => '',
                 'adult_price' => '',
@@ -1990,7 +1990,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gua Jomblang',
             	'description' => '',
                 'adult_price' => '',
@@ -2007,7 +2007,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Cave Tubing Goa Pindul',
             	'description' => 'Gua Pindul adalah objek wisata berupa gua yang terletak di Desa Bejiharjo, Kecamatan Karangmojo, Kabupaten Gunungkidul. Wikipedia',
                 'adult_price' => '',
@@ -2024,7 +2024,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kedung Pedut',
             	'description' => 'Air Terjun Kedung Pedut atau biasa disebut Curug Kedung Pedutberasal dari istilah bahasa Jawa. Curug yang berarti air terjun, kedung berarti kubangan atau kolam, dan pedut berarti kabut. Wikipedia',
                 'adult_price' => '',
@@ -2041,7 +2041,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Pintar Yogyakarta',
             	'description' => 'Taman Pintar Yogyakarta adalah wahana wisata yang terdapat di pusat Kota Yogyakarta, tepatnya di Jalan Panembahan Senopati No. 1-3, Yogyakarta, di kawasan Benteng Vredeburg. Wikipedia',
                 'adult_price' => '',
@@ -2058,7 +2058,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kebun Binatang Gembira Loka',
             	'description' => 'Kebun Binatang Gembira Loka adalah kebun binatang yang berada di Yogyakarta. Berisi berbagai macam spesies dari belahan dunia, seperti orangutan, gajah asia, simpanse, harimau, dan lain sebagainya.Wikipedia',
                 'adult_price' => '',
@@ -2075,7 +2075,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Budaya Yogyakarta',
             	'description' => 'Taman Budaya Yogyakarta adalah sarana wisata yang terletak di Jalan Sri Wedani No 1, Yogyakarta. TBY memiliki kompleks gedung yang berfungsi sebagai tempat pameran, pertunjukan, dan berbagai kegiatan seni lainnya. Wikipedia',
                 'adult_price' => '',
@@ -2092,7 +2092,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Taman Lampion',
             	'description' => '',
                 'adult_price' => '',
@@ -2109,7 +2109,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sindu Kusuma Edu Park',
             	'description' => 'Taman hiburan dengan wahana untuk anak & dewasa, termasuk bianglala raksasa, zipline, & Segway.',
                 'adult_price' => '',
@@ -2126,7 +2126,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Grand Puri Waterpark',
             	'description' => 'Jl. Parangtritis KM. 9,5, Gabusan, Sewon, Timbulharjo, Kec. Bantul, Bantul, Daerah Istimewa Yogyakarta 55186',
                 'adult_price' => '',
@@ -2143,7 +2143,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'XT Square',
             	'description' => '',
                 'adult_price' => '',
@@ -2160,7 +2160,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gudeg Pawon',
             	'description' => '',
                 'adult_price' => '',
@@ -2177,7 +2177,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bong Kopitown',
             	'description' => '',
                 'adult_price' => '',
@@ -2194,7 +2194,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sate Klathak Pak Pong',
             	'description' => '',
                 'adult_price' => '',
@@ -2211,7 +2211,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'The House of Raminten',
             	'description' => 'Rumah makan dengan alunan gamelan serta lesehan, menikmati nasi kucing dan jamu, serta menu lainnya.',
                 'adult_price' => '',
@@ -2228,7 +2228,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Angkringan Lik Man',
             	'description' => '',
                 'adult_price' => '',
@@ -2245,7 +2245,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Bakmi Shibitsu',
             	'description' => '',
                 'adult_price' => '',
@@ -2262,7 +2262,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Entok Slenget Kang Tanir',
             	'description' => '',
                 'adult_price' => '',
@@ -2279,7 +2279,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'jejamuran',
             	'description' => '',
                 'adult_price' => '',
@@ -2296,7 +2296,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Gudeg Yu Djum Wijilan 167',
             	'description' => '',
                 'adult_price' => '',
@@ -2313,7 +2313,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Warung makan ayam geprek bu Rum 1',
             	'description' => '',
                 'adult_price' => '',
@@ -2330,7 +2330,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Warung Kopi Klotok',
             	'description' => '',
                 'adult_price' => '',
@@ -2347,7 +2347,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Soto Bathok Mbah Katro',
             	'description' => '',
                 'adult_price' => '',
@@ -2364,7 +2364,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Oseng-oseng Mercon Bu Narti',
             	'description' => '',
                 'adult_price' => '',
@@ -2381,7 +2381,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Sate Buntel Tambak Segaran',
             	'description' => '',
                 'adult_price' => '',
@@ -2398,7 +2398,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Kalimilk ',
             	'description' => '',
                 'adult_price' => '',
@@ -2415,7 +2415,7 @@ class TourismPlacesTableSeeder extends Seeder
 			],
 			[
                 'city_id' => 227,
-            	'category' => '',
+            	'category_id' => '',
             	'name' => 'Tempo Gelato',
             	'description' => '',
                 'adult_price' => '',

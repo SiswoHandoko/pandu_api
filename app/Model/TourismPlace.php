@@ -17,7 +17,7 @@ class TourismPlace extends Model
      * @var array
      */
     protected $fillable = [
-        'city_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status'
+        'city_id', 'category_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status'
     ];
 
     /**
@@ -65,6 +65,14 @@ class TourismPlace extends Model
     */
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
+    }
+
+    /**
+    * One to One relationships
+    */
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
 }

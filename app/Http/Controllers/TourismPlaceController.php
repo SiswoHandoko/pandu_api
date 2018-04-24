@@ -68,7 +68,7 @@ class TourismPlaceController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $tourismplace = new TourismPlace;
-        $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
+        $tourismplace = $tourismplace->with('city.province', 'picture', 'event', 'category');
         $tourismplace = $tourismplace->where('status', '!=', 'deleted');
 
         // search query
@@ -275,7 +275,7 @@ class TourismPlaceController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->find($id);
+        $tourismplace = TourismPlace::with('city.province', 'picture', 'event','category')->where('status', '!=', 'deleted')->find($id);
         
         if (!$tourismplace) {
             $result = $this->generate_response($tourismplace, 404, 'Data Not Found.', true);
@@ -418,7 +418,7 @@ class TourismPlaceController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $event = new Event;
-        $event = $event->with('tourismplace');
+        $event = $event->with('tourismplace','tourismplace.category');
         $event = $event->where('tourism_place_id', $id);
         $event = $event->where('status', '!=', 'deleted');
 
@@ -495,7 +495,7 @@ class TourismPlaceController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $picture = new Picture;
-        $picture = $picture->with('tourismplace');
+        $picture = $picture->with('tourismplace','tourismplace.category');
         $picture = $picture->where('tourism_place_id', $id);
         $picture = $picture->where('status', '!=', 'deleted');
 

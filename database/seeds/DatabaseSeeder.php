@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call('SpecialDealsTableSeeder');
         $this->call('TipTricksTableSeeder');
         $this->call('InfoPaymentsTableSeeder');
+        $this->call('CategoriesTableSeeder');
     }
 }
