@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1af45c2d-76d6-4682-a9cb-ede3836a67ee",
+		"_postman_id": "1be10c10-355b-4bc0-9f07-7306624bf4e2",
 		"name": "Pandu",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -75,7 +75,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/public/user",
+							"raw": "{{url}}/public/user?",
 							"host": [
 								"{{url}}"
 							],
@@ -359,7 +359,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/public/user/3/plans",
+							"raw": "{{url}}/public/user/3/plans?",
 							"host": [
 								"{{url}}"
 							],
@@ -497,7 +497,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/public/specialdeal",
+							"raw": "{{url}}/public/specialdeal?",
 							"host": [
 								"{{url}}"
 							],
@@ -862,7 +862,6 @@
 								{
 									"key": "description",
 									"value": "apa",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -982,7 +981,6 @@
 								{
 									"key": "description",
 									"value": "",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -1341,7 +1339,6 @@
 								{
 									"key": "description",
 									"value": "test",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -2513,37 +2510,31 @@
 								{
 									"key": "answer[0]",
 									"value": "Example1",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "answer[1]",
 									"value": "Example2",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "answer[2]",
 									"value": "Example3",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "answer[3]",
 									"value": "Example4",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "answer[4]",
 									"value": "Example5",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "status",
 									"value": "active",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -2600,13 +2591,11 @@
 								{
 									"key": "status",
 									"value": "active",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "is_read",
 									"value": "1",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -2635,6 +2624,172 @@
 							"raw": ""
 						},
 						"url": "{{url}}/public/message/7",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"description": null,
+			"item": [
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/public/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"category"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/public/category/2",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/public/category/delete/3",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sample Category",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{url}}/public/category/create",
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "samples",
+									"type": "text",
+									"description": "Required"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/public/category/update/5",
 						"description": "Get Province By Id"
 					},
 					"response": []
