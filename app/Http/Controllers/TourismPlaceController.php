@@ -247,7 +247,7 @@ class TourismPlaceController extends Controller
             $tourismplace->status = $req->has('status') ? $req->status : 'active';
             $tourismplace->address = $req->has('address') ? $req->address : '';
             $tourismplace->phone = $req->has('phone') ? $req->phone : '';
-            $tourismplace->category = $req->has('category') ? $req->category : '';
+            $tourismplace->category_id = $req->has('category_id') ? $req->category_id : '';
 
             $tourismplace->save();
 
@@ -351,7 +351,7 @@ class TourismPlaceController extends Controller
                 $tourismplace->status = $req->has('status') ? $req->status : $tourismplace->status;
                 $tourismplace->address = $req->has('address') ? $req->address : $tourismplace->address;
                 $tourismplace->phone = $req->has('phone') ? $req->phone : $tourismplace->phone;
-                $tourismplace->category = $req->has('category') ? $req->category : $tourismplace->category;
+                $tourismplace->category_id = $req->has('category_id') ? $req->category_id : $tourismplace->category_id;
                 $tourismplace->status = $req->has('status') ? $req->status : $tourismplace->status;
 
                 $tourismplace->save();
