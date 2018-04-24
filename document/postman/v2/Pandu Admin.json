@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "958179c6-235a-4fc8-bbc2-a197b39e3e8f",
+		"_postman_id": "14dc498c-794a-45b1-9c26-c28b5e2a229e",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -845,8 +845,8 @@
 									"description": "Required"
 								},
 								{
-									"key": "category",
-									"value": "wisata",
+									"key": "category_id",
+									"value": "",
 									"type": "text",
 									"description": "Required"
 								},
@@ -955,8 +955,8 @@
 									"description": "Required"
 								},
 								{
-									"key": "category",
-									"value": "wisata",
+									"key": "category_id",
+									"value": "",
 									"description": "Required",
 									"type": "text"
 								},
@@ -2704,7 +2704,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/public/category",
+							"raw": "{{url}}/public/category?",
 							"host": [
 								"{{url}}"
 							],
