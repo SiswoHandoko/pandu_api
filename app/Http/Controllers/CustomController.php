@@ -180,18 +180,43 @@ class CustomController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $result['tourism_place']            = TourismPlace::where('status', 'active')->count();
-        $result['package']                  = Package::where('status', 'active')->count();
-        $result['plan']                     = Plan::count();
-        $result['user']                     = User::where('status', 'active')->count();
-        $result['last_ten_transactions']    = Plan::orderBy('created_at', 'desc')->get();
-        $result['top_five_tourism_places']  = DB::table('plan_details')
-                                                ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
-                                                ->select('tourism_places.*', DB::raw('count(*) as total'))
-                                                ->groupBy('tourism_place_id')
-                                                ->orderBy('total', 'desc')
-                                                ->get();
-        
+        if($req->input('city_id')){
+            $city_id = $req->input('city_id');
+            $result['tourism_place']            = TourismPlace::where('status', 'active')->where('city_id', $city_id)->count();
+            $result['package']                  = Package::with('packagedetail.tourismplace')->where('status', 'active')->whereHas('packagedetail.tourismplace', function($query) use ($city_id) {
+                $query->where('city_id' , $city_id);
+            })->count();
+            $result['plan']                     = Plan::with('plandetail.tourismplace')->where('status', 'active')->whereHas('plandetail.tourismplace', function($query) use ($city_id) {
+                $query->where('city_id' , $city_id);
+            })->count();
+            $result['user']                     = User::where('status', 'active')->count();
+            $result['last_ten_transactions']    = Plan::with('plandetail.tourismplace')->where('status', 'active')->whereHas('plandetail.tourismplace', function($query) use ($city_id) {
+                $query->where('city_id' , $city_id);
+            })->orderBy('created_at', 'desc')->get();
+            $result['top_ten_tourism_places']   = DB::table('plan_details')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->select('tourism_places.*', DB::raw('count(*) as total'))
+                                                    ->where('tourism_places.city_id',$city_id)
+                                                    ->groupBy('tourism_place_id')
+                                                    ->orderBy('total', 'desc')
+                                                    ->limit(10)
+                                                    ->get();
+        }else{
+            $result['tourism_place']            = TourismPlace::where('status', 'active')->count();
+            $result['package']                  = Package::where('status', 'active')->count();
+            $result['plan']                     = Plan::count();
+            $result['user']                     = User::where('status', 'active')->count();
+            $result['last_ten_transactions']    = Plan::orderBy('created_at', 'desc')->get();
+            $result['top_ten_tourism_places']   = DB::table('plan_details')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->select('tourism_places.*', DB::raw('count(*) as total'))
+                                                    ->groupBy('tourism_place_id')
+                                                    ->orderBy('total', 'desc')
+                                                    ->limit(10)
+                                                    ->get();
+        }
+
+
         $result = $this->generate_response($result, 200, 'All Data.', false);
 
         $this->update_access_log($access_log_id, $result);
