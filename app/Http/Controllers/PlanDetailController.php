@@ -21,7 +21,11 @@ class PlanDetailController extends Controller
         'total_price_infant',
         'total_price_tourist',
         'no_ticket',
-        'status'
+        'status',
+        'total_adult',
+        'total_child',
+        'total_infant',
+        'total_tourist'
     );
 
     /**
@@ -162,6 +166,10 @@ class PlanDetailController extends Controller
                 $plandetail->tourist_price = $tourismplace['tourist_price'];
                 $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
                 $plandetail->status = $req->has('status') ? $req->status : 'active';
+                $plandetail->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
+                $plandetail->total_child = $req->has('total_child') ? $req->total_child : 0;
+                $plandetail->total_infant = $req->has('total_infant') ? $req->total_infant : 0;
+                $plandetail->total_tourist = $req->has('total_tourist') ? $req->total_tourist : 0;
 
                 $plandetail->save();
 
@@ -292,6 +300,10 @@ class PlanDetailController extends Controller
                 $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : $plandetail->tourist_price;
                 $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
                 $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
+                $plandetail->total_adult = $req->has('total_adult') ? $req->total_adult : $plandetail->total_adult;
+                $plandetail->total_child = $req->has('total_child') ? $req->total_child : $plandetail->total_child;
+                $plandetail->total_infant = $req->has('total_infant') ? $req->total_infant : $plandetail->total_infant;
+                $plandetail->total_tourist = $req->has('total_tourist') ? $req->total_tourist : $plandetail->total_tourist;
 
                 $plandetail->save();
 
