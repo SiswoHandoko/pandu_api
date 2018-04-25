@@ -164,7 +164,7 @@ class PlanDetailController extends Controller
                 $plandetail->child_price = $tourismplace['child_price'];
                 $plandetail->infant_price = $tourismplace['infant_price'];
                 $plandetail->tourist_price = $tourismplace['tourist_price'];
-                $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '';
+                $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : '-';
                 $plandetail->status = $req->has('status') ? $req->status : 'active';
                 $plandetail->total_adult = $req->has('total_adult') ? $req->total_adult : 0;
                 $plandetail->total_child = $req->has('total_child') ? $req->total_child : 0;
@@ -268,10 +268,10 @@ class PlanDetailController extends Controller
             'start_time' => 'required',
             'end_time' => 'required',
             'day' => 'required|numeric|min:0',
-            'adult_price' => 'required|numeric|min:0',
-            'child_price' => 'required|numeric|min:0',
-            'infant_price' => 'required|numeric|min:0',
-            'tourist_price' => 'required|numeric|min:0'
+            // 'adult_price' => 'required|numeric|min:0',
+            // 'child_price' => 'required|numeric|min:0',
+            // 'infant_price' => 'required|numeric|min:0',
+            // 'tourist_price' => 'required|numeric|min:0'
         ]);
 
         if($validator->fails()) {
@@ -282,7 +282,7 @@ class PlanDetailController extends Controller
             return response()->json($result, 400);
         }else{
             $plandetail = PlanDetail::where('status', '!=', 'deleted')->find($id);
-
+            
             if (!$plandetail) {
                 $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
 
@@ -290,28 +290,49 @@ class PlanDetailController extends Controller
 
                 return response()->json($result, 404);
             } else {
-                $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
-                $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
-                $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
-                $plandetail->day = $req->has('day') ? $req->day : $plandetail->day;
-                $plandetail->adult_price = $req->has('adult_price') ? $req->adult_price : $plandetail->adult_price;
-                $plandetail->child_price = $req->has('child_price') ? $req->child_price : $plandetail->child_price;
-                $plandetail->infant_price = $req->has('infant_price') ? $req->infant_price : $plandetail->infant_price;
-                $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : $plandetail->tourist_price;
-                $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
-                $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
-                $plandetail->total_adult = $req->has('total_adult') ? $req->total_adult : $plandetail->total_adult;
-                $plandetail->total_child = $req->has('total_child') ? $req->total_child : $plandetail->total_child;
-                $plandetail->total_infant = $req->has('total_infant') ? $req->total_infant : $plandetail->total_infant;
-                $plandetail->total_tourist = $req->has('total_tourist') ? $req->total_tourist : $plandetail->total_tourist;
+                $tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : 0;
 
-                $plandetail->save();
+                $tourismplace = TourismPlace::with('city.province', 'picture', 'event')->where('status', '!=', 'deleted')->find($tourism_place_id);
+                $tourismplace = collect($tourismplace)->toArray();
 
-                $result = $this->generate_response($plandetail, 200, 'Data Has Been Updated.', false);
+                if ($tourismplace) {
+                    $plandetail = new PlanDetail();
+                    $plandetail = $plandetail->find($id);
 
-                $this->update_access_log($access_log_id, $result);
+                    $plandetail->tourism_place_id = $req->has('tourism_place_id') ? $req->tourism_place_id : $plandetail->tourism_place_id;
+                    $plandetail->start_time = $req->has('start_time') ? $req->start_time : $plandetail->start_time;
+                    $plandetail->end_time = $req->has('end_time') ? $req->end_time : $plandetail->end_time;
+                    $plandetail->day = $req->has('day') ? $req->day : $plandetail->day;
+                    // $plandetail->adult_price = $req->has('adult_price') ? $req->adult_price : $plandetail->adult_price;
+                    // $plandetail->child_price = $req->has('child_price') ? $req->child_price : $plandetail->child_price;
+                    // $plandetail->infant_price = $req->has('infant_price') ? $req->infant_price : $plandetail->infant_price;
+                    // $plandetail->tourist_price = $req->has('tourist_price') ? $req->tourist_price : $plandetail->tourist_price;
+                    $plandetail->no_ticket = $req->has('no_ticket') ? $req->no_ticket : $plandetail->no_ticket;
+                    $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
+                    $plandetail->adult_price = $tourismplace['adult_price'];
+                    $plandetail->child_price = $tourismplace['child_price'];
+                    $plandetail->infant_price = $tourismplace['infant_price'];
+                    $plandetail->tourist_price = $tourismplace['tourist_price'];
+                    $plandetail->total_adult = $req->has('total_adult') ? $req->total_adult : $plandetail->total_adult;
+                    $plandetail->total_child = $req->has('total_child') ? $req->total_child : $plandetail->total_child;
+                    $plandetail->total_infant = $req->has('total_infant') ? $req->total_infant : $plandetail->total_infant;
+                    $plandetail->total_tourist = $req->has('total_tourist') ? $req->total_tourist : $plandetail->total_tourist;
+                    $plandetail->status = $req->has('status') ? $req->status : $plandetail->status;
 
-                return response()->json($result, 200);
+                    $plandetail->save();
+
+                    $result = $this->generate_response($plandetail, 200, 'Data Has Been Updated.', false);
+
+                    $this->update_access_log($access_log_id, $result);
+
+                    return response()->json($result, 200);
+                } else {
+                    $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
+
+                    $this->update_access_log($access_log_id, $result);
+
+                    return response()->json($result, 400);
+                }
             }
         }
     }
