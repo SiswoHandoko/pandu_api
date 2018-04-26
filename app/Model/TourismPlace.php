@@ -17,7 +17,7 @@ class TourismPlace extends Model
      * @var array
      */
     protected $fillable = [
-        'city_id', 'category_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status'
+        'city_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status'
     ];
 
     /**
@@ -26,7 +26,7 @@ class TourismPlace extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at', 'city_id'
+        'created_at', 'updated_at', 'city_id','category_id'
     ];
 
     /**
