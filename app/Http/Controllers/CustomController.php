@@ -188,7 +188,7 @@ class CustomController extends Controller
         if($req->input('city_id')){
             /** Set Params */
             $city_id = $req->input('city_id');
-            $this_date = '2018-04-26';
+            $this_date = date('Y-m-d');
    
             $result['tourism_place']            = TourismPlace::where('status', 'active')->where('city_id', $city_id)->count();
             $result['package']                  = Package::with('packagedetail.tourismplace')->where('status', 'active')->whereHas('packagedetail.tourismplace', function($query) use ($city_id) {
@@ -231,8 +231,7 @@ class CustomController extends Controller
                                                     ->get());
         }else{
             /** Set Params */
-            $from_to =  date ( 'Y-m-d' , strtotime ( '-1 day' , strtotime ( date('Y-m-d') ) )) ;
-            $to_to   = date('Y-m-d');
+            $this_date = date('Y-m-d');
             
             $result['tourism_place']            = TourismPlace::where('status', 'active')->count();
             $result['package']                  = Package::where('status', 'active')->count();
