@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Mail;
 class CustomController extends Controller
 {
 
+     /** SAMPLE CODE IF YOU FILTER DATA BY DATE ON DATABASE */
+    //  $result2['query']                    = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->toSql();
+    //  $result2['all']                      = User::select(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR)) as new_date'))->get();
+    //  $result2['registered_user_this_day'] = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->get();
+
     /**
      * Store a newly created resource in storage.
      *
@@ -181,7 +186,10 @@ class CustomController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         if($req->input('city_id')){
+            /** Set Params */
             $city_id = $req->input('city_id');
+            $this_date = '2018-04-26';
+   
             $result['tourism_place']            = TourismPlace::where('status', 'active')->where('city_id', $city_id)->count();
             $result['package']                  = Package::with('packagedetail.tourismplace')->where('status', 'active')->whereHas('packagedetail.tourismplace', function($query) use ($city_id) {
                 $query->where('city_id' , $city_id);
@@ -189,7 +197,6 @@ class CustomController extends Controller
             $result['plan']                     = Plan::with('plandetail.tourismplace')->where('status', 'active')->whereHas('plandetail.tourismplace', function($query) use ($city_id) {
                 $query->where('city_id' , $city_id);
             })->count();
-            $result['user']                     = User::where('status', 'active')->count();
             $result['last_ten_transactions']    = Plan::with('plandetail.tourismplace')->where('status', 'active')->whereHas('plandetail.tourismplace', function($query) use ($city_id) {
                 $query->where('city_id' , $city_id);
             })->orderBy('created_at', 'desc')->get();
@@ -201,11 +208,35 @@ class CustomController extends Controller
                                                     ->orderBy('total', 'desc')
                                                     ->limit(10)
                                                     ->get();
+            $result['user']                     = User::where('status', 'active')->count();
+            $result['registered_user_this_day'] = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->count();
+            $result['income_this_day']          = DB::table('plans')
+                                                    ->select('plans.total_price')
+                                                    ->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->where('plans.status','ticketed')
+                                                    ->where('tourism_places.city_id',$city_id)
+                                                    ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
+                                                    ->groupBy('plan_details.plan_id')
+                                                    ->get();
+            $result['income_this_day']          = $this->sumArrayKey($result['income_this_day'],'total_price');
+            $result['transaction_this_day']     = count(DB::table('plans')
+                                                    ->select('plans.id as transaction')
+                                                    ->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->where('plans.status','ticketed')
+                                                    ->where('tourism_places.city_id',$city_id)
+                                                    ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
+                                                    ->groupBy('plan_details.plan_id')
+                                                    ->get());
         }else{
+            /** Set Params */
+            $from_to =  date ( 'Y-m-d' , strtotime ( '-1 day' , strtotime ( date('Y-m-d') ) )) ;
+            $to_to   = date('Y-m-d');
+            
             $result['tourism_place']            = TourismPlace::where('status', 'active')->count();
             $result['package']                  = Package::where('status', 'active')->count();
             $result['plan']                     = Plan::count();
-            $result['user']                     = User::where('status', 'active')->count();
             $result['last_ten_transactions']    = Plan::orderBy('created_at', 'desc')->get();
             $result['top_ten_tourism_places']   = DB::table('plan_details')
                                                     ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
@@ -214,13 +245,41 @@ class CustomController extends Controller
                                                     ->orderBy('total', 'desc')
                                                     ->limit(10)
                                                     ->get();
+            $result['user']                     = User::where('status', 'active')->count();
+            $result['registered_user_this_day'] = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->count();
+            $result['income_this_day']          = DB::table('plans')
+                                                    ->select('plans.total_price')
+                                                    ->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->where('plans.status','ticketed')
+                                                    ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
+                                                    ->groupBy('plan_details.plan_id')
+                                                    ->get();
+            $result['income_this_day']          = $this->sumArrayKey($result['income_this_day'],'total_price');
+            $result['transaction_this_day']     = count(DB::table('plans')
+                                                    ->select('plans.id as transaction')
+                                                    ->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id')
+                                                    ->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id')
+                                                    ->where('plans.status','ticketed')
+                                                    ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
+                                                    ->groupBy('plan_details.plan_id')
+                                                    ->get());
+            
         }
 
-
         $result = $this->generate_response($result, 200, 'All Data.', false);
-
         $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
+    }
+
+    private function sumArrayKey($items, $key=''){
+        // print_r($items);exit();
+        $sum = 0;
+        foreach($items as $item) {
+            $sum += $item->$key;
+        }
+
+        return $sum;
     }
 }
