@@ -22,6 +22,7 @@ class TourismPlaceController extends Controller
         'latitude',
         'facilities',
         'rate',
+        'website',
         'status'
     );
 
@@ -248,6 +249,7 @@ class TourismPlaceController extends Controller
             $tourismplace->address = $req->has('address') ? $req->address : '';
             $tourismplace->phone = $req->has('phone') ? $req->phone : '';
             $tourismplace->category_id = $req->has('category_id') ? $req->category_id : '';
+            $tourismplace->website = $req->has('website') ? $req->website : '';
 
             $tourismplace->save();
 
@@ -353,6 +355,7 @@ class TourismPlaceController extends Controller
                 $tourismplace->phone = $req->has('phone') ? $req->phone : $tourismplace->phone;
                 $tourismplace->category_id = $req->has('category_id') ? $req->category_id : $tourismplace->category_id;
                 $tourismplace->status = $req->has('status') ? $req->status : $tourismplace->status;
+                $tourismplace->website = $req->has('website') ? $req->website : $tourismplace->website;
 
                 $tourismplace->save();
 

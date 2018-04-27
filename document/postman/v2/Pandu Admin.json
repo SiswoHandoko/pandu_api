@@ -846,7 +846,7 @@
 								},
 								{
 									"key": "category_id",
-									"value": "",
+									"value": "1",
 									"type": "text",
 									"description": "Required"
 								},
@@ -855,6 +855,12 @@
 									"value": "active",
 									"type": "text",
 									"disabled": true
+								},
+								{
+									"key": "website",
+									"value": "www.google.com",
+									"description": "",
+									"type": "text"
 								}
 							]
 						},
@@ -892,6 +898,7 @@
 									"key": "description",
 									"value": "This is prambanan",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
@@ -934,6 +941,7 @@
 									"key": "facilities",
 									"value": "toilet, mushola, wifi",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
@@ -957,18 +965,25 @@
 								{
 									"key": "category_id",
 									"value": "",
-									"description": "Required",
-									"type": "text"
+									"type": "text",
+									"description": "Required"
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "website",
+									"value": "www.google.com",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
-						"url": "{{url}}/public/tourismplace/update/6",
+						"url": "{{url}}/public/tourismplace/update/143",
 						"description": "Get Province By Id"
 					},
 					"response": []
@@ -3972,13 +3987,39 @@
 									"key": "no_ticket",
 									"value": "T001",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -4036,13 +4077,39 @@
 									"key": "no_ticket",
 									"value": "T002",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
