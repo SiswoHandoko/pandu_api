@@ -3339,43 +3339,78 @@
 					"key": "plan_id",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "tourism_place_id",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00:00",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00:00",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "no_ticket",
 					"value": "T001",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "total_adult",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_child",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_infant",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_tourist",
+					"value": "0",
+					"type": "text",
+					"enabled": true,
+					"description": ""
 				}
 			],
 			"dataMode": "params",
@@ -3778,37 +3813,71 @@
 					"key": "tourism_place_id",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "start_time",
 					"value": "15:00:00",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "end_time",
 					"value": "16:00:00",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "day",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "no_ticket",
 					"value": "T002",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "total_adult",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_child",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_infant",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "total_tourist",
+					"value": "0",
+					"type": "text",
+					"enabled": true,
+					"description": ""
 				}
 			],
 			"dataMode": "urlencoded",
@@ -3901,98 +3970,120 @@
 		{
 			"id": "cb58b214-daf0-4478-bbf7-7e0e93cba1e0",
 			"name": "Update Tourism Place",
-			"url": "{{url}}/public/tourismplace/update/6",
+			"url": "{{url}}/public/tourismplace/update/143",
 			"description": "Get Province By Id",
 			"data": [
 				{
 					"key": "city_id",
 					"value": "227",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "name",
 					"value": "Prambanan",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "description",
 					"value": "This is prambanan",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "adult_price",
 					"value": "7000",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "child_price",
 					"value": "8000",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "infant_price",
 					"value": "9000",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "tourist_price",
 					"value": "10000",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "longitude",
 					"value": "1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "latitude",
 					"value": "-1",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "facilities",
 					"value": "toilet, mushola, wifi",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
 				},
 				{
 					"key": "rate",
 					"value": "2",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "address",
 					"value": "Jl. Setiabudi",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "phone",
 					"value": "082132222333",
 					"type": "text",
+					"enabled": true,
 					"description": "Required"
 				},
 				{
 					"key": "category_id",
 					"value": "",
-					"description": "Required",
-					"type": "text"
+					"type": "text",
+					"enabled": true,
+					"description": "Required"
 				},
 				{
 					"key": "status",
 					"value": "active",
 					"type": "text",
-					"enabled": false
+					"enabled": false,
+					"description": ""
+				},
+				{
+					"key": "website",
+					"value": "www.google.com",
+					"type": "text",
+					"enabled": true,
+					"description": ""
 				}
 			],
 			"dataMode": "urlencoded",
@@ -4683,7 +4774,7 @@
 				},
 				{
 					"key": "category_id",
-					"value": "",
+					"value": "1",
 					"type": "text",
 					"description": "Required"
 				},
@@ -4692,6 +4783,13 @@
 					"value": "active",
 					"type": "text",
 					"enabled": false
+				},
+				{
+					"key": "website",
+					"value": "www.google.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				}
 			],
 			"dataMode": "params",
