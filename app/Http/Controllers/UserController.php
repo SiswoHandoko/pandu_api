@@ -525,10 +525,9 @@ class UserController extends Controller
         $password = $request->input('password');
 
         /* get data */
-        $login = User::where('username', $username)->where('status','!=','deleted')->first();
-
+       $login = $this->check_auth($username);
         /* result */
-        if (!$login) {
+        if (!$login && !$login_email) {
             /* Username Not Found */
             $res = $this->generate_response($login,1,'Your username or password incorrect!',true);
 
@@ -592,6 +591,15 @@ class UserController extends Controller
                 return $res;
             }
         }
+    }
+
+    private function check_auth($username){
+        $login = User::where('username', $username)->where('status','!=','deleted')->first();
+        if(!$login){
+            $login = User::where('email', $username)->where('status','!=','deleted')->first();
+        }
+
+        return $login;
     }
 
     /**
