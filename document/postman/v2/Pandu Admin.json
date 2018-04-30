@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "30c23a7b-cce7-4734-af5b-5c176d05952a",
+		"_postman_id": "035c2241-8d65-4e4d-8860-bb2cdf962504",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -4712,6 +4712,62 @@
 								"dashboard"
 							],
 							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get Province By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-token",
+								"value": "77a64fae487baef2ae395a80db6b82549723219a"
+							},
+							{
+								"key": "device-type",
+								"value": "web"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/public/custom/report?type=monthly&year=2018&month=2&city_id=515",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"custom",
+								"report"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "monthly"
+								},
+								{
+									"key": "year",
+									"value": "2018"
+								},
+								{
+									"key": "month",
+									"value": "2"
+								},
+								{
+									"key": "city_id",
+									"value": "515"
+								},
 								{
 									"key": "",
 									"value": "",
