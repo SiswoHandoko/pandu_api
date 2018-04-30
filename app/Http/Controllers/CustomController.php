@@ -281,4 +281,115 @@ class CustomController extends Controller
 
         return $sum;
     }
+
+    public function reportData(Request $req){
+        /** Datatable Data */
+
+
+
+
+        /** Get Chart Data */
+        $result['chart_data'] = $this->reportChart($req);
+
+        return response()->json($result, 200);
+    }
+
+    /** For Generate Chart Data */
+    public function reportChart($req){
+
+        if($req->input('type')=='yearly'){
+            $chart_data   = DB::table('plans');
+            $chart_data   = $chart_data->select(DB::raw('year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR)) as year, month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR)) as month,(select sum(total_price) from plans where year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=month) as total_price, (select count(id) from plans where year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=month) as total_transaction'));
+            $chart_data   = $chart_data->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id');
+            $chart_data   = $chart_data->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id');
+
+            /** if filter by city */
+            if($req->input('city_id')){
+                $chart_data   = $chart_data->where('tourism_places.city_id',$req->input('city_id'));
+            }
+
+            $chart_data   = $chart_data->where('plans.status','ticketed');
+            $chart_data   = $chart_data->where(DB::raw('year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),$req->input('year'));
+            $chart_data   = $chart_data->groupBy(DB::raw('year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->groupBy(DB::raw('month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->get();
+            
+            $res = $this->parseYearly($chart_data,$req->input('year'));
+        }elseif($req->input('type')=='monthly'){
+            $chart_data   = DB::table('plans');
+            $chart_data   = $chart_data->select(DB::raw('day(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR)) as day_temp,year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR)) as year, month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR)) as month, (select sum(total_price) from plans where day(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=day_temp and year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=month) as total_price, (select count(id) from plans where day(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=day_temp and year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))=month) as total_transaction'));
+            $chart_data   = $chart_data->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id');
+            $chart_data   = $chart_data->leftjoin('tourism_places', 'tourism_places.id', '=', 'plan_details.tourism_place_id');
+
+            /** if filter by city */
+            if($req->input('city_id')){
+                $chart_data   = $chart_data->where('tourism_places.city_id',$req->input('city_id'));
+            }
+
+            $chart_data   = $chart_data->where('plans.status','ticketed');
+            $chart_data   = $chart_data->where(DB::raw('year(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),$req->input('year'));
+            $chart_data   = $chart_data->where(DB::raw('month(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),$req->input('month'));
+            $chart_data   = $chart_data->groupBy(DB::raw('day(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->get();
+            
+            $res = $this->parseMonthly($chart_data,$req->input('year'),$req->input('month'));
+        }
+        
+        return $res;
+        
+    }
+
+    /** Parsing Month if not found on database */
+    private function parseYearly($chart_data,$year){
+        $result = array();
+        for($i=0;$i<12;$i++){
+            for($j=0;$j<count($chart_data);$j++){
+                if($chart_data[$j]->month==$i+1){
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $chart_data[$j]->year;
+                    $result[$i]->month = $chart_data[$j]->month;
+                    $result[$i]->total_price = $chart_data[$j]->total_price;
+                    break;
+                }else{
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $year;
+                    $result[$i]->month = $i+1;
+                    $result[$i]->total_price = '0';
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /** Parsing Day if not found on database */
+    private function parseMonthly($chart_data,$year,$month){
+        $result = array();
+
+        /** Get Number Of Day from param year and month */
+        $number_of_day = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        
+        for($i=0;$i<$number_of_day;$i++){
+            for($j=0;$j<count($chart_data);$j++){
+                if($chart_data[$j]->day_temp==$i+1){
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $chart_data[$j]->year;
+                    $result[$i]->month = $chart_data[$j]->month;
+                    $result[$i]->day = $chart_data[$j]->day_temp;
+                    $result[$i]->total_price = $chart_data[$j]->total_price;
+                    $result[$i]->total_transaction = $chart_data[$j]->total_transaction;
+                    break;
+                }else{
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $year;
+                    $result[$i]->month = $month;
+                    $result[$i]->day = $i+1;
+                    $result[$i]->total_price = '0';
+                    $result[$i]->total_transaction = '0';
+                }
+            }
+        }
+
+        return $result;
+    }
 }
