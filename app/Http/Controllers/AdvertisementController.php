@@ -12,6 +12,7 @@ class AdvertisementController extends Controller
         'title',
         'caption',
         'type',
+        'city_id',
         'status'
     );
 
@@ -40,6 +41,7 @@ class AdvertisementController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $advertisement = new Advertisement;
+        $advertisement = $advertisement->with('city');
         $advertisement = $advertisement->where('status', '!=', 'deleted');
         
         // search query
@@ -137,6 +139,7 @@ class AdvertisementController extends Controller
             $advertisement->caption = $req->has('caption') ? $req->caption : '';
             $advertisement->type = $req->has('type') ? $req->type : '';
             $advertisement->status = $req->has('status') ? $req->status : 'active';
+            $advertisement->city_id = $req->has('city_id') ? $req->city_id : 0;
             $advertisement->save();
 
             $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);
@@ -163,7 +166,7 @@ class AdvertisementController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $advertisement = Advertisement::where('status','!=','deleted')->find($id);
+        $advertisement = Advertisement::with('city')->where('status','!=','deleted')->find($id);
 
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
@@ -226,6 +229,7 @@ class AdvertisementController extends Controller
                 $advertisement->caption = $req->has('caption') ? $req->caption : $advertisement->title;
                 $advertisement->type = $req->has('type') ? $req->type : $advertisement->title;
                 $advertisement->status = $req->has('status') ? $req->status : $advertisement->status;
+                $advertisement->city_id = $req->has('city_id') ? $req->city_id : $advertisement->city_id;
                 $advertisement->save();
 
                 $result = $this->generate_response($advertisement,200,'Data Has Been Saved.',false);

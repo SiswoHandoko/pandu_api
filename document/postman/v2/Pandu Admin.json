@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "035c2241-8d65-4e4d-8860-bb2cdf962504",
+		"_postman_id": "3df7f943-9f97-4019-9418-370376ba8a30",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -859,7 +859,6 @@
 								{
 									"key": "website",
 									"value": "www.google.com",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -898,7 +897,6 @@
 									"key": "description",
 									"value": "This is prambanan",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
@@ -941,7 +939,6 @@
 									"key": "facilities",
 									"value": "toilet, mushola, wifi",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
@@ -972,14 +969,12 @@
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "website",
 									"value": "www.google.com",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								}
 							]
 						},
@@ -1218,6 +1213,7 @@
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
@@ -1243,6 +1239,12 @@
 									"value": "1",
 									"type": "text",
 									"description": "Required ||1(tourist) || 2(guide) || 3(admin)"
+								},
+								{
+									"key": "city_id",
+									"value": "227",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -1311,6 +1313,7 @@
 									"key": "photo",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
@@ -1347,7 +1350,14 @@
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "227",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -1747,21 +1757,18 @@
 									"key": "image_url",
 									"value": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6BAMAAAB6wkcOAAAAG1BMVEX///8AAACfn59fX18fHx/f39+/v79/f38/Pz9KdSATAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACeklEQVR4nO3WQU8aQRTA8WFxdj26uiw9QqIJR5vaxmPRJnBcWmuvSxNJj9gYy1G0rX7svjc7W5YApu1yav6/hOU5vMzbN8wsGgMAAAAAAAAAAAAAAAAAAAAAAAAAAPA/CE7i80zee0+iI0H0PXnzTF6gefc6Muuf5zWLh8nXSW9fgtNvQmaz724/z6eb85qPkncrwcVg0mvXrd6Ry7VUffADOz+kv/3NebvHfmQoK9Ht1CzvKsqMjz6+1uU92Zy369clasml+XYL1SOZZOBj9z7qbMzb8dXdu11dpH+rflaEYarXYnlt7kay5er+xsbuwwdTn87quwj2ygGJ3Z2Mp0t5DV+96643W6iuraZ2ok1Gd4t7cLssbC/nNfLLK41nlXuoR1bRtudxIl02XfWw5cajdKl1t9qjWRzr3jgtRjJT25N8x8mReT+U6seV6tJ8tXXNM6OzzB7KLb7aVvVAa+Xyupj6/VZWj9Jq6y4vlJcdlPttC9XHHR/IrlpaeWm+vS5PN9u2Vt6el5EU9dX3yoLpujwt6qvXLW4uymensak/a8VVN7xu+5U8M8r9Wat94uxwEbb8mhcroBs+StfkmVHm1/y0bvVKS3rM3VPHP051w/9uvpKnx7zR0WBg6gkX36Zr2f3AdIvNpBu+bL6apy27H5igZeqpHqluLosqf9tipxdn3Te/dPRSnzNa/UfgrwQHH0VmgvvMfNAJw4PMHN4V1d3cUV7NM70jY1/qB+PXJhiun/SP7caqZexN3H/h6nyJ+2u+zTLPfOon8U93b/Mkqdl6xeWkDK6ezbOTvAy28JAHAAAAAAAAAAAAAAAAAAAAAAAAAAArfgEnYGI6+pXm3AAAAABJRU5ErkJggg==",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "rate",
 									"value": "1",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								}
 							]
@@ -1818,7 +1825,6 @@
 								{
 									"key": "rate",
 									"value": "1",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -2044,7 +2050,14 @@
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "227",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -2102,7 +2115,14 @@
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "227",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -3987,39 +4007,33 @@
 									"key": "no_ticket",
 									"value": "T001",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "total_adult",
 									"value": "2",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_child",
 									"value": "1",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_infant",
 									"value": "1",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_tourist",
 									"value": "0",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								}
 							]
 						},
@@ -4077,39 +4091,33 @@
 									"key": "no_ticket",
 									"value": "T002",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
-									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "total_adult",
 									"value": "2",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_child",
 									"value": "1",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_infant",
 									"value": "1",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								},
 								{
 									"key": "total_tourist",
 									"value": "0",
-									"type": "text",
-									"description": ""
+									"type": "text"
 								}
 							]
 						},

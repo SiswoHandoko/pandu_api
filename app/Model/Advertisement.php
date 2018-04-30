@@ -17,7 +17,7 @@ class Advertisement extends Model
      * @var array
      */
     protected $fillable = [
-        'image_url', 'title', 'caption','type','status'
+        'image_url', 'title', 'caption','type','status','city_id'
     ];
 
     /**
@@ -26,6 +26,13 @@ class Advertisement extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at', 'updated_at'
+        'created_at', 'updated_at','city_id'
     ];
+
+    /**
+    * Belongs To Relation
+    */
+    public function city() {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

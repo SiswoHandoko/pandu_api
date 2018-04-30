@@ -41,6 +41,16 @@ class City extends Model
         return $this->hasMany(TipTrick::class);
     }
 
+    public function advertisement()
+    {
+        return $this->hasMany(Advertisement::class);
+    }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
+
     /**
     * Belongs To Relation
     */
