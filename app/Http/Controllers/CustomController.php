@@ -244,8 +244,8 @@ class CustomController extends Controller
                                                     ->orderBy('total', 'desc')
                                                     ->limit(10)
                                                     ->get();
-            $result['user']                     = User::where('status', 'active')->where('city_id',$city_id)->count();
-            $result['registered_user_this_day'] = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->where('city_id',$city_id)->count();
+            $result['user']                     = User::where('status', 'active')->count();
+            $result['registered_user_this_day'] = User::where(DB::raw('date(DATE_ADD(created_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))->count();
             $result['income_this_day']          = DB::table('plans')
                                                     ->select('plans.total_price')
                                                     ->leftjoin('plan_details', 'plans.id', '=', 'plan_details.plan_id')
@@ -286,11 +286,9 @@ class CustomController extends Controller
         /** Datatable Data */
 
 
-
-
         /** Get Chart Data */
-        $result['chart_data'] = $this->reportChart($req);
-
+        $result = $this->reportChart($req);
+        $result = $this->generate_response($result, 200, 'All Data.', false);
         return response()->json($result, 200);
     }
 
