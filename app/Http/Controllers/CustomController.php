@@ -286,11 +286,9 @@ class CustomController extends Controller
         /** Datatable Data */
 
 
-
-
         /** Get Chart Data */
-        $result['chart_data'] = $this->reportChart($req);
-
+        $result = $this->reportChart($req);
+        $result = $this->generate_response($result, 200, 'All Data.', false);
         return response()->json($result, 200);
     }
 
