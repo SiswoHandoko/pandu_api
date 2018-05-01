@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Model\TourismPlace;
 use App\Model\Event;
 use App\Model\Picture;
-
 class TourismPlaceController extends Controller
 {
     private $fields_tourismplaces = array(
         'id',
         'city_id',
+        'category_id',
         'name',
         'description',
         'adult_price',

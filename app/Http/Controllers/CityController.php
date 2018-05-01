@@ -21,6 +21,7 @@ class CityController extends Controller
     private $fields_tourismplaces = array(
         'id',
         'city_id',
+        'category_id',
         'name',
         'description',
         'adult_price',
@@ -319,7 +320,7 @@ class CityController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $tourismplace = new TourismPlace;
-        $tourismplace = $tourismplace->with('city.province', 'picture', 'event');
+        $tourismplace = $tourismplace->with('city.province', 'picture', 'event', 'category');
         $tourismplace = $tourismplace->where('city_id', $id);
         $tourismplace = $tourismplace->where('status', '!=', 'deleted');
 
