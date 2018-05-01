@@ -213,13 +213,8 @@ class PrivateUserController extends Controller
             return response()->json($result, 400);
         }else{
             $privateuser = PrivateUser::find($id);
-            if(!$privateuser){
-                $result = $this->generate_response($privateuser, 404, 'Data Not Found.', true);
 
-                $this->update_access_log($access_log_id, $result);
-
-                return response()->json($result, 404);
-            }else{
+            if($privateuser){
                 $privateuser->user_id = $req->has('user_id') ? $req->user_id : $privateuser->user_id;
                 $privateuser->status = $req->has('status') ? $req->status : $privateuser->status;
                 $privateuser->save();
@@ -229,6 +224,12 @@ class PrivateUserController extends Controller
                 $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 200);
+            }else{
+                $result = $this->generate_response($privateuser, 404, 'Data Not Found.', true);
+
+                $this->update_access_log($access_log_id, $result);
+
+                return response()->json($result, 404);
             }
         }
     }

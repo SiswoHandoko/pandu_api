@@ -16,7 +16,7 @@ class CreatePrivateusersTable extends Migration
         Schema::create('private_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->default(0);
-            $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'deleted', 'confirmed', 'canceled'])->default('active');
             $table->timestamps();
         });
     }

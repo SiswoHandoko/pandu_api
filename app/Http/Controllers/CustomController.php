@@ -51,10 +51,10 @@ class CustomController extends Controller
             return response()->json($result, 400);
         }else{
             $modeldir   = "App\Model\ ";
-            $modelname  = ucfirst(rtrim($req->table,'s'));
+            $modelname  = str_replace(' ', '', ucwords(str_replace('_', ' ', rtrim($req->table,'s'))));
             $model      = trim($modeldir).$modelname;
-
             $update = $model::find($id);
+            
             if(!$update){
                 $result = $this->generate_response($update, 404, 'Data Not Found.', true);
 

@@ -152,6 +152,8 @@ class Controller extends BaseController
       $table[] = 'tip_tricks';
       $table[] = 'tourism_places';
       $table[] = 'users';
+      $table[] = 'private_users';
+      $table[] = 'private_guides';
 
       $result = '';
       $i      = 0;
