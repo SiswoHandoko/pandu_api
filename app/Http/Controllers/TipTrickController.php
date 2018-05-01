@@ -43,6 +43,7 @@ class TipTrickController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $tiptrick = new TipTrick;
+        $tiptrick = $tiptrick->with('city');
         $tiptrick = $tiptrick->where('status', '!=', 'deleted');
         
         // search query
