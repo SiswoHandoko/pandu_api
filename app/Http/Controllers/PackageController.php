@@ -337,7 +337,7 @@ class PackageController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $packagedetail = new PackageDetail;
-        $packagedetail = $packagedetail->with('package', 'tourismplace.picture');
+        $packagedetail = $packagedetail->with('package', 'tourismplace.picture', 'tourismplace.city');
         $packagedetail = $packagedetail->where('package_id', $id);
         $packagedetail = $packagedetail->where('status', '!=', 'deleted');
         $packagedetail = $packagedetail->orderBy('day', 'asc');
