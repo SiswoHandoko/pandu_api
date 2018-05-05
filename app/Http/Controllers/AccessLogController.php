@@ -32,6 +32,7 @@ class AccessLogController extends Controller
     */
     public function index(Request $req)
     {
+        
         $accesslog = new AccessLog;
 
         // search query
