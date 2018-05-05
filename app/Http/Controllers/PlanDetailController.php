@@ -49,7 +49,7 @@ class PlanDetailController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = new PlanDetail;
-        $plandetail = $plandetail->with('plan', 'tourismplace.picture');
+        $plandetail = $plandetail->with('plan', 'tourismplace.picture', 'tourismplace.city');
         $plandetail = $plandetail->where('status', '!=', 'deleted');
 
         // search query
@@ -217,7 +217,7 @@ class PlanDetailController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $plandetail = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
+        $plandetail = PlanDetail::with('plan', 'tourismplace.city')->where('status', '!=', 'deleted')->find($id);
 
         if (!$plandetail) {
             $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);

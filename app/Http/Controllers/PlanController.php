@@ -737,7 +737,7 @@ class PlanController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = new PlanDetail;
-        $plandetail = $plandetail->with('plan', 'tourismplace.picture');
+        $plandetail = $plandetail->with('plan', 'tourismplace.picture', 'tourismplace.city');
         $plandetail = $plandetail->where('status', '!=', 'deleted');
         $plandetail = $plandetail->where('plan_id', '=', $id);
         $plandetail = $plandetail->orderBy('day', 'asc');

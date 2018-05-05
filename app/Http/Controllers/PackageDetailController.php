@@ -42,7 +42,7 @@ class PackageDetailController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $packagedetail = new PackageDetail;
-        $packagedetail = $packagedetail->with('package', 'tourismplace');
+        $packagedetail = $packagedetail->with('package', 'tourismplace.city');
         $packagedetail = $packagedetail->where('status', '!=', 'deleted');
 
         // search query
@@ -171,7 +171,7 @@ class PackageDetailController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $packagedetail = PackageDetail::with('package', 'tourismplace')->where('status', '!=', 'deleted')->find($id);
+        $packagedetail = PackageDetail::with('package', 'tourismplace.city')->where('status', '!=', 'deleted')->find($id);
 
         if (!$packagedetail) {
             $result = $this->generate_response($packagedetail, 404, 'Data Not Found.', true);
