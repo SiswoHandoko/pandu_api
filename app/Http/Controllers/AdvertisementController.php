@@ -31,13 +31,13 @@ class AdvertisementController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'advertisement_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'advertisement_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $advertisement = new Advertisement;
         $advertisement = $advertisement->where('status', '!=', 'deleted');
@@ -61,7 +61,7 @@ class AdvertisementController extends Controller
             } else {
                 $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
                 
                 return response()->json($result, 400);
             }
@@ -76,7 +76,7 @@ class AdvertisementController extends Controller
             } else {
                 $result = $this->generate_response($advertisement, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -94,7 +94,7 @@ class AdvertisementController extends Controller
 
         $result = $this->generate_response($advertisement,200,'All Data.',false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -124,7 +124,11 @@ class AdvertisementController extends Controller
         ]);
 
         if($validator->fails()) {
-            $result = $this->generate_response($advertisement,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+            
+            $result = $this->generate_response($data,400,$message,true);
 
             $this->update_access_log($access_log_id, $result);
 
@@ -155,26 +159,26 @@ class AdvertisementController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'advertisement_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'advertisement_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $advertisement = Advertisement::where('status','!=','deleted')->find($id);
 
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($advertisement, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -207,7 +211,11 @@ class AdvertisementController extends Controller
         ]);
         
         if($validator->fails()) {
-            $result = $this->generate_response($advertisement,400,'Bad Request.',true);
+            $validate_error = $validator->errors()->all();
+            $message = implode(', ', $validate_error);
+            $data = array();
+
+            $result = $this->generate_response($data,400,$message,true);
 
             return response()->json($result, 400);
         }else{
@@ -245,20 +253,20 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
-        $param_insert = array(
-            'name' => 'advertisement_destroy',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'advertisement_destroy',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $advertisement = Advertisement::where('status', '!=', 'deleted')->find($id);
         
         if(!$advertisement){
             $result = $this->generate_response($advertisement, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
@@ -268,7 +276,7 @@ class AdvertisementController extends Controller
 
             $result = $this->generate_response($advertisement,200,'Data Has Been Deleted.',false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
