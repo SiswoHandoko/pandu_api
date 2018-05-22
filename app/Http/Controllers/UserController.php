@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\Model\User;
+use App\Model\UserDetail;
 use App\Model\Plan;
 use App\Model\Message;
 use Illuminate\Support\Facades\Mail;
@@ -184,6 +185,45 @@ class UserController extends Controller
 
                 return response()->json($result, 200);
             }else{
+
+                /* Validation If Role is Guide */
+                if($req->input('role_id')==2){
+                    $validator_detail = Validator::make($req->all(), [
+                        'calling_name' => 'required|max:255',
+                        'birth_place' => 'required|max:255',
+                        'gender' => 'required|max:255|in:l,p',
+                        'marriage_status' => 'required|max:255|in:married,not_married',
+                        'religion' => 'required|max:255',
+                        'nationality' => 'required|max:255',
+                        'child_of' => 'required|max:255',
+                        'amount_siblings' => 'required|max:255',
+                        'current_job' => 'required|max:255',
+                        'sim_type' => 'required|max:255',
+                        'ktp_number' => 'required|max:255',
+                        'ktp_address' => 'required|max:255',
+                        'another_address' => 'required|max:255',
+                        'education_background' => 'required',
+                        'languages' => 'required',
+                        'drive_motorcycle' => 'required|max:255|in:1,0',
+                        'drive_car' => 'required|max:255|in:1,0',
+                        'ktp_image' => 'required',
+                        'sim_image' => 'required',
+                        'kk_image'  => 'required',
+                        'pas_photo'  => 'required',
+                        'certificate'  => 'required',
+                        'cv'  => 'required',
+                    ]);
+
+                    if($validator_detail->fails()) {
+                        $validate_detail_error = $validator_detail->errors()->all();
+                        $message = implode(', ', $validate_detail_error);
+                        $data = array();
+                        $result = $this->generate_response($data,400,$message,true);
+                        $this->update_access_log($access_log_id, $result);
+                        return response()->json($result, 400);
+                    }
+                }
+                
                 /* bundling data */
                 $hasher = app()->make('hash');
                 $password = $hasher->make($req->input('password'));
@@ -217,15 +257,48 @@ class UserController extends Controller
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
 
-                /** Insert Into Table Message */
-                $message = new Message();
-                $message->user_id = $user->id;
-                $message->title = 'REGISTRATION INFO';
-                $message->description = "Congratulations your account has been registered with Pandu Apps. Please login on the application to start creating Plan.";
-                $message->status = 'active';
-                $message->created_by = '1';
-                $message->save();
-
+                /* Save To User Detail If Role is Guide */
+                if($req->input('role_id')==2){
+                    $userdetail = new UserDetail();
+                    $userdetail->user_id      = $user->id;
+                    $userdetail->calling_name = $req->has('calling_name') ? $req->calling_name : '';
+                    $userdetail->birth_place  = $req->has('birth_place') ? $req->birth_place : '';
+                    $userdetail->gender       = $req->has('gender') ? $req->gender : '';
+                    $userdetail->marriage_status = $req->has('marriage_status') ? $req->marriage_status : '';
+                    $userdetail->religion     = $req->has('calling_name') ? $req->religion : '';
+                    $userdetail->nationality  = $req->has('calling_name') ? $req->nationality : '';
+                    $userdetail->child_of     = $req->has('calling_name') ? $req->child_of : '';
+                    $userdetail->amount_siblings = $req->has('calling_name') ? $req->amount_siblings : '';
+                    $userdetail->current_job  = $req->has('calling_name') ? $req->current_job : '';
+                    $userdetail->sim_type     = $req->has('sim_type') ? $req->sim_type : '';
+                    $userdetail->ktp_number   = $req->has('ktp_number') ? $req->ktp_number : '';
+                    $userdetail->ktp_address  = $req->has('ktp_address') ? $req->ktp_address : '';
+                    $userdetail->another_contact = $req->has('another_contact') ? $req->another_contact : '';
+                    $userdetail->another_address = $req->has('another_address') ? $req->another_address : '';
+                    $userdetail->education_background = $req->has('education_background') ? $req->education_background : '';
+                    $userdetail->languages    = $req->has('languages') ? $req->languages : '';
+                    $userdetail->drive_motorcycle = $req->has('drive_motorcycle') ? $req->drive_motorcycle : '';
+                    $userdetail->drive_car    = $req->has('drive_car') ? $req->drive_car : '';
+                    $userdetail->private_vehicle = $req->has('private_vehicle') ? $req->private_vehicle : '';
+                    $userdetail->ktp_image    = $req->has('ktp_image') ? env('BACKEND_URL').'public/user_detail/ktp/'.$this->uploadFile($this->public_path(). "/user_detail/ktp/", $req->ktp_image) : env('BACKEND_URL').'public/user_detail/ktp/default_img.png';
+                    $userdetail->sim_image    = $req->has('sim_image') ? env('BACKEND_URL').'public/user_detail/sim/'.$this->uploadFile($this->public_path(). "/user_detail/sim/", $req->sim_image) : env('BACKEND_URL').'public/user_detail/sim/default_img.png';
+                    $userdetail->kk_image     = $req->has('kk_image') ? env('BACKEND_URL').'public/user_detail/kk/'.$this->uploadFile($this->public_path(). "/user_detail/kk/", $req->kk_image) : env('BACKEND_URL').'public/user_detail/kk/default_img.png';
+                    $userdetail->pas_photo    = $req->has('pas_photo') ? env('BACKEND_URL').'public/user_detail/pas_photo/'.$this->uploadFile($this->public_path(). "/user_detail/pas_photo/", $req->pas_photo) : env('BACKEND_URL').'public/user_detail/pas_photo/default_img.png';
+                    $userdetail->certificate  = $req->has('certificate') ? env('BACKEND_URL').'public/user_detail/certificate/'.$this->uploadFile($this->public_path(). "/user_detail/certificate/", $req->certificate) : env('BACKEND_URL').'public/user_detail/certificate/default_img.png';
+                    $userdetail->cv           = $req->has('cv') ? env('BACKEND_URL').'public/user_detail/cv/'.$this->uploadFile($this->public_path(). "/user_detail/cv/", $req->cv) : env('BACKEND_URL').'public/user_detail/cv/default_pdf.pdf';
+                    $userdetail->save();
+                    $user['user_detail']      = $userdetail;
+                }else{
+                     /** Insert Into Table Message if User != Guide */
+                    $message = new Message();
+                    $message->user_id = $user->id;
+                    $message->title = 'REGISTRATION INFO';
+                    $message->description = "Congratulations your account has been registered with Pandu Apps. Please login on the application to start creating Plan.";
+                    $message->status = 'active';
+                    $message->created_by = '1';
+                    $message->save();
+                }
+                
                 $result = $this->generate_response($user,200,'Data Has Been Saved.',false);
 
                 $this->update_access_log($access_log_id, $result);
@@ -251,7 +324,7 @@ class UserController extends Controller
 
         $access_log_id = $this->create_access_log($param_insert);
 
-        $user = User::with('city')->where('status','!=','deleted')->find($id);
+        $user = User::with('city','user_detail')->where('status','!=','deleted')->find($id);
 
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
@@ -260,6 +333,11 @@ class UserController extends Controller
 
             return response()->json($result, 404);
         }else{
+
+            if($user->role_id!=2){
+                unset($user->user_detail);
+            }
+
             $result = $this->generate_response($user,200,'Detail Data.',false);
 
             $this->update_access_log($access_log_id, $result);
@@ -368,6 +446,44 @@ class UserController extends Controller
                         }
                     }
 
+                    /* Validation If Role is Guide */
+                    if($req->input('role_id')==2){
+                        $validator_detail = Validator::make($req->all(), [
+                            'calling_name' => 'required|max:255',
+                            'birth_place' => 'required|max:255',
+                            'gender' => 'required|max:255|in:l,p',
+                            'marriage_status' => 'required|max:255|in:married,not_married',
+                            'religion' => 'required|max:255',
+                            'nationality' => 'required|max:255',
+                            'child_of' => 'required|max:255',
+                            'amount_siblings' => 'required|max:255',
+                            'current_job' => 'required|max:255',
+                            'sim_type' => 'required|max:255',
+                            'ktp_number' => 'required|max:255',
+                            'ktp_address' => 'required|max:255',
+                            'another_address' => 'required|max:255',
+                            'education_background' => 'required',
+                            'languages' => 'required',
+                            'drive_motorcycle' => 'required|max:255|in:1,0',
+                            'drive_car' => 'required|max:255|in:1,0',
+                            'ktp_image' => 'required',
+                            'sim_image' => 'required',
+                            'kk_image'  => 'required',
+                            'pas_photo'  => 'required',
+                            'certificate'  => 'required',
+                            'cv'  => 'required',
+                        ]);
+
+                        if($validator_detail->fails()) {
+                            $validate_detail_error = $validator_detail->errors()->all();
+                            $message = implode(', ', $validate_detail_error);
+                            $data = array();
+                            $result = $this->generate_response($data,400,$message,true);
+                            $this->update_access_log($access_log_id, $result);
+                            return response()->json($result, 400);
+                        }
+                    }
+
                     $user->firstname = $req->has('firstname') ? $req->firstname : $user->firstname;
                     $user->lastname = $req->has('lastname') ? $req->lastname : $user->lastname;
                     $user->contact = $req->has('contact') ? $req->contact : $user->contact;
@@ -382,6 +498,41 @@ class UserController extends Controller
                     /* upload process */
                     $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo, $user->photo) : $user->photo;
                     $user->save();
+
+                    /* Save To User Detail If Role is Guide */
+                    if($req->input('role_id')==2){
+                        $details = UserDetail::where('user_id',$id)->first();
+                        
+                        $userdetail = UserDetail::find($details->id);
+                        $userdetail->user_id      = $user->id;
+                        $userdetail->calling_name = $req->has('calling_name') ? $req->calling_name : $userdetail->calling_name;
+                        $userdetail->birth_place  = $req->has('birth_place') ? $req->birth_place : $userdetail->birth_place;
+                        $userdetail->gender       = $req->has('gender') ? $req->gender : $userdetail->gender;
+                        $userdetail->marriage_status = $req->has('marriage_status') ? $req->marriage_status : $userdetail->marriage_status;
+                        $userdetail->religion     = $req->has('calling_name') ? $req->religion : $userdetail->religion;
+                        $userdetail->nationality  = $req->has('calling_name') ? $req->nationality : $userdetail->nationality;
+                        $userdetail->child_of     = $req->has('calling_name') ? $req->child_of : $userdetail->child_of;
+                        $userdetail->amount_siblings = $req->has('calling_name') ? $req->amount_siblings : $userdetail->amount_siblings;
+                        $userdetail->current_job  = $req->has('calling_name') ? $req->current_job : $userdetail->current_job;
+                        $userdetail->sim_type     = $req->has('sim_type') ? $req->sim_type : $userdetail->sim_type;
+                        $userdetail->ktp_number   = $req->has('ktp_number') ? $req->ktp_number : $userdetail->ktp_number;
+                        $userdetail->ktp_address  = $req->has('ktp_address') ? $req->ktp_address : $userdetail->ktp_address;
+                        $userdetail->another_contact = $req->has('another_contact') ? $req->another_contact : $userdetail->another_contact;
+                        $userdetail->another_address = $req->has('another_address') ? $req->another_address : $userdetail->another_address;
+                        $userdetail->education_background = $req->has('education_background') ? $req->education_background : $userdetail->education_background;
+                        $userdetail->languages    = $req->has('languages') ? $req->languages : $userdetail->languages;
+                        $userdetail->drive_motorcycle = $req->has('drive_motorcycle') ? $req->drive_motorcycle : $userdetail->drive_motorcycle;
+                        $userdetail->drive_car    = $req->has('drive_car') ? $req->drive_car : $userdetail->drive_car;
+                        $userdetail->private_vehicle = $req->has('private_vehicle') ? $req->private_vehicle : $userdetail->private_vehicle;
+                        $userdetail->ktp_image    = $req->has('ktp_image') ? env('BACKEND_URL').'public/user_detail/ktp/'.$this->uploadFile($this->public_path(). "/user_detail/ktp/", $req->ktp_image, $userdetail->ktp_image) : $userdetail->ktp_image;
+                        $userdetail->sim_image    = $req->has('sim_image') ? env('BACKEND_URL').'public/user_detail/sim/'.$this->uploadFile($this->public_path(). "/user_detail/sim/", $req->sim_image, $userdetail->sim_image) : $userdetail->sim_image;
+                        $userdetail->kk_image     = $req->has('kk_image') ? env('BACKEND_URL').'public/user_detail/kk/'.$this->uploadFile($this->public_path(). "/user_detail/kk/", $req->kk_image, $userdetail->kk_image) : $userdetail->kk_image;
+                        $userdetail->pas_photo    = $req->has('pas_photo') ? env('BACKEND_URL').'public/user_detail/pas_photo/'.$this->uploadFile($this->public_path(). "/user_detail/pas_photo/", $req->pas_photo, $userdetail->pas_photo) : $userdetail->pas_photo;
+                        $userdetail->certificate  = $req->has('certificate') ? env('BACKEND_URL').'public/user_detail/certificate/'.$this->uploadFile($this->public_path(). "/user_detail/certificate/", $req->certificate, $userdetail->certificate) : $userdetail->certificate;
+                        $userdetail->cv           = $req->has('cv') ? env('BACKEND_URL').'public/user_detail/cv/'.$this->uploadFile($this->public_path(). "/user_detail/cv/", $req->cv, $userdetail->cv) : $userdetail->cv;
+                        $userdetail->save();
+                        $user['user_detail']      = $userdetail;
+                    }
 
                     $result = $this->generate_response($user,200,'Data Has Been Updated.',false);
 

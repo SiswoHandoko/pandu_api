@@ -64,7 +64,8 @@ class Controller extends BaseController
       "gif" => "474946",
       "bmp" => "424D",
       "tiff" => "4949",
-      "tiff" => "4D4D"
+      "tiff" => "4D4D",
+      "pdf" => "25504446"
       );
 
       foreach ($imagemimetypes as $mime => $hexbytes)

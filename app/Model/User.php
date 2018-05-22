@@ -48,4 +48,9 @@ class User extends Model
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }
+
+    public function user_detail()
+    {
+        return $this->hasOne(UserDetail::class);
+    }
 }
