@@ -154,6 +154,8 @@ class UserController extends Controller
             'role_id' => 'required|max:255|in:1,2,3',
             // 'photo' => 'max:2048',
             ]);
+
+            $req['username'] = str_random(8);
         }else{
             $validator = Validator::make($req->all(), [
             'firstname' => 'required|max:255',
