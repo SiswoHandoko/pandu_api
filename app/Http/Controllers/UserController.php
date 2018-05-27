@@ -140,19 +140,36 @@ class UserController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         /* Validation */
-        $validator = Validator::make($req->all(), [
-          'firstname' => 'required|max:255',
-          'lastname' => 'required|max:255',
-          'contact' => 'required|max:255',
-          'address' => 'required|max:255',
-          'birthdate' => 'required|max:255',
-          'username' => 'required|max:255',
-          'password' => 'required|max:255',
-          'repassword' => 'required|max:255',
-          'email' => 'required|max:255',
-          'role_id' => 'required|max:255|in:1,2,3',
-          // 'photo' => 'max:2048',
-        ]);
+        if($req->input('role_id')==2){
+            $validator = Validator::make($req->all(), [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'contact' => 'required|max:255',
+            'address' => 'required|max:255',
+            'birthdate' => 'required|max:255',
+            'username' => 'max:255',
+            'password' => 'max:255',
+            'repassword' => 'max:255',
+            'email' => 'required|max:255',
+            'role_id' => 'required|max:255|in:1,2,3',
+            // 'photo' => 'max:2048',
+            ]);
+        }else{
+            $validator = Validator::make($req->all(), [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'contact' => 'required|max:255',
+            'address' => 'required|max:255',
+            'birthdate' => 'required|max:255',
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+            'repassword' => 'required|max:255',
+            'email' => 'required|max:255',
+            'role_id' => 'required|max:255|in:1,2,3',
+            // 'photo' => 'max:2048',
+            ]);
+        }
+        
 
         if($validator->fails()) {
             $validate_error = $validator->errors()->all();
