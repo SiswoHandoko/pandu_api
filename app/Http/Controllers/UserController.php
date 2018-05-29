@@ -63,7 +63,7 @@ class UserController extends Controller
         $access_log_id = $this->create_access_log($param_insert);
 
         $user = new User;
-        $user = $user->with('city');
+        $user = $user->with('city','user_detail');
         $user = $user->where('status', '!=', 'deleted');
 
         // search query
