@@ -17,7 +17,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'role_id', 'firstname', 'lastname', 'contact', 'address', 'birthdate', 'username', 'password', 'email', 'web_token', 'android_token', 'ios_token', 'photo', 'status', 'remember_token'
+        'role_id', 'firstname', 'lastname', 'contact', 'address', 'birthdate', 'username', 'password', 'email', 'web_token', 'android_token', 'ios_token', 'photo', 'status', 'remember_token', 'city_id'
     ];
 
     /**
@@ -26,7 +26,7 @@ class User extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'web_token', 'android_token', 'ios_token', 'created_at', 'updated_at', 'role_id', 'remember_token'
+        'password', 'web_token', 'android_token', 'ios_token', 'created_at', 'updated_at', 'role_id', 'remember_token', 'city_id'
     ];
 
     /**
@@ -40,5 +40,17 @@ class User extends Model
     public function private_user()
     {
         return $this->hasMany(PrivateUser::class);
+    }
+
+    /**
+    * Belongs To Relation
+    */
+    public function city() {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function user_detail()
+    {
+        return $this->hasOne(UserDetail::class);
     }
 }
