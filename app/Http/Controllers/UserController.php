@@ -26,7 +26,7 @@ class UserController extends Controller
         'ios_token',
         'photo',
         'is_login',
-        'city_id',
+        //'city_id',
         'status'
     );
 
@@ -271,7 +271,7 @@ class UserController extends Controller
                 $user->email = $req->has('email') ? $req->email : '';
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
                 $user->status = $req->has('status') ? $req->status : 'active';
-                $user->city_id = $req->has('city_id') ? $req->city_id : 0;
+                //$user->city_id = $req->has('city_id') ? $req->city_id : 0;
                 /* upload process */
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
@@ -513,7 +513,7 @@ class UserController extends Controller
                     $user->email = $req->has('email') ? $req->email : $user->email;
                     $user->role_id = $req->has('role_id') ? $req->role_id : $user->role_id;
                     $user->status = $req->has('status') ? $req->status : $user->status;
-                    $user->city_id = $req->has('city_id') ? $req->city_id : $user->city_id;
+                    //$user->city_id = $req->has('city_id') ? $req->city_id : $user->city_id;
                     /* upload process */
                     $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo, $user->photo) : $user->photo;
                     $user->save();
