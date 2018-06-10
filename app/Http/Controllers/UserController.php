@@ -247,19 +247,6 @@ class UserController extends Controller
                 $hasher = app()->make('hash');
                 $password = $hasher->make($req->input('password'));
                 
-                /* Email Process */
-                $data['to']         = $req->input('email');
-                $data['alias']      = 'Admin Pandu';
-                $data['subject']    = 'REGISTRATION INFO';
-                $data['content']    = "Congratulations your account has been registered with Pandu Apps. <br/> Please login on the application to start creating Plan.";
-                $data['name']       = $req->input('username');
-
-                $email              = $data;
-                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
-                    $send->to($email['to'])->subject($email['subject']);
-                    $send->from('admin@pandu.com', $email['alias']);
-                });
-                
                 $user = new User();
                 $user->firstname = $req->has('firstname') ? $req->firstname : '';
                 $user->lastname = $req->has('lastname') ? $req->lastname : '';
@@ -270,11 +257,24 @@ class UserController extends Controller
                 $user->password = $password;
                 $user->email = $req->has('email') ? $req->email : '';
                 $user->role_id = $req->has('role_id') ? $req->role_id : '1';
-                $user->status = $req->has('status') ? $req->status : 'active';
+                $user->status = 'inactive';
                 $user->city_id = $req->has('city_id') ? $req->city_id : 0;
                 /* upload process */
                 $user->photo = $req->has('photo') ? env('BACKEND_URL').'public/images/users/'.$this->uploadFile($this->public_path(). "/images/users/", $req->photo) : env('BACKEND_URL').'public/images/users/default_img.png';
                 $user->save();
+
+                /* Email Process */
+                $data['to']         = $req->input('email');
+                $data['alias']      = 'Admin Pandu';
+                $data['subject']    = 'REGISTRATION INFO';
+                $data['content']    = "Congratulations your account has been registered with Pandu Apps. <br/> Please Confirm your registration by click this link <br/>  <a href='".env('BACKEND_URL')."public/user/confirmation/".$user->id."'>".env('BACKEND_URL')."public/user/confirmation/".$user->id."</a><br/><br/> Please login on the application to start creating Plan.";
+                $data['name']       = $req->input('username');
+
+                $email              = $data;
+                Mail::send('emails.template', ['params'=>$data], function($send) use ($email){
+                    $send->to($email['to'])->subject($email['subject']);
+                    $send->from('admin@pandu.com', $email['alias']);
+                });
 
                 /* Save To User Detail If Role is Guide */
                 if($req->input('role_id')==2){
@@ -978,4 +978,22 @@ class UserController extends Controller
             return response()->json($result, 200);
         }
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+
+    public function confirmation(Request $req,$id)
+    {   
+        $user = User::find($id);
+        $user->status = 'active';
+        $user->save();
+
+        echo "Your account Already Activated! Please Login on Apps";
+    }
+
 }
