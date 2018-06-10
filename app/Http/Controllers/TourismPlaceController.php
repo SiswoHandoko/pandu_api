@@ -277,13 +277,33 @@ class TourismPlaceController extends Controller
 
         // $access_log_id = $this->create_access_log($param_insert);
 
-        $tourismplace = TourismPlace::with('city.province', 'picture', 'event','category')->where('status', '!=', 'deleted')->find($id);
-        
+        $tourismplace = new TourismPlace;
+        $tourismplace = $tourismplace->with('city.province', 'picture', 'event','category');
+        $tourismplace = $tourismplace->where('status', '!=', 'deleted');
+        // $tourismplace = $tourismplace->whereHas('picture', function($query) {
+        //     $query->where('status', '!=', "deleted");
+        // });
+        $tourismplace = $tourismplace->find($id);
+
         if (!$tourismplace) {
             $result = $this->generate_response($tourismplace, 404, 'Data Not Found.', true);
 
             return response()->json($result, 404);
         } else {
+            if ($tourismplace->picture) {
+                $tourismplace = collect($tourismplace)->toArray();
+
+                $list_picture = array();
+
+                foreach ($tourismplace['picture'] as $key => $value) {
+                    if ($value['status'] != "deleted") {
+                        $list_picture[] = $tourismplace['picture'][$key];
+                    }
+                }
+                
+                $tourismplace['picture'] = collect($list_picture)->toArray();
+            }
+
             $result = $this->generate_response($tourismplace, 200, 'Detail Data.', false);
 
             // $this->update_access_log($access_log_id, $result);
@@ -554,7 +574,7 @@ class TourismPlaceController extends Controller
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
