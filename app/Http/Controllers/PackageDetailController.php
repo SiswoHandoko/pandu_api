@@ -259,7 +259,7 @@ class PackageDetailController extends Controller
     {
         $param_insert = array(
             'name' => 'packagedetail_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

@@ -61,13 +61,13 @@ class PlanController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'plan_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'plan_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plan = new Plan;
         $plan = $plan->with('user', 'guide', 'plandetail');
@@ -92,7 +92,7 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
                 
                 return response()->json($result, 400);
             }
@@ -107,7 +107,7 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -131,7 +131,7 @@ class PlanController extends Controller
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -406,13 +406,13 @@ class PlanController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'plan_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'plan_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plan = Plan::with('user', 'guide', 'plandetail')->where('status', '!=', 'deleted')->find($id);
 
@@ -420,13 +420,13 @@ class PlanController extends Controller
             // $plan = $this->validate_relation($plan);
             $result = $this->generate_response($plan, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         } else {
             $result = $this->generate_response($plan, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }
@@ -484,6 +484,10 @@ class PlanController extends Controller
 
                 return response()->json($result, 404);
             } else {
+                if ($req->has('status') && $req->status=='booking') {
+                    $req->status = 'issued';
+                }
+                
                 $plan->total_adult = $req->has('total_adult') ? $req->total_adult : $plan->total_adult;
                 $plan->total_child = $req->has('total_child') ? $req->total_child : $plan->total_child;
                 $plan->total_infant = $req->has('total_infant') ? $req->total_infant : $plan->total_infant;
@@ -611,7 +615,7 @@ class PlanController extends Controller
     {
         $param_insert = array(
             'name' => 'plan_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
@@ -648,7 +652,7 @@ class PlanController extends Controller
     {
         $param_insert = array(
             'name' => 'destroy_plandetail_by_plan',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
@@ -728,13 +732,13 @@ class PlanController extends Controller
     */
     public function plandetail_by_plan(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'plandetail_by_plan',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'plandetail_by_plan',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = new PlanDetail;
         $plandetail = $plandetail->with('plan', 'tourismplace.picture', 'tourismplace.city');
@@ -762,7 +766,7 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -777,7 +781,7 @@ class PlanController extends Controller
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -797,7 +801,7 @@ class PlanController extends Controller
         
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

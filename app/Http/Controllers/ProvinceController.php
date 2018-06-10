@@ -38,13 +38,13 @@ class ProvinceController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'province_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'province_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $province = new Province;
         $province = $province->where('status', '!=', 'deleted');
@@ -68,7 +68,7 @@ class ProvinceController extends Controller
             } else {
                 $result = $this->generate_response($province, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -83,7 +83,7 @@ class ProvinceController extends Controller
             } else {
                 $result = $this->generate_response($province, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -101,7 +101,7 @@ class ProvinceController extends Controller
 
         $result = $this->generate_response($province, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -155,25 +155,25 @@ class ProvinceController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'province_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'province_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $province = Province::where('status','!=','deleted')->find($id);
         if(!$province){
             $result = $this->generate_response($province, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($province, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -239,7 +239,7 @@ class ProvinceController extends Controller
     {
         $param_insert = array(
             'name' => 'province_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
@@ -273,13 +273,13 @@ class ProvinceController extends Controller
     */
     public function city_by_province(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'city_by_province',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'city_by_province',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $city = new City;
         $city = $city->with('province');
@@ -305,7 +305,7 @@ class ProvinceController extends Controller
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -320,7 +320,7 @@ class ProvinceController extends Controller
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -338,7 +338,7 @@ class ProvinceController extends Controller
 
         $result = $this->generate_response($city, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

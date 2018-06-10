@@ -251,7 +251,7 @@ class AdvertisementController extends Controller
     {
         $param_insert = array(
             'name' => 'advertisement_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

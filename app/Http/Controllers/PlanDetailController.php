@@ -44,13 +44,13 @@ class PlanDetailController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'plandetail_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'plandetail_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = new PlanDetail;
         $plandetail = $plandetail->with('plan', 'tourismplace.picture', 'tourismplace.city');
@@ -75,7 +75,7 @@ class PlanDetailController extends Controller
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
                 
                 return response()->json($result, 400);
             }
@@ -90,7 +90,7 @@ class PlanDetailController extends Controller
             } else {
                 $result = $this->generate_response($plandetail, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -108,7 +108,7 @@ class PlanDetailController extends Controller
         
         $result = $this->generate_response($plandetail, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -217,26 +217,26 @@ class PlanDetailController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'plandetail_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'plandetail_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plandetail = PlanDetail::with('plan', 'tourismplace.city')->where('status', '!=', 'deleted')->find($id);
 
         if (!$plandetail) {
             $result = $this->generate_response($plandetail, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($plandetail, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -347,7 +347,7 @@ class PlanDetailController extends Controller
     {
         $param_insert = array(
             'name' => 'plandetail_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

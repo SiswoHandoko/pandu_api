@@ -62,6 +62,10 @@ class CustomController extends Controller
 
                 return response()->json($result, 404);
             }else{
+                if ($req->has('status') && $req->status=='booking') {
+                    $req->status = 'issued';
+                }
+
                 $update->status = $req->has('status') ? $req->status : '';
                 $update->save();
 

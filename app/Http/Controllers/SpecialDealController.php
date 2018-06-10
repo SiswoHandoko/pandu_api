@@ -34,13 +34,13 @@ class SpecialDealController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'specialdeal_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'specialdeal_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $specialdeal = new SpecialDeal;
         $specialdeal = $specialdeal->with('tourismplace.picture', 'package');
@@ -65,7 +65,7 @@ class SpecialDealController extends Controller
             } else {
                 $result = $this->generate_response($specialdeal, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -80,7 +80,7 @@ class SpecialDealController extends Controller
             } else {
                 $result = $this->generate_response($specialdeal, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -100,7 +100,7 @@ class SpecialDealController extends Controller
 
         $result = $this->generate_response($specialdeal, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -206,26 +206,26 @@ class SpecialDealController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'specialdeal_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'specialdeal_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $specialdeal = SpecialDeal::with('tourismplace.picture','package')->where('status','!=','deleted')->find($id);
 
         if(!$specialdeal){
             $result = $this->generate_response($specialdeal, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($specialdeal, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -299,7 +299,7 @@ class SpecialDealController extends Controller
     {
         $param_insert = array(
             'name' => 'specialdeal_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

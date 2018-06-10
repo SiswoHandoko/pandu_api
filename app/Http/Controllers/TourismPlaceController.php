@@ -60,13 +60,13 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'tourismplace_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'tourismplace_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $tourismplace = new TourismPlace;
         $tourismplace = $tourismplace->with('city.province', 'picture', 'event', 'category');
@@ -91,7 +91,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
                 
                 return response()->json($result, 400);
             }
@@ -106,7 +106,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -128,7 +128,7 @@ class TourismPlaceController extends Controller
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -269,13 +269,13 @@ class TourismPlaceController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'tourismplace_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'tourismplace_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $tourismplace = TourismPlace::with('city.province', 'picture', 'event','category')->where('status', '!=', 'deleted')->find($id);
         
@@ -286,7 +286,7 @@ class TourismPlaceController extends Controller
         } else {
             $result = $this->generate_response($tourismplace, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -378,7 +378,7 @@ class TourismPlaceController extends Controller
     {
         $param_insert = array(
             'name' => 'tourismplace_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
@@ -412,13 +412,13 @@ class TourismPlaceController extends Controller
     */
     public function event_by_tourismplace(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'event_by_tourismplace',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'event_by_tourismplace',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $event = new Event;
         $event = $event->with('tourismplace','tourismplace.category');
@@ -444,7 +444,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($event, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -459,7 +459,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($event, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -477,7 +477,7 @@ class TourismPlaceController extends Controller
 
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -489,13 +489,13 @@ class TourismPlaceController extends Controller
     */
     public function picture_by_tourismplace(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'picture_by_tourismplace',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'picture_by_tourismplace',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $picture = new Picture;
         $picture = $picture->with('tourismplace','tourismplace.category');
@@ -521,7 +521,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -536,7 +536,7 @@ class TourismPlaceController extends Controller
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }

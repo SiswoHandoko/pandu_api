@@ -54,13 +54,13 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'user_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'user_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $user = new User;
         $user = $user->with('city','user_detail');
@@ -85,7 +85,7 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($user, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -100,7 +100,7 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($user, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -118,7 +118,7 @@ class UserController extends Controller
 
         $result = $this->generate_response($user, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -335,20 +335,20 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'user_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'user_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $user = User::with('city','user_detail')->where('status','!=','deleted')->find($id);
 
         if(!$user){
             $result = $this->generate_response($user,404,'Data Not Found.',true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
@@ -359,7 +359,7 @@ class UserController extends Controller
 
             $result = $this->generate_response($user,200,'Detail Data.',false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -783,13 +783,13 @@ class UserController extends Controller
     */
     public function user_by_plan(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'user_by_plan',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'user_by_plan',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $plan = new Plan;
         $plan = $plan->with('user', 'guide');
@@ -819,10 +819,14 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
+        }
+
+        if (!$req->input('order_by')) {
+            $plan = $plan->orderBy("id", "desc");
         }
 
         // order
@@ -834,7 +838,7 @@ class UserController extends Controller
             } else {
                 $result = $this->generate_response($plan, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -852,7 +856,7 @@ class UserController extends Controller
 
         $result = $this->generate_response($plan, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

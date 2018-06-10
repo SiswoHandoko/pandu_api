@@ -34,13 +34,13 @@ class EventController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'event_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'event_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $event = new Event;
         $event = $event->with('tourismplace');
@@ -65,7 +65,7 @@ class EventController extends Controller
             } else {
                 $result = $this->generate_response($event, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -80,7 +80,7 @@ class EventController extends Controller
             } else {
                 $result = $this->generate_response($event, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -98,7 +98,7 @@ class EventController extends Controller
 
         $result = $this->generate_response($event, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -161,26 +161,26 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'event_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'event_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $event = Event::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$event) {
             $result = $this->generate_response($event, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($event, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -255,7 +255,7 @@ class EventController extends Controller
     {
         $param_insert = array(
             'name' => 'event_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

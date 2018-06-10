@@ -62,13 +62,13 @@ class CityController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'city_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'city_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $city = new City;
         $city = $city->with('province');
@@ -93,7 +93,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -108,7 +108,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($city, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -126,7 +126,7 @@ class CityController extends Controller
 
         $result = $this->generate_response($city, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -185,13 +185,13 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'city_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'city_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $city = new City();
         $city = $city->with('province');
@@ -201,13 +201,13 @@ class CityController extends Controller
         if(!$city){
             $result = $this->generate_response($city, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         }else{
             $result = $this->generate_response($city, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -278,7 +278,7 @@ class CityController extends Controller
     {
         $param_insert = array(
             'name' => 'city_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
@@ -311,13 +311,13 @@ class CityController extends Controller
     */
     public function tourismplace_by_city(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'city_tourismplace',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'city_tourismplace',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $tourismplace = new TourismPlace;
         $tourismplace = $tourismplace->with('city.province', 'picture', 'event', 'category');
@@ -343,7 +343,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -358,7 +358,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($tourismplace, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -380,7 +380,7 @@ class CityController extends Controller
 
         $result = $this->generate_response($tourismplace, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -455,13 +455,13 @@ class CityController extends Controller
     */
     public function package_by_city(Request $req, $id)
     {
-        $param_insert = array(
-            'name' => 'city_package',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'city_package',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $package = new Package;
         $package = $package->with('packagedetail.tourismplace.city');
@@ -489,7 +489,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -504,7 +504,7 @@ class CityController extends Controller
             } else {
                 $result = $this->generate_response($package, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -522,7 +522,7 @@ class CityController extends Controller
 
         $result = $this->generate_response($package, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }

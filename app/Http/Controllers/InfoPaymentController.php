@@ -32,13 +32,13 @@ class InfoPaymentController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'infopayment_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'infopayment_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
         
         $infopayment = new InfoPayment;
         $infopayment = $infopayment->where('status', '!=', 'deleted');
@@ -62,7 +62,7 @@ class InfoPaymentController extends Controller
             } else {
                 $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -77,7 +77,7 @@ class InfoPaymentController extends Controller
             } else {
                 $result = $this->generate_response($infopayment, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -95,7 +95,7 @@ class InfoPaymentController extends Controller
 
         $result = $this->generate_response($infopayment, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -155,26 +155,26 @@ class InfoPaymentController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'infopayment_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'infopayment_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $infopayment = InfoPayment::where('status', '!=', 'deleted')->find($id);
         
         if (!$infopayment) {
             $result = $this->generate_response($infopayment, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($infopayment, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -248,7 +248,7 @@ class InfoPaymentController extends Controller
     {
         $param_insert = array(
             'name' => 'infopayment_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 

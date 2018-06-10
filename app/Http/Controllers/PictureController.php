@@ -31,13 +31,13 @@ class PictureController extends Controller
     */
     public function index(Request $req)
     {
-        $param_insert = array(
-            'name' => 'picture_index',
-            'params' => json_encode(collect($req)->toArray()),
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'picture_index',
+        //     'params' => json_encode(collect($req)->toArray()),
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $picture = new Picture;
         $picture = $picture->with('tourismplace');
@@ -62,7 +62,7 @@ class PictureController extends Controller
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
                 
                 return response()->json($result, 400);
             }
@@ -77,7 +77,7 @@ class PictureController extends Controller
             } else {
                 $result = $this->generate_response($picture, 400, 'Bad Request.', true);
 
-                $this->update_access_log($access_log_id, $result);
+                // $this->update_access_log($access_log_id, $result);
 
                 return response()->json($result, 400);
             }
@@ -95,7 +95,7 @@ class PictureController extends Controller
 
         $result = $this->generate_response($picture, 200, 'All Data.', false);
 
-        $this->update_access_log($access_log_id, $result);
+        // $this->update_access_log($access_log_id, $result);
 
         return response()->json($result, 200);
     }
@@ -161,26 +161,26 @@ class PictureController extends Controller
      */
     public function show($id)
     {
-        $param_insert = array(
-            'name' => 'picture_show',
-            'params' => '',
-            'result' => ''
-        );
+        // $param_insert = array(
+        //     'name' => 'picture_show',
+        //     'params' => '',
+        //     'result' => ''
+        // );
 
-        $access_log_id = $this->create_access_log($param_insert);
+        // $access_log_id = $this->create_access_log($param_insert);
 
         $picture = Picture::with('tourismplace')->where('status', '!=', 'deleted')->find($id);
         
         if (!$picture) {
             $result = $this->generate_response($picture, 404, 'Data Not Found.', true);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 404);
         } else {
             $result = $this->generate_response($picture, 200, 'Detail Data.', false);
 
-            $this->update_access_log($access_log_id, $result);
+            // $this->update_access_log($access_log_id, $result);
 
             return response()->json($result, 200);
         }
@@ -249,7 +249,7 @@ class PictureController extends Controller
     {
         $param_insert = array(
             'name' => 'picture_destroy',
-            'params' => '',
+            'params' => json_encode(array("id" => $id)),
             'result' => ''
         );
 
