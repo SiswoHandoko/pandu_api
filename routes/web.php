@@ -27,6 +27,7 @@ $router->post('/login', 'UserController@login');
 $router->get('/logout/{id}', 'UserController@logout');
 $router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@index']);
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@show']);
+$router->get('/user/confirmation/{id}', 'UserController@confirmation');
 $router->post('/user/create', 'UserController@store');
 $router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@update']);
 $router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);

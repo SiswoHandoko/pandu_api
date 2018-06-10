@@ -530,7 +530,7 @@ class PlanController extends Controller
                     $data['to']         = $plan->user->email;
                     $data['alias']      = 'Admin Pandu';
                     $data['subject']    = 'BOOKING PLAN';
-                    $data['content']    = "Your Current Plan status is <strong>Booking</strong> immediately complete and confirm payment.";
+                    $data['content']    = "Your Current Plan status is <strong>Booking</strong> for now you can not buy tickets yet. and all payments are not charged";
                     $data['name']       = $plan->user->username;
 
                     $email              = $data;
@@ -543,7 +543,7 @@ class PlanController extends Controller
                     $message = new Message();
                     $message->user_id = $plan->user->id;
                     $message->title = 'BOOKING PLAN';
-                    $message->description = "Your Current Plan status is Booking immediately complete and confirm payment.";
+                    $message->description = "Your Current Plan status is <strong>Booking</strong> for now you can not buy tickets yet. and all payments are not charged";
                     $message->status = 'booking';
                     $message->created_by = '1';
                     $message->save();
