@@ -29,6 +29,7 @@ $router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@index'
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@show']);
 $router->post('/user/create', 'UserController@store');
 $router->put('/user/update/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@update']);
+$router->get('/user/confirmation/{id}', 'UserController@confirmation');
 $router->get('/user/delete/{id}', ['middleware' => 'auth', 'uses' =>  'UserController@destroy']);
 $router->get('/user/{id}/plans', 'UserController@user_by_plan');
 $router->post('/user/forgotpassword', 'UserController@forgot_password');
