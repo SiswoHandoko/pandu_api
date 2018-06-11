@@ -15,7 +15,9 @@ class CityController extends Controller
         'name',
         'image_url',
         'rate',
-        'status'
+        'status',
+        'longitude',
+        'latitude'
     );
 
     private $fields_tourismplaces = array(
@@ -166,6 +168,8 @@ class CityController extends Controller
             $city->name = $req->has('name') ? $req->name : '';
             $city->status = $req->has('status') ? $req->status : 'active';
             $city->rate = $req->has('rate') ? $req->rate : 0;
+            $city->latitude = $req->has('latitude') ? $req->latitude : 0;
+            $city->longitude = $req->has('longitude') ? $req->longitude : 0;
             $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url) : env('BACKEND_URL').'public/images/cities/default_img.png';
             $city->save();
 
@@ -256,6 +260,8 @@ class CityController extends Controller
                 $city->image_url = $req->has('image_url') ? env('BACKEND_URL').'public/images/cities/'.$this->uploadFile($this->public_path(). "/images/cities/", $req->image_url,$city->image_url) : $city->image_url;
                 $city->status = $req->has('status') ? $req->status : $city->status;
                 $city->rate = $req->has('rate') ? $req->rate : $city->rate;
+                $city->latitude = $req->has('latitude') ? $req->latitude : $city->latitude;
+                $city->longitude = $req->has('longitude') ? $req->longitude : $city->longitude;
                 $city->province_id = $req->has('province_id') ? $req->province_id : $city->province_id;
                 $city->save();
 
