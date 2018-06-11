@@ -287,9 +287,6 @@ class CustomController extends Controller
     }
 
     public function reportData(Request $req){
-        /** Datatable Data */
-
-
         /** Get Chart Data */
         $result = $this->reportChart($req);
         $result = $this->generate_response($result, 200, 'All Data.', false);
@@ -388,6 +385,106 @@ class CustomController extends Controller
                     $result[$i]->day = $i+1;
                     $result[$i]->total_price = '0';
                     $result[$i]->total_transaction = '0';
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    public function reportGuide(Request $req){
+        /** Get Chart Data */
+        $result = $this->reportChartGuide($req);
+        $result = $this->generate_response($result, 200, 'All Data.', false);
+        return response()->json($result, 200);
+    }
+
+    /** For Generate Chart Data */
+    public function reportChartGuide($req){
+
+        if($req->input('type')=='yearly'){
+            $chart_data   = DB::table('users');
+            $chart_data   = $chart_data->select(DB::raw('year(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as year, month(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as month,(select count(role_id) from users where year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=month and role_id=2) as total_guide'));
+
+            /** if filter by city */
+            if($req->input('city_id')){
+                $chart_data   = $chart_data->where('city_id',$req->input('city_id'));
+            }
+
+            $chart_data   = $chart_data->where('role_id','2');
+            $chart_data   = $chart_data->where(DB::raw('year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'),$req->input('year'));
+            $chart_data   = $chart_data->groupBy(DB::raw('year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->groupBy(DB::raw('month(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->get();
+            
+            $res = $this->parseGuideYearly($chart_data,$req->input('year'));
+        }elseif($req->input('type')=='monthly'){
+            $chart_data   = DB::table('users');
+            $chart_data   = $chart_data->select(DB::raw('day(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as day_temp,year(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as year, month(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as month, (select count(role_id) from users where day(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=day_temp and year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=month and role_id=2) as total_guide'));
+           
+            /** if filter by city */
+            if($req->input('city_id')){
+                $chart_data   = $chart_data->where('city_id',$req->input('city_id'));
+            }
+
+            $chart_data   = $chart_data->where('role_id','2');
+            $chart_data   = $chart_data->where(DB::raw('year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'),$req->input('year'));
+            $chart_data   = $chart_data->where(DB::raw('month(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'),$req->input('month'));
+            $chart_data   = $chart_data->groupBy(DB::raw('day(DATE_ADD(users.created_at, INTERVAL 7 HOUR))'));
+            $chart_data   = $chart_data->get();
+            
+            $res = $this->parseGuideMonthly($chart_data,$req->input('year'),$req->input('month'));
+        }
+        
+        return $res;
+        
+    }
+
+    /** Parsing Month if not found on database */
+    private function parseGuideYearly($chart_data,$year){
+        $result = array();
+        for($i=0;$i<12;$i++){
+            for($j=0;$j<count($chart_data);$j++){
+                if($chart_data[$j]->month==$i+1){
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $chart_data[$j]->year;
+                    $result[$i]->month = $chart_data[$j]->month;
+                    $result[$i]->total_guide = $chart_data[$j]->total_guide;
+                    break;
+                }else{
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $year;
+                    $result[$i]->month = $i+1;
+                    $result[$i]->total_guide = '0';
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /** Parsing Day if not found on database */
+    private function parseGuideMonthly($chart_data,$year,$month){
+        $result = array();
+
+        /** Get Number Of Day from param year and month */
+        $number_of_day = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        
+        for($i=0;$i<$number_of_day;$i++){
+            for($j=0;$j<count($chart_data);$j++){
+                if($chart_data[$j]->day_temp==$i+1){
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $chart_data[$j]->year;
+                    $result[$i]->month = $chart_data[$j]->month;
+                    $result[$i]->day = $chart_data[$j]->day_temp;
+                    $result[$i]->total_guide = $chart_data[$j]->total_guide;
+                    break;
+                }else{
+                    $result[$i] = new \stdClass();
+                    $result[$i]->year = $year;
+                    $result[$i]->month = $month;
+                    $result[$i]->day = $i+1;
+                    $result[$i]->total_guide = '0';
                 }
             }
         }
