@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Model\AccessLog;
+use App\Model\User;
 
 class Controller extends BaseController
 {
@@ -28,6 +29,38 @@ class Controller extends BaseController
 
     return $result;
   }
+
+    public function check_account($request) {
+        if ($request->header('user-id')) {
+            $user_id = $request->header('user-id');
+
+            $user = new User;
+            $user = $user->with('city','user_detail');
+            $user = $user->where('status','!=','deleted');
+            $user = $user->find($user_id);
+        
+            if ($user && $user->is_online) {
+                $date_now = date("Y-m-d H:i:s");
+                $date_online = $user->last_online;
+
+                $is_online = "offline";
+
+                $diff = strtotime($date_now) - strtotime($date_online);
+                $hours = $diff / ( 60 * 60 );
+
+                if ($hours > 3) {
+                    $is_online = 'offline';
+                } else {
+                    $is_online = 'online';
+                }
+
+                $user->is_online = $is_online;
+                $user->last_online = $date_now;
+                
+                $user->save();
+            }
+        }
+    }
 
   public function uploadFile($path, $base64,$last_image = ''){
         /* Upload function */

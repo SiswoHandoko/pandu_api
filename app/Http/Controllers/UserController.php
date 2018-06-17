@@ -54,6 +54,8 @@ class UserController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'user_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -61,7 +63,7 @@ class UserController extends Controller
         // );
 
         // $access_log_id = $this->create_access_log($param_insert);
-
+        
         $user = new User;
         $user = $user->with('city','user_detail');
         $user = $user->where('status', '!=', 'deleted');
@@ -131,6 +133,8 @@ class UserController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'user_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -333,8 +337,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'user_show',
         //     'params' => '',
@@ -375,6 +381,8 @@ class UserController extends Controller
 
     public function update(Request $req,$id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'user_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -569,8 +577,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'user_destroy',
             'params' => '',
@@ -608,6 +618,8 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+        $this->check_account($request);
+
         $param_insert = array(
             'name' => 'user_login',
             'params' => json_encode(collect($request)->toArray()),
@@ -646,8 +658,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function logout($id)
+    public function logout(Request $request, $id)
     {
+        $this->check_account($request);
+
         $param_insert = array(
             'name' => 'user_logout',
             'params' => '',
@@ -667,6 +681,8 @@ class UserController extends Controller
         }else{
             $user->is_login = 0;
             $user->web_token = '';
+            $user->is_online = 'offline';
+            $user->last_online = date("Y-m-d H:i:s");
             $user->save();
 
             $result = $this->generate_response($user,200,'You are already logout.',false);
@@ -720,7 +736,7 @@ class UserController extends Controller
 
                         return $res;
                     }else{
-                        $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1]);
+                        $create_token = User::where('id', $login->id)->update(['web_token' => $api_token, 'is_login' => 1, 'is_online' => 'online', 'last_online' => date("Y-m-d H:i:s")]);
                         if ($create_token) {
                             /* Set Web Token As Result */
                             $login['token'] = $api_token;
@@ -783,6 +799,8 @@ class UserController extends Controller
     */
     public function user_by_plan(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'user_by_plan',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -870,6 +888,8 @@ class UserController extends Controller
 
     public function forgot_password(Request $request)
     {
+        $this->check_account($request);
+
         $param_insert = array(
             'name' => 'user_forgot_password',
             'params' => json_encode(collect($request)->toArray()),
@@ -952,8 +972,10 @@ class UserController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function message_by_user($id)
+    public function message_by_user(Request $request, $id)
     {
+        $this->check_account($request);
+
         $param_insert = array(
             'name' => 'message_by_user',
             'params' => '',
@@ -987,8 +1009,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function confirmation(Request $req,$id)
+    public function confirmation(Request $req, $id)
     {   
+        $this->check_account($req);
+
         $user = User::find($id);
         $user->status = 'active';
         $user->save();
