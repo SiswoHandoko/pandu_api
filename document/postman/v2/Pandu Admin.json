@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cab525a9-5a1c-4d9d-8a04-3af2eeacead9",
+		"_postman_id": "6de69863-3bc5-4418-8e7d-d5c5dda32389",
 		"name": "Pandu Admin",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -860,6 +860,12 @@
 									"key": "website",
 									"value": "www.google.com",
 									"type": "text"
+								},
+								{
+									"key": "additional_info",
+									"value": "",
+									"description": "",
+									"type": "text"
 								}
 							]
 						},
@@ -974,6 +980,12 @@
 								{
 									"key": "website",
 									"value": "www.google.com",
+									"type": "text"
+								},
+								{
+									"key": "additional_info",
+									"value": "",
+									"description": "",
 									"type": "text"
 								}
 							]
