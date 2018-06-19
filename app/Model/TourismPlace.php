@@ -17,7 +17,7 @@ class TourismPlace extends Model
      * @var array
      */
     protected $fillable = [
-        'city_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status'
+        'city_id', 'name', 'description', 'adult_price', 'child_price', 'infant_price', 'tourist_price', 'longitude', 'latitude', 'facilities', 'status', 'additional_info'
     ];
 
     /**
