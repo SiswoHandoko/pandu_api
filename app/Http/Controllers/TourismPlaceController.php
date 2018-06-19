@@ -60,6 +60,8 @@ class TourismPlaceController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'tourismplace_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -204,6 +206,8 @@ class TourismPlaceController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'tourismplace_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -267,8 +271,10 @@ class TourismPlaceController extends Controller
      * @param  \App\TourismPlace  $tourismplace
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'tourismplace_show',
         //     'params' => '',
@@ -322,6 +328,8 @@ class TourismPlaceController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'tourismplace_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -394,8 +402,10 @@ class TourismPlaceController extends Controller
      * @param  \App\TourismPlace  $tourismplace
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'tourismplace_destroy',
             'params' => json_encode(array("id" => $id)),
@@ -432,6 +442,8 @@ class TourismPlaceController extends Controller
     */
     public function event_by_tourismplace(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'event_by_tourismplace',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -509,6 +521,8 @@ class TourismPlaceController extends Controller
     */
     public function picture_by_tourismplace(Request $req, $id)
     {
+        $this->check_account($req);
+        
         // $param_insert = array(
         //     'name' => 'picture_by_tourismplace',
         //     'params' => json_encode(collect($req)->toArray()),

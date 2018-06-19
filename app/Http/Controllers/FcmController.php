@@ -23,6 +23,8 @@ class FcmController extends Controller
      */
     public function sendnotif(Request $req)
     {
+        $this->check_account($req);
+        
         /* Validation */
         $validator = Validator::make($req->all(), [
           'token' => 'required',

@@ -44,6 +44,8 @@ class PlanDetailController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'plandetail_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -121,6 +123,8 @@ class PlanDetailController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+        
         $param_insert = array(
             'name' => 'plandetail_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -215,8 +219,10 @@ class PlanDetailController extends Controller
      * @param  \App\PlanDetail  $plandetail
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'plandetail_show',
         //     'params' => '',
@@ -252,6 +258,8 @@ class PlanDetailController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'plandetail_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -343,8 +351,10 @@ class PlanDetailController extends Controller
      * @param  \App\PlanDetail  $plandetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'plandetail_destroy',
             'params' => json_encode(array("id" => $id)),

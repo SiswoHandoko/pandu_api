@@ -16,6 +16,8 @@ class MailController extends Controller
      */
     public function sendmail(Request $req)
     {
+        $this->check_account($req);
+        
         $param_insert = array(
             'name' => 'mail_sendmail',
             'params' => json_encode(collect($req)->toArray()),

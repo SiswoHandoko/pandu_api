@@ -43,9 +43,28 @@ class Controller extends BaseController
                 $date_now = date("Y-m-d H:i:s");
                 $date_online = $user->last_online;
 
-                $is_online = "offline";
+                $user->last_online = $date_now;
+                
+                $user->save();
+            }
+        }
+
+        $this->update_users();
+    }
+
+    private function update_users() {
+        $user = new User;
+        $user = $user->with('city','user_detail');
+        $user = $user->where('status','!=','deleted');
+        $user = $user->get();
+    
+        if ($user) {
+            foreach ($user as $key => $value) {
+                $date_now = date("Y-m-d H:i:s");
+                $date_online = $user[$key]->last_online;
 
                 $diff = strtotime($date_now) - strtotime($date_online);
+                
                 $hours = $diff / ( 60 * 60 );
 
                 if ($hours > 3) {
@@ -54,10 +73,9 @@ class Controller extends BaseController
                     $is_online = 'online';
                 }
 
-                $user->is_online = $is_online;
-                $user->last_online = $date_now;
+                $user[$key]->is_online = $is_online;
                 
-                $user->save();
+                $user[$key]->save();
             }
         }
     }

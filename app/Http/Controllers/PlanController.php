@@ -61,6 +61,8 @@ class PlanController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'plan_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -144,6 +146,8 @@ class PlanController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'plan_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -404,8 +408,10 @@ class PlanController extends Controller
      * @param  \App\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'plan_show',
         //     'params' => '',
@@ -442,6 +448,8 @@ class PlanController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'plan_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -611,8 +619,10 @@ class PlanController extends Controller
      * @param  \App\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'plan_destroy',
             'params' => json_encode(array("id" => $id)),
@@ -650,6 +660,8 @@ class PlanController extends Controller
      */
     public function destroy_plandetail_by_plan(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'destroy_plandetail_by_plan',
             'params' => json_encode(array("id" => $id)),
@@ -700,8 +712,10 @@ class PlanController extends Controller
         }
     }
 
-    private function update_day_plan($plan_id)
+    private function update_day_plan(Request $req, $plan_id)
     {
+        $this->check_account($req);
+
         $max_day = PlanDetail::with('plan', 'tourismplace')->where('status', '!=', 'deleted')->where('plan_id', '=', $plan_id)->orderBy('day', 'desc')->get();
         $max_day = collect($max_day)->toArray();
 
@@ -732,6 +746,8 @@ class PlanController extends Controller
     */
     public function plandetail_by_plan(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'plandetail_by_plan',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -816,6 +832,8 @@ class PlanController extends Controller
 
     public function update_plandetail_by_plan(Request $req, $id)
     {
+        $this->check_account($req);
+        
         $param_insert = array(
             'name' => 'update_plandetail_by_plan',
             'params' => json_encode(collect($req)->toArray()),

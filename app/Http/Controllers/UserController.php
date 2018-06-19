@@ -379,7 +379,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $req,$id)
+    public function update(Request $req, $id)
     {
         $this->check_account($req);
 

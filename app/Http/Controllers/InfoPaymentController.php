@@ -32,6 +32,8 @@ class InfoPaymentController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'infopayment_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -108,6 +110,8 @@ class InfoPaymentController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'infopayment_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -153,8 +157,10 @@ class InfoPaymentController extends Controller
      * @param  \App\InfoPayment  $infopayment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'infopayment_show',
         //     'params' => '',
@@ -190,6 +196,8 @@ class InfoPaymentController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'infopayment_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -244,8 +252,10 @@ class InfoPaymentController extends Controller
      * @param  \App\InfoPayment  $infopayment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'infopayment_destroy',
             'params' => json_encode(array("id" => $id)),

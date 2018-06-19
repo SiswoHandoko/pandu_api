@@ -34,6 +34,8 @@ class MessageController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'message_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -110,6 +112,8 @@ class MessageController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'message_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -155,8 +159,10 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'message_show',
         //     'params' => '',
@@ -191,7 +197,9 @@ class MessageController extends Controller
      */
 
     public function update(Request $req,$id)
-    {   
+    {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'message_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -243,8 +251,10 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'message_destroy',
             'params' => json_encode(array("id" => $id)),

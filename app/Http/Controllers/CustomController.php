@@ -27,6 +27,8 @@ class CustomController extends Controller
      */
     public function update_status(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'custom_package',
             'params' => json_encode(collect($req)->toArray()),
@@ -181,6 +183,8 @@ class CustomController extends Controller
     */
     public function dashboard(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'dashboard_data',
             'params' => json_encode(collect($req)->toArray()),
@@ -287,6 +291,8 @@ class CustomController extends Controller
     }
 
     public function reportData(Request $req){
+        $this->check_account($req);
+
         /** Get Chart Data */
         $result = $this->reportChart($req);
         $result = $this->generate_response($result, 200, 'All Data.', false);
@@ -295,6 +301,7 @@ class CustomController extends Controller
 
     /** For Generate Chart Data */
     public function reportChart($req){
+        $this->check_account($req);
 
         if($req->input('type')=='yearly'){
             $chart_data   = DB::table('plans');
@@ -393,6 +400,8 @@ class CustomController extends Controller
     }
 
     public function reportGuide(Request $req){
+        $this->check_account($req);
+
         /** Get Chart Data */
         $result = $this->reportChartGuide($req);
         $result = $this->generate_response($result, 200, 'All Data.', false);
@@ -401,7 +410,8 @@ class CustomController extends Controller
 
     /** For Generate Chart Data */
     public function reportChartGuide($req){
-
+        $this->check_account($req);
+        
         if($req->input('type')=='yearly'){
             $chart_data   = DB::table('users');
             $chart_data   = $chart_data->select(DB::raw('year(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as year, month(DATE_ADD(users.created_at, INTERVAL 7 HOUR)) as month,(select count(role_id) from users where year(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=year and month(DATE_ADD(users.created_at, INTERVAL 7 HOUR))=month and role_id=2) as total_guide'));

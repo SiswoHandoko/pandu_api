@@ -30,6 +30,8 @@ class CategoryController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'category_index',
             'params' => json_encode(collect($req)->toArray()),
@@ -106,6 +108,8 @@ class CategoryController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'category_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -146,8 +150,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'category_show',
             'params' => '',
@@ -182,6 +188,8 @@ class CategoryController extends Controller
      */
     public function update(Request $req,$id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'category_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -229,8 +237,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'category_destroy',
             'params' => '',

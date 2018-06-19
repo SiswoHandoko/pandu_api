@@ -32,6 +32,8 @@ class AdvertisementController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'advertisement_index',
             'params' => json_encode(collect($req)->toArray()),
@@ -109,6 +111,8 @@ class AdvertisementController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'advertisement_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -156,8 +160,10 @@ class AdvertisementController extends Controller
      * @param  \App\Advertisement  $advertisement
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'advertisement_show',
             'params' => '',
@@ -193,6 +199,8 @@ class AdvertisementController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'advertisement_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -247,8 +255,10 @@ class AdvertisementController extends Controller
      * @param  \App\Advertisement  $advertisement
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'advertisement_destroy',
             'params' => json_encode(array("id" => $id)),

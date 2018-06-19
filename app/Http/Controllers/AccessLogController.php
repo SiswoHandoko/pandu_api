@@ -32,6 +32,8 @@ class AccessLogController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+        
         $accesslog = new AccessLog;
 
         // search query

@@ -64,6 +64,8 @@ class CityController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'city_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -141,6 +143,8 @@ class CityController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'city_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -187,8 +191,10 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'city_show',
         //     'params' => '',
@@ -227,6 +233,8 @@ class CityController extends Controller
 
     public function update(Request $req,$id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'city_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -280,8 +288,10 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'city_destroy',
             'params' => json_encode(array("id" => $id)),
@@ -317,6 +327,8 @@ class CityController extends Controller
     */
     public function tourismplace_by_city(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'city_tourismplace',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -461,6 +473,8 @@ class CityController extends Controller
     */
     public function package_by_city(Request $req, $id)
     {
+        $this->check_account($req);
+        
         // $param_insert = array(
         //     'name' => 'city_package',
         //     'params' => json_encode(collect($req)->toArray()),

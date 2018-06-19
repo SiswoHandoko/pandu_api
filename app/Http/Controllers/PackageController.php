@@ -48,6 +48,8 @@ class PackageController extends Controller
     */
     public function index(Request $req)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'package_index',
         //     'params' => json_encode(collect($req)->toArray()),
@@ -143,6 +145,8 @@ class PackageController extends Controller
      */
     public function store(Request $req)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'package_store',
             'params' => json_encode(collect($req)->toArray()),
@@ -194,8 +198,10 @@ class PackageController extends Controller
      * @param  \App\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $req, $id)
     {
+        $this->check_account($req);
+
         // $param_insert = array(
         //     'name' => 'package_show',
         //     'params' => '',
@@ -231,6 +237,8 @@ class PackageController extends Controller
 
     public function update(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'package_update',
             'params' => json_encode(collect($req)->toArray()),
@@ -290,8 +298,10 @@ class PackageController extends Controller
      * @param  \App\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
+        $this->check_account($req);
+
         $param_insert = array(
             'name' => 'package_destroy',
             'params' => json_encode(array("id" => $id)),
@@ -328,6 +338,8 @@ class PackageController extends Controller
     */
     public function packagedetail_by_package(Request $req, $id)
     {
+        $this->check_account($req);
+        
         // $param_insert = array(
         //     'name' => 'packagedetail_by_package',
         //     'params' => json_encode(collect($req)->toArray()),
