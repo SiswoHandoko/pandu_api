@@ -40,6 +40,8 @@ class Controller extends BaseController
             $user = $user->find($user_id);
         
             if ($user && $user->is_online) {
+                date_default_timezone_set("Asia/Bangkok");
+                
                 $date_now = date("Y-m-d H:i:s");
                 $date_online = $user->last_online;
 
@@ -60,12 +62,15 @@ class Controller extends BaseController
     
         if ($user) {
             foreach ($user as $key => $value) {
+                date_default_timezone_set("Asia/Bangkok");
+
                 $date_now = date("Y-m-d H:i:s");
                 $date_online = $user[$key]->last_online;
 
                 $diff = strtotime($date_now) - strtotime($date_online);
                 
                 $hours = $diff / ( 60 * 60 );
+                // echo $date_now.' : '.$date_online.' : '.$hours.'<br/>';
 
                 if ($hours > 3) {
                     $is_online = 'offline';

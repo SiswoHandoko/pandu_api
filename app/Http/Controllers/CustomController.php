@@ -237,6 +237,12 @@ class CustomController extends Controller
                                                     ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
                                                     ->groupBy('plan_details.plan_id')
                                                     ->get());
+            $result['user_online']              = count(DB::table('users')
+                                                    ->where('is_online','online')
+                                                    ->get());
+            $result['user_offline']              = count(DB::table('users')
+                                                    ->where('is_online','offline')
+                                                    ->get());
         }else{
             /** Set Params */
             $this_date = date('Y-m-d');
@@ -270,6 +276,12 @@ class CustomController extends Controller
                                                     ->where('plans.status','ticketed')
                                                     ->where(DB::raw('date(DATE_ADD(plans.updated_at, INTERVAL 7 HOUR))'),DB::raw('date("'.$this_date.'")'))
                                                     ->groupBy('plan_details.plan_id')
+                                                    ->get());
+            $result['user_online']              = count(DB::table('users')
+                                                    ->where('is_online','online')
+                                                    ->get());
+            $result['user_offline']              = count(DB::table('users')
+                                                    ->where('is_online','offline')
                                                     ->get());
             
         }
