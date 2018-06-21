@@ -4511,6 +4511,10 @@
 							{
 								"key": "device-type",
 								"value": "web"
+							},
+							{
+								"key": "user-id",
+								"value": "1"
 							}
 						],
 						"body": {

@@ -1775,11 +1775,21 @@
 			"headerData": [
 				{
 					"key": "api-token",
-					"value": "77a64fae487baef2ae395a80db6b82549723219a"
+					"value": "77a64fae487baef2ae395a80db6b82549723219a",
+					"description": "",
+					"enabled": true
 				},
 				{
 					"key": "device-type",
-					"value": "web"
+					"value": "web",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user-id",
+					"value": "1",
+					"description": "",
+					"enabled": true
 				}
 			],
 			"method": "GET",
@@ -1795,7 +1805,7 @@
 			"events": null,
 			"folder": "ec3a22f4-8daa-4750-a1d9-6de93206d933",
 			"rawModeData": "",
-			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\n",
+			"headers": "api-token: 77a64fae487baef2ae395a80db6b82549723219a\ndevice-type: web\nuser-id: 1\n",
 			"pathVariables": {}
 		},
 		{
