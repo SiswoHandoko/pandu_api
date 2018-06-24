@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a3952979-d64a-4de7-8a05-e20beabc46dd",
+		"_postman_id": "666c5af5-d9a7-495e-83f7-e3ee47b74dfc",
 		"name": "Pandu",
 		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -1547,13 +1547,39 @@
 									"key": "no_ticket",
 									"value": "T002",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
@@ -1636,13 +1662,39 @@
 									"key": "no_ticket",
 									"value": "T001",
 									"type": "text",
+									"description": "",
 									"disabled": true
 								},
 								{
 									"key": "status",
 									"value": "active",
 									"type": "text",
+									"description": "",
 									"disabled": true
+								},
+								{
+									"key": "total_adult",
+									"value": "2",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_child",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_infant",
+									"value": "1",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "total_tourist",
+									"value": "0",
+									"type": "text",
+									"description": ""
 								}
 							]
 						},
