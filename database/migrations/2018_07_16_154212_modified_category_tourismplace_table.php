@@ -14,8 +14,8 @@ class ModifiedCategoryTourismplaceTable extends Migration
     public function up()
     {
         Schema::table('tourism_places', function (Blueprint $table) {
-            $table->renameColumn('category', 'category_id');
-            $table->integer('category_id')->default(0)->change();
+            $table->dropColumn('category');
+            $table->integer('category_id')->default(0);
         });
     }
 
@@ -27,8 +27,8 @@ class ModifiedCategoryTourismplaceTable extends Migration
     public function down()
     {
         Schema::table('tourism_places', function (Blueprint $table) {
-            $table->renameColumn('category_id', 'category');
-            $table->string('category')->default('')->change();
+            $table->string('category')->default('');
+            $table->dropColumn('category_id');
         });
     }
 }
